@@ -1204,7 +1204,7 @@ available proxy.
 | 12 | 0 agents (1 experiment run directly by orchestrator) — convergence declared, iteration ends here | 0 |
 | 13 | 0 agents (2 experiments — iter38, iter39 — run directly by orchestrator, reopened post-convergence on request) | 0 |
 | 14 | 0 agents (iter44 and all its verification passes — sweeps, ablation, seed/date-shift robustness, blend — run directly by orchestrator) | 0 |
-| 15 | 0 agents (iter45-47 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
+| 15 | 0 agents (iter45-48 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner, time-of-day feature — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
 
 **GPU time is 0 throughout and will remain 0** — every model, including
 iter44's LightGBM ranker, trains CPU-only. The FM/BPR line (iter1-iter39)
@@ -1537,19 +1537,33 @@ linear combinations of these three models' scores. **Verdict: REJECT (no
 promotable finding)** — iter44's blend stands unchanged as the final
 model. Full detail: `experiments/iter47_stacking_meta/RESULT.md`.
 
+### iter48 — time-of-day (hour-of-day) as a GBM-native feature
+`hourmin` has been carried in every row tuple since iter18 but never once
+used as a model feature across 44+ iterations — a genuinely untried,
+cheap lever, distinct from the decay/recency-window feature family
+iter18-44 already explored. Added `sin`/`cos` of the fractional hour
+(preserving the 24h wraparound) to iter44's exact feature set and
+hyperparameters. Result: valid 0.66054 / test 0.64765, slightly **worse**
+than the 0.66135/0.64794 baseline — below the 0.0003 look-threshold, no
+seeds run. Time-of-day carries no exploitable signal here, plausibly
+because the recency/decay features already capture the relevant
+session-level pattern more directly than raw clock time does. **Verdict:
+REJECT.** Full detail: `experiments/iter48_hour_of_day/RESULT.md`.
+
 ## Round 15 complete — summary
-Three independent methods tested (CatBoost-native, extreme-low-capacity
-GBM hyperparameter depth, stacking meta-learner), all directly by the
-orchestrator, no subagent dispatch. All three landed as clean, well-
-diagnosed REJECTs rather than gains — but each closes a real open
-question left from Round 14: CatBoost's native-encoding ceiling is now
-known (iter45), the GBM hyperparameter search space at num_leaves=2 is
-now exhaustively checked (iter46), and both the "does stacking beat a
-fixed alpha" and "does a third model add blend diversity" questions are
-now answered no, with a doubly-confirmed diagnosis (iter47). No change to
-the final selected model. **Convergence reaffirmed**: iter44's blend
-(valid 0.66473 / test 0.65197) remains the best result after 15 rounds /
-47 iterations.
+Four independent methods tested (CatBoost-native, extreme-low-capacity
+GBM hyperparameter depth, stacking meta-learner, time-of-day feature),
+all directly by the orchestrator, no subagent dispatch. All four landed
+as clean, well-diagnosed REJECTs rather than gains — but each closes a
+real open question: CatBoost's native-encoding ceiling is now known
+(iter45), the GBM hyperparameter search space at num_leaves=2 is now
+exhaustively checked (iter46), both "does stacking beat a fixed alpha"
+and "does a third model add blend diversity" are answered no with a
+doubly-confirmed diagnosis (iter47), and a previously-never-touched raw
+field (hour-of-day) is now shown to carry no signal at this feature set
+(iter48). No change to the final selected model. **Convergence
+reaffirmed**: iter44's blend (valid 0.66473 / test 0.65197) remains the
+best result after 15 rounds / 48 iterations.
 
 ## Final result (as of end of Round 15 — unchanged from Round 14, reaffirmed by iter45-47)
 **Final selected model: iter44 blend** — a score-level blend (alpha=0.1,

@@ -1,0 +1,9 @@
+  dfs[name][c] = dfs[name][c].astype(cats[c])
+best_iteration=320  valid={'GAUC': np.float32(0.74405324), 'nDCG@5': np.float32(0.57703614), 'primary': np.float32(0.6605447), 'users': 22377, 'rows': 124909}  test={'GAUC': np.float32(0.71984804), 'nDCG@5': np.float32(0.57545036), 'primary': np.float32(0.64764917), 'users': 23875, 'rows': 170588}
+valid: {'GAUC': np.float32(0.74405324), 'nDCG@5': np.float32(0.57703614), 'primary': np.float32(0.6605447), 'users': 22377, 'rows': 124909}
+test: {'GAUC': np.float32(0.71984804), 'nDCG@5': np.float32(0.57545036), 'primary': np.float32(0.64764917), 'users': 23875, 'rows': 170588}
+
+[harness check] baseline iter44 (no hour feature): valid=0.66135 test=0.64794
+[iter48] with hour_sin/hour_cos: valid=0.66054 test=0.64765
+
+(gain does not clear the 0.0003 look-threshold -- no further seeds run)
