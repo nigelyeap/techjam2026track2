@@ -1206,7 +1206,7 @@ available proxy.
 | 14 | 0 agents (iter44 and all its verification passes — sweeps, ablation, seed/date-shift robustness, blend — run directly by orchestrator) | 0 |
 | 15 | 0 agents (iter45-50 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner, time-of-day feature, monotonic constraints, GOSS boosting — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
 | 16 | 0 agents (iter51 — LightGBM linear_tree=True, standalone + blend — run directly by orchestrator) | 0 |
-| 17 | 0 agents (iter52-55 — capacity/linear_lambda/hour-of-day retests + learning_rate sweep and blend — run directly by orchestrator, continued on explicit post-promotion instruction) | 0 |
+| 17 | 0 agents (iter52-57 — capacity/linear_lambda/hour-of-day retests, learning_rate sweep and blend (promoted), fine learning_rate resweep, reg_lambda resweep — run directly by orchestrator, continued on explicit post-promotion instruction) | 0 |
 
 **GPU time is 0 throughout and will remain 0** — every model, including
 iter44's LightGBM ranker, trains CPU-only. The FM/BPR line (iter1-iter39)
@@ -1662,7 +1662,7 @@ feature exactly zero effective weight. **Verdict: REJECT**, confirming
 rather than reversing iter48's original finding. Full detail:
 `experiments/iter54_hour_of_day_linear_tree/RESULT.md`.
 
-### iter55 — learning_rate sweep under linear_tree=True — **NEW BEST CANDIDATE, pending promotion decision**
+### iter55 — learning_rate sweep under linear_tree=True — **PROMOTED to submission (Round 17)**
 A genuinely new hypothesis (not a retest of an old rejected knob):
 `linear_tree=True` changes what each boosting round buys the model (a
 per-leaf linear fit vs. a flat constant), so `learning_rate=0.05` —
@@ -1679,13 +1679,36 @@ marginal).**
 
 Reblending this GBM (seed=0, lr=0.10) with the unchanged FM 5-seed
 ensemble found a new best alpha=0.10: **valid=0.67451, test=0.65832**,
-vs. the currently-submitted iter51 blend (alpha=0.08, valid=0.67297/
+vs. the then-submitted iter51 blend (alpha=0.08, valid=0.67297/
 test=0.65643) — **+0.00154 valid, +0.00189 test**. The blend-level gain
 is larger than the standalone GBM gain, i.e. this GBM's errors also
 compose slightly better with the FM ensemble's. **Verdict: PROMOTE
-(blend)** — flagged to the user for an explicit go-ahead before touching
-`SUBMISSION.md`/`make_submission.py`/`submission.csv`, not promoted
-unilaterally. Full detail: `experiments/iter55_learning_rate_sweep/RESULT.md`.
+(blend)** — user approved promotion; `SUBMISSION.md`, `make_submission.py`,
+`submission.csv`, and `DEVPOST.md` were updated, independently
+re-validated with `submit.py --check`, committed and pushed. Full
+detail: `experiments/iter55_learning_rate_sweep/RESULT.md`.
+
+### iter56 — fine-grained learning_rate sweep around iter55's winner (0.10)
+Checked whether a finer grid around 0.10 finds an even better point than
+iter55's coarse sweep, given how non-monotonic that coarse sweep was.
+`learning_rate=0.085` edges out 0.10 by +0.00022 valid at single-seed
+resolution — below the 0.0003 look-threshold and within the seed-to-seed
+noise already measured for this config (iter55's 5-seed std was 0.00021).
+The whole 0.08–0.13 neighborhood sits within a ~0.0013 valid band with no
+further-improving direction. **Verdict: REJECT** — confirms iter55's
+`learning_rate=0.10` sits in a genuine local plateau. Full detail:
+`experiments/iter56_learning_rate_fine_sweep/RESULT.md`.
+
+### iter57 — reg_lambda resweep under linear_tree=True + learning_rate=0.10
+`reg_lambda=1.0` was tuned pre-iter51/55 against the old constant-leaf
+tree at the old learning rate; never re-checked after both changes. Swept
+`{0.0..5.0}`: the metric is bit-identical across `{0.0..3.0}` and only
+degrades slightly at 5.0. **Verdict: REJECT** — a flat, wide plateau, not
+a sharp optimum; at `num_leaves=2` nearly all model flexibility now lives
+in the per-leaf linear fit (governed by `linear_lambda`, already
+confirmed optimal in iter53), leaving the tree-structure regularizer with
+essentially nothing to do. Full detail:
+`experiments/iter57_reg_lambda_resweep/RESULT.md`.
 
 ## Round 17 — post-promotion, continued iteration on explicit instruction ("keep testing further, push harder")
 iter51 (linear_tree=True blend, valid 0.67297/test 0.65643) was promoted
@@ -1700,36 +1723,45 @@ robust local optimum along those axes. A fourth, genuinely new hypothesis
 (iter55, `learning_rate` resweep under `linear_tree=True`) then found a
 real further gain: 5-seed confirmed standalone (+0.00085 valid) and a
 larger blend-level gain (+0.00154 valid / +0.00189 test) over the
-currently-submitted iter51 blend. **New best-known candidate — valid
-0.67451 / test 0.65832 — pending the user's explicit decision on
-promoting it, same pattern as iter51's promotion.**
+currently-submitted iter51 blend. **Promoted to the submission
+deliverables after explicit user approval** (valid 0.67451 / test
+0.65832). Two further follow-ups then closed out the immediate
+neighborhood of this new config: a fine-grained `learning_rate` sweep
+around 0.10 (iter56, REJECT — confirmed a genuine local plateau) and a
+`reg_lambda` resweep under the new config (iter57, REJECT — a flat,
+wide plateau with no effect). iter55 stands as the final result at the
+end of Round 17.
 
-## Best-known candidate (as of end of Round 17 — iter55, NOT YET promoted to submission deliverables)
-iter55's blend (`linear_tree=True` GBM at `learning_rate=0.10`, alpha=0.10
-with the unchanged FM ensemble) scores **valid primary 0.67451, test
-primary 0.65832** — +0.00154 valid / +0.00189 test over the
-currently-submitted iter51 blend below. 5-seed confirmed on the
-standalone GBM (mean valid=0.67011, std 0.00021, 5/5 seeds improving on
-iter51's own 5-seed baseline). This is the strongest result found across
-16 rounds / 55 iterations, but **`SUBMISSION.md`, `make_submission.py`,
-and `submission.csv` still reflect iter51** — promoting iter55 requires
-the user's explicit go-ahead, given these are the actual competition
-deliverables this close to the 1 Sep 2026 12:00 SGT deadline. See
-`experiments/iter55_learning_rate_sweep/RESULT.md` for full detail.
+## Best-known candidate / final result as currently submitted (iter55, promoted end of Round 17)
+**Final selected model: iter55 blend** — a score-level blend (alpha=0.10,
+90% weight on the GBM) of (a) a single
+`LGBMRanker(num_leaves=2, learning_rate=0.10, n_estimators=500,
+min_child_samples=200, reg_lambda=1.0, linear_tree=True)` trained on
+iter44's GBM-native encoding of iter27's causal features, and (b) the
+iter38 5-seed FM+BPR sigmoid-mean ensemble (unchanged) — **valid primary
+0.67451**, **test primary 0.65832**, selected on valid per the stated
+protocol. Total improvement over the FM baseline (iter1, test 0.5946):
+**+0.0637 test primary (+10.71% relative)**, across 17 rounds / 57
+iterations (iter55 found the gain; iter56-57 are confirmatory REJECTs
+closing the immediate neighborhood of this config). Promoted to
+`SUBMISSION.md`, `make_submission.py`, and `submission.csv` after explicit
+user approval; the regenerated `submission.csv` was independently
+re-validated with `submit.py --check`. See
+`experiments/iter55_learning_rate_sweep/RESULT.md` for the full
+verification chain (sweep, 5-seed confirmation, blend alpha-resweep), and
+`experiments/iter51_linear_tree/RESULT.md` for the underlying
+`linear_tree=True` harness check this config builds on.
 
-## Final result as currently submitted (iter51, promoted end of Round 16, superseded on valid/test by iter55 above)
-**Final selected model: iter51 blend** — a score-level blend (alpha=0.08,
+### Prior final result (iter51, end of Round 16 — superseded by iter55)
+**Selected model: iter51 blend** — a score-level blend (alpha=0.08,
 92% weight on the GBM) of (a) a single
 `LGBMRanker(num_leaves=2, lr=0.05, n_estimators=500, min_child_samples=200,
 reg_lambda=1.0, linear_tree=True)` trained on iter44's GBM-native encoding
 of iter27's causal features, and (b) the iter38 5-seed FM+BPR sigmoid-mean
-ensemble (unchanged) — **valid primary 0.67297**, **test primary 0.65643**,
-selected on valid per the stated protocol. Total improvement over the FM
-baseline (iter1, test 0.5946): **+0.0618 test primary (+10.40% relative)**,
-across 16 rounds / 51 iterations (plus Round 17's three confirmatory
-REJECTs, 54 iterations total). Promoted to `SUBMISSION.md`,
-`make_submission.py`, and `submission.csv` after explicit user approval.
-See `experiments/iter51_linear_tree/RESULT.md` for the full verification
+ensemble (unchanged) — **valid primary 0.67297**, **test primary 0.65643**.
+Total improvement over the FM baseline (iter1, test 0.5946): **+0.0618
+test primary (+10.40% relative)**, across 16 rounds / 51 iterations. See
+`experiments/iter51_linear_tree/RESULT.md` for the full verification
 chain (harness check, 5-seed confirmation, blend alpha-resweep).
 
 ### Prior final result (iter44, end of Round 15 — superseded by iter51)
