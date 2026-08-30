@@ -1,0 +1,4 @@
+gbdt: valid=0.66135 test=0.64794 best_iter=332
+goss: valid=0.64423 test=0.63413 best_iter=181
+
+[exited with code 0]

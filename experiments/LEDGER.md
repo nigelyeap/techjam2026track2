@@ -1204,7 +1204,7 @@ available proxy.
 | 12 | 0 agents (1 experiment run directly by orchestrator) — convergence declared, iteration ends here | 0 |
 | 13 | 0 agents (2 experiments — iter38, iter39 — run directly by orchestrator, reopened post-convergence on request) | 0 |
 | 14 | 0 agents (iter44 and all its verification passes — sweeps, ablation, seed/date-shift robustness, blend — run directly by orchestrator) | 0 |
-| 15 | 0 agents (iter45-49 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner, time-of-day feature, monotonic constraints — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
+| 15 | 0 agents (iter45-50 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner, time-of-day feature, monotonic constraints, GOSS boosting — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
 
 **GPU time is 0 throughout and will remain 0** — every model, including
 iter44's LightGBM ranker, trains CPU-only. The FM/BPR line (iter1-iter39)
@@ -1566,21 +1566,33 @@ instead — a much worse trade at this capacity than the intended
 regularization benefit. **Verdict: REJECT, clearly and by a wide margin.**
 Full detail: `experiments/iter49_monotone_constraints/RESULT.md`.
 
+### iter50 — GOSS boosting at num_leaves=2
+iter46's boosting/sampling sweep never tested GOSS specifically (a
+distinct algorithm, not a gbdt sampling-rate variant). Single-axis swap
+on iter44's exact pipeline: `gbdt` harness-check reproduced iter44 exactly
+(0.66135/0.64794); `goss` scored valid 0.64423/test 0.63413 — clearly
+worse (-0.017 valid). Same underlying cause as iter46's
+`subsample`/`colsample_bytree` findings: at `num_leaves=2` there is only
+one split per tree to get right, so stochastic instance subsampling costs
+more in split quality than it buys in variance reduction. **Verdict:
+REJECT.** Full detail: `experiments/iter50_goss_boosting/RESULT.md`.
+
 ## Round 15 complete — summary
-Five independent methods tested (CatBoost-native, extreme-low-capacity
-GBM hyperparameter depth, stacking meta-learner, time-of-day feature,
-monotonic constraints), all directly by the orchestrator, no subagent
-dispatch. All five landed as clean, well-diagnosed REJECTs rather than
-gains — but each closes a real open question: CatBoost's native-encoding
-ceiling is now known (iter45), the GBM hyperparameter search space at
-num_leaves=2 is now exhaustively checked (iter46), both "does stacking
-beat a fixed alpha" and "does a third model add blend diversity" are
-answered no with a doubly-confirmed diagnosis (iter47), a previously-
+Six independent methods tested (CatBoost-native, extreme-low-capacity GBM
+hyperparameter depth, stacking meta-learner, time-of-day feature,
+monotonic constraints, GOSS boosting), all directly by the orchestrator,
+no subagent dispatch. All six landed as clean, well-diagnosed REJECTs
+rather than gains — but each closes a real open question: CatBoost's
+native-encoding ceiling is now known (iter45), the GBM hyperparameter/
+boosting-algorithm search space at num_leaves=2 is now exhaustively
+checked across every axis tried so far (iter46, iter50), both "does
+stacking beat a fixed alpha" and "does a third model add blend diversity"
+are answered no with a doubly-confirmed diagnosis (iter47), a previously-
 never-touched raw field (hour-of-day) carries no signal at this feature
 set (iter48), and structural monotonicity constraints are actively
 harmful at this ultra-low-capacity regime (iter49). No change to the
 final selected model. **Convergence reaffirmed**: iter44's blend (valid
-0.66473 / test 0.65197) remains the best result after 15 rounds / 49
+0.66473 / test 0.65197) remains the best result after 15 rounds / 50
 iterations.
 
 ## Final result (as of end of Round 15 — unchanged from Round 14, reaffirmed by iter45-47)
