@@ -12,14 +12,14 @@ harness, and a documented set of open hypotheses to test systematically rather t
 
 A score-level blend of two independently-trained model families — an FM ranking model (pairwise
 BPR loss, three layered additions: recency-decay/momentum features, activity-weighted BPR
-sampling, retuned smoothing constants) and a LightGBM ranker trained on a from-scratch,
-un-bucketed encoding of the same causal features — that improves test primary from the FM
-baseline's 0.5946 to **0.65197** (+0.0574 absolute, +9.65% relative), fully reproducible with
-`python3 make_submission.py`.
+sampling, retuned smoothing constants) and a LightGBM ranker (`linear_tree=True`, a linear model
+per leaf rather than a flat constant) trained on a from-scratch, un-bucketed encoding of the same
+causal features — that improves test primary from the FM baseline's 0.5946 to **0.65643**
+(+0.0618 absolute, +10.40% relative), fully reproducible with `python3 make_submission.py`.
 
 ## How we built it
 
-We ran an autonomous, orchestrator-driven iteration loop over 14 rounds / 44 iterations:
+We ran an autonomous, orchestrator-driven iteration loop over 16 rounds / 51 iterations:
 
 1. **Hypothesize** from the starter kit's own "organizer-suggested unexplored directions"
    (loss function, feature causality, sampling strategy, model architecture, multi-task learning,
@@ -54,12 +54,24 @@ treating "GBM underperforms FM" as closed, we gave the GBM its own un-bucketed e
 same causal features. This closed the gap and then reversed it by a wide, seed-stable,
 date-shift-robust margin (LightGBM alone: test 0.64794 vs. FM's 0.64187), and blending the two
 model families' scores (10% FM / 90% GBM) gave a further gain from genuine model diversity,
-becoming the new final result (test 0.65197). Because this gain was unusually large relative to
-everything else found across 44 iterations, it went through a longer verification chain than
-usual before being trusted (ruled out as a stable-sort tie artifact, ruled out as driven by a
-silently-added feature, confirmed stable across 5 seeds, confirmed to hold under a
+becoming the final result through Round 15 (test 0.65197). Because this gain was unusually large
+relative to everything else found across 44 iterations, it went through a longer verification
+chain than usual before being trusted (ruled out as a stable-sort tie artifact, ruled out as
+driven by a silently-added feature, confirmed stable across 5 seeds, confirmed to hold under a
 date-shifted train/valid/test split) — see
 [`experiments/iter44_gbm_native_features/RESULT.md`](experiments/iter44_gbm_native_features/RESULT.md).
+
+**One further structural gain (Round 16) became the new final result.** At the GBM's
+best-scoring capacity (`num_leaves=2`), every tree makes exactly one split and predicts a flat
+constant on each side. Turning on LightGBM's `linear_tree=True` option fits a linear regression
+per leaf instead, so the same one-split tree becomes piecewise-*linear* rather than
+piecewise-constant — a structural change, not a hyperparameter retune, and untried across the
+six other Round-15 methods (a second GBM library, a hyperparameter depth sweep, a stacking
+meta-learner, a time-of-day feature, monotonic constraints, GOSS boosting) that had all landed as
+clean rejects. It gained +0.0079 valid over the constant-leaf GBM on the first run, confirmed
+tight across 5 seeds, and re-blending it with the unchanged FM ensemble (at a re-swept 8% FM /
+92% GBM) pushed the final result to **test 0.65643** — see
+[`experiments/iter51_linear_tree/RESULT.md`](experiments/iter51_linear_tree/RESULT.md).
 
 ## Challenges we ran into
 
@@ -89,9 +101,11 @@ date-shifted train/valid/test split) — see
 
 ## Accomplishments that we're proud of
 
-- +9.65% relative improvement over the official baseline (up from +7.45% at the first
+- +10.40% relative improvement over the official baseline (up from +7.45% at the first
   convergence point), the extra gain found entirely in a self-directed post-convergence phase
-  rather than from any new instruction.
+  rather than from any new instruction — including seven further methods tried after the GBM
+  blend result above, six of which were clean rejects before the seventh (`linear_tree=True`)
+  found the next real gain.
 - A disciplined negative-results record: two multi-task learning designs and a model-capacity
   sweep were tried, diagnosed, and closed with documented reasoning rather than silently dropped
   or retried indefinitely — and, distinctly, a documented *reopening* of a previously-closed
@@ -119,11 +133,11 @@ genuinely different things, not just noisier copies of the same signal.
 
 The user-history sequence-modeling direction (DIN/SIM-style attention over a user's raw
 interaction sequence) remains the most likely next lever — the current recency-decay features are
-a lightweight proxy for recency, not a learned sequence model. On the GBM side specifically: a
-third library (CatBoost) has only been tried on the wrong (bucketed) encoding and is a cheap
-follow-up for a third diverse ensemble member; and the GBM's wider valid/test gap at its
-smallest, best-scoring tree size is a documented, seed-stable, date-shift-confirmed property worth
-further study rather than a red flag to walk back the result.
+a lightweight proxy for recency, not a learned sequence model. A third GBM library (CatBoost) was
+since tried on the correct native encoding and closed (underperformed LightGBM, added nothing in
+a 3-way stack); the GBM's wider valid/test gap at its smallest, best-scoring tree size remains a
+documented, seed-stable, date-shift-confirmed property worth further study rather than a red flag
+to walk back the result.
 
 ## Built with
 

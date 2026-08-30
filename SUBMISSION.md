@@ -9,18 +9,21 @@ Within-user ranking on KuaiRand-Pure. Label: `long_view`. Metric: mean(GAUC, nDC
 | FM baseline (organizer-provided, test) | 0.6610 | 0.5282 | **0.5946** |
 | iter27 single-model config (5-seed mean, test) | — | — | 0.63889 |
 | iter38 FM ensemble (test, prior final result) | 0.7156 | 0.5681 | 0.64187 |
-| **Final model — iter44 blend (valid)** | — | — | **0.66473** |
-| **Final model — iter44 blend (test)** | — | — | **0.65197** |
+| iter44 blend (test, prior final result) | — | — | 0.65197 |
+| **Final model — iter51 blend (valid)** | — | — | **0.67297** |
+| **Final model — iter51 blend (test)** | — | — | **0.65643** |
 
-- **Test primary: 0.65197** — a score-level blend (10% weight) of the FM ensemble above with
-  (90% weight) a single LightGBM ranker trained on a from-scratch, un-bucketed ("GBM-native")
-  encoding of the same causal features
-- **Valid primary: 0.66473** — model selection was valid-only throughout
-- **Improvement over baseline: +0.0574 absolute, +9.65% relative**
+- **Test primary: 0.65643** — a score-level blend (8% weight) of the FM ensemble above with
+  (92% weight) a single LightGBM ranker trained on a from-scratch, un-bucketed ("GBM-native")
+  encoding of the same causal features, with `linear_tree=True` (a linear model per leaf instead
+  of a flat constant)
+- **Valid primary: 0.67297** — model selection was valid-only throughout
+- **Improvement over baseline: +0.0618 absolute, +10.40% relative**
 - Reached across 12 iteration rounds / 37 iterations to convergence (3 consecutive
   non-improving rounds under a pre-declared ε=0.002, N=3 rule), then Round 13 (FM ensembling,
-  +0.0020 valid / +0.0030 test) and Round 14 (iter44's GBM-native representation + blend,
-  a further +0.0248 valid / +0.0101 test) reopened on request to keep maximizing score
+  +0.0020 valid / +0.0030 test), Round 14 (iter44's GBM-native representation + blend,
+  a further +0.0248 valid / +0.0101 test), and Round 16 (iter51's `linear_tree=True` GBM + blend,
+  a further +0.0082 valid / +0.0045 test) reopened on request to keep maximizing score
   post-convergence.
 
 ## What the final model is
@@ -63,14 +66,29 @@ confirmed to hold under a 3-day-shifted date split (see
 for the full verification chain). Blending its score with the (unchanged) iter38 FM ensemble —
 10% weight on FM, 90% on the GBM, the optimum of a validation-only alpha sweep confirmed at two
 grid resolutions — gave a further, genuine gain from real model-family diversity (unlike iter41's
-earlier attempt to blend a GBM trained on FM's *own* features, which added nothing): **valid
-0.66473, test 0.65197**, the final submitted model.
+earlier attempt to blend a GBM trained on FM's *own* features, which added nothing): valid
+0.66473, test 0.65197. This was the final submitted model through Round 15.
+
+**Round 16 (iter51) found one further, independent structural gain and became the new final
+submitted model.** At `num_leaves=2`, every tree in iter44's GBM makes exactly one split and
+predicts a flat constant on each side — a piecewise-*constant* step function per tree. LightGBM's
+`linear_tree=True` option instead fits a (regularized) linear regression per leaf, so with only 2
+leaves the tree becomes a genuine piecewise-*linear* function: one split, but each side gets its
+own linear model over the continuous features instead of a flat constant. This single-axis change
+on top of iter44's exact pipeline and hyperparameters gained +0.0079 valid on the first run,
+confirmed tight across 5 seeds (mean valid 0.66926, range 0.66915–0.66943 — tighter than iter44's
+own seed variance). Re-blending this GBM with the unchanged iter38 FM ensemble at a re-swept
+optimum (8% weight on FM, 92% on the GBM) gave a further gain from the same model-family
+diversity as iter44's blend: **valid 0.67297, test 0.65643**, the final submitted model. See
+[`experiments/iter51_linear_tree/RESULT.md`](experiments/iter51_linear_tree/RESULT.md) for the
+full standalone and blend results.
 
 Code: [`experiments/iter27_triple_fusion/data_ext.py`](experiments/iter27_triple_fusion/data_ext.py),
 [`experiments/iter27_triple_fusion/train.py`](experiments/iter27_triple_fusion/train.py) (FM base
 config, per seed), [`experiments/iter38_seed_ensemble/driver.py`](experiments/iter38_seed_ensemble/driver.py)
 (FM ensembling), [`experiments/iter44_gbm_native_features/train.py`](experiments/iter44_gbm_native_features/train.py)
-(GBM-native model), [`experiments/iter44_gbm_native_features/blend.py`](experiments/iter44_gbm_native_features/blend.py)
+(GBM-native model), [`experiments/iter51_linear_tree/train.py`](experiments/iter51_linear_tree/train.py)
+(`linear_tree=True` variant), [`experiments/iter51_linear_tree/blend.py`](experiments/iter51_linear_tree/blend.py)
 (the FM+GBM blend), [`make_submission.py`](make_submission.py) (final end-to-end reproduction).
 
 ## Reproducing the result
@@ -81,11 +99,12 @@ pip install lightgbm pandas   # new dependencies for iter44's GBM; the FM/BPR li
 python3 make_submission.py submission.csv
 ```
 
-This trains iter44's GBM-native LightGBM ranker (a few seconds, CPU) and iter27's exact FM
-configuration at 5 seeds (~25s each on CPU, one core — ~2 minutes total, still well within the
-official baseline's resource profile), blends their test-split scores at the confirmed optimum
-(alpha=0.1), evaluates on valid/test, writes `submission.csv` in the format `submit.py` requires,
-then self-validates that file with `submit.py`'s own `read_submission` alignment check.
+This trains iter51's GBM-native `linear_tree=True` LightGBM ranker (a few seconds, CPU) and
+iter27's exact FM configuration at 5 seeds (~25s each on CPU, one core — ~2 minutes total, still
+well within the official baseline's resource profile), blends their test-split scores at the
+confirmed optimum (alpha=0.08), evaluates on valid/test, writes `submission.csv` in the format
+`submit.py` requires, then self-validates that file with `submit.py`'s own `read_submission`
+alignment check.
 
 To reproduce the full 5-seed result reported above directly against the experiment harness:
 
@@ -154,8 +173,19 @@ Every iteration — hypothesis, method, harness-fidelity check, results, verdict
   date-shift robustness) before being trusted — see
   [`experiments/iter44_gbm_native_features/RESULT.md`](experiments/iter44_gbm_native_features/RESULT.md).
   Blending it with the unchanged iter38 FM ensemble gave a further, genuine gain from real
-  model-family diversity, becoming the new final submitted model (**PROMOTE**, valid
+  model-family diversity, becoming the final submitted model through Round 15 (**PROMOTE**, valid
   0.66473/test 0.65197).
+- **Round 15 (post-convergence, on request)**: six further directions were tried against iter44's
+  exact pipeline — CatBoost as a second GBM library on the native encoding, an extreme-low-capacity
+  hyperparameter depth sweep, a logistic stacking meta-learner over the FM/GBM/CatBoost scores, a
+  time-of-day feature, monotonic constraints on the engagement-rate features, and GOSS boosting —
+  all six landed as clean, well-diagnosed **REJECT**s, closing several previously-open questions
+  (CatBoost's native-encoding ceiling, the GBM hyperparameter/boosting-algorithm search space at
+  `num_leaves=2`, whether stacking beats a fixed blend weight) without finding a new gain. See
+  [`experiments/LEDGER.md`](experiments/LEDGER.md)'s Round 15 section for detail on each.
+- **Round 16 (post-convergence, on request)**: `linear_tree=True` (**PROMOTE**) — see the
+  `linear_tree` paragraph above. The first genuine gain found across seven consecutive Round
+  15/16 methods, and the new final submitted model.
 
 ## Limitations / future work
 
@@ -181,9 +211,10 @@ Every iteration — hypothesis, method, harness-fidelity check, results, verdict
   since confirmed on the GBM side too: a 5-seed GBM ensemble (iter44) scored valid 0.66142/test
   0.64770, no meaningful gain over the single seed (0.66135/0.64794) — the final model uses a
   single GBM seed for that reason.
-- **A third GBM library on the native-feature representation** (CatBoost, which iter43 only ever
-  tested on FM's bucketed encoding) is a cheap, not-yet-tried follow-up for a third diverse
-  ensemble member, if further score-blending is pursued.
+- **A third GBM library on the native-feature representation** (CatBoost) was since tried
+  (iter45, Round 15): it underperformed LightGBM on the same native encoding and added nothing
+  in a 3-way stack (iter47) — closed, not a further lever. See
+  [`experiments/iter45_catboost_native/RESULT.md`](experiments/iter45_catboost_native/RESULT.md).
 - **The valid/test gap widens as GBM tree capacity shrinks toward `num_leaves=2`** (~0.013 at
   num_leaves=2 vs. ~0.002-0.003 at num_leaves=7, stable across seeds and confirmed present under
   a date-shifted split too) — documented in
@@ -195,7 +226,7 @@ Every iteration — hypothesis, method, harness-fidelity check, results, verdict
 
 See [`README.md`](README.md) for environment/data-download instructions. The FM/BPR line
 (iter1-iter39) is Python 3.9+ and numpy only, no other dependencies. **The final submitted model
-(iter44) additionally requires `pandas` and `lightgbm`** (both pip-installable) for its GBM
+(iter51) additionally requires `pandas` and `lightgbm`** (both pip-installable) for its GBM
 component — see `pip install lightgbm pandas` in "Reproducing the result" above.
 `make_submission.py` and everything under `experiments/` assume `KuaiRand-Pure/data/` is present
 at the repo root, per that README.
