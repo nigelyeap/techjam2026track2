@@ -1759,7 +1759,29 @@ effect), and a `min_child_samples` resweep (iter58, REJECT — also flat;
 never binds at `num_leaves=2`). Together iter53/57/58 close out all three
 GBM tree-structure regularization knobs as moot at this capacity setting
 — the GBM hyperparameter space is considered exhausted for this
-architecture. iter55 stands as the final result at the end of Round 17.
+architecture. A final check (iter59, GBM 5-seed prediction-averaged
+ensemble blended with FM) also REJECTed — GBM seed variance is tight
+enough that the single already-selected seed=0 is not a denoising
+opportunity the way FM's seeds are. iter55 stands as the final result at
+the end of Round 17.
+
+## Round 18 — FM-side search (user-directed pivot after GBM space exhausted)
+With the GBM hyperparameter space confirmed exhausted (iter53/56-59), the
+user was asked how to spend the remaining time before the 1 Sep 12:00 SGT
+deadline and chose to keep searching via FM-side/new-feature angles rather
+than shift straight to deliverables polish. Round 18 opens by resweeping
+the two FM hyperparameters most analogous to the GBM knobs that already
+paid off once (capacity via `num_leaves`, and the `learning_rate` finding
+that produced iter55): FM embedding dimension `k` (iter60) and FM
+`learning_rate` (iter61).
+
+### iter60 — FM embedding dimension (k) resweep
+`k=16` has been the FM embedding dimension since iter38, never
+resystematically resweept. Single-seed sweep over `{8,12,16,24,32,48,64}`:
+`k=16` is already the best point on the grid (valid=0.63894), with every
+other value strictly worse and no monotonic trend. **Verdict: REJECT** —
+`k=16` confirmed as the right embedding dimension. Full detail:
+`experiments/iter60_fm_embedding_dim_sweep/RESULT.md`.
 
 ## Best-known candidate / final result as currently submitted (iter55, promoted end of Round 17)
 **Final selected model: iter55 blend** — a score-level blend (alpha=0.10,

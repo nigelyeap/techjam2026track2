@@ -1,0 +1,10 @@
+k=  8  valid=0.63797  test=0.63989
+k= 12  valid=0.63712  test=0.63791
+k= 16  valid=0.63894  test=0.63989
+k= 24  valid=0.63688  test=0.63787
+k= 32  valid=0.63780  test=0.64005
+k= 48  valid=0.63844  test=0.63979
+k= 64  valid=0.63728  test=0.63794
+
+best: k=16  valid=0.63894  test=0.63989
+iter38 baseline (k=16): see results above
