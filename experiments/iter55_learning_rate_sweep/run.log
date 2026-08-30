@@ -1,0 +1,83 @@
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+learning_rate=0.01  valid=0.64402  test=0.63199
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+learning_rate=0.02  valid=0.64417  test=0.63246
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+learning_rate=0.03  valid=0.64380  test=0.63233
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+learning_rate=0.05  valid=0.66932  test=0.65146
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+learning_rate=0.07  valid=0.63990  test=0.62501
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+learning_rate=0.10  valid=0.67052  test=0.65277
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+learning_rate=0.15  valid=0.66671  test=0.65066
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+learning_rate=0.20  valid=0.66504  test=0.65103
+
+best: learning_rate=0.10  valid=0.67052  test=0.65277
+iter51 baseline (lr=0.05): valid=0.66932 test=0.65146

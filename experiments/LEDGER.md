@@ -1206,6 +1206,7 @@ available proxy.
 | 14 | 0 agents (iter44 and all its verification passes — sweeps, ablation, seed/date-shift robustness, blend — run directly by orchestrator) | 0 |
 | 15 | 0 agents (iter45-50 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner, time-of-day feature, monotonic constraints, GOSS boosting — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
 | 16 | 0 agents (iter51 — LightGBM linear_tree=True, standalone + blend — run directly by orchestrator) | 0 |
+| 17 | 0 agents (iter52-55 — capacity/linear_lambda/hour-of-day retests + learning_rate sweep and blend — run directly by orchestrator, continued on explicit post-promotion instruction) | 0 |
 
 **GPU time is 0 throughout and will remain 0** — every model, including
 iter44's LightGBM ranker, trains CPU-only. The FM/BPR line (iter1-iter39)
@@ -1578,7 +1579,7 @@ one split per tree to get right, so stochastic instance subsampling costs
 more in split quality than it buys in variance reduction. **Verdict:
 REJECT.** Full detail: `experiments/iter50_goss_boosting/RESULT.md`.
 
-### iter51 — LightGBM `linear_tree=True` at num_leaves=2 — **NEW BEST CANDIDATE, pending promotion decision**
+### iter51 — LightGBM `linear_tree=True` at num_leaves=2 — **PROMOTED to submission (Round 16), superseded on valid/test by iter55 (Round 17)**
 At `num_leaves=2` each tree makes one split and predicts a flat constant
 per leaf. `linear_tree=True` instead fits a linear regression per leaf, so
 with 2 leaves the tree becomes piecewise-*linear* rather than
@@ -1630,20 +1631,109 @@ final selected model. **Convergence reaffirmed**: iter44's blend (valid
 0.66473 / test 0.65197) remains the best result after 15 rounds / 50
 iterations.
 
-## Best-known candidate (as of end of Round 16 — iter51, NOT YET promoted to submission deliverables)
-iter51's blend (`linear_tree=True` GBM at alpha=0.08 with the unchanged
-FM ensemble) scores **valid primary 0.67297, test primary 0.65643** —
-+0.00824 valid / +0.00446 test over the currently-submitted iter44 blend
-below. 5-seed confirmed on the standalone GBM (mean valid=0.66926, range
-0.66915–0.66943). This is the strongest result found across 15 rounds / 51
-iterations, but **`SUBMISSION.md`, `make_submission.py`, and
-`submission.csv` still reflect iter44** — promoting iter51 requires the
-user's explicit go-ahead (asked, pending as of this ledger update), given
-these are the actual competition deliverables. See
-`experiments/iter51_linear_tree/RESULT.md` for full detail.
+### iter52 — capacity (num_leaves) resweep under linear_tree=True
+Retest of iter46's already-rejected capacity sweep, this time with
+`linear_tree=True` fixed on, since a linear per-leaf model changes what
+extra capacity buys the tree. `num_leaves=2` remains the clear optimum
+(valid 0.66932); 3 leaves already costs -0.0039 valid, and 4+ leaves
+collapses to ~0.63, below even the old constant-leaf GBM. If anything
+`linear_tree=True` makes over-capacity *more* costly, not less: each extra
+leaf's own linear model is fit on a shrinking, more overfit-prone slice.
+**Verdict: REJECT.** Full detail: `experiments/iter52_linear_tree_capacity_sweep/RESULT.md`.
 
-## Final result as currently submitted (iter44, end of Round 15 — unchanged from Round 14, reaffirmed by iter45-47)
-**Final selected model: iter44 blend** — a score-level blend (alpha=0.1,
+### iter53 — linear_lambda (leaf-linear-model regularization) sweep
+`linear_tree=True` exposes its own L2 penalty (`linear_lambda`, default
+0.0) on the per-leaf linear coefficients, distinct from `reg_lambda`
+already tuned pre-iter51. Never swept in iter51. Single-axis sweep over
+{0.0 .. 10.0}: values ≤0.1 are indistinguishable from the unregularized
+default (each leaf gets ~half the training set at `num_leaves=2`, plenty
+of data), values ≥0.5 monotonically hurt. **Verdict: REJECT** — the
+LightGBM default is already optimal. Full detail:
+`experiments/iter53_linear_lambda_sweep/RESULT.md`.
+
+### iter54 — hour-of-day feature retest under linear_tree=True
+iter48's hour_sin/hour_cos feature was a clean REJECT against the old
+constant-leaf tree, but a piecewise-*linear* leaf can in principle use a
+continuous feature even without it winning a split. Retest under
+`linear_tree=True` + iter51's hyperparameters produced a result **bit-
+identical** to the no-feature baseline (same best_iteration=72, same
+metrics to 5 decimals) — the per-leaf linear regression assigned the
+feature exactly zero effective weight. **Verdict: REJECT**, confirming
+rather than reversing iter48's original finding. Full detail:
+`experiments/iter54_hour_of_day_linear_tree/RESULT.md`.
+
+### iter55 — learning_rate sweep under linear_tree=True — **NEW BEST CANDIDATE, pending promotion decision**
+A genuinely new hypothesis (not a retest of an old rejected knob):
+`linear_tree=True` changes what each boosting round buys the model (a
+per-leaf linear fit vs. a flat constant), so `learning_rate=0.05` —
+tuned pre-iter51 against the old constant-leaf tree — was never
+re-validated against this structural change. Single-axis sweep found
+`learning_rate=0.10` beats the baseline by +0.00120 valid on the first
+run (highly non-monotonic sweep — 0.07 collapses to 0.639 between two
+much better points at 0.05 and 0.10). **5-seed confirmation**: mean
+valid=0.67011 (std 0.00021) vs. iter51's mean valid=0.66926 — +0.00085
+valid, +0.00090 test, 5/5 seeds improving, gain ~4x the seed noise.
+Falls just under the self-imposed 0.001 round-number bar but is credible
+given the tight, consistent margin. **Verdict: PROMOTE (standalone,
+marginal).**
+
+Reblending this GBM (seed=0, lr=0.10) with the unchanged FM 5-seed
+ensemble found a new best alpha=0.10: **valid=0.67451, test=0.65832**,
+vs. the currently-submitted iter51 blend (alpha=0.08, valid=0.67297/
+test=0.65643) — **+0.00154 valid, +0.00189 test**. The blend-level gain
+is larger than the standalone GBM gain, i.e. this GBM's errors also
+compose slightly better with the FM ensemble's. **Verdict: PROMOTE
+(blend)** — flagged to the user for an explicit go-ahead before touching
+`SUBMISSION.md`/`make_submission.py`/`submission.csv`, not promoted
+unilaterally. Full detail: `experiments/iter55_learning_rate_sweep/RESULT.md`.
+
+## Round 17 — post-promotion, continued iteration on explicit instruction ("keep testing further, push harder")
+iter51 (linear_tree=True blend, valid 0.67297/test 0.65643) was promoted
+to the actual submission deliverables (`SUBMISSION.md`,
+`make_submission.py`, `submission.csv`, `DEVPOST.md`) after explicit user
+approval. Round 17 opened three follow-up hypotheses testing whether
+`linear_tree=True`'s structural change reopens previously-closed
+directions: capacity (iter52), the new tree type's own regularization
+knob (iter53), and a previously-rejected feature (iter54). All three
+landed clean REJECTs — iter51's exact configuration stands confirmed as a
+robust local optimum along those axes. A fourth, genuinely new hypothesis
+(iter55, `learning_rate` resweep under `linear_tree=True`) then found a
+real further gain: 5-seed confirmed standalone (+0.00085 valid) and a
+larger blend-level gain (+0.00154 valid / +0.00189 test) over the
+currently-submitted iter51 blend. **New best-known candidate — valid
+0.67451 / test 0.65832 — pending the user's explicit decision on
+promoting it, same pattern as iter51's promotion.**
+
+## Best-known candidate (as of end of Round 17 — iter55, NOT YET promoted to submission deliverables)
+iter55's blend (`linear_tree=True` GBM at `learning_rate=0.10`, alpha=0.10
+with the unchanged FM ensemble) scores **valid primary 0.67451, test
+primary 0.65832** — +0.00154 valid / +0.00189 test over the
+currently-submitted iter51 blend below. 5-seed confirmed on the
+standalone GBM (mean valid=0.67011, std 0.00021, 5/5 seeds improving on
+iter51's own 5-seed baseline). This is the strongest result found across
+16 rounds / 55 iterations, but **`SUBMISSION.md`, `make_submission.py`,
+and `submission.csv` still reflect iter51** — promoting iter55 requires
+the user's explicit go-ahead, given these are the actual competition
+deliverables this close to the 1 Sep 2026 12:00 SGT deadline. See
+`experiments/iter55_learning_rate_sweep/RESULT.md` for full detail.
+
+## Final result as currently submitted (iter51, promoted end of Round 16, superseded on valid/test by iter55 above)
+**Final selected model: iter51 blend** — a score-level blend (alpha=0.08,
+92% weight on the GBM) of (a) a single
+`LGBMRanker(num_leaves=2, lr=0.05, n_estimators=500, min_child_samples=200,
+reg_lambda=1.0, linear_tree=True)` trained on iter44's GBM-native encoding
+of iter27's causal features, and (b) the iter38 5-seed FM+BPR sigmoid-mean
+ensemble (unchanged) — **valid primary 0.67297**, **test primary 0.65643**,
+selected on valid per the stated protocol. Total improvement over the FM
+baseline (iter1, test 0.5946): **+0.0618 test primary (+10.40% relative)**,
+across 16 rounds / 51 iterations (plus Round 17's three confirmatory
+REJECTs, 54 iterations total). Promoted to `SUBMISSION.md`,
+`make_submission.py`, and `submission.csv` after explicit user approval.
+See `experiments/iter51_linear_tree/RESULT.md` for the full verification
+chain (harness check, 5-seed confirmation, blend alpha-resweep).
+
+### Prior final result (iter44, end of Round 15 — superseded by iter51)
+**Selected model: iter44 blend** — a score-level blend (alpha=0.1,
 90% weight on the GBM) of (a) a single `LGBMRanker(num_leaves=2, lr=0.05,
 n_estimators=500, min_child_samples=200, reg_lambda=1.0)` trained on a
 GBM-native (un-bucketed) encoding of iter27's causal features, and (b) the
@@ -1655,7 +1745,7 @@ iterations. See iter44's entry above and
 `experiments/iter44_gbm_native_features/RESULT.md` for the full
 verification chain (tie-artifact check, feature-confound ablation, seed
 robustness, blend diversity confirmation) that preceded this promotion.
-Superseded on valid/test by iter51 above, pending promotion decision.
+Superseded by iter51.
 
 ### Prior final result (iter38, end of Round 13 — kept for history)
 Starting point: iter1 (FM pointwise baseline, official test primary 0.5946).
