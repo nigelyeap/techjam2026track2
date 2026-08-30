@@ -1,0 +1,28 @@
+[0] {'depth': 6, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'} -> valid=0.62127 test=0.62221 best_iter=211
+[1] {'depth': 1, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'} -> valid=0.60331 test=0.59802 best_iter=78
+[2] {'depth': 2, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'} -> valid=0.62712 test=0.62721 best_iter=498
+[3] {'depth': 3, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'} -> valid=0.62783 test=0.62943 best_iter=498
+[4] {'depth': 4, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'} -> valid=0.62746 test=0.62893 best_iter=392
+[5] {'depth': 5, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'} -> valid=0.62440 test=0.62638 best_iter=304
+[6] {'depth': 2, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'PairLogitPairwise'} -> valid=0.59005 test=0.59163 best_iter=499
+[7] {'depth': 2, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'PairLogit'} -> valid=0.58390 test=0.58691 best_iter=499
+[8] {'depth': 2, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 1.0, 'loss_function': 'YetiRank'} -> valid=0.62715 test=0.62704 best_iter=499
+[9] {'depth': 2, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 10.0, 'loss_function': 'YetiRank'} -> valid=0.62717 test=0.62678 best_iter=499
+[10] {'depth': 2, 'iterations': 1500, 'learning_rate': 0.02, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'} -> valid=0.62624 test=0.62554 best_iter=1003
+[11] {'depth': 2, 'iterations': 500, 'learning_rate': 0.1, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'} -> valid=0.62964 test=0.62999 best_iter=318
+
+=== ranked by valid primary ===
+  valid=0.62964 test=0.62999  {'depth': 2, 'iterations': 500, 'learning_rate': 0.1, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'}
+  valid=0.62783 test=0.62943  {'depth': 3, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'}
+  valid=0.62746 test=0.62893  {'depth': 4, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'}
+  valid=0.62717 test=0.62678  {'depth': 2, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 10.0, 'loss_function': 'YetiRank'}
+  valid=0.62715 test=0.62704  {'depth': 2, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 1.0, 'loss_function': 'YetiRank'}
+  valid=0.62712 test=0.62721  {'depth': 2, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'}
+  valid=0.62624 test=0.62554  {'depth': 2, 'iterations': 1500, 'learning_rate': 0.02, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'}
+  valid=0.62440 test=0.62638  {'depth': 5, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'}
+  valid=0.62127 test=0.62221  {'depth': 6, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'}
+  valid=0.60331 test=0.59802  {'depth': 1, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'}
+  valid=0.59005 test=0.59163  {'depth': 2, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'PairLogitPairwise'}
+  valid=0.58390 test=0.58691  {'depth': 2, 'iterations': 500, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'PairLogit'}
+
+wrote sweep_results.json

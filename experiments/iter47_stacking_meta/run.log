@@ -1,0 +1,29 @@
+=== base model 1/3: GBM (LightGBM, iter44 native) ===
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  GBM standalone: valid=0.66135 test=0.64794
+
+=== base model 2/3: CatBoost (iter45 native) ===
+  CatBoost standalone: valid=0.62964 test=0.62999
+
+=== base model 3/3: FM 5-seed ensemble (iter38 exact config) ===
+  FM ensemble standalone: valid=0.63988 test=0.64187
+
+[baseline] iter44 fixed-alpha blend (FM+GBM, alpha=0.1): valid=0.66473 test=0.65197
+[stack:2way_FM_GBM] w=[2.40730052 1.11791291] b=-3.7939 -> valid=0.65426 test=0.65185
+[stack:3way_FM_GBM_CB] w=[ 3.04035156  2.26779436 -3.01531708] b=-3.3167 -> valid=0.57343 test=0.55369
+
+=== direct grid search on primary metric (3-way weights) ===
+  best direct-grid weights: {'w_fm': 0.1, 'w_gbm': 0.9, 'w_cb': 0.0, 'valid': 0.6647330522537231, 'test': 0.6519687175750732}
+
+wrote results.json

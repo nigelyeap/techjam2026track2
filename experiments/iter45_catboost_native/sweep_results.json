@@ -1,0 +1,134 @@
+[
+  {
+    "cfg": {
+      "depth": 2,
+      "iterations": 500,
+      "learning_rate": 0.1,
+      "l2_leaf_reg": 3.0,
+      "loss_function": "YetiRank"
+    },
+    "valid": 0.6296416521072388,
+    "test": 0.6299858689308167
+  },
+  {
+    "cfg": {
+      "depth": 3,
+      "iterations": 500,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 3.0,
+      "loss_function": "YetiRank"
+    },
+    "valid": 0.6278266906738281,
+    "test": 0.6294306516647339
+  },
+  {
+    "cfg": {
+      "depth": 4,
+      "iterations": 500,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 3.0,
+      "loss_function": "YetiRank"
+    },
+    "valid": 0.6274563074111938,
+    "test": 0.6289340257644653
+  },
+  {
+    "cfg": {
+      "depth": 2,
+      "iterations": 500,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 10.0,
+      "loss_function": "YetiRank"
+    },
+    "valid": 0.6271684765815735,
+    "test": 0.6267831325531006
+  },
+  {
+    "cfg": {
+      "depth": 2,
+      "iterations": 500,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 1.0,
+      "loss_function": "YetiRank"
+    },
+    "valid": 0.6271494030952454,
+    "test": 0.6270413398742676
+  },
+  {
+    "cfg": {
+      "depth": 2,
+      "iterations": 500,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 3.0,
+      "loss_function": "YetiRank"
+    },
+    "valid": 0.6271237730979919,
+    "test": 0.6272084712982178
+  },
+  {
+    "cfg": {
+      "depth": 2,
+      "iterations": 1500,
+      "learning_rate": 0.02,
+      "l2_leaf_reg": 3.0,
+      "loss_function": "YetiRank"
+    },
+    "valid": 0.626239001750946,
+    "test": 0.6255449056625366
+  },
+  {
+    "cfg": {
+      "depth": 5,
+      "iterations": 500,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 3.0,
+      "loss_function": "YetiRank"
+    },
+    "valid": 0.6244018077850342,
+    "test": 0.6263814568519592
+  },
+  {
+    "cfg": {
+      "depth": 6,
+      "iterations": 500,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 3.0,
+      "loss_function": "YetiRank"
+    },
+    "valid": 0.6212695837020874,
+    "test": 0.6222141981124878
+  },
+  {
+    "cfg": {
+      "depth": 1,
+      "iterations": 500,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 3.0,
+      "loss_function": "YetiRank"
+    },
+    "valid": 0.6033064126968384,
+    "test": 0.5980231761932373
+  },
+  {
+    "cfg": {
+      "depth": 2,
+      "iterations": 500,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 3.0,
+      "loss_function": "PairLogitPairwise"
+    },
+    "valid": 0.5900475978851318,
+    "test": 0.591627836227417
+  },
+  {
+    "cfg": {
+      "depth": 2,
+      "iterations": 500,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 3.0,
+      "loss_function": "PairLogit"
+    },
+    "valid": 0.5839014053344727,
+    "test": 0.5869110822677612
+  }
+]

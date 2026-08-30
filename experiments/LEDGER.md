@@ -1204,6 +1204,7 @@ available proxy.
 | 12 | 0 agents (1 experiment run directly by orchestrator) — convergence declared, iteration ends here | 0 |
 | 13 | 0 agents (2 experiments — iter38, iter39 — run directly by orchestrator, reopened post-convergence on request) | 0 |
 | 14 | 0 agents (iter44 and all its verification passes — sweeps, ablation, seed/date-shift robustness, blend — run directly by orchestrator) | 0 |
+| 15 | 0 agents (iter45-47 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
 
 **GPU time is 0 throughout and will remain 0** — every model, including
 iter44's LightGBM ranker, trains CPU-only. The FM/BPR line (iter1-iter39)
@@ -1481,7 +1482,76 @@ confirmed alpha=0.10 as a genuine, non-coarse-grid-artifact optimum
 check changes the promotion decision. Full detail:
 `experiments/iter44_gbm_native_features/RESULT.md`.
 
-## Final result (as of end of Round 14 — supersedes the iter38 result below)
+### iter45 — CatBoost on iter44's GBM-native encoding
+Re-tested CatBoost (previously rejected in iter43 on FM's bucketed
+encoding) on iter44's native, un-bucketed feature set — the same fix that
+took LightGBM from below-FM to new-best. First run produced an implausible
+valid/test gap (valid 0.4835, ≈ trivial random floor, vs. test 0.6222);
+root-caused to a real evaluation bug, not a ranking failure: CatBoost's
+`Pool` requires rows sorted by `user_id`, so predictions were computed on a
+user-sorted copy of the valid frame but evaluated against the original
+unsorted label/user arrays. Fixed by evaluating against the same sorted
+arrays the predictions came from; self-consistent numbers followed
+(0.62127/0.62221). A 12-point sweep over depth (1-6) and loss function
+found capacity-shrinking helps, mirroring LightGBM's pattern, but the
+optimum is an *interior* point (`depth=2`) rather than LightGBM's literal
+floor — `depth=1` is markedly worse (0.60331). `YetiRank` clearly beat
+both pairwise losses. Best found: `depth=2, learning_rate=0.1,
+l2_leaf_reg=3.0, YetiRank` → valid 0.62964/test 0.62999 — still ~0.031
+valid below LightGBM-native (0.66135) and below the FM ensemble (0.63988).
+**Verdict: REJECT (standalone)**; carried into iter47 as a third blend
+candidate. Full detail: `experiments/iter45_catboost_native/RESULT.md`.
+
+### iter46 — extreme-low-capacity hyperparameter depth sweep at num_leaves=2
+iter44 swept `num_leaves` to LightGBM's floor but every other
+hyperparameter was only ever tuned around `num_leaves=7`, never at the
+actual winning capacity. An 18-config sweep, fixed at `num_leaves=2`,
+checked learning_rate, min_child_samples, reg_lambda, and three axes never
+tried anywhere in the project before (subsample, colsample_bytree,
+`boosting_type='dart'`). **No axis beat the baseline 0.66135 valid** —
+`min_child_samples` had literally zero effect across its entire tested
+range (50-1600), since num_leaves=2 trees have far more natural per-leaf
+samples than any tested threshold; every other axis was flat or worse.
+**Verdict: REJECT (no promotable finding)** — confirms iter44's config is
+a genuine, comprehensively-checked local optimum, closing off further
+hyperparameter search on this model as a lever. Full detail:
+`experiments/iter46_extreme_capacity_depth/RESULT.md`.
+
+### iter47 — stacking meta-learner over FM + GBM (+ CatBoost) scores
+Tested whether a learned combiner beats iter44's fixed alpha=0.1 blend,
+and whether adding iter45's CatBoost as a third base model adds value
+through diversity despite being individually much weaker. A logistic
+regression (gradient descent, no new dependency) fit on valid
+underperformed the fixed-alpha baseline in both the 2-way (FM+GBM: 0.65426
+vs. 0.66473 valid) and 3-way (FM+GBM+CatBoost: 0.57343 valid, CatBoost's
+learned weight going negative) configurations. Diagnosis: binary
+cross-entropy over individual rows is the wrong proxy objective for the
+group-wise ranking metric — the same objective-mismatch family as iter39's
+listwise-loss REJECT. Confirmed by a direct grid search evaluated on the
+actual primary metric instead of a proxy loss: it converged to exactly
+`w_fm=0.1, w_gbm=0.9, w_cb=0.0` — reproducing iter44's blend bit-for-bit
+(valid 0.66473, test 0.65197). This settles two things at once: CatBoost
+adds zero value to the blend even with a free weight and metric-aligned
+selection, and iter44's alpha=0.1 blend is already the true optimum among
+linear combinations of these three models' scores. **Verdict: REJECT (no
+promotable finding)** — iter44's blend stands unchanged as the final
+model. Full detail: `experiments/iter47_stacking_meta/RESULT.md`.
+
+## Round 15 complete — summary
+Three independent methods tested (CatBoost-native, extreme-low-capacity
+GBM hyperparameter depth, stacking meta-learner), all directly by the
+orchestrator, no subagent dispatch. All three landed as clean, well-
+diagnosed REJECTs rather than gains — but each closes a real open
+question left from Round 14: CatBoost's native-encoding ceiling is now
+known (iter45), the GBM hyperparameter search space at num_leaves=2 is
+now exhaustively checked (iter46), and both the "does stacking beat a
+fixed alpha" and "does a third model add blend diversity" questions are
+now answered no, with a doubly-confirmed diagnosis (iter47). No change to
+the final selected model. **Convergence reaffirmed**: iter44's blend
+(valid 0.66473 / test 0.65197) remains the best result after 15 rounds /
+47 iterations.
+
+## Final result (as of end of Round 15 — unchanged from Round 14, reaffirmed by iter45-47)
 **Final selected model: iter44 blend** — a score-level blend (alpha=0.1,
 90% weight on the GBM) of (a) a single `LGBMRanker(num_leaves=2, lr=0.05,
 n_estimators=500, min_child_samples=200, reg_lambda=1.0)` trained on a
