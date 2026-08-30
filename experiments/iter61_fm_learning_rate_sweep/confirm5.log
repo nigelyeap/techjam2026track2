@@ -1,0 +1,8 @@
+seed=0  lr=0.0005: valid=0.63951 test=0.64194  |  lr=0.001: valid=0.63894 test=0.63989  |  delta_valid=+0.00058
+seed=1  lr=0.0005: valid=0.63884 test=0.63876  |  lr=0.001: valid=0.63868 test=0.63913  |  delta_valid=+0.00016
+seed=2  lr=0.0005: valid=0.63908 test=0.63944  |  lr=0.001: valid=0.63685 test=0.63768  |  delta_valid=+0.00223
+seed=3  lr=0.0005: valid=0.63853 test=0.63996  |  lr=0.001: valid=0.63747 test=0.63853  |  delta_valid=+0.00105
+seed=4  lr=0.0005: valid=0.63909 test=0.63964  |  lr=0.001: valid=0.63768 test=0.63921  |  delta_valid=+0.00140
+
+5-seed valid: lr=0.0005 mean=0.63901 std=0.00032  |  lr=0.001 mean=0.63792 std=0.00077  |  mean_delta=+0.00108  wins=5/5
+5-seed test:  lr=0.0005 mean=0.63995 std=0.00107  |  lr=0.001 mean=0.63889 std=0.00074  |  mean_delta=+0.00106

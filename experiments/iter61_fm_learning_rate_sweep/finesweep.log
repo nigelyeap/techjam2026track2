@@ -1,0 +1,9 @@
+lr=0.0003  valid=0.63952  test=0.64130
+lr=0.0004  valid=0.63927  test=0.64066
+lr=0.0005  valid=0.63951  test=0.64194
+lr=0.0006  valid=0.63957  test=0.64073
+lr=0.0007  valid=0.63929  test=0.64078
+lr=0.0008  valid=0.63809  test=0.63938
+
+best: lr=0.0006  valid=0.63957  test=0.64073
+iter38 baseline (lr=0.001): valid=0.63894 test=0.63989

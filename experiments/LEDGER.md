@@ -1207,6 +1207,7 @@ available proxy.
 | 15 | 0 agents (iter45-50 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner, time-of-day feature, monotonic constraints, GOSS boosting — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
 | 16 | 0 agents (iter51 — LightGBM linear_tree=True, standalone + blend — run directly by orchestrator) | 0 |
 | 17 | 0 agents (iter52-59 — capacity/linear_lambda/hour-of-day retests, learning_rate sweep and blend (promoted), fine learning_rate resweep, reg_lambda resweep, min_child_samples resweep, GBM seed-ensemble blend — run directly by orchestrator, continued on explicit post-promotion instruction) | 0 |
+| 18 | 0 agents (iter60-61 — FM embedding-dim resweep, FM learning_rate resweep+blend — run directly by orchestrator, user-directed pivot to FM-side search after GBM space exhausted) | 0 |
 
 **GPU time is 0 throughout and will remain 0** — every model, including
 iter44's LightGBM ranker, trains CPU-only. The FM/BPR line (iter1-iter39)
@@ -1782,6 +1783,23 @@ resystematically resweept. Single-seed sweep over `{8,12,16,24,32,48,64}`:
 other value strictly worse and no monotonic trend. **Verdict: REJECT** —
 `k=16` confirmed as the right embedding dimension. Full detail:
 `experiments/iter60_fm_embedding_dim_sweep/RESULT.md`.
+
+### iter61 — FM learning_rate resweep (real standalone gain, doesn't propagate to blend)
+`lr=0.001` (Adam) has been the FM learning rate since iter38, never
+resystematically resweept — the FM-side analogue of iter55's GBM finding.
+Coarse + fine sweep found a genuine plateau at `lr≈0.0003-0.0008`
+(+0.0005-0.0006 valid vs baseline, not a spike). 5-seed confirmed at
+`lr=0.0005`: **mean valid=0.63901 vs 0.63792 (mean delta +0.00108, 5/5
+seeds winning)** — clears the 0.001 "unambiguously real" bar and *reduces*
+seed variance (0.00032 vs 0.00077). However the blend-level effect (GBM
+iter55 seed=0 + this FM ensemble) is only **valid=0.67475 vs iter55's
+0.67451 (+0.00024, below the 0.0003 look-threshold) and test=0.65804 vs
+0.65832 (-0.00028, the wrong direction)**. **Verdict: REJECT for
+promotion** — the GBM already captures much of what a sharper FM adds, so
+the real standalone FM gain doesn't propagate to a clearing blend-level
+gain, and test moves the wrong way. iter55's blend remains the best-known
+submission candidate. Full detail:
+`experiments/iter61_fm_learning_rate_sweep/RESULT.md`.
 
 ## Best-known candidate / final result as currently submitted (iter55, promoted end of Round 17)
 **Final selected model: iter55 blend** — a score-level blend (alpha=0.10,
