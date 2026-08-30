@@ -1206,7 +1206,7 @@ available proxy.
 | 14 | 0 agents (iter44 and all its verification passes — sweeps, ablation, seed/date-shift robustness, blend — run directly by orchestrator) | 0 |
 | 15 | 0 agents (iter45-50 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner, time-of-day feature, monotonic constraints, GOSS boosting — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
 | 16 | 0 agents (iter51 — LightGBM linear_tree=True, standalone + blend — run directly by orchestrator) | 0 |
-| 17 | 0 agents (iter52-57 — capacity/linear_lambda/hour-of-day retests, learning_rate sweep and blend (promoted), fine learning_rate resweep, reg_lambda resweep — run directly by orchestrator, continued on explicit post-promotion instruction) | 0 |
+| 17 | 0 agents (iter52-58 — capacity/linear_lambda/hour-of-day retests, learning_rate sweep and blend (promoted), fine learning_rate resweep, reg_lambda resweep, min_child_samples resweep — run directly by orchestrator, continued on explicit post-promotion instruction) | 0 |
 
 **GPU time is 0 throughout and will remain 0** — every model, including
 iter44's LightGBM ranker, trains CPU-only. The FM/BPR line (iter1-iter39)
@@ -1710,6 +1710,19 @@ confirmed optimal in iter53), leaving the tree-structure regularizer with
 essentially nothing to do. Full detail:
 `experiments/iter57_reg_lambda_resweep/RESULT.md`.
 
+### iter58 — min_child_samples resweep under linear_tree=True + learning_rate=0.10
+`min_child_samples=200` was tuned pre-iter51/55; under `linear_tree=True`
+it controls how much data each leaf's linear fit trains on, a more direct
+interaction with the structural change than `reg_lambda`. Swept
+`{20..1200}`: the metric is bit-identical across the entire range.
+**Verdict: REJECT** — with `num_leaves=2` (two leaves total, tens of
+thousands of training rows), the constraint never binds regardless of
+value. Combined with iter53 (`linear_lambda`) and iter57 (`reg_lambda`),
+this closes all three tree-structure regularization knobs as flat/moot at
+this capacity setting — the GBM side of the hyperparameter space is now
+considered exhausted for this architecture. Full detail:
+`experiments/iter58_min_child_samples_resweep/RESULT.md`.
+
 ## Round 17 — post-promotion, continued iteration on explicit instruction ("keep testing further, push harder")
 iter51 (linear_tree=True blend, valid 0.67297/test 0.65643) was promoted
 to the actual submission deliverables (`SUBMISSION.md`,
@@ -1725,12 +1738,15 @@ real further gain: 5-seed confirmed standalone (+0.00085 valid) and a
 larger blend-level gain (+0.00154 valid / +0.00189 test) over the
 currently-submitted iter51 blend. **Promoted to the submission
 deliverables after explicit user approval** (valid 0.67451 / test
-0.65832). Two further follow-ups then closed out the immediate
+0.65832). Three further follow-ups then closed out the immediate
 neighborhood of this new config: a fine-grained `learning_rate` sweep
-around 0.10 (iter56, REJECT — confirmed a genuine local plateau) and a
-`reg_lambda` resweep under the new config (iter57, REJECT — a flat,
-wide plateau with no effect). iter55 stands as the final result at the
-end of Round 17.
+around 0.10 (iter56, REJECT — confirmed a genuine local plateau), a
+`reg_lambda` resweep (iter57, REJECT — a flat, wide plateau with no
+effect), and a `min_child_samples` resweep (iter58, REJECT — also flat;
+never binds at `num_leaves=2`). Together iter53/57/58 close out all three
+GBM tree-structure regularization knobs as moot at this capacity setting
+— the GBM hyperparameter space is considered exhausted for this
+architecture. iter55 stands as the final result at the end of Round 17.
 
 ## Best-known candidate / final result as currently submitted (iter55, promoted end of Round 17)
 **Final selected model: iter55 blend** — a score-level blend (alpha=0.10,
