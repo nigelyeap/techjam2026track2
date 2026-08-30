@@ -1205,6 +1205,7 @@ available proxy.
 | 13 | 0 agents (2 experiments — iter38, iter39 — run directly by orchestrator, reopened post-convergence on request) | 0 |
 | 14 | 0 agents (iter44 and all its verification passes — sweeps, ablation, seed/date-shift robustness, blend — run directly by orchestrator) | 0 |
 | 15 | 0 agents (iter45-50 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner, time-of-day feature, monotonic constraints, GOSS boosting — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
+| 16 | 0 agents (iter51 — LightGBM linear_tree=True, standalone + blend — run directly by orchestrator) | 0 |
 
 **GPU time is 0 throughout and will remain 0** — every model, including
 iter44's LightGBM ranker, trains CPU-only. The FM/BPR line (iter1-iter39)
@@ -1577,6 +1578,40 @@ one split per tree to get right, so stochastic instance subsampling costs
 more in split quality than it buys in variance reduction. **Verdict:
 REJECT.** Full detail: `experiments/iter50_goss_boosting/RESULT.md`.
 
+### iter51 — LightGBM `linear_tree=True` at num_leaves=2 — **NEW BEST CANDIDATE, pending promotion decision**
+At `num_leaves=2` each tree makes one split and predicts a flat constant
+per leaf. `linear_tree=True` instead fits a linear regression per leaf, so
+with 2 leaves the tree becomes piecewise-*linear* rather than
+piecewise-constant — a structural change distinct from every
+hyperparameter, boosting-algorithm, feature, and constraint variant tried
+in Round 15. Single-axis swap on iter44's exact pipeline: harness-checked
+`linear_tree=False` reproduces 0.66135/0.64794 exactly; `linear_tree=True`
+scored valid 0.66932/test 0.65146 on the first run (+0.00797 valid),
+clearing both the look and confirmed-gain thresholds immediately.
+**5-seed confirmation**: mean valid=0.66926 (range 0.66915–0.66943), mean
+test=0.65140 (range 0.65133–0.65149) — tighter across seeds than iter44's
+own seed variance. **Verdict: PROMOTE (standalone).**
+
+Reblending this GBM (seed=0) with the unchanged FM 5-seed ensemble via the
+same alpha-sweep pattern as iter44/iter47 found a new best alpha=0.08:
+**valid=0.67297, test=0.65643**, vs. the current final submission's
+iter44 blend (alpha=0.10, valid=0.66473/test=0.65197) — **+0.00824 valid,
++0.00446 test**. This is the first genuine gain over iter44's blend found
+across the entire 7-method "own track" (iter45–51). **Verdict: PROMOTE
+(blend)** — flagged to the user for an explicit go-ahead before touching
+`SUBMISSION.md`/`make_submission.py`/`submission.csv`, not promoted
+unilaterally. Full detail: `experiments/iter51_linear_tree/RESULT.md`.
+
+## Round 16 complete — summary
+One method tested directly by the orchestrator (no subagent dispatch):
+`linear_tree=True`, a structural change to how each tree's split is used
+that had not been tried across 50 prior iterations. Unlike the six
+consecutive REJECTs of Round 15, this cleared every threshold decisively
+and held tight across 5 seeds both standalone and in the submission-level
+blend. **This is a new best candidate — valid 0.67297 / test 0.65643 —
+pending the user's explicit decision on promoting it to the actual
+submission deliverables** (see "Final result" below).
+
 ## Round 15 complete — summary
 Six independent methods tested (CatBoost-native, extreme-low-capacity GBM
 hyperparameter depth, stacking meta-learner, time-of-day feature,
@@ -1595,7 +1630,19 @@ final selected model. **Convergence reaffirmed**: iter44's blend (valid
 0.66473 / test 0.65197) remains the best result after 15 rounds / 50
 iterations.
 
-## Final result (as of end of Round 15 — unchanged from Round 14, reaffirmed by iter45-47)
+## Best-known candidate (as of end of Round 16 — iter51, NOT YET promoted to submission deliverables)
+iter51's blend (`linear_tree=True` GBM at alpha=0.08 with the unchanged
+FM ensemble) scores **valid primary 0.67297, test primary 0.65643** —
++0.00824 valid / +0.00446 test over the currently-submitted iter44 blend
+below. 5-seed confirmed on the standalone GBM (mean valid=0.66926, range
+0.66915–0.66943). This is the strongest result found across 15 rounds / 51
+iterations, but **`SUBMISSION.md`, `make_submission.py`, and
+`submission.csv` still reflect iter44** — promoting iter51 requires the
+user's explicit go-ahead (asked, pending as of this ledger update), given
+these are the actual competition deliverables. See
+`experiments/iter51_linear_tree/RESULT.md` for full detail.
+
+## Final result as currently submitted (iter44, end of Round 15 — unchanged from Round 14, reaffirmed by iter45-47)
 **Final selected model: iter44 blend** — a score-level blend (alpha=0.1,
 90% weight on the GBM) of (a) a single `LGBMRanker(num_leaves=2, lr=0.05,
 n_estimators=500, min_child_samples=200, reg_lambda=1.0)` trained on a
@@ -1608,6 +1655,7 @@ iterations. See iter44's entry above and
 `experiments/iter44_gbm_native_features/RESULT.md` for the full
 verification chain (tie-artifact check, feature-confound ablation, seed
 robustness, blend diversity confirmation) that preceded this promotion.
+Superseded on valid/test by iter51 above, pending promotion decision.
 
 ### Prior final result (iter38, end of Round 13 — kept for history)
 Starting point: iter1 (FM pointwise baseline, official test primary 0.5946).

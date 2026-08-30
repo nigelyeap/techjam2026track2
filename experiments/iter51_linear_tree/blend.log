@@ -1,0 +1,13 @@
+=== GBM (linear_tree=True, iter51) ===
+  GBM standalone: valid=0.66932 test=0.65146
+
+=== FM 5-seed ensemble (iter38 exact config) ===
+  FM ensemble standalone: valid=0.63988 test=0.64187
+
+=== alpha sweep (FM weight) on valid, direct metric ===
+  best alpha=0.08 -> valid=0.67297 test=0.65643
+
+  [compare] iter44 blend (old GBM, alpha=0.1): valid=0.66473 test=0.65197
+  [compare] iter51 blend (linear_tree GBM, alpha=0.08): valid=0.67297 test=0.65643
+
+wrote blend_results.json

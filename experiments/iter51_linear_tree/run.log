@@ -1,0 +1,15 @@
+best_iteration=332  valid={'GAUC': np.float32(0.7450017), 'nDCG@5': np.float32(0.57770807), 'primary': np.float32(0.6613549), 'users': 22377, 'rows': 124909}  test={'GAUC': np.float32(0.7202073), 'nDCG@5': np.float32(0.57567674), 'primary': np.float32(0.647942), 'users': 23875, 'rows': 170588}
+[harness check] linear_tree=False: valid=0.66135 test=0.64794 (expect 0.66135/0.64794)
+best_iteration=72  valid={'GAUC': np.float32(0.7565716), 'nDCG@5': np.float32(0.5820748), 'primary': np.float32(0.6693232), 'users': 22377, 'rows': 124909}  test={'GAUC': np.float32(0.72549325), 'nDCG@5': np.float32(0.57741874), 'primary': np.float32(0.651456), 'users': 23875, 'rows': 170588}
+[iter51] linear_tree=True seed=0: valid=0.66932 test=0.65146
+
+gain over baseline: 0.00797
+=== clears 0.0003 look-threshold, running 4 more seeds ===
+  seed=1 valid=0.66922 test=0.65149
+  seed=2 valid=0.66943 test=0.65133
+  seed=3 valid=0.66917 test=0.65136
+  seed=4 valid=0.66915 test=0.65135
+
+5-seed valid: mean=0.66926 min=0.66915 max=0.66943
+5-seed test:  mean=0.65140 min=0.65133 max=0.65149
+baseline (no linear_tree): valid=0.66135 test=0.64794
