@@ -1,0 +1,299 @@
+{
+  "environment": {
+    "numpy": "2.4.3",
+    "python": "3.13.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterYIXI1_xgboost_native_standalone",
+  "features": {
+    "categorical": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1"
+    ],
+    "numeric": [
+      "duration_ms",
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3",
+      "lastk_rate",
+      "gap"
+    ]
+  },
+  "fixed_xgb_parameters": {
+    "colsample_bytree": 1.0,
+    "early_stopping_rounds": 30,
+    "enable_categorical": true,
+    "eval_metric": "ndcg@5-",
+    "learning_rate": 0.05,
+    "max_bin": 256,
+    "max_cat_to_onehot": 4,
+    "min_child_weight": 1.0,
+    "n_estimators": 500,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 1.0,
+    "tree_method": "hist"
+  },
+  "scope": "standalone XGBoost only; blend.py owns the promoted three-model blend",
+  "selection_policy": {
+    "promotion_delta": 0.001,
+    "promotion_reference": "iter44 standalone native LightGBM",
+    "selector": "official validation primary only",
+    "test_access": "after the standalone objective/depth configuration is frozen"
+  },
+  "standalone_comparison": {
+    "confirmed": false,
+    "delta_vs_lgb_valid": -0.0027161836624145508,
+    "lgb_reference_valid": 0.6613549,
+    "note": "This verdict applies only to standalone XGBoost.",
+    "seed_confirmation": [],
+    "verdict": "REJECT"
+  },
+  "standalone_winner": {
+    "best_internal_ndcg_at_5_minus": 0.5779849610900798,
+    "best_iteration": 333,
+    "max_depth": 1,
+    "objective": "rank:ndcg",
+    "seed": 0,
+    "test": {
+      "GAUC": 0.7110653519630432,
+      "nDCG@5": 0.5791770815849304,
+      "primary": 0.6451212167739868,
+      "rows": 170588,
+      "users": 23875
+    },
+    "valid": {
+      "GAUC": 0.739288866519928,
+      "nDCG@5": 0.5779885053634644,
+      "primary": 0.6586387157440186,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "sweep": [
+    {
+      "best_internal_ndcg_at_5_minus": 0.5719181922325547,
+      "best_iteration": 186,
+      "max_depth": 1,
+      "objective": "rank:pairwise",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7418615221977234,
+        "nDCG@5": 0.5719202756881714,
+        "primary": 0.656890869140625,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "best_internal_ndcg_at_5_minus": 0.5727333827980878,
+      "best_iteration": 85,
+      "max_depth": 2,
+      "objective": "rank:pairwise",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7402293086051941,
+        "nDCG@5": 0.5727354884147644,
+        "primary": 0.6564823985099792,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "best_internal_ndcg_at_5_minus": 0.5698096281272302,
+      "best_iteration": 67,
+      "max_depth": 3,
+      "objective": "rank:pairwise",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7322009205818176,
+        "nDCG@5": 0.5699748396873474,
+        "primary": 0.6510878801345825,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "best_internal_ndcg_at_5_minus": 0.5683484018226828,
+      "best_iteration": 39,
+      "max_depth": 4,
+      "objective": "rank:pairwise",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7273666858673096,
+        "nDCG@5": 0.5683514475822449,
+        "primary": 0.6478590965270996,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "best_internal_ndcg_at_5_minus": 0.5661239931502534,
+      "best_iteration": 49,
+      "max_depth": 5,
+      "objective": "rank:pairwise",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7243157625198364,
+        "nDCG@5": 0.5661778450012207,
+        "primary": 0.6452468037605286,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "best_internal_ndcg_at_5_minus": 0.5626328455890183,
+      "best_iteration": 46,
+      "max_depth": 7,
+      "objective": "rank:pairwise",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7158536911010742,
+        "nDCG@5": 0.5628689527511597,
+        "primary": 0.6393613219261169,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "best_internal_ndcg_at_5_minus": 0.5779849610900798,
+      "best_iteration": 333,
+      "max_depth": 1,
+      "objective": "rank:ndcg",
+      "seed": 0,
+      "test": {
+        "GAUC": 0.7110653519630432,
+        "nDCG@5": 0.5791770815849304,
+        "primary": 0.6451212167739868,
+        "rows": 170588,
+        "users": 23875
+      },
+      "valid": {
+        "GAUC": 0.739288866519928,
+        "nDCG@5": 0.5779885053634644,
+        "primary": 0.6586387157440186,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "best_internal_ndcg_at_5_minus": 0.5756277394875491,
+      "best_iteration": 167,
+      "max_depth": 2,
+      "objective": "rank:ndcg",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7335449457168579,
+        "nDCG@5": 0.5756301879882812,
+        "primary": 0.6545875668525696,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "best_internal_ndcg_at_5_minus": 0.5691320831877268,
+      "best_iteration": 304,
+      "max_depth": 3,
+      "objective": "rank:ndcg",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7238637804985046,
+        "nDCG@5": 0.5691331028938293,
+        "primary": 0.646498441696167,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "best_internal_ndcg_at_5_minus": 0.5666212470547911,
+      "best_iteration": 182,
+      "max_depth": 4,
+      "objective": "rank:ndcg",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7175949215888977,
+        "nDCG@5": 0.5666210055351257,
+        "primary": 0.6421079635620117,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "best_internal_ndcg_at_5_minus": 0.5657374348978439,
+      "best_iteration": 175,
+      "max_depth": 5,
+      "objective": "rank:ndcg",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7176163792610168,
+        "nDCG@5": 0.5657224059104919,
+        "primary": 0.6416693925857544,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "best_internal_ndcg_at_5_minus": 0.561922760788813,
+      "best_iteration": 151,
+      "max_depth": 7,
+      "objective": "rank:ndcg",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7101578712463379,
+        "nDCG@5": 0.5618492364883423,
+        "primary": 0.6360035538673401,
+        "rows": 124909,
+        "users": 22377
+      }
+    }
+  ],
+  "sweep_winner_so_far": {
+    "best_internal_ndcg_at_5_minus": 0.5779849610900798,
+    "best_iteration": 333,
+    "max_depth": 1,
+    "objective": "rank:ndcg",
+    "seed": 0,
+    "test": {
+      "GAUC": 0.7110653519630432,
+      "nDCG@5": 0.5791770815849304,
+      "primary": 0.6451212167739868,
+      "rows": 170588,
+      "users": 23875
+    },
+    "valid": {
+      "GAUC": 0.739288866519928,
+      "nDCG@5": 0.5779885053634644,
+      "primary": 0.6586387157440186,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "test_evaluation": {
+    "performed": true,
+    "timing": "after standalone objective/depth selection was frozen"
+  },
+  "tie_diagnostic": {
+    "constant_valid": {
+      "GAUC": 0.5,
+      "nDCG@5": 0.4673425257205963,
+      "primary": 0.48367124795913696,
+      "rows": 124909,
+      "users": 22377
+    },
+    "random_valid": {
+      "GAUC": 0.49903032183647156,
+      "nDCG@5": 0.466287761926651,
+      "primary": 0.4826590418815613,
+      "rows": 124909,
+      "users": 22377
+    },
+    "winner": {
+      "mean_per_user_unique_fraction": 0.9089884714098821,
+      "rows": 124909,
+      "unique_scores_overall": 10139
+    }
+  }
+}

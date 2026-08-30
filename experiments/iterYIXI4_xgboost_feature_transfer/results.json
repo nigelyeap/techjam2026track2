@@ -1,0 +1,2274 @@
+{
+  "candidates": [
+    {
+      "added_feature_gain_fraction": {},
+      "best_internal_ndcg_at_5_minus": 0.5779849610900798,
+      "best_iteration": 333,
+      "config": {
+        "added": [],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap"
+        ],
+        "removed": []
+      },
+      "family": "reference",
+      "feature_gain_fraction": {
+        "author_id": 0.11785065976130041,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.12934565076951093,
+        "decay_tab_3": 0.148606076379111,
+        "duration_ms": 0.1243402952753739,
+        "gap": 0.0659742967842988,
+        "last1": 0.0,
+        "lastk_rate": 0.11589944315794502,
+        "tab": 0.21778967408566496,
+        "user_id": 0.0,
+        "video_id": 0.08019390378679499
+      },
+      "name": "yixi1_xgb_reference",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.739288866519928,
+        "nDCG@5": 0.5779885053634644,
+        "primary": 0.6586387157440186,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_act_1": 0.0,
+        "decay_rate_1": 0.14258278159918852
+      },
+      "best_internal_ndcg_at_5_minus": 0.5740005229113582,
+      "best_iteration": 338,
+      "config": {
+        "added": [
+          "decay_rate_1",
+          "decay_act_1"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_1",
+          "decay_act_1"
+        ],
+        "removed": [
+          "decay_rate_2.5",
+          "decay_act_2.5"
+        ]
+      },
+      "delta_vs_reference_valid": -0.005127549171447754,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.10524770688220435,
+        "decay_act_1": 0.0,
+        "decay_rate_1": 0.14258278159918852,
+        "decay_tab_3": 0.14666115827416235,
+        "duration_ms": 0.12363811911998095,
+        "gap": 0.07651004767789456,
+        "last1": 0.0,
+        "lastk_rate": 0.11274982016086899,
+        "tab": 0.21487619315114115,
+        "user_id": 0.0,
+        "video_id": 0.07773417313455916
+      },
+      "name": "user_h1_replace",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.733018696308136,
+        "nDCG@5": 0.5740036964416504,
+        "primary": 0.6535111665725708,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_act_1": 0.0,
+        "decay_rate_1": 0.0
+      },
+      "best_internal_ndcg_at_5_minus": 0.5779849610900798,
+      "best_iteration": 333,
+      "config": {
+        "added": [
+          "decay_rate_1",
+          "decay_act_1"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_1",
+          "decay_act_1"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": 0.0,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.11785065976130041,
+        "decay_act_1": 0.0,
+        "decay_act_2.5": 0.0,
+        "decay_rate_1": 0.0,
+        "decay_rate_2.5": 0.12934565076951093,
+        "decay_tab_3": 0.148606076379111,
+        "duration_ms": 0.1243402952753739,
+        "gap": 0.0659742967842988,
+        "last1": 0.0,
+        "lastk_rate": 0.11589944315794502,
+        "tab": 0.21778967408566496,
+        "user_id": 0.0,
+        "video_id": 0.08019390378679499
+      },
+      "name": "user_h1_parallel",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.739288866519928,
+        "nDCG@5": 0.5779885053634644,
+        "primary": 0.6586387157440186,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_act_5": 0.0,
+        "decay_rate_5": 0.11024951742484836
+      },
+      "best_internal_ndcg_at_5_minus": 0.5824813320751475,
+      "best_iteration": 340,
+      "config": {
+        "added": [
+          "decay_rate_5",
+          "decay_act_5"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_5",
+          "decay_act_5"
+        ],
+        "removed": [
+          "decay_rate_2.5",
+          "decay_act_2.5"
+        ]
+      },
+      "delta_vs_reference_valid": 0.007851839065551758,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.12155257711420761,
+        "decay_act_5": 0.0,
+        "decay_rate_5": 0.11024951742484836,
+        "decay_tab_3": 0.13771157040858367,
+        "duration_ms": 0.11151703420527592,
+        "gap": 0.06534754841846448,
+        "last1": 0.07201456945941138,
+        "lastk_rate": 0.10826891645491245,
+        "tab": 0.203068259812881,
+        "user_id": 0.0,
+        "video_id": 0.07027000670141509
+      },
+      "name": "user_h5_replace",
+      "seed": 0,
+      "test": {
+        "GAUC": 0.7199506163597107,
+        "nDCG@5": 0.5839914083480835,
+        "primary": 0.6519709825515747,
+        "rows": 170588,
+        "users": 23875
+      },
+      "valid": {
+        "GAUC": 0.7504962086677551,
+        "nDCG@5": 0.5824848413467407,
+        "primary": 0.6664905548095703,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_act_5": 0.0,
+        "decay_rate_5": 0.11024951742484836
+      },
+      "best_internal_ndcg_at_5_minus": 0.5824813320751475,
+      "best_iteration": 340,
+      "config": {
+        "added": [
+          "decay_rate_5",
+          "decay_act_5"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_5",
+          "decay_act_5"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": 0.007851839065551758,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.12155257711420761,
+        "decay_act_2.5": 0.0,
+        "decay_act_5": 0.0,
+        "decay_rate_2.5": 0.0,
+        "decay_rate_5": 0.11024951742484836,
+        "decay_tab_3": 0.13771157040858367,
+        "duration_ms": 0.11151703420527592,
+        "gap": 0.06534754841846448,
+        "last1": 0.07201456945941138,
+        "lastk_rate": 0.10826891645491245,
+        "tab": 0.203068259812881,
+        "user_id": 0.0,
+        "video_id": 0.07027000670141509
+      },
+      "name": "user_h5_parallel",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7504962086677551,
+        "nDCG@5": 0.5824848413467407,
+        "primary": 0.6664905548095703,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_act_7": 0.0,
+        "decay_rate_7": 0.1150219721316203
+      },
+      "best_internal_ndcg_at_5_minus": 0.5818514029746334,
+      "best_iteration": 350,
+      "config": {
+        "added": [
+          "decay_rate_7",
+          "decay_act_7"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_7",
+          "decay_act_7"
+        ],
+        "removed": [
+          "decay_rate_2.5",
+          "decay_act_2.5"
+        ]
+      },
+      "delta_vs_reference_valid": 0.006775319576263428,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.11305748913429506,
+        "decay_act_7": 0.0,
+        "decay_rate_7": 0.1150219721316203,
+        "decay_tab_3": 0.1403581379425549,
+        "duration_ms": 0.11197293933068454,
+        "gap": 0.06536652153102966,
+        "last1": 0.07172119762221284,
+        "lastk_rate": 0.1091640244045155,
+        "tab": 0.20716390742143187,
+        "user_id": 0.0,
+        "video_id": 0.06617381048165535
+      },
+      "name": "user_h7_replace",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7489732503890991,
+        "nDCG@5": 0.5818548202514648,
+        "primary": 0.665414035320282,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_act_7": 0.0,
+        "decay_rate_7": 0.1150219721316203
+      },
+      "best_internal_ndcg_at_5_minus": 0.5818514029746334,
+      "best_iteration": 350,
+      "config": {
+        "added": [
+          "decay_rate_7",
+          "decay_act_7"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_7",
+          "decay_act_7"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": 0.006775319576263428,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.11305748913429506,
+        "decay_act_2.5": 0.0,
+        "decay_act_7": 0.0,
+        "decay_rate_2.5": 0.0,
+        "decay_rate_7": 0.1150219721316203,
+        "decay_tab_3": 0.1403581379425549,
+        "duration_ms": 0.11197293933068454,
+        "gap": 0.06536652153102966,
+        "last1": 0.07172119762221284,
+        "lastk_rate": 0.1091640244045155,
+        "tab": 0.20716390742143187,
+        "user_id": 0.0,
+        "video_id": 0.06617381048165535
+      },
+      "name": "user_h7_parallel",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7489732503890991,
+        "nDCG@5": 0.5818548202514648,
+        "primary": 0.665414035320282,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_act_14": 0.0,
+        "decay_rate_14": 0.11312526869945033
+      },
+      "best_internal_ndcg_at_5_minus": 0.5752221410403304,
+      "best_iteration": 255,
+      "config": {
+        "added": [
+          "decay_rate_14",
+          "decay_act_14"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_14",
+          "decay_act_14"
+        ],
+        "removed": [
+          "decay_rate_2.5",
+          "decay_act_2.5"
+        ]
+      },
+      "delta_vs_reference_valid": -0.0009124279022216797,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.1163567096625412,
+        "decay_act_14": 0.0,
+        "decay_rate_14": 0.11312526869945033,
+        "decay_tab_3": 0.12951634235312323,
+        "duration_ms": 0.1344784518292538,
+        "gap": 0.05791845196469868,
+        "last1": 0.06547979080374271,
+        "lastk_rate": 0.10411817417199298,
+        "tab": 0.19231727332256682,
+        "user_id": 0.0,
+        "video_id": 0.08668953719263026
+      },
+      "name": "user_h14_replace",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7402281165122986,
+        "nDCG@5": 0.5752243995666504,
+        "primary": 0.6577262878417969,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_act_14": 0.0,
+        "decay_rate_14": 0.11312526869945033
+      },
+      "best_internal_ndcg_at_5_minus": 0.5752221410403304,
+      "best_iteration": 255,
+      "config": {
+        "added": [
+          "decay_rate_14",
+          "decay_act_14"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_14",
+          "decay_act_14"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": -0.0009124279022216797,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.1163567096625412,
+        "decay_act_14": 0.0,
+        "decay_act_2.5": 0.0,
+        "decay_rate_14": 0.11312526869945033,
+        "decay_rate_2.5": 0.0,
+        "decay_tab_3": 0.12951634235312323,
+        "duration_ms": 0.1344784518292538,
+        "gap": 0.05791845196469868,
+        "last1": 0.06547979080374271,
+        "lastk_rate": 0.10411817417199298,
+        "tab": 0.19231727332256682,
+        "user_id": 0.0,
+        "video_id": 0.08668953719263026
+      },
+      "name": "user_h14_parallel",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7402281165122986,
+        "nDCG@5": 0.5752243995666504,
+        "primary": 0.6577262878417969,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_act_5": 0.0,
+        "decay_act_7": 0.0,
+        "decay_rate_5": 0.0,
+        "decay_rate_7": 0.1150219721316203
+      },
+      "best_internal_ndcg_at_5_minus": 0.5818514029746334,
+      "best_iteration": 350,
+      "config": {
+        "added": [
+          "decay_rate_5",
+          "decay_act_5",
+          "decay_rate_7",
+          "decay_act_7"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_5",
+          "decay_act_5",
+          "decay_rate_7",
+          "decay_act_7"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": 0.006775319576263428,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.11305748913429506,
+        "decay_act_2.5": 0.0,
+        "decay_act_5": 0.0,
+        "decay_act_7": 0.0,
+        "decay_rate_2.5": 0.0,
+        "decay_rate_5": 0.0,
+        "decay_rate_7": 0.1150219721316203,
+        "decay_tab_3": 0.1403581379425549,
+        "duration_ms": 0.11197293933068454,
+        "gap": 0.06536652153102966,
+        "last1": 0.07172119762221284,
+        "lastk_rate": 0.1091640244045155,
+        "tab": 0.20716390742143187,
+        "user_id": 0.0,
+        "video_id": 0.06617381048165535
+      },
+      "name": "user_parallel_preliminary_union",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7489732503890991,
+        "nDCG@5": 0.5818548202514648,
+        "primary": 0.665414035320282,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_tab_1": 0.13872642808650237
+      },
+      "best_internal_ndcg_at_5_minus": 0.5734744682264044,
+      "best_iteration": 248,
+      "config": {
+        "added": [
+          "decay_tab_1"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "lastk_rate",
+          "gap",
+          "decay_tab_1"
+        ],
+        "removed": [
+          "decay_tab_3"
+        ]
+      },
+      "delta_vs_reference_valid": -0.006363511085510254,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.1216865544245143,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.1295123383888872,
+        "decay_tab_1": 0.13872642808650237,
+        "duration_ms": 0.1322827616327229,
+        "gap": 0.06397088489915144,
+        "last1": 0.0,
+        "lastk_rate": 0.11077805056431492,
+        "tab": 0.20707802417050236,
+        "user_id": 0.0,
+        "video_id": 0.09596495783340452
+      },
+      "name": "tab_h1_replace",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7310728430747986,
+        "nDCG@5": 0.5734775066375732,
+        "primary": 0.6522752046585083,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_tab_1": 0.11557319680880997
+      },
+      "best_internal_ndcg_at_5_minus": 0.5787677060833437,
+      "best_iteration": 307,
+      "config": {
+        "added": [
+          "decay_tab_1"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_tab_1"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": 0.00027102231979370117,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.1113635399066828,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.10828077766687773,
+        "decay_tab_1": 0.11557319680880997,
+        "decay_tab_3": 0.15234095377597756,
+        "duration_ms": 0.10276623932054609,
+        "gap": 0.05733573624820199,
+        "last1": 0.0,
+        "lastk_rate": 0.0972835921480483,
+        "tab": 0.18081730195312087,
+        "user_id": 0.0,
+        "video_id": 0.0742386621717347
+      },
+      "name": "tab_h1_parallel",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7390486001968384,
+        "nDCG@5": 0.5787708759307861,
+        "primary": 0.6589097380638123,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_tab_5": 0.134940489863859
+      },
+      "best_internal_ndcg_at_5_minus": 0.5721086391691103,
+      "best_iteration": 202,
+      "config": {
+        "added": [
+          "decay_tab_5"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "lastk_rate",
+          "gap",
+          "decay_tab_5"
+        ],
+        "removed": [
+          "decay_tab_3"
+        ]
+      },
+      "delta_vs_reference_valid": -0.007467210292816162,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.12736343514358328,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.13038804722981934,
+        "decay_tab_5": 0.134940489863859,
+        "duration_ms": 0.13998148342737446,
+        "gap": 0.06459819661373024,
+        "last1": 0.0,
+        "lastk_rate": 0.10844059395528914,
+        "tab": 0.19708364180499224,
+        "user_id": 0.0,
+        "video_id": 0.09720411196135227
+      },
+      "name": "tab_h5_replace",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7302312850952148,
+        "nDCG@5": 0.5721117258071899,
+        "primary": 0.6511715054512024,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_tab_5": 0.11222769026222192
+      },
+      "best_internal_ndcg_at_5_minus": 0.5722483769019857,
+      "best_iteration": 202,
+      "config": {
+        "added": [
+          "decay_tab_5"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_tab_5"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": -0.007321178913116455,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.11276223062673958,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.11544009500155075,
+        "decay_tab_3": 0.1218849898970618,
+        "decay_tab_5": 0.11222769026222192,
+        "duration_ms": 0.12393372006585651,
+        "gap": 0.057192527324793234,
+        "last1": 0.0,
+        "lastk_rate": 0.09600874262775408,
+        "tab": 0.1744895702987163,
+        "user_id": 0.0,
+        "video_id": 0.08606043389530582
+      },
+      "name": "tab_h5_parallel",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7303836345672607,
+        "nDCG@5": 0.5722514390945435,
+        "primary": 0.6513175368309021,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_tab_7": 0.13787426164024294
+      },
+      "best_internal_ndcg_at_5_minus": 0.5617859433887541,
+      "best_iteration": 71,
+      "config": {
+        "added": [
+          "decay_tab_7"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "lastk_rate",
+          "gap",
+          "decay_tab_7"
+        ],
+        "removed": [
+          "decay_tab_3"
+        ]
+      },
+      "delta_vs_reference_valid": -0.02034008502960205,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.1377897265375488,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.1770309743836949,
+        "decay_tab_7": 0.13787426164024294,
+        "duration_ms": 0.2261902706183998,
+        "gap": 0.0,
+        "last1": 0.0,
+        "lastk_rate": 0.11524588967829055,
+        "tab": 0.20586887714182298,
+        "user_id": 0.0,
+        "video_id": 0.0
+      },
+      "name": "tab_h7_replace",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.714809238910675,
+        "nDCG@5": 0.5617879629135132,
+        "primary": 0.6382986307144165,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_tab_7": 0.13092117955585864
+      },
+      "best_internal_ndcg_at_5_minus": 0.5620057253662596,
+      "best_iteration": 71,
+      "config": {
+        "added": [
+          "decay_tab_7"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_tab_7"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": -0.02012491226196289,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.12020149348584248,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.15443377419270254,
+        "decay_tab_3": 0.11699951868873956,
+        "decay_tab_7": 0.13092117955585864,
+        "duration_ms": 0.19731810943749475,
+        "gap": 0.0,
+        "last1": 0.0,
+        "lastk_rate": 0.10053527505666528,
+        "tab": 0.17959064958269674,
+        "user_id": 0.0,
+        "video_id": 0.0
+      },
+      "name": "tab_h7_parallel",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7150197625160217,
+        "nDCG@5": 0.5620077848434448,
+        "primary": 0.6385138034820557,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_tab_14": 0.14482833084308433
+      },
+      "best_internal_ndcg_at_5_minus": 0.5614326198645239,
+      "best_iteration": 71,
+      "config": {
+        "added": [
+          "decay_tab_14"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "lastk_rate",
+          "gap",
+          "decay_tab_14"
+        ],
+        "removed": [
+          "decay_tab_3"
+        ]
+      },
+      "delta_vs_reference_valid": -0.02071225643157959,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.14019367505144223,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.16455132228659494,
+        "decay_tab_14": 0.14482833084308433,
+        "duration_ms": 0.22715492945701832,
+        "gap": 0.0,
+        "last1": 0.0,
+        "lastk_rate": 0.11745908565292164,
+        "tab": 0.20581265670893853,
+        "user_id": 0.0,
+        "video_id": 0.0
+      },
+      "name": "tab_h14_replace",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7144182324409485,
+        "nDCG@5": 0.5614347457885742,
+        "primary": 0.637926459312439,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_tab_14": 0.1585463480950004
+      },
+      "best_internal_ndcg_at_5_minus": 0.5616792775314351,
+      "best_iteration": 71,
+      "config": {
+        "added": [
+          "decay_tab_14"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_tab_14"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": -0.02048635482788086,
+      "family": "additional_timescales",
+      "feature_gain_fraction": {
+        "author_id": 0.11953913369038119,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.14030820225326504,
+        "decay_tab_14": 0.1585463480950004,
+        "decay_tab_3": 0.11227324879434361,
+        "duration_ms": 0.19368850606725196,
+        "gap": 0.0,
+        "last1": 0.0,
+        "lastk_rate": 0.10015400008497094,
+        "tab": 0.17549056101478688,
+        "user_id": 0.0,
+        "video_id": 0.0
+      },
+      "name": "tab_h14_parallel",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7146233916282654,
+        "nDCG@5": 0.56168133020401,
+        "primary": 0.6381523609161377,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "author_decay_rate_2.5": 0.26790100278038426
+      },
+      "best_internal_ndcg_at_5_minus": 0.5406993493525876,
+      "best_iteration": 30,
+      "config": {
+        "added": [
+          "author_decay_rate_2.5"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "author_decay_rate_2.5"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": -0.050017476081848145,
+      "family": "popularity_decay",
+      "feature_gain_fraction": {
+        "author_decay_rate_2.5": 0.26790100278038426,
+        "author_id": 0.15080477408868503,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.23613050972078023,
+        "decay_tab_3": 0.0,
+        "duration_ms": 0.0,
+        "gap": 0.0,
+        "last1": 0.0,
+        "lastk_rate": 0.0,
+        "tab": 0.34516371341015045,
+        "user_id": 0.0,
+        "video_id": 0.0
+      },
+      "name": "author_rate",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.6765419244766235,
+        "nDCG@5": 0.5407004952430725,
+        "primary": 0.6086212396621704,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "author_decay_act_2.5": 0.0
+      },
+      "best_internal_ndcg_at_5_minus": 0.5779849610900798,
+      "best_iteration": 333,
+      "config": {
+        "added": [
+          "author_decay_act_2.5"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "author_decay_act_2.5"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": 0.0,
+      "family": "popularity_decay",
+      "feature_gain_fraction": {
+        "author_decay_act_2.5": 0.0,
+        "author_id": 0.11785065976130041,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.12934565076951093,
+        "decay_tab_3": 0.148606076379111,
+        "duration_ms": 0.1243402952753739,
+        "gap": 0.0659742967842988,
+        "last1": 0.0,
+        "lastk_rate": 0.11589944315794502,
+        "tab": 0.21778967408566496,
+        "user_id": 0.0,
+        "video_id": 0.08019390378679499
+      },
+      "name": "author_activity",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.739288866519928,
+        "nDCG@5": 0.5779885053634644,
+        "primary": 0.6586387157440186,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "author_decay_act_2.5": 0.0,
+        "author_decay_rate_2.5": 0.26790100278038426
+      },
+      "best_internal_ndcg_at_5_minus": 0.5406993493525876,
+      "best_iteration": 30,
+      "config": {
+        "added": [
+          "author_decay_rate_2.5",
+          "author_decay_act_2.5"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "author_decay_rate_2.5",
+          "author_decay_act_2.5"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": -0.050017476081848145,
+      "family": "popularity_decay",
+      "feature_gain_fraction": {
+        "author_decay_act_2.5": 0.0,
+        "author_decay_rate_2.5": 0.26790100278038426,
+        "author_id": 0.15080477408868503,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.23613050972078023,
+        "decay_tab_3": 0.0,
+        "duration_ms": 0.0,
+        "gap": 0.0,
+        "last1": 0.0,
+        "lastk_rate": 0.0,
+        "tab": 0.34516371341015045,
+        "user_id": 0.0,
+        "video_id": 0.0
+      },
+      "name": "author_rate_activity",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.6765419244766235,
+        "nDCG@5": 0.5407004952430725,
+        "primary": 0.6086212396621704,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "video_decay_rate_2.5": 0.2427606542134721
+      },
+      "best_internal_ndcg_at_5_minus": 0.539786402227352,
+      "best_iteration": 34,
+      "config": {
+        "added": [
+          "video_decay_rate_2.5"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "video_decay_rate_2.5"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": -0.05078995227813721,
+      "family": "popularity_decay",
+      "feature_gain_fraction": {
+        "author_id": 0.20292576386624622,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.23040913175652114,
+        "decay_tab_3": 0.0,
+        "duration_ms": 0.0,
+        "gap": 0.0,
+        "last1": 0.0,
+        "lastk_rate": 0.0,
+        "tab": 0.3239044501637605,
+        "user_id": 0.0,
+        "video_decay_rate_2.5": 0.2427606542134721,
+        "video_id": 0.0
+      },
+      "name": "video_rate",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.6759101152420044,
+        "nDCG@5": 0.5397874712944031,
+        "primary": 0.6078487634658813,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "video_decay_act_2.5": 0.0
+      },
+      "best_internal_ndcg_at_5_minus": 0.5779849610900798,
+      "best_iteration": 333,
+      "config": {
+        "added": [
+          "video_decay_act_2.5"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "video_decay_act_2.5"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": 0.0,
+      "family": "popularity_decay",
+      "feature_gain_fraction": {
+        "author_id": 0.11785065976130041,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.12934565076951093,
+        "decay_tab_3": 0.148606076379111,
+        "duration_ms": 0.1243402952753739,
+        "gap": 0.0659742967842988,
+        "last1": 0.0,
+        "lastk_rate": 0.11589944315794502,
+        "tab": 0.21778967408566496,
+        "user_id": 0.0,
+        "video_decay_act_2.5": 0.0,
+        "video_id": 0.08019390378679499
+      },
+      "name": "video_activity",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.739288866519928,
+        "nDCG@5": 0.5779885053634644,
+        "primary": 0.6586387157440186,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "video_decay_act_2.5": 0.0,
+        "video_decay_rate_2.5": 0.2427606542134721
+      },
+      "best_internal_ndcg_at_5_minus": 0.539786402227352,
+      "best_iteration": 34,
+      "config": {
+        "added": [
+          "video_decay_rate_2.5",
+          "video_decay_act_2.5"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "video_decay_rate_2.5",
+          "video_decay_act_2.5"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": -0.05078995227813721,
+      "family": "popularity_decay",
+      "feature_gain_fraction": {
+        "author_id": 0.20292576386624622,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.23040913175652114,
+        "decay_tab_3": 0.0,
+        "duration_ms": 0.0,
+        "gap": 0.0,
+        "last1": 0.0,
+        "lastk_rate": 0.0,
+        "tab": 0.3239044501637605,
+        "user_id": 0.0,
+        "video_decay_act_2.5": 0.0,
+        "video_decay_rate_2.5": 0.2427606542134721,
+        "video_id": 0.0
+      },
+      "name": "video_rate_activity",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.6759101152420044,
+        "nDCG@5": 0.5397874712944031,
+        "primary": 0.6078487634658813,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_rate_per_duration": 0.13199689297253028
+      },
+      "best_internal_ndcg_at_5_minus": 0.579438769088231,
+      "best_iteration": 418,
+      "config": {
+        "added": [
+          "decay_rate_per_duration"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_per_duration"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": 0.002100706100463867,
+      "family": "cross_features",
+      "feature_gain_fraction": {
+        "author_id": 0.1138646810710246,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.11221978417529661,
+        "decay_rate_per_duration": 0.13199689297253028,
+        "decay_tab_3": 0.13929704026683884,
+        "duration_ms": 0.05958505766730879,
+        "gap": 0.060224425881803906,
+        "last1": 0.0,
+        "lastk_rate": 0.10874484530958488,
+        "tab": 0.20464010207010763,
+        "user_id": 0.0,
+        "video_id": 0.06942717058550447
+      },
+      "name": "cross_decay_rate_per_duration",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7420374751091003,
+        "nDCG@5": 0.5794413685798645,
+        "primary": 0.6607394218444824,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_rate_x_log_activity": 0.15470238519586352
+      },
+      "best_internal_ndcg_at_5_minus": 0.5844191245139757,
+      "best_iteration": 328,
+      "config": {
+        "added": [
+          "decay_rate_x_log_activity"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_x_log_activity"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": 0.005226254463195801,
+      "family": "cross_features",
+      "feature_gain_fraction": {
+        "author_id": 0.12908836108236368,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.10398930002838663,
+        "decay_rate_x_log_activity": 0.15470238519586352,
+        "decay_tab_3": 0.0784402956626663,
+        "duration_ms": 0.10719272474968289,
+        "gap": 0.06399497497622372,
+        "last1": 0.0,
+        "lastk_rate": 0.0997733884366037,
+        "tab": 0.2004179309378891,
+        "user_id": 0.0,
+        "video_id": 0.062400638930320475
+      },
+      "name": "cross_decay_rate_x_log_activity",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7433072924613953,
+        "nDCG@5": 0.5844225883483887,
+        "primary": 0.6638649702072144,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "activity_tier_x_tab": 0.22187955890878622
+      },
+      "best_internal_ndcg_at_5_minus": 0.5795793568029535,
+      "best_iteration": 431,
+      "config": {
+        "added": [
+          "activity_tier_x_tab"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "activity_tier_x_tab"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": 0.002295970916748047,
+      "family": "cross_features",
+      "feature_gain_fraction": {
+        "activity_tier_x_tab": 0.22187955890878622,
+        "author_id": 0.109483077084997,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.11443698218448413,
+        "decay_tab_3": 0.14454789366452617,
+        "duration_ms": 0.10424966221785532,
+        "gap": 0.0631487039581014,
+        "last1": 0.0,
+        "lastk_rate": 0.111537170826127,
+        "tab": 0.05768805564337918,
+        "user_id": 0.0,
+        "video_id": 0.07302889551174357
+      },
+      "name": "cross_activity_tier_x_tab",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7422872185707092,
+        "nDCG@5": 0.5795822143554688,
+        "primary": 0.6609346866607666,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "activity_tier_x_tab": 0.16900235755102522,
+        "decay_rate_per_duration": 0.11109007818708,
+        "decay_rate_x_log_activity": 0.12596127240913982
+      },
+      "best_internal_ndcg_at_5_minus": 0.5816577084060042,
+      "best_iteration": 213,
+      "config": {
+        "added": [
+          "decay_rate_per_duration",
+          "decay_rate_x_log_activity",
+          "activity_tier_x_tab"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_rate_2.5",
+          "decay_act_2.5",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_per_duration",
+          "decay_rate_x_log_activity",
+          "activity_tier_x_tab"
+        ],
+        "removed": []
+      },
+      "delta_vs_reference_valid": 0.000727534294128418,
+      "family": "cross_features",
+      "feature_gain_fraction": {
+        "activity_tier_x_tab": 0.16900235755102522,
+        "author_id": 0.09918520017728352,
+        "decay_act_2.5": 0.0,
+        "decay_rate_2.5": 0.1089748388231575,
+        "decay_rate_per_duration": 0.11109007818708,
+        "decay_rate_x_log_activity": 0.12596127240913982,
+        "decay_tab_3": 0.06280473359553888,
+        "duration_ms": 0.10185240438937049,
+        "gap": 0.054119232333226484,
+        "last1": 0.0,
+        "lastk_rate": 0.0867409711398203,
+        "tab": 0.0,
+        "user_id": 0.0,
+        "video_id": 0.08026891139435778
+      },
+      "name": "cross_preliminary_union",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7370707392692566,
+        "nDCG@5": 0.5816617608070374,
+        "primary": 0.659366250038147,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added_feature_gain_fraction": {
+        "decay_act_5": 0.0,
+        "decay_rate_5": 0.12559397985228393,
+        "decay_rate_x_log_activity": 0.13985550732924396
+      },
+      "best_internal_ndcg_at_5_minus": 0.5805738471953158,
+      "best_iteration": 215,
+      "config": {
+        "added": [
+          "decay_rate_5",
+          "decay_act_5",
+          "decay_rate_x_log_activity"
+        ],
+        "columns": [
+          "user_id",
+          "video_id",
+          "author_id",
+          "tab",
+          "last1",
+          "duration_ms",
+          "decay_tab_3",
+          "lastk_rate",
+          "gap",
+          "decay_rate_5",
+          "decay_act_5",
+          "decay_rate_x_log_activity"
+        ],
+        "removed": [
+          "decay_rate_2.5",
+          "decay_act_2.5"
+        ]
+      },
+      "delta_vs_reference_valid": 0.00017380714416503906,
+      "family": "confirmed_composition",
+      "feature_gain_fraction": {
+        "author_id": 0.11312367173884481,
+        "decay_act_5": 0.0,
+        "decay_rate_5": 0.12559397985228393,
+        "decay_rate_x_log_activity": 0.13985550732924396,
+        "decay_tab_3": 0.06986229409942596,
+        "duration_ms": 0.12203519379842938,
+        "gap": 0.05635278743025746,
+        "last1": 0.0,
+        "lastk_rate": 0.09726834736834002,
+        "tab": 0.1885588497054534,
+        "user_id": 0.0,
+        "video_id": 0.08734936867772107
+      },
+      "name": "confirmed_family_composition",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7370474338531494,
+        "nDCG@5": 0.580577552318573,
+        "primary": 0.6588125228881836,
+        "rows": 124909,
+        "users": 22377
+      }
+    }
+  ],
+  "composition_attempted": true,
+  "confirmations": {
+    "additional_timescales": {
+      "all_seeds_at_least_0.001": true,
+      "candidate": "user_h5_replace",
+      "confirmed": true,
+      "mean_delta": 0.007851839065551758,
+      "min_delta": 0.007851839065551758,
+      "rows": [
+        {
+          "candidate_valid": {
+            "GAUC": 0.7504962086677551,
+            "nDCG@5": 0.5824848413467407,
+            "primary": 0.6664905548095703,
+            "rows": 124909,
+            "users": 22377
+          },
+          "delta": 0.007851839065551758,
+          "reference_valid": {
+            "GAUC": 0.739288866519928,
+            "nDCG@5": 0.5779885053634644,
+            "primary": 0.6586387157440186,
+            "rows": 124909,
+            "users": 22377
+          },
+          "seed": 0
+        },
+        {
+          "candidate_valid": {
+            "GAUC": 0.7504962086677551,
+            "nDCG@5": 0.5824848413467407,
+            "primary": 0.6664905548095703,
+            "rows": 124909,
+            "users": 22377
+          },
+          "delta": 0.007851839065551758,
+          "reference_valid": {
+            "GAUC": 0.739288866519928,
+            "nDCG@5": 0.5779885053634644,
+            "primary": 0.6586387157440186,
+            "rows": 124909,
+            "users": 22377
+          },
+          "seed": 1
+        },
+        {
+          "candidate_valid": {
+            "GAUC": 0.7504962086677551,
+            "nDCG@5": 0.5824848413467407,
+            "primary": 0.6664905548095703,
+            "rows": 124909,
+            "users": 22377
+          },
+          "delta": 0.007851839065551758,
+          "reference_valid": {
+            "GAUC": 0.739288866519928,
+            "nDCG@5": 0.5779885053634644,
+            "primary": 0.6586387157440186,
+            "rows": 124909,
+            "users": 22377
+          },
+          "seed": 2
+        },
+        {
+          "candidate_valid": {
+            "GAUC": 0.7504962086677551,
+            "nDCG@5": 0.5824848413467407,
+            "primary": 0.6664905548095703,
+            "rows": 124909,
+            "users": 22377
+          },
+          "delta": 0.007851839065551758,
+          "reference_valid": {
+            "GAUC": 0.739288866519928,
+            "nDCG@5": 0.5779885053634644,
+            "primary": 0.6586387157440186,
+            "rows": 124909,
+            "users": 22377
+          },
+          "seed": 3
+        },
+        {
+          "candidate_valid": {
+            "GAUC": 0.7504962086677551,
+            "nDCG@5": 0.5824848413467407,
+            "primary": 0.6664905548095703,
+            "rows": 124909,
+            "users": 22377
+          },
+          "delta": 0.007851839065551758,
+          "reference_valid": {
+            "GAUC": 0.739288866519928,
+            "nDCG@5": 0.5779885053634644,
+            "primary": 0.6586387157440186,
+            "rows": 124909,
+            "users": 22377
+          },
+          "seed": 4
+        }
+      ],
+      "std_delta": 0.0
+    },
+    "cross_features": {
+      "all_seeds_at_least_0.001": true,
+      "candidate": "cross_decay_rate_x_log_activity",
+      "confirmed": true,
+      "mean_delta": 0.005226254463195801,
+      "min_delta": 0.005226254463195801,
+      "rows": [
+        {
+          "candidate_valid": {
+            "GAUC": 0.7433072924613953,
+            "nDCG@5": 0.5844225883483887,
+            "primary": 0.6638649702072144,
+            "rows": 124909,
+            "users": 22377
+          },
+          "delta": 0.005226254463195801,
+          "reference_valid": {
+            "GAUC": 0.739288866519928,
+            "nDCG@5": 0.5779885053634644,
+            "primary": 0.6586387157440186,
+            "rows": 124909,
+            "users": 22377
+          },
+          "seed": 0
+        },
+        {
+          "candidate_valid": {
+            "GAUC": 0.7433072924613953,
+            "nDCG@5": 0.5844225883483887,
+            "primary": 0.6638649702072144,
+            "rows": 124909,
+            "users": 22377
+          },
+          "delta": 0.005226254463195801,
+          "reference_valid": {
+            "GAUC": 0.739288866519928,
+            "nDCG@5": 0.5779885053634644,
+            "primary": 0.6586387157440186,
+            "rows": 124909,
+            "users": 22377
+          },
+          "seed": 1
+        },
+        {
+          "candidate_valid": {
+            "GAUC": 0.7433072924613953,
+            "nDCG@5": 0.5844225883483887,
+            "primary": 0.6638649702072144,
+            "rows": 124909,
+            "users": 22377
+          },
+          "delta": 0.005226254463195801,
+          "reference_valid": {
+            "GAUC": 0.739288866519928,
+            "nDCG@5": 0.5779885053634644,
+            "primary": 0.6586387157440186,
+            "rows": 124909,
+            "users": 22377
+          },
+          "seed": 2
+        },
+        {
+          "candidate_valid": {
+            "GAUC": 0.7433072924613953,
+            "nDCG@5": 0.5844225883483887,
+            "primary": 0.6638649702072144,
+            "rows": 124909,
+            "users": 22377
+          },
+          "delta": 0.005226254463195801,
+          "reference_valid": {
+            "GAUC": 0.739288866519928,
+            "nDCG@5": 0.5779885053634644,
+            "primary": 0.6586387157440186,
+            "rows": 124909,
+            "users": 22377
+          },
+          "seed": 3
+        },
+        {
+          "candidate_valid": {
+            "GAUC": 0.7433072924613953,
+            "nDCG@5": 0.5844225883483887,
+            "primary": 0.6638649702072144,
+            "rows": 124909,
+            "users": 22377
+          },
+          "delta": 0.005226254463195801,
+          "reference_valid": {
+            "GAUC": 0.739288866519928,
+            "nDCG@5": 0.5779885053634644,
+            "primary": 0.6586387157440186,
+            "rows": 124909,
+            "users": 22377
+          },
+          "seed": 4
+        }
+      ],
+      "std_delta": 0.0
+    }
+  },
+  "confirmed_families": [
+    "additional_timescales",
+    "cross_features"
+  ],
+  "environment": {
+    "numpy": "2.4.3",
+    "python": "3.13.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterYIXI4_xgboost_feature_transfer",
+  "families": {
+    "additional_timescales": {
+      "candidates": [
+        "user_h1_replace",
+        "user_h1_parallel",
+        "user_h5_replace",
+        "user_h5_parallel",
+        "user_h7_replace",
+        "user_h7_parallel",
+        "user_h14_replace",
+        "user_h14_parallel",
+        "user_parallel_preliminary_union",
+        "tab_h1_replace",
+        "tab_h1_parallel",
+        "tab_h5_replace",
+        "tab_h5_parallel",
+        "tab_h7_replace",
+        "tab_h7_parallel",
+        "tab_h14_replace",
+        "tab_h14_parallel"
+      ],
+      "preliminary_pass": true,
+      "winner": "user_h5_replace"
+    },
+    "cross_features": {
+      "candidates": [
+        "cross_decay_rate_per_duration",
+        "cross_decay_rate_x_log_activity",
+        "cross_activity_tier_x_tab",
+        "cross_preliminary_union"
+      ],
+      "preliminary_pass": true,
+      "winner": "cross_decay_rate_x_log_activity"
+    },
+    "popularity_decay": {
+      "candidates": [
+        "author_rate",
+        "author_activity",
+        "author_rate_activity",
+        "video_rate",
+        "video_activity",
+        "video_rate_activity"
+      ],
+      "preliminary_pass": false,
+      "winner": "author_activity"
+    }
+  },
+  "feature_metadata": {
+    "base_columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3",
+      "lastk_rate",
+      "gap"
+    ],
+    "causality": {
+      "families": {
+        "author_decay": {
+          "checks": [
+            {
+              "date": 20220422,
+              "max_abs_error": 7.105427357601002e-15,
+              "row_index": 1141112,
+              "same_date_matching_rows_excluded": 2
+            },
+            {
+              "date": 20220428,
+              "max_abs_error": 1.7763568394002505e-14,
+              "row_index": 1203566,
+              "same_date_matching_rows_excluded": 2
+            },
+            {
+              "date": 20220425,
+              "max_abs_error": 1.4779288903810084e-12,
+              "row_index": 1266020,
+              "same_date_matching_rows_excluded": 308
+            }
+          ],
+          "halflives": [
+            2.5
+          ],
+          "max_abs_error": 1.4779288903810084e-12
+        },
+        "user_decay": {
+          "checks": [
+            {
+              "date": 20220422,
+              "max_abs_error": 1.7763568394002505e-15,
+              "row_index": 1141112,
+              "same_date_matching_rows_excluded": 1
+            },
+            {
+              "date": 20220425,
+              "max_abs_error": 1.0658141036401503e-14,
+              "row_index": 1203604,
+              "same_date_matching_rows_excluded": 0
+            },
+            {
+              "date": 20220425,
+              "max_abs_error": 1.7763568394002505e-14,
+              "row_index": 1266020,
+              "same_date_matching_rows_excluded": 0
+            }
+          ],
+          "halflives": [
+            1.0,
+            5.0,
+            7.0,
+            14.0
+          ],
+          "max_abs_error": 1.7763568394002505e-14
+        },
+        "user_tab_decay": {
+          "checks": [
+            {
+              "date": 20220425,
+              "max_abs_error": 2.220446049250313e-16,
+              "row_index": 1141113,
+              "same_date_matching_rows_excluded": 0
+            },
+            {
+              "date": 20220422,
+              "max_abs_error": 5.329070518200751e-15,
+              "row_index": 1203670,
+              "same_date_matching_rows_excluded": 1
+            },
+            {
+              "date": 20220425,
+              "max_abs_error": 5.329070518200751e-15,
+              "row_index": 1266020,
+              "same_date_matching_rows_excluded": 0
+            }
+          ],
+          "halflives": [
+            1.0,
+            5.0,
+            7.0,
+            14.0
+          ],
+          "max_abs_error": 5.329070518200751e-15
+        },
+        "video_decay": {
+          "checks": [
+            {
+              "date": 20220422,
+              "max_abs_error": 7.105427357601002e-15,
+              "row_index": 1141112,
+              "same_date_matching_rows_excluded": 2
+            },
+            {
+              "date": 20220428,
+              "max_abs_error": 1.7763568394002505e-14,
+              "row_index": 1203566,
+              "same_date_matching_rows_excluded": 2
+            },
+            {
+              "date": 20220425,
+              "max_abs_error": 1.4779288903810084e-12,
+              "row_index": 1266020,
+              "same_date_matching_rows_excluded": 308
+            }
+          ],
+          "halflives": [
+            2.5
+          ],
+          "max_abs_error": 1.4779288903810084e-12
+        }
+      },
+      "global_max_abs_error": 1.4779288903810084e-12,
+      "passed": true,
+      "same_date_matching_rows_excluded_across_checks": 626,
+      "semantics": "strict prior dates only"
+    },
+    "diagnostics": {
+      "activity_tier_x_tab": {
+        "tier_edges_train_only": [
+          3.422273204762632,
+          10.610015965572785,
+          23.49360678091117
+        ],
+        "train_categories": 58
+      },
+      "author_decay_act_2.5": {
+        "finite_fraction": 1.0,
+        "max": 3675.565155508746,
+        "mean": 203.31800268460225,
+        "min": 0.0,
+        "nonzero_fraction": 0.8074422142611768,
+        "rows": 1141112,
+        "std": 424.10056122310266
+      },
+      "author_decay_rate_2.5": {
+        "finite_fraction": 1.0,
+        "max": 0.9464464035280565,
+        "mean": 0.36340615377609464,
+        "min": 0.002413856077927041,
+        "nonzero_fraction": 1.0,
+        "rows": 1141112,
+        "std": 0.15984731658565884
+      },
+      "decay_act_1": {
+        "finite_fraction": 1.0,
+        "max": 170.5,
+        "mean": 8.609248819712839,
+        "min": 0.0,
+        "nonzero_fraction": 0.9045545047287208,
+        "rows": 1141112,
+        "std": 11.57946502517417
+      },
+      "decay_act_14": {
+        "finite_fraction": 1.0,
+        "max": 589.0413158968829,
+        "mean": 30.661695234646665,
+        "min": 0.0,
+        "nonzero_fraction": 0.9045545047287208,
+        "rows": 1141112,
+        "std": 39.20079502148989
+      },
+      "decay_act_5": {
+        "finite_fraction": 1.0,
+        "max": 460.648492599197,
+        "mean": 24.078655668975745,
+        "min": 0.0,
+        "nonzero_fraction": 0.9045545047287208,
+        "rows": 1141112,
+        "std": 30.185050457517654
+      },
+      "decay_act_7": {
+        "finite_fraction": 1.0,
+        "max": 502.93867084038294,
+        "mean": 26.68748186425068,
+        "min": 0.0,
+        "nonzero_fraction": 0.9045545047287208,
+        "rows": 1141112,
+        "std": 33.60106362505021
+      },
+      "decay_rate_1": {
+        "finite_fraction": 1.0,
+        "max": 0.9459459459459459,
+        "mean": 0.38457816482515256,
+        "min": 0.004459308807134894,
+        "nonzero_fraction": 1.0,
+        "rows": 1141112,
+        "std": 0.18253323981874797
+      },
+      "decay_rate_14": {
+        "finite_fraction": 1.0,
+        "max": 0.9742139140285251,
+        "mean": 0.3718849363786991,
+        "min": 0.0015631388601990465,
+        "nonzero_fraction": 1.0,
+        "rows": 1141112,
+        "std": 0.20267118448726568
+      },
+      "decay_rate_5": {
+        "finite_fraction": 1.0,
+        "max": 0.9702970050206923,
+        "mean": 0.3729199908911533,
+        "min": 0.0019056475377956792,
+        "nonzero_fraction": 1.0,
+        "rows": 1141112,
+        "std": 0.19995656066982206
+      },
+      "decay_rate_7": {
+        "finite_fraction": 1.0,
+        "max": 0.9720967147483573,
+        "mean": 0.37243271366699665,
+        "min": 0.0017462811981961317,
+        "nonzero_fraction": 1.0,
+        "rows": 1141112,
+        "std": 0.20116276932238886
+      },
+      "decay_rate_per_duration": {
+        "finite_fraction": 1.0,
+        "max": 0.9557785942760804,
+        "mean": 0.0064516033331971905,
+        "min": 4.27003814368404e-09,
+        "nonzero_fraction": 1.0,
+        "rows": 1141112,
+        "std": 0.051805216278177274
+      },
+      "decay_rate_x_log_activity": {
+        "finite_fraction": 1.0,
+        "max": 3.490031432658117,
+        "mean": 0.7779805137146752,
+        "min": 0.0,
+        "nonzero_fraction": 0.9045545047287208,
+        "rows": 1141112,
+        "std": 0.5742344469885694
+      },
+      "decay_tab_1": {
+        "finite_fraction": 1.0,
+        "max": 38.5,
+        "mean": 1.8612502406592346,
+        "min": 0.0,
+        "nonzero_fraction": 0.7034524218481621,
+        "rows": 1141112,
+        "std": 2.8126006819802956
+      },
+      "decay_tab_14": {
+        "finite_fraction": 1.0,
+        "max": 113.74683717538494,
+        "mean": 6.72405580304543,
+        "min": 0.0,
+        "nonzero_fraction": 0.7034524218481621,
+        "rows": 1141112,
+        "std": 9.68415656301888
+      },
+      "decay_tab_5": {
+        "finite_fraction": 1.0,
+        "max": 96.04189851608554,
+        "mean": 5.262016623706934,
+        "min": 0.0,
+        "nonzero_fraction": 0.7034524218481621,
+        "rows": 1141112,
+        "std": 7.4152236206395
+      },
+      "decay_tab_7": {
+        "finite_fraction": 1.0,
+        "max": 102.99398142790733,
+        "mean": 5.840859492545848,
+        "min": 0.0,
+        "nonzero_fraction": 0.7034524218481621,
+        "rows": 1141112,
+        "std": 8.275739493381977
+      },
+      "train_correlations_with_decay_rate_2.5": {
+        "decay_rate_1": 0.9806733657448571,
+        "decay_rate_14": 0.9933742698303977,
+        "decay_rate_5": 0.997433991370431,
+        "decay_rate_7": 0.995831920456642
+      },
+      "video_decay_act_2.5": {
+        "finite_fraction": 1.0,
+        "max": 3675.565155508746,
+        "mean": 187.82397227122405,
+        "min": 0.0,
+        "nonzero_fraction": 0.7881583928659063,
+        "rows": 1141112,
+        "std": 414.1423836458278
+      },
+      "video_decay_rate_2.5": {
+        "finite_fraction": 1.0,
+        "max": 0.9464464035280565,
+        "mean": 0.3684941333829265,
+        "min": 0.002413856077927041,
+        "nonzero_fraction": 1.0,
+        "rows": 1141112,
+        "std": 0.1604754748023772
+      }
+    },
+    "lengths": {
+      "test": 170588,
+      "train": 1141112,
+      "valid": 124909
+    }
+  },
+  "fixed_model": {
+    "colsample_bytree": 1.0,
+    "early_stopping_rounds": 30,
+    "enable_categorical": true,
+    "eval_metric": "ndcg@5-",
+    "learning_rate": 0.05,
+    "max_bin": 256,
+    "max_cat_to_onehot": 4,
+    "max_depth": 1,
+    "min_child_weight": 1.0,
+    "n_estimators": 500,
+    "objective": "rank:ndcg",
+    "reg_lambda": 1.0,
+    "subsample": 1.0,
+    "tree_method": "hist"
+  },
+  "preliminary_family_winners": {
+    "additional_timescales": "user_h5_replace",
+    "cross_features": "cross_decay_rate_x_log_activity"
+  },
+  "provenance": {
+    "feature_builder": "experiments/iterYIXI2_feature_depth/features.py",
+    "feature_builder_sha256": "bef9dab34fc7c159f561ed95f1ca2542627857ec0d54104f9934378d68a90b14",
+    "feature_definitions_modified": false,
+    "model_builder": "experiments/iterYIXI1_xgboost_native/run_experiment.py",
+    "model_builder_sha256": "aca1c2d2b1ff409ce3a63b234bfd74825fa15c1c2f8c0bccc033d5b185e2dbea"
+  },
+  "selected_delta_vs_reference_test": 0.006849765777587891,
+  "selected_on_validation": {
+    "added_feature_gain_fraction": {
+      "decay_act_5": 0.0,
+      "decay_rate_5": 0.11024951742484836
+    },
+    "best_internal_ndcg_at_5_minus": 0.5824813320751475,
+    "best_iteration": 340,
+    "config": {
+      "added": [
+        "decay_rate_5",
+        "decay_act_5"
+      ],
+      "columns": [
+        "user_id",
+        "video_id",
+        "author_id",
+        "tab",
+        "last1",
+        "duration_ms",
+        "decay_tab_3",
+        "lastk_rate",
+        "gap",
+        "decay_rate_5",
+        "decay_act_5"
+      ],
+      "removed": [
+        "decay_rate_2.5",
+        "decay_act_2.5"
+      ]
+    },
+    "delta_vs_reference_valid": 0.007851839065551758,
+    "family": "additional_timescales",
+    "feature_gain_fraction": {
+      "author_id": 0.12155257711420761,
+      "decay_act_5": 0.0,
+      "decay_rate_5": 0.11024951742484836,
+      "decay_tab_3": 0.13771157040858367,
+      "duration_ms": 0.11151703420527592,
+      "gap": 0.06534754841846448,
+      "last1": 0.07201456945941138,
+      "lastk_rate": 0.10826891645491245,
+      "tab": 0.203068259812881,
+      "user_id": 0.0,
+      "video_id": 0.07027000670141509
+    },
+    "name": "user_h5_replace",
+    "seed": 0,
+    "test": {
+      "GAUC": 0.7199506163597107,
+      "nDCG@5": 0.5839914083480835,
+      "primary": 0.6519709825515747,
+      "rows": 170588,
+      "users": 23875
+    },
+    "valid": {
+      "GAUC": 0.7504962086677551,
+      "nDCG@5": 0.5824848413467407,
+      "primary": 0.6664905548095703,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "selected_reason": "best confirmed candidate",
+  "selection_policy": {
+    "preliminary_delta": 0.0003,
+    "promotion_delta": 0.001,
+    "selector": "official validation primary only",
+    "test_access": "after family selection, confirmation, composition, and diagnostics"
+  },
+  "test_evaluation": {
+    "performed": true,
+    "timing": "after family selection, five-seed confirmations, optional composition, and diagnostics"
+  },
+  "tie_diagnostic": {
+    "constant_valid": {
+      "GAUC": 0.5,
+      "nDCG@5": 0.4673425257205963,
+      "primary": 0.48367124795913696,
+      "rows": 124909,
+      "users": 22377
+    },
+    "random_valid": {
+      "GAUC": 0.49903032183647156,
+      "nDCG@5": 0.466287761926651,
+      "primary": 0.4826590418815613,
+      "rows": 124909,
+      "users": 22377
+    },
+    "selected": {
+      "mean_per_user_unique_fraction": 0.9323663950317878,
+      "rows": 124909,
+      "unique_scores_overall": 13236
+    }
+  },
+  "verdict": "PROMOTE"
+}
