@@ -1207,7 +1207,7 @@ available proxy.
 | 15 | 0 agents (iter45-50 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner, time-of-day feature, monotonic constraints, GOSS boosting — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
 | 16 | 0 agents (iter51 — LightGBM linear_tree=True, standalone + blend — run directly by orchestrator) | 0 |
 | 17 | 0 agents (iter52-59 — capacity/linear_lambda/hour-of-day retests, learning_rate sweep and blend (promoted), fine learning_rate resweep, reg_lambda resweep, min_child_samples resweep, GBM seed-ensemble blend — run directly by orchestrator, continued on explicit post-promotion instruction) | 0 |
-| 18 | 0 agents (iter60-61 — FM embedding-dim resweep, FM learning_rate resweep+blend — run directly by orchestrator, user-directed pivot to FM-side search after GBM space exhausted) | 0 |
+| 18 | 0 agents (iter60-62 — FM embedding-dim resweep, FM learning_rate resweep+blend, FM sampling_alpha resweep — run directly by orchestrator, user-directed pivot to FM-side search after GBM space exhausted) | 0 |
 
 **GPU time is 0 throughout and will remain 0** — every model, including
 iter44's LightGBM ranker, trains CPU-only. The FM/BPR line (iter1-iter39)
@@ -1800,6 +1800,14 @@ the real standalone FM gain doesn't propagate to a clearing blend-level
 gain, and test moves the wrong way. iter55's blend remains the best-known
 submission candidate. Full detail:
 `experiments/iter61_fm_learning_rate_sweep/RESULT.md`.
+
+### iter62 — FM negative-sampling alpha resweep
+`sampling_alpha=0.75` (BPR negative-sampling weighting by user decayed-
+positive-count) unchanged since iter38, never resystematically resweept.
+Single-seed sweep `{0.0..1.5}`: monotonically increasing to 0.75, then
+monotonically decreasing — a clean interior optimum already at the
+current value. **Verdict: REJECT.** Full detail:
+`experiments/iter62_fm_sampling_alpha_sweep/RESULT.md`.
 
 ## Best-known candidate / final result as currently submitted (iter55, promoted end of Round 17)
 **Final selected model: iter55 blend** — a score-level blend (alpha=0.10,

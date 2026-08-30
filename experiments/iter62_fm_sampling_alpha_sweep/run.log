@@ -1,0 +1,10 @@
+sampling_alpha=0.00  valid=0.63727  test=0.63664
+sampling_alpha=0.25  valid=0.63789  test=0.64002
+sampling_alpha=0.50  valid=0.63848  test=0.64012
+sampling_alpha=0.75  valid=0.63894  test=0.63989
+sampling_alpha=1.00  valid=0.63647  test=0.63691
+sampling_alpha=1.25  valid=0.63451  test=0.63550
+sampling_alpha=1.50  valid=0.63408  test=0.63499
+
+best: sampling_alpha=0.75  valid=0.63894  test=0.63989
+iter38 baseline (sampling_alpha=0.75): see results above
