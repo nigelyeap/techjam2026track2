@@ -1,0 +1,42 @@
+=== training native-feature LightGBM ranker (num_leaves=2, the sweep2 winner) ===
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+best_iteration=332  valid={'GAUC': np.float32(0.7450017), 'nDCG@5': np.float32(0.57770807), 'primary': np.float32(0.6613549), 'users': 22377, 'rows': 124909}  test={'GAUC': np.float32(0.7202073), 'nDCG@5': np.float32(0.57567674), 'primary': np.float32(0.647942), 'users': 23875, 'rows': 170588}
+
+=== retraining FM 5-seed ensemble (iter38 exact method) ===
+  fm seed 0 done
+  fm seed 1 done
+  fm seed 2 done
+  fm seed 3 done
+  fm seed 4 done
+
+FM ensemble (sanity check vs iter38): valid=0.63988 test=0.64187
+
+=== blend sweep (alpha = weight on FM ensemble) ===
+  alpha=0.0  valid_primary=0.66135
+  alpha=0.1  valid_primary=0.66473
+  alpha=0.2  valid_primary=0.66450
+  alpha=0.3  valid_primary=0.66306
+  alpha=0.4  valid_primary=0.66131
+  alpha=0.5  valid_primary=0.65924
+  alpha=0.6  valid_primary=0.65680
+  alpha=0.7  valid_primary=0.65370
+  alpha=0.8  valid_primary=0.64990
+  alpha=0.9  valid_primary=0.64533
+  alpha=1.0  valid_primary=0.63988
+
+best alpha (on valid) = 0.1  valid=0.66473  test=0.65197
+reference: FM-only ensemble valid=0.63988 test=0.64187
+reference: native-feature LightGBM-only valid=0.66135 test=0.64794
+
+wrote blend_results.json

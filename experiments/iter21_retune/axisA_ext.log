@@ -1,0 +1,10 @@
+loading extended dataset (cached after first run)...
+loaded in 5.8s
+[done] alpha_0.1            seed=0 valid=0.62062 test=0.62112  (59.8s)
+[done] alpha_0.1            seed=1 valid=0.62111 test=0.62000  (61.5s)
+[done] alpha_0.1            seed=2 valid=0.62112 test=0.62079  (61.4s)
+[done] alpha_0.25           seed=0 valid=0.62075 test=0.62157  (54.3s)
+[done] alpha_0.25           seed=1 valid=0.62149 test=0.61977  (45.9s)
+[done] alpha_0.25           seed=2 valid=0.62144 test=0.62159  (43.8s)
+
+Axis A extension complete.

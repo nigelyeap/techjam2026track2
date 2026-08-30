@@ -1,0 +1,13 @@
+/Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter44_gbm_native_features/train.py:83: Pandas4Warning: Constructing a Categorical with a dtype and values containing non-null entries not in that dtype's categories is deprecated and will raise in a future version.
+  dfs[name][c] = dfs[name][c].astype(cats[c])
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+best_iteration=91  valid={'GAUC': np.float32(0.71642613), 'nDCG@5': np.float32(0.5622641), 'primary': np.float32(0.6393451), 'users': 22377, 'rows': 124909}  test={'GAUC': np.float32(0.70910645), 'nDCG@5': np.float32(0.564846), 'primary': np.float32(0.63697624), 'users': 23875, 'rows': 170588}
+valid: {'GAUC': np.float32(0.71642613), 'nDCG@5': np.float32(0.5622641), 'primary': np.float32(0.6393451), 'users': 22377, 'rows': 124909}
+test: {'GAUC': np.float32(0.70910645), 'nDCG@5': np.float32(0.564846), 'primary': np.float32(0.63697624), 'users': 23875, 'rows': 170588}

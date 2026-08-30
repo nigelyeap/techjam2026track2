@@ -1,0 +1,4 @@
+[0] {'depth': 3, 'iterations': 300, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'} -> valid=0.61045 test=0.60737 best_iter=299
+[1] {'depth': 4, 'iterations': 300, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'YetiRank'} -> valid=0.61241 test=0.61056 best_iter=297
+[2] {'depth': 4, 'iterations': 500, 'learning_rate': 0.03, 'l2_leaf_reg': 10.0, 'loss_function': 'YetiRank'} -> valid=0.61217 test=0.60973 best_iter=493
+[3] {'depth': 3, 'iterations': 300, 'learning_rate': 0.05, 'l2_leaf_reg': 3.0, 'loss_function': 'QueryRMSE'} -> valid=0.59910 test=0.59607 best_iter=294

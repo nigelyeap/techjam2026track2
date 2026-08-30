@@ -1,0 +1,19 @@
+loading fused dataset (cached after first run)...
+loaded in 0.8s
+[done] combo_full_flat                seed=0 valid=0.62902 test=0.62599  (67.5s)
+[done] combo_full_flat                seed=1 valid=0.62907 test=0.62684  (95.4s)
+[done] combo_full_flat                seed=2 valid=0.62990 test=0.62613  (105.0s)
+[done] combo_full_decay_alpha0.25     seed=0 valid=0.62778 test=0.62637  (65.2s)
+[done] combo_full_decay_alpha0.25     seed=1 valid=0.63018 test=0.62905  (93.6s)
+[done] combo_full_decay_alpha0.25     seed=2 valid=0.62565 test=0.62509  (64.6s)
+[done] combo_full_decay_alpha0.5      seed=0 valid=0.62977 test=0.62938  (93.4s)
+[done] combo_full_decay_alpha0.5      seed=1 valid=0.63133 test=0.62727  (113.2s)
+[done] combo_full_decay_alpha0.5      seed=2 valid=0.63226 test=0.62928  (102.2s)
+[done] combo_full_decay_alpha0.75     seed=0 valid=0.63081 test=0.63011  (98.3s)
+[done] combo_full_decay_alpha0.75     seed=1 valid=0.63071 test=0.62863  (106.4s)
+[done] combo_full_decay_alpha0.75     seed=2 valid=0.62975 test=0.62836  (104.1s)
+[done] combo_full_decay_alpha1.0      seed=0 valid=0.62988 test=0.62850  (105.1s)
+[done] combo_full_decay_alpha1.0      seed=1 valid=0.62912 test=0.62778  (97.4s)
+[done] combo_full_decay_alpha1.0      seed=2 valid=0.63047 test=0.62789  (110.1s)
+
+Phase 1+2 complete.

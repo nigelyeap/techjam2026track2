@@ -1,0 +1,95 @@
+=== Loading OFFICIAL-split extended dataset (cached after first run) ===
+loaded in 2.6s  sizes={'train': 1141112, 'valid': 124909, 'test': 170588}
+
+=== Step 0: harness-fidelity check A (OFFICIAL split, sampling_alpha=0.75/alpha=0.5/n_buckets=20, 5 seeds) ===
+[done] fidelity_official_winning_cfg    seed=0 valid=0.63894 test=0.63989  (37.8s)
+[done] fidelity_official_winning_cfg    seed=1 valid=0.63868 test=0.63913  (37.8s)
+[done] fidelity_official_winning_cfg    seed=2 valid=0.63685 test=0.63768  (36.1s)
+[done] fidelity_official_winning_cfg    seed=3 valid=0.63747 test=0.63853  (34.6s)
+[done] fidelity_official_winning_cfg    seed=4 valid=0.63768 test=0.63921  (39.2s)
+
+Fidelity check A vs iter27_triple_fusion/results.json ('fusion_sampling_alpha0.75'):
+  seed 0: valid this=0.63894 pub=0.63894 (Δ-0.00000) | test this=0.63989 pub=0.63989 (Δ-0.00000)  OK
+  seed 1: valid this=0.63868 pub=0.63868 (Δ-0.00000) | test this=0.63913 pub=0.63913 (Δ+0.00000)  OK
+  seed 2: valid this=0.63685 pub=0.63685 (Δ+0.00000) | test this=0.63768 pub=0.63768 (Δ+0.00000)  OK
+  seed 3: valid this=0.63747 pub=0.63747 (Δ+0.00000) | test this=0.63853 pub=0.63853 (Δ+0.00000)  OK
+  seed 4: valid this=0.63768 pub=0.63768 (Δ+0.00000) | test this=0.63921 pub=0.63921 (Δ+0.00000)  OK
+
+Harness fidelity A CONFIRMED (bit-exact within 1e-4 vs iter27's published numbers). Proceeding.
+
+=== Step 1: supplementary OFFICIAL-split n_buckets=10 @ sampling_alpha=0.75 (3 seeds) ===
+[done] official_winning_cfg_nbuckets10  seed=0 valid=0.63644 test=0.63644  (37.4s)
+[done] official_winning_cfg_nbuckets10  seed=1 valid=0.63794 test=0.63610  (37.6s)
+[done] official_winning_cfg_nbuckets10  seed=2 valid=0.63591 test=0.63546  (36.1s)
+
+Official split @ sampling_alpha=0.75 (3-seed, matched to Step-1 n): n_buckets=20 valid mean 0.63816 vs n_buckets=10 valid mean 0.63676  (Δ=+0.00140)
+
+=== Step 2: SHIFTED-split construction check (vs iter29) ===
+loaded in 2.9s  sizes={'train': 1079797, 'valid': 143394, 'test': 170150}
+expected (iter29 driver.log): {'train': 1079797, 'valid': 143394, 'test': 170150}
+Row counts MATCH iter29's shifted split exactly. Date boundaries: {'train': (20220405, 20220418), 'valid': (20220419, 20220425), 'test': (20220426, 20220505)} (copied verbatim from iter29_bucket_robustness/data_ext.py).
+
+=== Step 3: SHIFTED-split fused-config n_buckets sweep (5 seeds each) ===
+[done] shifted_winning_cfg_nbuckets20   seed=0 valid=0.63546 test=0.63999  (39.8s)
+[done] shifted_winning_cfg_nbuckets20   seed=1 valid=0.63578 test=0.64125  (36.0s)
+[done] shifted_winning_cfg_nbuckets20   seed=2 valid=0.63660 test=0.63868  (40.1s)
+[done] shifted_winning_cfg_nbuckets20   seed=3 valid=0.63682 test=0.64106  (37.3s)
+[done] shifted_winning_cfg_nbuckets20   seed=4 valid=0.63579 test=0.63874  (38.7s)
+[done] shifted_winning_cfg_nbuckets10   seed=0 valid=0.63384 test=0.63743  (38.7s)
+[done] shifted_winning_cfg_nbuckets10   seed=1 valid=0.63452 test=0.63995  (35.5s)
+=== Loading OFFICIAL-split extended dataset (cached after first run) ===
+loaded in 2.8s  sizes={'train': 1141112, 'valid': 124909, 'test': 170588}
+
+=== Step 0: harness-fidelity check A (OFFICIAL split, sampling_alpha=0.75/alpha=0.5/n_buckets=20, 5 seeds) ===
+[skip] fidelity_official_winning_cfg seed=0 already done
+[skip] fidelity_official_winning_cfg seed=1 already done
+[skip] fidelity_official_winning_cfg seed=2 already done
+[skip] fidelity_official_winning_cfg seed=3 already done
+[skip] fidelity_official_winning_cfg seed=4 already done
+
+Fidelity check A vs iter27_triple_fusion/results.json ('fusion_sampling_alpha0.75'):
+  seed 0: valid this=0.63894 pub=0.63894 (Δ-0.00000) | test this=0.63989 pub=0.63989 (Δ-0.00000)  OK
+  seed 1: valid this=0.63868 pub=0.63868 (Δ-0.00000) | test this=0.63913 pub=0.63913 (Δ+0.00000)  OK
+  seed 2: valid this=0.63685 pub=0.63685 (Δ+0.00000) | test this=0.63768 pub=0.63768 (Δ+0.00000)  OK
+  seed 3: valid this=0.63747 pub=0.63747 (Δ+0.00000) | test this=0.63853 pub=0.63853 (Δ+0.00000)  OK
+  seed 4: valid this=0.63768 pub=0.63768 (Δ+0.00000) | test this=0.63921 pub=0.63921 (Δ+0.00000)  OK
+
+Harness fidelity A CONFIRMED (bit-exact within 1e-4 vs iter27's published numbers). Proceeding.
+
+=== Step 1: supplementary OFFICIAL-split n_buckets=10 @ sampling_alpha=0.75 (3 seeds) ===
+[skip] official_winning_cfg_nbuckets10 seed=0 already done
+[skip] official_winning_cfg_nbuckets10 seed=1 already done
+[skip] official_winning_cfg_nbuckets10 seed=2 already done
+
+Official split @ sampling_alpha=0.75 (3-seed, matched to Step-1 n): n_buckets=20 valid mean 0.63816 vs n_buckets=10 valid mean 0.63676  (Δ=+0.00140)
+
+=== Step 2: SHIFTED-split construction check (vs iter29) ===
+loaded in 3.2s  sizes={'train': 1079797, 'valid': 143394, 'test': 170150}
+expected (iter29 driver.log): {'train': 1079797, 'valid': 143394, 'test': 170150}
+Row counts MATCH iter29's shifted split exactly. Date boundaries: {'train': (20220405, 20220418), 'valid': (20220419, 20220425), 'test': (20220426, 20220505)} (copied verbatim from iter29_bucket_robustness/data_ext.py).
+
+=== Step 3: SHIFTED-split fused-config n_buckets sweep (5 seeds each) ===
+[skip] shifted_winning_cfg_nbuckets20 seed=0 already done
+[skip] shifted_winning_cfg_nbuckets20 seed=1 already done
+[skip] shifted_winning_cfg_nbuckets20 seed=2 already done
+[skip] shifted_winning_cfg_nbuckets20 seed=3 already done
+[skip] shifted_winning_cfg_nbuckets20 seed=4 already done
+[skip] shifted_winning_cfg_nbuckets10 seed=0 already done
+[skip] shifted_winning_cfg_nbuckets10 seed=1 already done
+[done] shifted_winning_cfg_nbuckets10   seed=2 valid=0.63451 test=0.63758  (43.3s)
+[done] shifted_winning_cfg_nbuckets10   seed=3 valid=0.63545 test=0.63966  (38.8s)
+[done] shifted_winning_cfg_nbuckets10   seed=4 valid=0.63432 test=0.63942  (39.4s)
+
+SHIFTED split, fused config (sampling_alpha=0.75, alpha=0.5, decay_halflife=3), 5-seed means:
+  n_buckets=20: valid 0.63609  test 0.63994
+  n_buckets=10: valid 0.63453  test 0.63881
+  Δ (20 vs 10): valid +0.00156  test +0.00114
+
+=== Step 4: three-way comparison (isolated lever vs fused-config, official vs shifted) ===
+                                                 Δ valid     Δ test
+iter29 isolated lever, shifted split            -0.00007   +0.00056
+iter27 fused config, official split (a=0.5)     +0.00156        n/a
+iter35 fused config, official split (a=0.75)    +0.00140        n/a
+iter35 fused config, shifted split (a=0.75)     +0.00156   +0.00114
+
+iter35 date-shift robustness check complete.

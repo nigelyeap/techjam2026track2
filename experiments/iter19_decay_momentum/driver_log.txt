@@ -1,0 +1,13 @@
+loading fused dataset (cached after first run)...
+loaded in 1.8s
+[done] iter16_alone                             seed=0 valid=0.61943 test=0.61761  (31.3s)
+[done] iter16_alone                             seed=1 valid=0.62064 test=0.61479  (39.8s)
+[done] iter16_alone                             seed=2 valid=0.62078 test=0.61941  (41.9s)
+[done] iter18_alone                             seed=0 valid=0.61349 test=0.60871  (84.4s)
+[done] iter18_alone                             seed=1 valid=0.61457 test=0.60998  (104.0s)
+[done] iter18_alone                             seed=2 valid=0.61612 test=0.61136  (95.9s)
+[done] combo_full                               seed=0 valid=0.62902 test=0.62599  (97.3s)
+[done] combo_full                               seed=1 valid=0.62907 test=0.62684  (93.6s)
+[done] combo_full                               seed=2 valid=0.62990 test=0.62613  (98.9s)
+
+Phase 1+2 complete.

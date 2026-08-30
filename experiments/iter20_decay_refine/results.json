@@ -1,0 +1,466 @@
+[
+  {
+    "tag": "decay_rate_1.5+decay_act_1.5+tab",
+    "features": [
+      "decay_rate_1.5",
+      "decay_act_1.5",
+      "tab"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6196108460426331,
+    "valid_gauc": 0.6917241215705872,
+    "valid_ndcg5": 0.547497570514679,
+    "test_primary": 0.6117751002311707,
+    "test_gauc": 0.6815781593322754,
+    "test_ndcg5": 0.5419720411300659,
+    "seconds": 60.87293004989624
+  },
+  {
+    "tag": "decay_rate_1.5+decay_act_1.5+tab",
+    "features": [
+      "decay_rate_1.5",
+      "decay_act_1.5",
+      "tab"
+    ],
+    "seed": 1,
+    "valid_primary": 0.6194968223571777,
+    "valid_gauc": 0.6922543048858643,
+    "valid_ndcg5": 0.5467393398284912,
+    "test_primary": 0.608748733997345,
+    "test_gauc": 0.6779496073722839,
+    "test_ndcg5": 0.539547860622406,
+    "seconds": 67.18812704086304
+  },
+  {
+    "tag": "decay_rate_1.5+decay_act_1.5+tab",
+    "features": [
+      "decay_rate_1.5",
+      "decay_act_1.5",
+      "tab"
+    ],
+    "seed": 2,
+    "valid_primary": 0.6194794774055481,
+    "valid_gauc": 0.6916137337684631,
+    "valid_ndcg5": 0.5473452210426331,
+    "test_primary": 0.6133943796157837,
+    "test_gauc": 0.6841019988059998,
+    "test_ndcg5": 0.5426867008209229,
+    "seconds": 57.824151039123535
+  },
+  {
+    "tag": "decay_rate_2+decay_act_2+tab",
+    "features": [
+      "decay_rate_2",
+      "decay_act_2",
+      "tab"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6204408407211304,
+    "valid_gauc": 0.693195104598999,
+    "valid_ndcg5": 0.5476865768432617,
+    "test_primary": 0.6136484146118164,
+    "test_gauc": 0.6838099956512451,
+    "test_ndcg5": 0.5434868931770325,
+    "seconds": 69.60391688346863
+  },
+  {
+    "tag": "decay_rate_2+decay_act_2+tab",
+    "features": [
+      "decay_rate_2",
+      "decay_act_2",
+      "tab"
+    ],
+    "seed": 1,
+    "valid_primary": 0.6201024055480957,
+    "valid_gauc": 0.6927744150161743,
+    "valid_ndcg5": 0.5474303960800171,
+    "test_primary": 0.6132540702819824,
+    "test_gauc": 0.6838585138320923,
+    "test_ndcg5": 0.5426495671272278,
+    "seconds": 62.71742582321167
+  },
+  {
+    "tag": "decay_rate_2+decay_act_2+tab",
+    "features": [
+      "decay_rate_2",
+      "decay_act_2",
+      "tab"
+    ],
+    "seed": 2,
+    "valid_primary": 0.6223071813583374,
+    "valid_gauc": 0.6949795484542847,
+    "valid_ndcg5": 0.5496348142623901,
+    "test_primary": 0.6167006492614746,
+    "test_gauc": 0.687561571598053,
+    "test_ndcg5": 0.545839786529541,
+    "seconds": 59.621498823165894
+  },
+  {
+    "tag": "decay_rate_2.5+decay_act_2.5+tab",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "tab"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6209831237792969,
+    "valid_gauc": 0.6937512159347534,
+    "valid_ndcg5": 0.5482150316238403,
+    "test_primary": 0.6181530952453613,
+    "test_gauc": 0.688904881477356,
+    "test_ndcg5": 0.5474012494087219,
+    "seconds": 68.36836671829224
+  },
+  {
+    "tag": "decay_rate_2.5+decay_act_2.5+tab",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "tab"
+    ],
+    "seed": 1,
+    "valid_primary": 0.6212435960769653,
+    "valid_gauc": 0.6944201588630676,
+    "valid_ndcg5": 0.5480670928955078,
+    "test_primary": 0.6118608117103577,
+    "test_gauc": 0.6814769506454468,
+    "test_ndcg5": 0.5422446727752686,
+    "seconds": 83.71182584762573
+  },
+  {
+    "tag": "decay_rate_2.5+decay_act_2.5+tab",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "tab"
+    ],
+    "seed": 2,
+    "valid_primary": 0.6214181184768677,
+    "valid_gauc": 0.6938876509666443,
+    "valid_ndcg5": 0.5489485859870911,
+    "test_primary": 0.6189324259757996,
+    "test_gauc": 0.6901525855064392,
+    "test_ndcg5": 0.5477122664451599,
+    "seconds": 58.777260065078735
+  },
+  {
+    "tag": "decay_rate_3+decay_act_3+tab",
+    "features": [
+      "decay_rate_3",
+      "decay_act_3",
+      "tab"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6194308996200562,
+    "valid_gauc": 0.6915556192398071,
+    "valid_ndcg5": 0.5473061800003052,
+    "test_primary": 0.6176092624664307,
+    "test_gauc": 0.6886246800422668,
+    "test_ndcg5": 0.5465938448905945,
+    "seconds": 68.10693001747131
+  },
+  {
+    "tag": "decay_rate_3+decay_act_3+tab",
+    "features": [
+      "decay_rate_3",
+      "decay_act_3",
+      "tab"
+    ],
+    "seed": 1,
+    "valid_primary": 0.6206439733505249,
+    "valid_gauc": 0.6934840083122253,
+    "valid_ndcg5": 0.5478039383888245,
+    "test_primary": 0.6147936582565308,
+    "test_gauc": 0.6852696537971497,
+    "test_ndcg5": 0.5443176031112671,
+    "seconds": 72.27029919624329
+  },
+  {
+    "tag": "decay_rate_3+decay_act_3+tab",
+    "features": [
+      "decay_rate_3",
+      "decay_act_3",
+      "tab"
+    ],
+    "seed": 2,
+    "valid_primary": 0.6207784414291382,
+    "valid_gauc": 0.6927976012229919,
+    "valid_ndcg5": 0.5487592816352844,
+    "test_primary": 0.6194138526916504,
+    "test_gauc": 0.6908578276634216,
+    "test_ndcg5": 0.5479698777198792,
+    "seconds": 59.650768756866455
+  },
+  {
+    "tag": "decay_rate_3.5+decay_act_3.5+tab",
+    "features": [
+      "decay_rate_3.5",
+      "decay_act_3.5",
+      "tab"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6198790073394775,
+    "valid_gauc": 0.6917993426322937,
+    "valid_ndcg5": 0.5479587316513062,
+    "test_primary": 0.6141576766967773,
+    "test_gauc": 0.6839138865470886,
+    "test_ndcg5": 0.5444015264511108,
+    "seconds": 80.38750004768372
+  },
+  {
+    "tag": "decay_rate_3.5+decay_act_3.5+tab",
+    "features": [
+      "decay_rate_3.5",
+      "decay_act_3.5",
+      "tab"
+    ],
+    "seed": 1,
+    "valid_primary": 0.6197441816329956,
+    "valid_gauc": 0.6919931769371033,
+    "valid_ndcg5": 0.5474951267242432,
+    "test_primary": 0.617984414100647,
+    "test_gauc": 0.689439594745636,
+    "test_ndcg5": 0.5465291738510132,
+    "seconds": 69.03666090965271
+  },
+  {
+    "tag": "decay_rate_3.5+decay_act_3.5+tab",
+    "features": [
+      "decay_rate_3.5",
+      "decay_act_3.5",
+      "tab"
+    ],
+    "seed": 2,
+    "valid_primary": 0.6198782324790955,
+    "valid_gauc": 0.6918619275093079,
+    "valid_ndcg5": 0.5478945374488831,
+    "test_primary": 0.6196346282958984,
+    "test_gauc": 0.690610945224762,
+    "test_ndcg5": 0.5486583113670349,
+    "seconds": 49.44556212425232
+  },
+  {
+    "tag": "decay_rate_4+decay_act_4+tab",
+    "features": [
+      "decay_rate_4",
+      "decay_act_4",
+      "tab"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6196386814117432,
+    "valid_gauc": 0.6915108561515808,
+    "valid_ndcg5": 0.5477664470672607,
+    "test_primary": 0.6169679164886475,
+    "test_gauc": 0.6874841451644897,
+    "test_ndcg5": 0.5464516878128052,
+    "seconds": 61.3016300201416
+  },
+  {
+    "tag": "decay_rate_4+decay_act_4+tab",
+    "features": [
+      "decay_rate_4",
+      "decay_act_4",
+      "tab"
+    ],
+    "seed": 1,
+    "valid_primary": 0.6195042133331299,
+    "valid_gauc": 0.6917080879211426,
+    "valid_ndcg5": 0.547300398349762,
+    "test_primary": 0.6178700923919678,
+    "test_gauc": 0.6889519691467285,
+    "test_ndcg5": 0.5467882752418518,
+    "seconds": 51.658796072006226
+  },
+  {
+    "tag": "decay_rate_4+decay_act_4+tab",
+    "features": [
+      "decay_rate_4",
+      "decay_act_4",
+      "tab"
+    ],
+    "seed": 2,
+    "valid_primary": 0.619293212890625,
+    "valid_gauc": 0.6909521818161011,
+    "valid_ndcg5": 0.5476343035697937,
+    "test_primary": 0.6199154853820801,
+    "test_gauc": 0.691034734249115,
+    "test_ndcg5": 0.5487961769104004,
+    "seconds": 34.07442307472229
+  },
+  {
+    "tag": "decay_rate_5+decay_act_5+tab",
+    "features": [
+      "decay_rate_5",
+      "decay_act_5",
+      "tab"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6177991628646851,
+    "valid_gauc": 0.6894979476928711,
+    "valid_ndcg5": 0.5461004376411438,
+    "test_primary": 0.6170021295547485,
+    "test_gauc": 0.6871762871742249,
+    "test_ndcg5": 0.5468279123306274,
+    "seconds": 46.70388889312744
+  },
+  {
+    "tag": "decay_rate_5+decay_act_5+tab",
+    "features": [
+      "decay_rate_5",
+      "decay_act_5",
+      "tab"
+    ],
+    "seed": 1,
+    "valid_primary": 0.6185337901115417,
+    "valid_gauc": 0.6908258199691772,
+    "valid_ndcg5": 0.5462417602539062,
+    "test_primary": 0.6179457306861877,
+    "test_gauc": 0.6896562576293945,
+    "test_ndcg5": 0.546235203742981,
+    "seconds": 45.13227391242981
+  },
+  {
+    "tag": "decay_rate_5+decay_act_5+tab",
+    "features": [
+      "decay_rate_5",
+      "decay_act_5",
+      "tab"
+    ],
+    "seed": 2,
+    "valid_primary": 0.6173670887947083,
+    "valid_gauc": 0.6883062124252319,
+    "valid_ndcg5": 0.5464279651641846,
+    "test_primary": 0.6183484792709351,
+    "test_gauc": 0.6889867782592773,
+    "test_ndcg5": 0.5477101802825928,
+    "seconds": 33.985612869262695
+  },
+  {
+    "tag": "decay_rate_2.5+decay_act_2.5+decay_tab_3",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6226087808609009,
+    "valid_gauc": 0.6961133480072021,
+    "valid_ndcg5": 0.5491042733192444,
+    "test_primary": 0.6209694147109985,
+    "test_gauc": 0.6923220753669739,
+    "test_ndcg5": 0.5496167540550232,
+    "seconds": 38.82573890686035
+  },
+  {
+    "tag": "decay_rate_2.5+decay_act_2.5+decay_tab_3",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3"
+    ],
+    "seed": 1,
+    "valid_primary": 0.6231088042259216,
+    "valid_gauc": 0.6962810158729553,
+    "valid_ndcg5": 0.5499365925788879,
+    "test_primary": 0.6173650026321411,
+    "test_gauc": 0.6872961521148682,
+    "test_ndcg5": 0.5474338531494141,
+    "seconds": 45.75188112258911
+  },
+  {
+    "tag": "decay_rate_2.5+decay_act_2.5+decay_tab_3",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3"
+    ],
+    "seed": 2,
+    "valid_primary": 0.6219025254249573,
+    "valid_gauc": 0.6952594518661499,
+    "valid_ndcg5": 0.5485455989837646,
+    "test_primary": 0.6209430694580078,
+    "test_gauc": 0.6922179460525513,
+    "test_ndcg5": 0.5496681332588196,
+    "seconds": 32.816280126571655
+  },
+  {
+    "tag": "decay_rate_2.5+decay_act_2.5+decay_tab_7",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_7"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6215780973434448,
+    "valid_gauc": 0.6947833895683289,
+    "valid_ndcg5": 0.548372745513916,
+    "test_primary": 0.619476318359375,
+    "test_gauc": 0.6909827589988708,
+    "test_ndcg5": 0.5479698181152344,
+    "seconds": 29.994609832763672
+  },
+  {
+    "tag": "decay_rate_2.5+decay_act_2.5+decay_tab_7",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_7"
+    ],
+    "seed": 1,
+    "valid_primary": 0.6221506595611572,
+    "valid_gauc": 0.6952124834060669,
+    "valid_ndcg5": 0.5490888953208923,
+    "test_primary": 0.6178290843963623,
+    "test_gauc": 0.6883385181427002,
+    "test_ndcg5": 0.5473195910453796,
+    "seconds": 33.41122484207153
+  },
+  {
+    "tag": "decay_rate_2.5+decay_act_2.5+decay_tab_7",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_7"
+    ],
+    "seed": 2,
+    "valid_primary": 0.621823787689209,
+    "valid_gauc": 0.6944801211357117,
+    "valid_ndcg5": 0.5491673946380615,
+    "test_primary": 0.6208181381225586,
+    "test_gauc": 0.692412257194519,
+    "test_ndcg5": 0.5492239594459534,
+    "seconds": 26.813227891921997
+  },
+  {
+    "tag": "decay_rate_2.5+decay_act_2.5+decay_tab_3",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3"
+    ],
+    "seed": 3,
+    "valid_primary": 0.6234525442123413,
+    "valid_gauc": 0.6966730356216431,
+    "valid_ndcg5": 0.5502321124076843,
+    "test_primary": 0.6168062686920166,
+    "test_gauc": 0.6863181591033936,
+    "test_ndcg5": 0.5472944378852844,
+    "seconds": 35.139660120010376
+  },
+  {
+    "tag": "decay_rate_2.5+decay_act_2.5+decay_tab_3",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3"
+    ],
+    "seed": 4,
+    "valid_primary": 0.6223033666610718,
+    "valid_gauc": 0.6949825286865234,
+    "valid_ndcg5": 0.5496241450309753,
+    "test_primary": 0.6208204627037048,
+    "test_gauc": 0.6917513012886047,
+    "test_ndcg5": 0.5498896241188049,
+    "seconds": 30.700182914733887
+  }
+]

@@ -1,0 +1,8 @@
+loading fused dataset (cached)...
+loaded in 2.7s
+[skip] combo_full_decay_alpha0.5 seed=0 already done
+[skip] combo_full_decay_alpha0.5 seed=1 already done
+[skip] combo_full_decay_alpha0.5 seed=2 already done
+[done] combo_full_decay_alpha0.5      seed=3 valid=0.63009 test=0.62936  (104.1s)
+[done] combo_full_decay_alpha0.5      seed=4 valid=0.63203 test=0.63118  (88.4s)
+5-seed run complete.

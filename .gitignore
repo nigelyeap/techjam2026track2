@@ -1,0 +1,11 @@
+# Raw dataset directory (use KuaiRand-Pure.tar.gz instead, or download fresh)
+KuaiRand-Pure/data/
+
+# Regeneratable per-experiment feature caches (multi-GB, rebuilt automatically on first run)
+experiments/**/.cache_v1_*.pkl
+experiments/**/.cache_v2_*.pkl
+experiments/**/*.pkl
+
+__pycache__/
+*.pyc
+.DS_Store

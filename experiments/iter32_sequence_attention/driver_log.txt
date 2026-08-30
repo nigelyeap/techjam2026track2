@@ -1,0 +1,53 @@
+loading extended dataset (cached after first run)...
+loaded in 7.3s
+
+=== Step 0: harness-fidelity check (iter24 feature set, attention excluded) ===
+[done] harness_fidelity_iter24_base        seed=0 valid=0.63260 test=0.62839  (65.1s)
+[done] harness_fidelity_iter24_base        seed=1 valid=0.63308 test=0.62942  (50.9s)
+[done] harness_fidelity_iter24_base        seed=2 valid=0.63179 test=0.62687  (50.9s)
+
+Harness-fidelity comparison vs iter24's own published per-seed numbers:
+  seed=0  valid got=0.63260 ref=0.63260 Δ=+0.00000  |  test got=0.62839 ref=0.62839 Δ=+0.00000
+  seed=1  valid got=0.63308 ref=0.63308 Δ=-0.00000  |  test got=0.62942 ref=0.62942 Δ=+0.00000
+  seed=2  valid got=0.63179 ref=0.63179 Δ=-0.00000  |  test got=0.62687 ref=0.62687 Δ=-0.00000
+  max abs diff vs iter24 reference: 0.00000
+  Harness fidelity confirmed (diff within noise).
+
+=== Step 1: target-attention sweep (BASE_FEATURES + 1 attention field), 3 seeds ===
+[done] base+attn_rate_10                   seed=0 valid=0.63452 test=0.63072  (53.4s)
+[done] base+attn_rate_10                   seed=1 valid=0.63468 test=0.63226  (79.8s)
+[done] base+attn_rate_10                   seed=2 valid=0.63302 test=0.63002  (70.7s)
+[done] base+attn_rate_20                   seed=0 valid=0.63446 test=0.62968  (73.0s)
+[done] base+attn_rate_20                   seed=1 valid=0.63423 test=0.63134  (72.5s)
+[done] base+attn_rate_20                   seed=2 valid=0.63357 test=0.62912  (74.8s)
+[done] base+attn_rate_40                   seed=0 valid=0.63538 test=0.63025  (68.4s)
+[done] base+attn_rate_40                   seed=1 valid=0.63460 test=0.63099  (69.0s)
+[done] base+attn_rate_40                   seed=2 valid=0.63401 test=0.62926  (71.3s)
+[done] base+attn_decay_rate_3.0            seed=0 valid=0.63389 test=0.63069  (69.9s)
+[done] base+attn_decay_rate_3.0            seed=1 valid=0.63352 test=0.63133  (66.4s)
+[done] base+attn_decay_rate_3.0            seed=2 valid=0.63174 test=0.63005  (74.7s)
+[done] base+attn_decay_rate_7.0            seed=0 valid=0.63528 test=0.63127  (79.0s)
+[done] base+attn_decay_rate_7.0            seed=1 valid=0.63350 test=0.63056  (72.9s)
+[done] base+attn_decay_rate_7.0            seed=2 valid=0.63310 test=0.63000  (64.4s)
+
+Step 1 valid means:
+  base+attn_rate_10              valid mean=0.63407
+  base+attn_rate_20              valid mean=0.63409
+  base+attn_rate_40              valid mean=0.63466
+  base+attn_decay_rate_3.0       valid mean=0.63305
+  base+attn_decay_rate_7.0       valid mean=0.63396
+
+Baseline (no attention, this harness's own 3-seed mean): 0.63249
+
+Best Step 1 config: base+attn_rate_40 (valid mean 0.63466), vs iter24 5-seed reference 0.63251
+Margin vs iter24 5-seed valid mean: +0.00215
+
+=== Step 2: 5-seed confirmation of base+attn_rate_40 ===
+[skip] base+attn_rate_40 seed=0 already done
+[skip] base+attn_rate_40 seed=1 already done
+[skip] base+attn_rate_40 seed=2 already done
+[done] base+attn_rate_40                   seed=3 valid=0.63231 test=0.62678  (48.9s)
+[done] base+attn_rate_40                   seed=4 valid=0.63459 test=0.63036  (51.0s)
+5-seed valid mean for base+attn_rate_40: 0.63418
+
+Sweep complete.

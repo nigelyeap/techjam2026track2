@@ -1,0 +1,18 @@
+=== Loading fused-config dataset ===
+loaded in 21.0s
+[seed 0] valid=0.63894 (Δ+0.000000) test=0.63989 (Δ+0.000000)  23.8s
+[seed 1] valid=0.63868 (Δ+0.000000) test=0.63913 (Δ+0.000000)  26.6s
+[seed 2] valid=0.63685 (Δ+0.000000) test=0.63768 (Δ+0.000000)  23.7s
+[seed 3] valid=0.63747 (Δ+0.000000) test=0.63853 (Δ+0.000000)  22.1s
+[seed 4] valid=0.63768 (Δ+0.000000) test=0.63921 (Δ+0.000000)  30.4s
+
+Harness fidelity vs iter27 published: CONFIRMED bit-exact
+
+=== iter27 5-seed mean-of-metrics (published) ===
+  valid=0.63792  test=0.63889
+=== iter38 5-model ENSEMBLE (mean of raw logits) ===
+  valid=0.63986 (Δ+0.00193)  test=0.64180 (Δ+0.00292)
+=== iter38 5-model ENSEMBLE (mean of sigmoid scores) ===
+  valid=0.63988 (Δ+0.00195)  test=0.64187 (Δ+0.00298)
+
+wrote results.json

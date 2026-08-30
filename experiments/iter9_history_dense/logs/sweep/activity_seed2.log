@@ -1,0 +1,6 @@
+loading ../../KuaiRand-Pure/data ... extra features=('activity',)
+
+=== iter9 fm+bpr_weighted+activity (seed=2) ===
+  valid  GAUC 0.6697 | nDCG@5 0.5370 | primary 0.6033
+  test   GAUC 0.6628 | nDCG@5 0.5303 | primary 0.5965
+{"seed": 2, "features": ["activity"], "valid": {"GAUC": 0.6697010397911072, "nDCG@5": 0.5369947552680969, "primary": 0.603347897529602, "users": 22377, "rows": 124909}, "test": {"GAUC": 0.6627514958381653, "nDCG@5": 0.530329704284668, "primary": 0.5965405702590942, "users": 23875, "rows": 170588}}

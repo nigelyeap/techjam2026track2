@@ -1,0 +1,40 @@
+loading iter24-refined-feature dataset (cached after first run)... features=('decay_rate_2.5', 'decay_act_2.5', 'decay_tab_3', 'last1', 'lastk_rate', 'gap')
+loaded in 1.8s
+
+=== Phase 0: harness-fidelity check (MLP disabled == iter24 plain-FM BPR) ===
+[done] fm_only_parity                           seed=0 valid=0.63260 test=0.62839 diverged=False  (40.5s)
+[done] fm_only_parity                           seed=1 valid=0.63308 test=0.62942 diverged=False  (63.0s)
+loading iter24-refined-feature dataset (cached after first run)... features=('decay_rate_2.5', 'decay_act_2.5', 'decay_tab_3', 'last1', 'lastk_rate', 'gap')
+loaded in 5.5s
+
+=== Phase 0: harness-fidelity check (MLP disabled == iter24 plain-FM BPR) ===
+[skip] fm_only_parity seed=0 already done
+[skip] fm_only_parity seed=1 already done
+[done] fm_only_parity                           seed=2 valid=0.63179 test=0.62687 diverged=False  (113.9s)
+[done] fm_only_parity                           seed=3 valid=0.63208 test=0.62855 diverged=False  (112.6s)
+[done] fm_only_parity                           seed=4 valid=0.63298 test=0.62892 diverged=False  (116.7s)
+fm_only_parity 5-seed: valid mean=0.63251 std=0.00050 | test mean=0.62843 std=0.00086
+iter24 published 5-seed: valid mean=0.63251 std=0.00050 | test mean=0.62843 std=0.00086
+
+=== Phase 1: width sweep {16,32,64}, single hidden layer, 3 seeds ===
+[done] deep_h16                                 seed=0 valid=0.63296 test=0.62938 diverged=False  (98.5s)
+[done] deep_h16                                 seed=1 valid=0.63327 test=0.63036 diverged=False  (101.7s)
+[done] deep_h16                                 seed=2 valid=0.63040 test=0.62966 diverged=False  (849.4s)
+[done] deep_h32                                 seed=0 valid=0.63196 test=0.62798 diverged=False  (141.0s)
+[done] deep_h32                                 seed=1 valid=0.63484 test=0.63132 diverged=False  (95.5s)
+[done] deep_h32                                 seed=2 valid=0.63125 test=0.62979 diverged=False  (88.3s)
+[done] deep_h64                                 seed=0 valid=0.62989 test=0.62726 diverged=False  (84.9s)
+[done] deep_h64                                 seed=1 valid=0.63401 test=0.63016 diverged=False  (51.5s)
+[done] deep_h64                                 seed=2 valid=0.63161 test=0.63064 diverged=False  (50.2s)
+
+Phase 1 3-seed valid means: {16: 0.63221, 32: 0.63268, 64: 0.63184}
+Phase 1 best width: 32 (3-seed valid mean 0.63268)
+
+Margin of deep_h32 (3-seed) vs iter24 5-seed valid reference (0.63251): +0.00017
+
+Margin below confirmation threshold (~0.001-0.002) -- but extending to 5 seeds anyway per task instruction (default deep_h32 must still be reported at 5 seeds).
+[done] deep_h32                                 seed=3 valid=0.63183 test=0.63051 diverged=False  (58.3s)
+[done] deep_h32                                 seed=4 valid=0.63234 test=0.63020 diverged=False  (63.1s)
+deep_h32 5-seed: valid mean=0.63244 std=0.00125 | test mean=0.62996 std=0.00111
+
+Driver complete.

@@ -1,0 +1,55 @@
+loading extended dataset (single causal-feature pass) from /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter12_item_features/../../KuaiRand-Pure/data ...
+  loaded in 5.0s
+
+=== user_only_iter9 features=('activity', 'tab', 'rate') seed=0 ===
+  valid primary=0.61028  test primary=0.60562  (35.0s)
+
+=== user_only_iter9 features=('activity', 'tab', 'rate') seed=1 ===
+  valid primary=0.61038  test primary=0.60567  (34.7s)
+
+=== user_only_iter9 features=('activity', 'tab', 'rate') seed=2 ===
+  valid primary=0.61006  test primary=0.60585  (33.6s)
+
+=== user+video_pop features=('activity', 'tab', 'rate', 'video_pop') seed=0 ===
+  valid primary=0.60968  test primary=0.60526  (33.5s)
+
+=== user+video_pop features=('activity', 'tab', 'rate', 'video_pop') seed=1 ===
+  valid primary=0.61082  test primary=0.60584  (35.8s)
+
+=== user+video_pop features=('activity', 'tab', 'rate', 'video_pop') seed=2 ===
+  valid primary=0.61027  test primary=0.60610  (34.5s)
+
+=== user+author_rate features=('activity', 'tab', 'rate', 'author_rate') seed=0 ===
+  valid primary=0.60971  test primary=0.60486  (31.2s)
+
+=== user+author_rate features=('activity', 'tab', 'rate', 'author_rate') seed=1 ===
+  valid primary=0.61048  test primary=0.60597  (37.3s)
+
+=== user+author_rate features=('activity', 'tab', 'rate', 'author_rate') seed=2 ===
+  valid primary=0.61030  test primary=0.60609  (35.5s)
+
+=== user+video_pop+author_rate features=('activity', 'tab', 'rate', 'video_pop', 'author_rate') seed=0 ===
+  valid primary=0.60994  test primary=0.60539  (42.4s)
+
+=== user+video_pop+author_rate features=('activity', 'tab', 'rate', 'video_pop', 'author_rate') seed=1 ===
+  valid primary=0.61074  test primary=0.60634  (38.4s)
+
+=== user+video_pop+author_rate features=('activity', 'tab', 'rate', 'video_pop', 'author_rate') seed=2 ===
+  valid primary=0.61042  test primary=0.60502  (27.0s)
+
+=== item_only features=('video_pop', 'author_rate') seed=0 ===
+  valid primary=0.60202  test primary=0.59724  (19.5s)
+
+=== item_only features=('video_pop', 'author_rate') seed=1 ===
+  valid primary=0.60335  test primary=0.59667  (23.3s)
+
+=== item_only features=('video_pop', 'author_rate') seed=2 ===
+  valid primary=0.60284  test primary=0.59674  (22.2s)
+
+
+=== SUMMARY (mean over available seeds) ===
+user_only_iter9                n=3  valid mean=0.61024 std=0.00013  test mean=0.60572 std=0.00010
+user+video_pop                 n=3  valid mean=0.61026 std=0.00047  test mean=0.60573 std=0.00035
+user+author_rate               n=3  valid mean=0.61017 std=0.00033  test mean=0.60564 std=0.00055
+user+video_pop+author_rate     n=3  valid mean=0.61037 std=0.00033  test mean=0.60558 std=0.00056
+item_only                      n=3  valid mean=0.60274 std=0.00055  test mean=0.59688 std=0.00026

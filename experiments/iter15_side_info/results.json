@@ -1,0 +1,368 @@
+{
+  "base_causal__seed0": {
+    "config": "base_causal",
+    "features": [
+      "activity",
+      "tab",
+      "rate"
+    ],
+    "n_fields": 8,
+    "seed": 0,
+    "valid": {
+      "GAUC": 0.6793738007545471,
+      "nDCG@5": 0.5411769151687622,
+      "primary": 0.610275387763977,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.6743998527526855,
+      "nDCG@5": 0.5368493795394897,
+      "primary": 0.6056246161460876,
+      "users": 23875,
+      "rows": 170588
+    },
+    "time_s": 24.346198081970215
+  },
+  "base_causal__seed1": {
+    "config": "base_causal",
+    "features": [
+      "activity",
+      "tab",
+      "rate"
+    ],
+    "n_fields": 8,
+    "seed": 1,
+    "valid": {
+      "GAUC": 0.6796602010726929,
+      "nDCG@5": 0.5411036014556885,
+      "primary": 0.6103819012641907,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.6746119856834412,
+      "nDCG@5": 0.5367271304130554,
+      "primary": 0.6056695580482483,
+      "users": 23875,
+      "rows": 170588
+    },
+    "time_s": 22.727824926376343
+  },
+  "base_causal__seed2": {
+    "config": "base_causal",
+    "features": [
+      "activity",
+      "tab",
+      "rate"
+    ],
+    "n_fields": 8,
+    "seed": 2,
+    "valid": {
+      "GAUC": 0.678493082523346,
+      "nDCG@5": 0.541625440120697,
+      "primary": 0.6100592613220215,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.6743116974830627,
+      "nDCG@5": 0.5373955965042114,
+      "primary": 0.6058536767959595,
+      "users": 23875,
+      "rows": 170588
+    },
+    "time_s": 24.727123975753784
+  },
+  "causal_plus_user__seed0": {
+    "config": "causal_plus_user",
+    "features": [
+      "activity",
+      "tab",
+      "rate",
+      "u_active_degree",
+      "u_live_streamer",
+      "u_video_author",
+      "u_follow_range",
+      "u_fans_range",
+      "u_register_range"
+    ],
+    "n_fields": 14,
+    "seed": 0,
+    "valid": {
+      "GAUC": 0.6781724095344543,
+      "nDCG@5": 0.541178822517395,
+      "primary": 0.6096756458282471,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.6732422709465027,
+      "nDCG@5": 0.5363136529922485,
+      "primary": 0.6047779321670532,
+      "users": 23875,
+      "rows": 170588
+    },
+    "time_s": 31.492674112319946
+  },
+  "causal_plus_user__seed1": {
+    "config": "causal_plus_user",
+    "features": [
+      "activity",
+      "tab",
+      "rate",
+      "u_active_degree",
+      "u_live_streamer",
+      "u_video_author",
+      "u_follow_range",
+      "u_fans_range",
+      "u_register_range"
+    ],
+    "n_fields": 14,
+    "seed": 1,
+    "valid": {
+      "GAUC": 0.6797229647636414,
+      "nDCG@5": 0.5410597920417786,
+      "primary": 0.61039137840271,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.673912525177002,
+      "nDCG@5": 0.5363702178001404,
+      "primary": 0.6051414012908936,
+      "users": 23875,
+      "rows": 170588
+    },
+    "time_s": 42.8613760471344
+  },
+  "causal_plus_user__seed2": {
+    "config": "causal_plus_user",
+    "features": [
+      "activity",
+      "tab",
+      "rate",
+      "u_active_degree",
+      "u_live_streamer",
+      "u_video_author",
+      "u_follow_range",
+      "u_fans_range",
+      "u_register_range"
+    ],
+    "n_fields": 14,
+    "seed": 2,
+    "valid": {
+      "GAUC": 0.678557276725769,
+      "nDCG@5": 0.5420775413513184,
+      "primary": 0.6103174090385437,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.6739721894264221,
+      "nDCG@5": 0.5372101068496704,
+      "primary": 0.6055911779403687,
+      "users": 23875,
+      "rows": 170588
+    },
+    "time_s": 42.14029264450073
+  },
+  "causal_plus_video__seed0": {
+    "config": "causal_plus_video",
+    "features": [
+      "activity",
+      "tab",
+      "rate",
+      "v_play",
+      "v_like",
+      "v_share",
+      "v_complete",
+      "v_follow"
+    ],
+    "n_fields": 13,
+    "seed": 0,
+    "valid": {
+      "GAUC": 0.6787573099136353,
+      "nDCG@5": 0.5415800213813782,
+      "primary": 0.6101686954498291,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.673471212387085,
+      "nDCG@5": 0.5369322896003723,
+      "primary": 0.6052017211914062,
+      "users": 23875,
+      "rows": 170588
+    },
+    "time_s": 41.37685418128967
+  },
+  "causal_plus_video__seed1": {
+    "config": "causal_plus_video",
+    "features": [
+      "activity",
+      "tab",
+      "rate",
+      "v_play",
+      "v_like",
+      "v_share",
+      "v_complete",
+      "v_follow"
+    ],
+    "n_fields": 13,
+    "seed": 1,
+    "valid": {
+      "GAUC": 0.6783457398414612,
+      "nDCG@5": 0.5413718223571777,
+      "primary": 0.6098587512969971,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.6722854971885681,
+      "nDCG@5": 0.534965455532074,
+      "primary": 0.603625476360321,
+      "users": 23875,
+      "rows": 170588
+    },
+    "time_s": 57.67420196533203
+  },
+  "causal_plus_video__seed2": {
+    "config": "causal_plus_video",
+    "features": [
+      "activity",
+      "tab",
+      "rate",
+      "v_play",
+      "v_like",
+      "v_share",
+      "v_complete",
+      "v_follow"
+    ],
+    "n_fields": 13,
+    "seed": 2,
+    "valid": {
+      "GAUC": 0.6786689162254333,
+      "nDCG@5": 0.5410667061805725,
+      "primary": 0.6098678112030029,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.6734672784805298,
+      "nDCG@5": 0.5368844270706177,
+      "primary": 0.6051758527755737,
+      "users": 23875,
+      "rows": 170588
+    },
+    "time_s": 49.81179332733154
+  },
+  "causal_plus_both__seed0": {
+    "config": "causal_plus_both",
+    "features": [
+      "activity",
+      "tab",
+      "rate",
+      "u_active_degree",
+      "u_live_streamer",
+      "u_video_author",
+      "u_follow_range",
+      "u_fans_range",
+      "u_register_range",
+      "v_play",
+      "v_like",
+      "v_share",
+      "v_complete",
+      "v_follow"
+    ],
+    "n_fields": 19,
+    "seed": 0,
+    "valid": {
+      "GAUC": 0.6781261563301086,
+      "nDCG@5": 0.5414232611656189,
+      "primary": 0.6097747087478638,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.6729443669319153,
+      "nDCG@5": 0.5364083647727966,
+      "primary": 0.604676365852356,
+      "users": 23875,
+      "rows": 170588
+    },
+    "time_s": 69.12221312522888
+  },
+  "causal_plus_both__seed1": {
+    "config": "causal_plus_both",
+    "features": [
+      "activity",
+      "tab",
+      "rate",
+      "u_active_degree",
+      "u_live_streamer",
+      "u_video_author",
+      "u_follow_range",
+      "u_fans_range",
+      "u_register_range",
+      "v_play",
+      "v_like",
+      "v_share",
+      "v_complete",
+      "v_follow"
+    ],
+    "n_fields": 19,
+    "seed": 1,
+    "valid": {
+      "GAUC": 0.6794963479042053,
+      "nDCG@5": 0.541229784488678,
+      "primary": 0.6103630661964417,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.6741663813591003,
+      "nDCG@5": 0.5361282229423523,
+      "primary": 0.6051473021507263,
+      "users": 23875,
+      "rows": 170588
+    },
+    "time_s": 82.12326192855835
+  },
+  "causal_plus_both__seed2": {
+    "config": "causal_plus_both",
+    "features": [
+      "activity",
+      "tab",
+      "rate",
+      "u_active_degree",
+      "u_live_streamer",
+      "u_video_author",
+      "u_follow_range",
+      "u_fans_range",
+      "u_register_range",
+      "v_play",
+      "v_like",
+      "v_share",
+      "v_complete",
+      "v_follow"
+    ],
+    "n_fields": 19,
+    "seed": 2,
+    "valid": {
+      "GAUC": 0.6774808764457703,
+      "nDCG@5": 0.5415182113647461,
+      "primary": 0.6094995737075806,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.6737185716629028,
+      "nDCG@5": 0.5364903211593628,
+      "primary": 0.6051044464111328,
+      "users": 23875,
+      "rows": 170588
+    },
+    "time_s": 69.72919392585754
+  }
+}

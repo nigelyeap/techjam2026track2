@@ -1,0 +1,32 @@
+loading extended dataset (cached after first run)...
+loaded features in 4.3s
+loaded aux labels in 3.9s (train rows=1141112)
+
+=== Phase 0: harness-fidelity check (aux_weight=0.0 vs iter24 published seeds 0-2) ===
+[done] harness_aux0                   seed=0 valid=0.63260 test=0.62839  (82.0s)
+[done] harness_aux0                   seed=1 valid=0.63308 test=0.62942  (74.1s)
+[done] harness_aux0                   seed=2 valid=0.63179 test=0.62687  (78.6s)
+  seed=0 valid got=0.6326002 ref=0.6326002 err=0.00e+00 | test got=0.6283902 ref=0.6283902 err=0.00e+00
+  seed=1 valid got=0.6330777 ref=0.6330777 err=0.00e+00 | test got=0.6294211 ref=0.6294211 err=0.00e+00
+  seed=2 valid got=0.6317897 ref=0.6317897 err=0.00e+00 | test got=0.6268690 ref=0.6268690 err=0.00e+00
+Harness-fidelity max abs err vs iter24's published seeds 0-2: 0.00e+00
+Harness fidelity OK (aux_weight=0.0 reproduces iter24 within float noise).
+
+=== Phase 1: aux_weight sweep (all 5 aux tasks, 3 seeds) ===
+[done] mtl_all5_w0.1                  seed=0 valid=0.62728 test=0.62636  (65.6s)
+[done] mtl_all5_w0.1                  seed=1 valid=0.62770 test=0.62723  (76.2s)
+[done] mtl_all5_w0.1                  seed=2 valid=0.62641 test=0.62742  (55.5s)
+[done] mtl_all5_w0.2                  seed=0 valid=0.62431 test=0.62107  (93.2s)
+[done] mtl_all5_w0.2                  seed=1 valid=0.62423 test=0.62044  (59.0s)
+[done] mtl_all5_w0.2                  seed=2 valid=0.62318 test=0.62362  (38.3s)
+[done] mtl_all5_w0.3                  seed=0 valid=0.62048 test=0.61882  (42.6s)
+[done] mtl_all5_w0.3                  seed=1 valid=0.62041 test=0.61706  (43.1s)
+[done] mtl_all5_w0.3                  seed=2 valid=0.61928 test=0.61885  (53.3s)
+
+Phase 1 valid means: {0.1: 0.62713, 0.2: 0.6239, 0.3: 0.62006}
+Best aux_weight: 0.1 (3-seed valid mean 0.62713) vs iter24 5-seed reference 0.63251
+Margin vs iter24 5-seed valid mean: -0.00538
+
+Margin below confirmation threshold (~0.001) -- no 5-seed run triggered by driver. Reporting the 3-seed sweep as a non-promotion.
+
+iter31 multi-task sweep complete.

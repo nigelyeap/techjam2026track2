@@ -1,0 +1,39 @@
+loading fused dataset (cached after first run)...
+loaded in 1.0s
+
+=== Phase 0: harness-fidelity check (MLP disabled == iter19 FM-only BPR) ===
+[skip] fm_only_parity seed=0 already done
+[skip] fm_only_parity seed=1 already done
+[skip] fm_only_parity seed=2 already done
+
+=== Phase 1: width x depth sweep (3 seeds, mlp_lr=lr=0.001) ===
+[skip] deep_h16 seed=0 already done
+[skip] deep_h16 seed=1 already done
+[skip] deep_h16 seed=2 already done
+[skip] deep_h16x16 seed=0 already done
+[skip] deep_h16x16 seed=1 already done
+[skip] deep_h16x16 seed=2 already done
+[skip] deep_h32 seed=0 already done
+[skip] deep_h32 seed=1 already done
+[skip] deep_h32 seed=2 already done
+[skip] deep_h32x32 seed=0 already done
+[skip] deep_h32x32 seed=1 already done
+[skip] deep_h32x32 seed=2 already done
+[skip] deep_h64 seed=0 already done
+[skip] deep_h64 seed=1 already done
+[skip] deep_h64 seed=2 already done
+[skip] deep_h64x64 seed=0 already done
+[skip] deep_h64x64 seed=1 already done
+[skip] deep_h64x64 seed=2 already done
+
+Phase 0+1 complete.
+
+=== Phase 2: 5-seed confirmation of top candidates ===
+[done] deep_h64x64                              seed=3 valid=0.63130 test=0.62965 diverged=False  (50.4s)
+[done] deep_h64x64                              seed=4 valid=0.62659 test=0.62695 diverged=False  (45.4s)
+[done] deep_h32                                 seed=3 valid=0.63140 test=0.63183 diverged=False  (55.7s)
+[done] deep_h32                                 seed=4 valid=0.62992 test=0.62863 diverged=False  (53.8s)
+[done] fm_only_parity                           seed=3 valid=0.62791 test=0.62518 diverged=False  (44.6s)
+[done] fm_only_parity                           seed=4 valid=0.62899 test=0.62663 diverged=False  (47.6s)
+
+Phase 2 complete.

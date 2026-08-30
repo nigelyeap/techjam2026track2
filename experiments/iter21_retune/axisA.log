@@ -1,0 +1,19 @@
+loading extended dataset (cached after first run)...
+loaded in 3.7s
+[done] alpha_0.5            seed=0 valid=0.62106 test=0.62112  (35.6s)
+[done] alpha_0.5            seed=1 valid=0.62167 test=0.61775  (38.3s)
+[done] alpha_0.5            seed=2 valid=0.62186 test=0.62156  (37.7s)
+[done] alpha_1.0            seed=0 valid=0.61943 test=0.61761  (41.4s)
+[done] alpha_1.0            seed=1 valid=0.62064 test=0.61479  (72.6s)
+[done] alpha_1.0            seed=2 valid=0.62078 test=0.61941  (59.6s)
+[done] alpha_2.0            seed=0 valid=0.61955 test=0.61653  (63.4s)
+[done] alpha_2.0            seed=1 valid=0.61988 test=0.61613  (71.4s)
+[done] alpha_2.0            seed=2 valid=0.61981 test=0.61752  (58.2s)
+[done] alpha_5.0            seed=0 valid=0.61773 test=0.61431  (63.1s)
+[done] alpha_5.0            seed=1 valid=0.61853 test=0.61204  (73.4s)
+[done] alpha_5.0            seed=2 valid=0.61848 test=0.61454  (59.6s)
+[done] alpha_10.0           seed=0 valid=0.61727 test=0.61124  (63.0s)
+[done] alpha_10.0           seed=1 valid=0.61766 test=0.61220  (64.4s)
+[done] alpha_10.0           seed=2 valid=0.61757 test=0.61307  (59.7s)
+
+Axis A complete.

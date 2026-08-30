@@ -1,0 +1,14 @@
+loading data...
+
+=== harness-fidelity check: iter24 feature set, seed 0 (expect ~0.63894/0.63989) ===
+  [fidelity] seed=0 valid=0.63894 test=0.63989
+fidelity check PASSED
+
+=== iter42: iter24_feats + decay_engage_2.5, seed 0 ===
+  [iter42-seed0] seed=0 valid=0.63820 test=0.63917
+
+seed-0 delta (iter42 - iter24): valid -0.00074
+
+seed-0 delta too small to bother with 5-seed confirm -- treating as REJECT
+
+wrote results.json

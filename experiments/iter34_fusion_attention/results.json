@@ -1,0 +1,181 @@
+[
+  {
+    "tag": "fidelity_no_attn",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3",
+      "last1",
+      "lastk_rate",
+      "gap"
+    ],
+    "seed": 0,
+    "sampling_alpha": 0.75,
+    "alpha": 0.5,
+    "n_buckets": 20,
+    "valid_primary": 0.6389358639717102,
+    "valid_gauc": 0.7173628807067871,
+    "valid_ndcg5": 0.5605088472366333,
+    "test_primary": 0.6398863196372986,
+    "test_gauc": 0.7129350304603577,
+    "test_ndcg5": 0.5668376088142395,
+    "seconds": 37.963396072387695
+  },
+  {
+    "tag": "fidelity_no_attn",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3",
+      "last1",
+      "lastk_rate",
+      "gap"
+    ],
+    "seed": 1,
+    "sampling_alpha": 0.75,
+    "alpha": 0.5,
+    "n_buckets": 20,
+    "valid_primary": 0.638678789138794,
+    "valid_gauc": 0.7164508104324341,
+    "valid_ndcg5": 0.560906708240509,
+    "test_primary": 0.6391348838806152,
+    "test_gauc": 0.7119649648666382,
+    "test_ndcg5": 0.5663048624992371,
+    "seconds": 37.86414289474487
+  },
+  {
+    "tag": "fidelity_no_attn",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3",
+      "last1",
+      "lastk_rate",
+      "gap"
+    ],
+    "seed": 2,
+    "sampling_alpha": 0.75,
+    "alpha": 0.5,
+    "n_buckets": 20,
+    "valid_primary": 0.6368540525436401,
+    "valid_gauc": 0.7139641642570496,
+    "valid_ndcg5": 0.5597440004348755,
+    "test_primary": 0.6376838684082031,
+    "test_gauc": 0.7109656929969788,
+    "test_ndcg5": 0.5644021034240723,
+    "seconds": 36.5363929271698
+  },
+  {
+    "tag": "fidelity_no_attn",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3",
+      "last1",
+      "lastk_rate",
+      "gap"
+    ],
+    "seed": 3,
+    "sampling_alpha": 0.75,
+    "alpha": 0.5,
+    "n_buckets": 20,
+    "valid_primary": 0.6374706625938416,
+    "valid_gauc": 0.7149930596351624,
+    "valid_ndcg5": 0.5599482655525208,
+    "test_primary": 0.6385308504104614,
+    "test_gauc": 0.7117495536804199,
+    "test_ndcg5": 0.5653121471405029,
+    "seconds": 34.94451189041138
+  },
+  {
+    "tag": "fidelity_no_attn",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3",
+      "last1",
+      "lastk_rate",
+      "gap"
+    ],
+    "seed": 4,
+    "sampling_alpha": 0.75,
+    "alpha": 0.5,
+    "n_buckets": 20,
+    "valid_primary": 0.6376844048500061,
+    "valid_gauc": 0.7159478664398193,
+    "valid_ndcg5": 0.5594209432601929,
+    "test_primary": 0.6392104625701904,
+    "test_gauc": 0.7121070027351379,
+    "test_ndcg5": 0.5663139820098877,
+    "seconds": 39.496675968170166
+  },
+  {
+    "tag": "fused_plus_attn40",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3",
+      "last1",
+      "lastk_rate",
+      "gap",
+      "attn_rate_40"
+    ],
+    "seed": 0,
+    "sampling_alpha": 0.75,
+    "alpha": 0.5,
+    "n_buckets": 20,
+    "valid_primary": 0.6400232315063477,
+    "valid_gauc": 0.7185531258583069,
+    "valid_ndcg5": 0.5614932775497437,
+    "test_primary": 0.6403476595878601,
+    "test_gauc": 0.7135322093963623,
+    "test_ndcg5": 0.5671631097793579,
+    "seconds": 43.030009031295776
+  },
+  {
+    "tag": "fused_plus_attn40",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3",
+      "last1",
+      "lastk_rate",
+      "gap",
+      "attn_rate_40"
+    ],
+    "seed": 1,
+    "sampling_alpha": 0.75,
+    "alpha": 0.5,
+    "n_buckets": 20,
+    "valid_primary": 0.6384820938110352,
+    "valid_gauc": 0.7162661552429199,
+    "valid_ndcg5": 0.5606980323791504,
+    "test_primary": 0.6382704973220825,
+    "test_gauc": 0.7111170887947083,
+    "test_ndcg5": 0.5654239654541016,
+    "seconds": 42.59420394897461
+  },
+  {
+    "tag": "fused_plus_attn40",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3",
+      "last1",
+      "lastk_rate",
+      "gap",
+      "attn_rate_40"
+    ],
+    "seed": 2,
+    "sampling_alpha": 0.75,
+    "alpha": 0.5,
+    "n_buckets": 20,
+    "valid_primary": 0.637130618095398,
+    "valid_gauc": 0.7145854234695435,
+    "valid_ndcg5": 0.5596758127212524,
+    "test_primary": 0.637788712978363,
+    "test_gauc": 0.7109705209732056,
+    "test_ndcg5": 0.5646069049835205,
+    "seconds": 40.6377489566803
+  }
+]

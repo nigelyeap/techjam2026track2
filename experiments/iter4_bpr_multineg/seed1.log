@@ -1,0 +1,17 @@
+loading ../../KuaiRand-Pure/data ...
+{'train': 1141112, 'valid': 124909, 'test': 170588} fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket']
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | n_neg=4 | rows/step = 8192 pos + 32768 neg = 40960
+  epoch  1 | loss 0.6729 | valid GAUC 0.6532 nDCG@5 0.5280 primary 0.5906 | 2.1s
+  epoch  2 | loss 0.6082 | valid GAUC 0.6586 nDCG@5 0.5309 primary 0.5948 | 2.2s
+  epoch  3 | loss 0.5542 | valid GAUC 0.6613 nDCG@5 0.5335 primary 0.5974 | 2.2s
+  epoch  4 | loss 0.5255 | valid GAUC 0.6604 nDCG@5 0.5339 primary 0.5971 | 2.4s
+  epoch  5 | loss 0.5051 | valid GAUC 0.6610 nDCG@5 0.5339 primary 0.5974 | 2.2s
+  epoch  6 | loss 0.4882 | valid GAUC 0.6609 nDCG@5 0.5335 primary 0.5972 | 1.9s
+  epoch  7 | loss 0.4695 | valid GAUC 0.6595 nDCG@5 0.5325 primary 0.5960 | 1.8s
+  epoch  8 | loss 0.4517 | valid GAUC 0.6589 nDCG@5 0.5322 primary 0.5956 | 2.0s
+  epoch  9 | loss 0.4358 | valid GAUC 0.6576 nDCG@5 0.5312 primary 0.5944 | 2.0s
+  early stop at epoch 9
+
+=== fm+bpr_multineg (n_neg=4, seed=1) ===
+  valid  GAUC 0.6610 | nDCG@5 0.5339 | primary 0.5974
+  test   GAUC 0.6564 | nDCG@5 0.5271 | primary 0.5917

@@ -1,0 +1,40 @@
+loading fused dataset (cached after first run)...
+loaded in 2.1s
+
+=== Phase 0: reference (deep_h32, default hyperparams, this harness) ===
+[done] ref_deep_h32                 seed=0 valid=0.62982 test=0.62889 diverged=False  (99.7s)
+[done] ref_deep_h32                 seed=1 valid=0.63339 test=0.63274 diverged=False  (101.2s)
+[done] ref_deep_h32                 seed=2 valid=0.62942 test=0.62956 diverged=False  (106.5s)
+
+=== Phase 1: lever 1 (lower mlp_lr) ===
+[done] mlp_lr_0.0005                seed=0 valid=0.63003 test=0.62829 diverged=False  (108.0s)
+[done] mlp_lr_0.0005                seed=1 valid=0.63252 test=0.63138 diverged=False  (112.6s)
+[done] mlp_lr_0.0005                seed=2 valid=0.63062 test=0.63142 diverged=False  (845.9s)
+[done] mlp_lr_0.0002                seed=0 valid=0.62934 test=0.62835 diverged=False  (141.1s)
+[done] mlp_lr_0.0002                seed=1 valid=0.63139 test=0.62943 diverged=False  (107.7s)
+[done] mlp_lr_0.0002                seed=2 valid=0.63294 test=0.62929 diverged=False  (110.4s)
+
+=== Phase 2: lever 2 (higher l2_mlp) ===
+[done] l2_mlp_0.0001                seed=0 valid=0.62968 test=0.62889 diverged=False  (75.2s)
+[done] l2_mlp_0.0001                seed=1 valid=0.63258 test=0.63311 diverged=False  (49.7s)
+[done] l2_mlp_0.0001                seed=2 valid=0.62978 test=0.62971 diverged=False  (54.5s)
+[done] l2_mlp_0.001                 seed=0 valid=0.63077 test=0.62925 diverged=False  (64.6s)
+[done] l2_mlp_0.001                 seed=1 valid=0.63069 test=0.63182 diverged=False  (58.1s)
+[done] l2_mlp_0.001                 seed=2 valid=0.63031 test=0.62740 diverged=False  (58.4s)
+
+=== Phase 3: lever 3 (smaller init_scale_mult) ===
+[done] init_scale_0.5               seed=0 valid=0.62930 test=0.62847 diverged=False  (47.0s)
+[done] init_scale_0.5               seed=1 valid=0.63262 test=0.63162 diverged=False  (47.8s)
+[done] init_scale_0.5               seed=2 valid=0.63068 test=0.63105 diverged=False  (49.6s)
+[done] init_scale_0.25              seed=0 valid=0.62806 test=0.62605 diverged=False  (51.7s)
+[done] init_scale_0.25              seed=1 valid=0.63185 test=0.63165 diverged=False  (52.3s)
+[done] init_scale_0.25              seed=2 valid=0.63062 test=0.63028 diverged=False  (55.6s)
+
+Phase 0-3 complete.
+
+=== Phase 5: lever 4 (ensemble of 3 deep-part inits, default hyperparams) ===
+[done] ensemble3_default            seed=0 valid=0.63003 test=0.62871 diverged=False  (104.0s)
+[done] ensemble3_default            seed=1 valid=0.63283 test=0.63271 diverged=False  (110.7s)
+[done] ensemble3_default            seed=2 valid=0.62942 test=0.62993 diverged=False  (92.5s)
+
+Phase 5 complete. All Phase 0-5 (3-seed) runs done.

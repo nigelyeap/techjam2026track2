@@ -1,0 +1,90 @@
+loading /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter32_sequence_attention/../../KuaiRand-Pure/data ...
+{'train': 1141112, 'valid': 124909, 'test': 170588}   (210.8s)
+
+=== PART A: decay-feature (rate/act) causal spot-checks (brute force) ===
+halflife= 2.0d  decayed_total>0 coverage: 92.29%  (mean=12.916, max=296.595)
+halflife= 2.5d  decayed_total>0 coverage: 92.29%  (mean=14.995, max=342.161)
+halflife= 3.0d  decayed_total>0 coverage: 92.29%  (mean=16.753, max=377.162)
+halflife= 3.5d  decayed_total>0 coverage: 92.29%  (mean=18.273, max=404.760)
+25 random rows x 4 halflives: decayed_pos/decayed_total match brute force (max abs err 1.42e-14). No leakage detected.
+zero-activity rows (5 checked): decayed_pos/total/tab correctly 0.0.
+same-date-pair edge case (3 rows): decay values identical across the pair, as expected (same-date rows never see each other). PASSED.
+
+=== PART B: decayed tab_pos causal spot-checks (brute force) ===
+tab halflife= 3.0d  decayed_tab_pos>0 coverage: 73.37%  (mean=3.658, max=81.792)
+tab halflife= 7.0d  decayed_tab_pos>0 coverage: 73.37%  (mean=5.557, max=102.994)
+30 random rows x 2 tab-halflives: all decayed_tab_pos match brute force (max abs err 1.42e-14). No leakage detected.
+zero-tab_pos-but-nonzero-activity rows (5 checked): decayed_tab_pos correctly 0.0 despite nonzero decay_rate/act.
+same-date-pair edge case (decay_tab, 3 rows): decayed_tab_pos identical across the pair, as expected. PASSED.
+
+=== PART C: momentum-feature causal spot-checks (brute force) ===
+last1 coverage (not user's first row): 98.12%
+gap coverage (not user's first row): 98.12%
+
+user=0  (13 rows, chronological order)
+  pos= 0 date=20220411 time_ms=1649673604040 label=0 | last1 got=-1 manual=-1 | lastk_sum got=0 manual=0 | gap_ms got=-1 manual=-1  [OK]
+  pos= 1 date=20220411 time_ms=1649673611472 label=0 | last1 got=0 manual=0 | lastk_sum got=0 manual=0 | gap_ms got=7432 manual=7432  [OK]
+  pos= 2 date=20220411 time_ms=1649673704264 label=1 | last1 got=0 manual=0 | lastk_sum got=0 manual=0 | gap_ms got=92792 manual=92792  [OK]
+  pos= 3 date=20220411 time_ms=1649675512388 label=0 | last1 got=1 manual=1 | lastk_sum got=1 manual=1 | gap_ms got=1808124 manual=1808124  [OK]
+  pos= 4 date=20220416 time_ms=1650111976017 label=0 | last1 got=0 manual=0 | lastk_sum got=1 manual=1 | gap_ms got=436463629 manual=436463629  [OK]
+  pos= 5 date=20220420 time_ms=1650444367095 label=0 | last1 got=0 manual=0 | lastk_sum got=1 manual=1 | gap_ms got=332391078 manual=332391078  [OK]
+  pos= 6 date=20220420 time_ms=1650449589381 label=0 | last1 got=0 manual=0 | lastk_sum got=1 manual=1 | gap_ms got=5222286 manual=5222286  [OK]
+  pos= 7 date=20220422 time_ms=1650586815813 label=0 | last1 got=0 manual=0 | lastk_sum got=1 manual=1 | gap_ms got=137226432 manual=137226432  [OK]
+  pos= 8 date=20220422 time_ms=1650615878629 label=0 | last1 got=0 manual=0 | lastk_sum got=0 manual=0 | gap_ms got=29062816 manual=29062816  [OK]
+  pos= 9 date=20220425 time_ms=1650882384975 label=0 | last1 got=0 manual=0 | lastk_sum got=0 manual=0 | gap_ms got=266506346 manual=266506346  [OK]
+  pos=10 date=20220429 time_ms=1651237368151 label=0 | last1 got=0 manual=0 | lastk_sum got=0 manual=0 | gap_ms got=354983176 manual=354983176  [OK]
+  pos=11 date=20220430 time_ms=1651280365845 label=0 | last1 got=0 manual=0 | lastk_sum got=0 manual=0 | gap_ms got=42997694 manual=42997694  [OK]
+  pos=12 date=20220502 time_ms=1651461680240 label=0 | last1 got=0 manual=0 | lastk_sum got=0 manual=0 | gap_ms got=181314395 manual=181314395  [OK]
+
+user=1  (13 rows, chronological order)
+  pos= 0 date=20220410 time_ms=1649584510570 label=1 | last1 got=-1 manual=-1 | lastk_sum got=0 manual=0 | gap_ms got=-1 manual=-1  [OK]
+  pos= 1 date=20220411 time_ms=1649645295928 label=0 | last1 got=1 manual=1 | lastk_sum got=1 manual=1 | gap_ms got=60785358 manual=60785358  [OK]
+  pos= 2 date=20220411 time_ms=1649648827559 label=0 | last1 got=0 manual=0 | lastk_sum got=1 manual=1 | gap_ms got=3531631 manual=3531631  [OK]
+  pos= 3 date=20220412 time_ms=1649706052290 label=1 | last1 got=0 manual=0 | lastk_sum got=1 manual=1 | gap_ms got=57224731 manual=57224731  [OK]
+  pos= 4 date=20220412 time_ms=1649706789917 label=1 | last1 got=1 manual=1 | lastk_sum got=2 manual=2 | gap_ms got=737627 manual=737627  [OK]
+  pos= 5 date=20220412 time_ms=1649707373426 label=1 | last1 got=1 manual=1 | lastk_sum got=3 manual=3 | gap_ms got=583509 manual=583509  [OK]
+  pos= 6 date=20220412 time_ms=1649708149549 label=0 | last1 got=1 manual=1 | lastk_sum got=3 manual=3 | gap_ms got=776123 manual=776123  [OK]
+  pos= 7 date=20220417 time_ms=1650165081534 label=1 | last1 got=0 manual=0 | lastk_sum got=3 manual=3 | gap_ms got=456931985 manual=456931985  [OK]
+  pos= 8 date=20220419 time_ms=1650352792048 label=1 | last1 got=1 manual=1 | lastk_sum got=4 manual=4 | gap_ms got=187710514 manual=187710514  [OK]
+  pos= 9 date=20220425 time_ms=1650839916065 label=0 | last1 got=1 manual=1 | lastk_sum got=4 manual=4 | gap_ms got=487124017 manual=487124017  [OK]
+  pos=10 date=20220428 time_ms=1651154821828 label=0 | last1 got=0 manual=0 | lastk_sum got=3 manual=3 | gap_ms got=314905763 manual=314905763  [OK]
+  pos=11 date=20220429 time_ms=1651238509407 label=0 | last1 got=0 manual=0 | lastk_sum got=2 manual=2 | gap_ms got=83687579 manual=83687579  [OK]
+  pos=12 date=20220430 time_ms=1651328487418 label=1 | last1 got=0 manual=0 | lastk_sum got=2 manual=2 | gap_ms got=89978011 manual=89978011  [OK]
+
+user=10  (10 rows, chronological order)
+  pos= 0 date=20220413 time_ms=1649851716720 label=1 | last1 got=-1 manual=-1 | lastk_sum got=0 manual=0 | gap_ms got=-1 manual=-1  [OK]
+  pos= 1 date=20220418 time_ms=1650221702353 label=1 | last1 got=1 manual=1 | lastk_sum got=1 manual=1 | gap_ms got=369985633 manual=369985633  [OK]
+  pos= 2 date=20220423 time_ms=1650671005597 label=1 | last1 got=1 manual=1 | lastk_sum got=2 manual=2 | gap_ms got=449303244 manual=449303244  [OK]
+  pos= 3 date=20220427 time_ms=1651012463800 label=1 | last1 got=1 manual=1 | lastk_sum got=3 manual=3 | gap_ms got=341458203 manual=341458203  [OK]
+  pos= 4 date=20220501 time_ms=1651336128623 label=0 | last1 got=1 manual=1 | lastk_sum got=4 manual=4 | gap_ms got=323664823 manual=323664823  [OK]
+  pos= 5 date=20220501 time_ms=1651362785665 label=0 | last1 got=0 manual=0 | lastk_sum got=4 manual=4 | gap_ms got=26657042 manual=26657042  [OK]
+  pos= 6 date=20220505 time_ms=1651738791973 label=1 | last1 got=0 manual=0 | lastk_sum got=3 manual=3 | gap_ms got=376006308 manual=376006308  [OK]
+  pos= 7 date=20220508 time_ms=1651968336196 label=1 | last1 got=1 manual=1 | lastk_sum got=3 manual=3 | gap_ms got=229544223 manual=229544223  [OK]
+  pos= 8 date=20220508 time_ms=1651985830225 label=0 | last1 got=1 manual=1 | lastk_sum got=3 manual=3 | gap_ms got=17494029 manual=17494029  [OK]
+  pos= 9 date=20220508 time_ms=1652001262019 label=0 | last1 got=0 manual=0 | lastk_sum got=2 manual=2 | gap_ms got=15431794 manual=15431794  [OK]
+
+--- synthetic same-time_ms tie stress test (momentum) ---
+tie stress test: all assertions passed.
+
+=== PART D: cross-family joint edge case (same-date, different time_ms pair) ===
+user=1 date=20220412: 3 rows, same calendar date, distinct time_ms
+  rank=0 time_ms=1649706052290 label=1 decay_pos=0.5000 decay_total=1.9142 decay_tab=0.6300 last1=0 gap_ms=57224731
+  rank=1 time_ms=1649706789917 label=1 decay_pos=0.5000 decay_total=1.9142 decay_tab=0.6300 last1=1 gap_ms=737627
+  rank=2 time_ms=1649707373426 label=1 decay_pos=0.5000 decay_total=1.9142 decay_tab=0.6300 last1=1 gap_ms=583509
+  -> decay AND decay_tab features are IDENTICAL across the pair (both date-level, correctly blind to intra-date order); momentum last1 correctly DIFFERS and resolves the true time_ms order. All three families verified independently correct on the same rows -- no cross-contamination from the join (decay<->decay_tab agree by construction, both disagree with momentum by construction).
+
+=== PART E: target-attention causal spot-checks (brute force) ===
+window= 10  attn_rate coverage: 98.12%  (mean over covered=0.3340)
+window= 20  attn_rate coverage: 98.12%  (mean over covered=0.3383)
+window= 40  attn_rate coverage: 98.12%  (mean over covered=0.3431)
+decay halflife= 3.0d  attn_decay_rate coverage: 98.12%  (mean over covered=0.3393)
+decay halflife= 7.0d  attn_decay_rate coverage: 98.12%  (mean over covered=0.3413)
+25 random rows (24 with nonzero history, 1 zero-history sentinel-checked) x 3 windows x 2 decay-halflives: attn_rate/attn_decay_rate match brute force (max abs err 0.00e+00). No leakage detected.
+
+--- synthetic same-time_ms tie stress test (attention) ---
+all three rows share time_ms=5000, differ only by orig_idx -- row 3's attention correctly sees only rows 1&2 (never itself, never a 'future' same-time_ms row with higher orig_idx). tie stress test: all assertions passed.
+
+--- unseen-item / missing-embedding degrade-gracefully check (attention) ---
+with all item embeddings missing (empty item_emb dict), attention logits are all-zero, softmax is uniform, and attn_rate correctly reduces to a plain unweighted mean of the window's labels (0.5 for a [1,0] window) -- no crash, no NaN, graceful degradation confirmed.
+
+All causal spot-checks (decay + decay_tab + momentum + attention + cross-family joint) passed.

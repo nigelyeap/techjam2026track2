@@ -1,0 +1,3 @@
+best_iteration=202  valid={'GAUC': np.float32(0.67772186), 'nDCG@5': np.float32(0.5410912), 'primary': np.float32(0.60940653), 'users': 22377, 'rows': 124909}  test={'GAUC': np.float32(0.67558324), 'nDCG@5': np.float32(0.53879845), 'primary': np.float32(0.60719085), 'users': 23875, 'rows': 170588}
+valid: {'GAUC': np.float32(0.67772186), 'nDCG@5': np.float32(0.5410912), 'primary': np.float32(0.60940653), 'users': 22377, 'rows': 124909}
+test: {'GAUC': np.float32(0.67558324), 'nDCG@5': np.float32(0.53879845), 'primary': np.float32(0.60719085), 'users': 23875, 'rows': 170588}

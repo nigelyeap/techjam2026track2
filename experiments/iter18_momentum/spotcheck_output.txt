@@ -1,0 +1,61 @@
+loading /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter18_momentum/../../KuaiRand-Pure/data ...
+{'train': 1141112, 'valid': 124909, 'test': 170588}
+
+total rows: 1436609
+last1 coverage (not user's first row): 98.12%  (1409532/1436609)
+  of covered rows: last1==1 (prior long_view) rate = 33.15%
+lastk_cnt distribution: {0: 27077, 1: 26742, 2: 26412, 3: 26017, 4: 25634, 5: 1304727}
+gap coverage (not user's first row): 98.12%  (1409532/1436609)
+  gap(s) stats: median=2385.4s p25=317.0s p75=28302.2s max=2407735.8s
+
+--- causal spot-checks: full chronological sequences for 3 real users ---
+
+user=0  (13 rows, chronological order)
+  pos= 0 date=20220411 time_ms=1649673604040 label=0 | last1: got=-1 manual=-1 | lastk_sum: got=0 manual=0 | lastk_cnt: got=0 manual=0 | gap_ms: got=-1 manual=-1  [OK]
+  pos= 1 date=20220411 time_ms=1649673611472 label=0 | last1: got=0 manual=0 | lastk_sum: got=0 manual=0 | lastk_cnt: got=1 manual=1 | gap_ms: got=7432 manual=7432  [OK]
+  pos= 2 date=20220411 time_ms=1649673704264 label=1 | last1: got=0 manual=0 | lastk_sum: got=0 manual=0 | lastk_cnt: got=2 manual=2 | gap_ms: got=92792 manual=92792  [OK]
+  pos= 3 date=20220411 time_ms=1649675512388 label=0 | last1: got=1 manual=1 | lastk_sum: got=1 manual=1 | lastk_cnt: got=3 manual=3 | gap_ms: got=1808124 manual=1808124  [OK]
+  pos= 4 date=20220416 time_ms=1650111976017 label=0 | last1: got=0 manual=0 | lastk_sum: got=1 manual=1 | lastk_cnt: got=4 manual=4 | gap_ms: got=436463629 manual=436463629  [OK]
+  pos= 5 date=20220420 time_ms=1650444367095 label=0 | last1: got=0 manual=0 | lastk_sum: got=1 manual=1 | lastk_cnt: got=5 manual=5 | gap_ms: got=332391078 manual=332391078  [OK]
+  pos= 6 date=20220420 time_ms=1650449589381 label=0 | last1: got=0 manual=0 | lastk_sum: got=1 manual=1 | lastk_cnt: got=5 manual=5 | gap_ms: got=5222286 manual=5222286  [OK]
+  pos= 7 date=20220422 time_ms=1650586815813 label=0 | last1: got=0 manual=0 | lastk_sum: got=1 manual=1 | lastk_cnt: got=5 manual=5 | gap_ms: got=137226432 manual=137226432  [OK]
+  pos= 8 date=20220422 time_ms=1650615878629 label=0 | last1: got=0 manual=0 | lastk_sum: got=0 manual=0 | lastk_cnt: got=5 manual=5 | gap_ms: got=29062816 manual=29062816  [OK]
+  pos= 9 date=20220425 time_ms=1650882384975 label=0 | last1: got=0 manual=0 | lastk_sum: got=0 manual=0 | lastk_cnt: got=5 manual=5 | gap_ms: got=266506346 manual=266506346  [OK]
+  pos=10 date=20220429 time_ms=1651237368151 label=0 | last1: got=0 manual=0 | lastk_sum: got=0 manual=0 | lastk_cnt: got=5 manual=5 | gap_ms: got=354983176 manual=354983176  [OK]
+  pos=11 date=20220430 time_ms=1651280365845 label=0 | last1: got=0 manual=0 | lastk_sum: got=0 manual=0 | lastk_cnt: got=5 manual=5 | gap_ms: got=42997694 manual=42997694  [OK]
+  pos=12 date=20220502 time_ms=1651461680240 label=0 | last1: got=0 manual=0 | lastk_sum: got=0 manual=0 | lastk_cnt: got=5 manual=5 | gap_ms: got=181314395 manual=181314395  [OK]
+
+user=1  (13 rows, chronological order)
+  pos= 0 date=20220410 time_ms=1649584510570 label=1 | last1: got=-1 manual=-1 | lastk_sum: got=0 manual=0 | lastk_cnt: got=0 manual=0 | gap_ms: got=-1 manual=-1  [OK]
+  pos= 1 date=20220411 time_ms=1649645295928 label=0 | last1: got=1 manual=1 | lastk_sum: got=1 manual=1 | lastk_cnt: got=1 manual=1 | gap_ms: got=60785358 manual=60785358  [OK]
+  pos= 2 date=20220411 time_ms=1649648827559 label=0 | last1: got=0 manual=0 | lastk_sum: got=1 manual=1 | lastk_cnt: got=2 manual=2 | gap_ms: got=3531631 manual=3531631  [OK]
+  pos= 3 date=20220412 time_ms=1649706052290 label=1 | last1: got=0 manual=0 | lastk_sum: got=1 manual=1 | lastk_cnt: got=3 manual=3 | gap_ms: got=57224731 manual=57224731  [OK]
+  pos= 4 date=20220412 time_ms=1649706789917 label=1 | last1: got=1 manual=1 | lastk_sum: got=2 manual=2 | lastk_cnt: got=4 manual=4 | gap_ms: got=737627 manual=737627  [OK]
+  pos= 5 date=20220412 time_ms=1649707373426 label=1 | last1: got=1 manual=1 | lastk_sum: got=3 manual=3 | lastk_cnt: got=5 manual=5 | gap_ms: got=583509 manual=583509  [OK]
+  pos= 6 date=20220412 time_ms=1649708149549 label=0 | last1: got=1 manual=1 | lastk_sum: got=3 manual=3 | lastk_cnt: got=5 manual=5 | gap_ms: got=776123 manual=776123  [OK]
+  pos= 7 date=20220417 time_ms=1650165081534 label=1 | last1: got=0 manual=0 | lastk_sum: got=3 manual=3 | lastk_cnt: got=5 manual=5 | gap_ms: got=456931985 manual=456931985  [OK]
+  pos= 8 date=20220419 time_ms=1650352792048 label=1 | last1: got=1 manual=1 | lastk_sum: got=4 manual=4 | lastk_cnt: got=5 manual=5 | gap_ms: got=187710514 manual=187710514  [OK]
+  pos= 9 date=20220425 time_ms=1650839916065 label=0 | last1: got=1 manual=1 | lastk_sum: got=4 manual=4 | lastk_cnt: got=5 manual=5 | gap_ms: got=487124017 manual=487124017  [OK]
+  pos=10 date=20220428 time_ms=1651154821828 label=0 | last1: got=0 manual=0 | lastk_sum: got=3 manual=3 | lastk_cnt: got=5 manual=5 | gap_ms: got=314905763 manual=314905763  [OK]
+  pos=11 date=20220429 time_ms=1651238509407 label=0 | last1: got=0 manual=0 | lastk_sum: got=2 manual=2 | lastk_cnt: got=5 manual=5 | gap_ms: got=83687579 manual=83687579  [OK]
+  pos=12 date=20220430 time_ms=1651328487418 label=1 | last1: got=0 manual=0 | lastk_sum: got=2 manual=2 | lastk_cnt: got=5 manual=5 | gap_ms: got=89978011 manual=89978011  [OK]
+
+user=10  (10 rows, chronological order)
+  pos= 0 date=20220413 time_ms=1649851716720 label=1 | last1: got=-1 manual=-1 | lastk_sum: got=0 manual=0 | lastk_cnt: got=0 manual=0 | gap_ms: got=-1 manual=-1  [OK]
+  pos= 1 date=20220418 time_ms=1650221702353 label=1 | last1: got=1 manual=1 | lastk_sum: got=1 manual=1 | lastk_cnt: got=1 manual=1 | gap_ms: got=369985633 manual=369985633  [OK]
+  pos= 2 date=20220423 time_ms=1650671005597 label=1 | last1: got=1 manual=1 | lastk_sum: got=2 manual=2 | lastk_cnt: got=2 manual=2 | gap_ms: got=449303244 manual=449303244  [OK]
+  pos= 3 date=20220427 time_ms=1651012463800 label=1 | last1: got=1 manual=1 | lastk_sum: got=3 manual=3 | lastk_cnt: got=3 manual=3 | gap_ms: got=341458203 manual=341458203  [OK]
+  pos= 4 date=20220501 time_ms=1651336128623 label=0 | last1: got=1 manual=1 | lastk_sum: got=4 manual=4 | lastk_cnt: got=4 manual=4 | gap_ms: got=323664823 manual=323664823  [OK]
+  pos= 5 date=20220501 time_ms=1651362785665 label=0 | last1: got=0 manual=0 | lastk_sum: got=4 manual=4 | lastk_cnt: got=5 manual=5 | gap_ms: got=26657042 manual=26657042  [OK]
+  pos= 6 date=20220505 time_ms=1651738791973 label=1 | last1: got=0 manual=0 | lastk_sum: got=3 manual=3 | lastk_cnt: got=5 manual=5 | gap_ms: got=376006308 manual=376006308  [OK]
+  pos= 7 date=20220508 time_ms=1651968336196 label=1 | last1: got=1 manual=1 | lastk_sum: got=3 manual=3 | lastk_cnt: got=5 manual=5 | gap_ms: got=229544223 manual=229544223  [OK]
+  pos= 8 date=20220508 time_ms=1651985830225 label=0 | last1: got=1 manual=1 | lastk_sum: got=3 manual=3 | lastk_cnt: got=5 manual=5 | gap_ms: got=17494029 manual=17494029  [OK]
+  pos= 9 date=20220508 time_ms=1652001262019 label=0 | last1: got=0 manual=0 | lastk_sum: got=2 manual=2 | lastk_cnt: got=5 manual=5 | gap_ms: got=15431794 manual=15431794  [OK]
+
+--- synthetic same-time_ms tie stress test ---
+  row 0: video=v1 label=1 time_ms=5000 orig_idx=100 -> last1=-1 lastk_sum=0 lastk_cnt=0 gap_ms=-1
+  row 1: video=v2 label=0 time_ms=5000 orig_idx=101 -> last1=1 lastk_sum=1 lastk_cnt=1 gap_ms=0
+  row 2: video=v3 label=1 time_ms=5500 orig_idx=99 -> last1=0 lastk_sum=1 lastk_cnt=2 gap_ms=500
+tie stress test: all assertions passed (row2's time_ms=5500 is causally after the tie pair despite its smaller orig_idx -- orig_idx only breaks EXACT time_ms ties, it never overrides real chronological order).
+
+All causal spot-checks passed. No same-timestamp or future leakage detected.

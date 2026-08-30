@@ -1,0 +1,230 @@
+[
+  {
+    "tag": "harness_aux0",
+    "aux_weight": 0.0,
+    "aux_tasks": [
+      "is_click",
+      "is_like",
+      "is_follow",
+      "is_comment",
+      "is_forward"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6326001882553101,
+    "valid_gauc": 0.7083069682121277,
+    "valid_ndcg5": 0.5568934679031372,
+    "test_primary": 0.6283901929855347,
+    "test_gauc": 0.6996503472328186,
+    "test_ndcg5": 0.5571300983428955,
+    "seconds": 82.04421997070312
+  },
+  {
+    "tag": "harness_aux0",
+    "aux_weight": 0.0,
+    "aux_tasks": [
+      "is_click",
+      "is_like",
+      "is_follow",
+      "is_comment",
+      "is_forward"
+    ],
+    "seed": 1,
+    "valid_primary": 0.6330777406692505,
+    "valid_gauc": 0.709810733795166,
+    "valid_ndcg5": 0.5563448071479797,
+    "test_primary": 0.6294211149215698,
+    "test_gauc": 0.7022740244865417,
+    "test_ndcg5": 0.5565681457519531,
+    "seconds": 74.09797286987305
+  },
+  {
+    "tag": "harness_aux0",
+    "aux_weight": 0.0,
+    "aux_tasks": [
+      "is_click",
+      "is_like",
+      "is_follow",
+      "is_comment",
+      "is_forward"
+    ],
+    "seed": 2,
+    "valid_primary": 0.6317896842956543,
+    "valid_gauc": 0.7084380984306335,
+    "valid_ndcg5": 0.555141270160675,
+    "test_primary": 0.6268689632415771,
+    "test_gauc": 0.6992623805999756,
+    "test_ndcg5": 0.5544755458831787,
+    "seconds": 78.64444613456726
+  },
+  {
+    "tag": "mtl_all5_w0.1",
+    "aux_weight": 0.1,
+    "aux_tasks": [
+      "is_click",
+      "is_like",
+      "is_follow",
+      "is_comment",
+      "is_forward"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6272802352905273,
+    "valid_gauc": 0.7022251486778259,
+    "valid_ndcg5": 0.5523353815078735,
+    "test_primary": 0.6263603568077087,
+    "test_gauc": 0.6990810036659241,
+    "test_ndcg5": 0.5536397099494934,
+    "seconds": 65.58600807189941
+  },
+  {
+    "tag": "mtl_all5_w0.1",
+    "aux_weight": 0.1,
+    "aux_tasks": [
+      "is_click",
+      "is_like",
+      "is_follow",
+      "is_comment",
+      "is_forward"
+    ],
+    "seed": 1,
+    "valid_primary": 0.6276965141296387,
+    "valid_gauc": 0.7029634118080139,
+    "valid_ndcg5": 0.5524296164512634,
+    "test_primary": 0.6272290945053101,
+    "test_gauc": 0.7008659243583679,
+    "test_ndcg5": 0.5535922646522522,
+    "seconds": 76.20108389854431
+  },
+  {
+    "tag": "mtl_all5_w0.1",
+    "aux_weight": 0.1,
+    "aux_tasks": [
+      "is_click",
+      "is_like",
+      "is_follow",
+      "is_comment",
+      "is_forward"
+    ],
+    "seed": 2,
+    "valid_primary": 0.6264143586158752,
+    "valid_gauc": 0.7009036540985107,
+    "valid_ndcg5": 0.5519250631332397,
+    "test_primary": 0.6274162530899048,
+    "test_gauc": 0.700741171836853,
+    "test_ndcg5": 0.5540912747383118,
+    "seconds": 55.45726704597473
+  },
+  {
+    "tag": "mtl_all5_w0.2",
+    "aux_weight": 0.2,
+    "aux_tasks": [
+      "is_click",
+      "is_like",
+      "is_follow",
+      "is_comment",
+      "is_forward"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6243077516555786,
+    "valid_gauc": 0.6977738738059998,
+    "valid_ndcg5": 0.5508416891098022,
+    "test_primary": 0.6210716962814331,
+    "test_gauc": 0.6931232810020447,
+    "test_ndcg5": 0.5490200519561768,
+    "seconds": 93.218022108078
+  },
+  {
+    "tag": "mtl_all5_w0.2",
+    "aux_weight": 0.2,
+    "aux_tasks": [
+      "is_click",
+      "is_like",
+      "is_follow",
+      "is_comment",
+      "is_forward"
+    ],
+    "seed": 1,
+    "valid_primary": 0.624229907989502,
+    "valid_gauc": 0.6987096071243286,
+    "valid_ndcg5": 0.5497502088546753,
+    "test_primary": 0.6204445958137512,
+    "test_gauc": 0.6936304569244385,
+    "test_ndcg5": 0.547258734703064,
+    "seconds": 58.95280718803406
+  },
+  {
+    "tag": "mtl_all5_w0.2",
+    "aux_weight": 0.2,
+    "aux_tasks": [
+      "is_click",
+      "is_like",
+      "is_follow",
+      "is_comment",
+      "is_forward"
+    ],
+    "seed": 2,
+    "valid_primary": 0.6231764554977417,
+    "valid_gauc": 0.6962102651596069,
+    "valid_ndcg5": 0.5501426458358765,
+    "test_primary": 0.6236229538917542,
+    "test_gauc": 0.6957678198814392,
+    "test_ndcg5": 0.5514780879020691,
+    "seconds": 38.27616500854492
+  },
+  {
+    "tag": "mtl_all5_w0.3",
+    "aux_weight": 0.3,
+    "aux_tasks": [
+      "is_click",
+      "is_like",
+      "is_follow",
+      "is_comment",
+      "is_forward"
+    ],
+    "seed": 0,
+    "valid_primary": 0.6204789876937866,
+    "valid_gauc": 0.6929562091827393,
+    "valid_ndcg5": 0.548001766204834,
+    "test_primary": 0.6188226938247681,
+    "test_gauc": 0.6907250881195068,
+    "test_ndcg5": 0.5469202995300293,
+    "seconds": 42.62309789657593
+  },
+  {
+    "tag": "mtl_all5_w0.3",
+    "aux_weight": 0.3,
+    "aux_tasks": [
+      "is_click",
+      "is_like",
+      "is_follow",
+      "is_comment",
+      "is_forward"
+    ],
+    "seed": 1,
+    "valid_primary": 0.6204069256782532,
+    "valid_gauc": 0.6933677792549133,
+    "valid_ndcg5": 0.547446072101593,
+    "test_primary": 0.6170610189437866,
+    "test_gauc": 0.68924880027771,
+    "test_ndcg5": 0.5448732972145081,
+    "seconds": 43.088407039642334
+  },
+  {
+    "tag": "mtl_all5_w0.3",
+    "aux_weight": 0.3,
+    "aux_tasks": [
+      "is_click",
+      "is_like",
+      "is_follow",
+      "is_comment",
+      "is_forward"
+    ],
+    "seed": 2,
+    "valid_primary": 0.619284987449646,
+    "valid_gauc": 0.6910101771354675,
+    "valid_ndcg5": 0.5475597977638245,
+    "test_primary": 0.6188517808914185,
+    "test_gauc": 0.6907435655593872,
+    "test_ndcg5": 0.5469600558280945,
+    "seconds": 53.30263304710388
+  }
+]

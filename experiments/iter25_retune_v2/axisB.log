@@ -1,0 +1,22 @@
+loading extended dataset (cached after first run)... DEFAULT_ALPHA=1.0
+loaded in 1.5s
+[done] k_16                 seed=0 valid=0.62902 test=0.62599  (76.2s)
+[done] k_16                 seed=1 valid=0.62907 test=0.62684  (99.5s)
+[done] k_16                 seed=2 valid=0.62990 test=0.62613  (103.3s)
+[done] k_24                 seed=0 valid=0.62926 test=0.62690  (108.8s)
+[done] k_24                 seed=1 valid=0.62703 test=0.62724  (96.2s)
+[done] k_24                 seed=2 valid=0.62826 test=0.62246  (128.7s)
+[done] k_32                 seed=0 valid=0.62767 test=0.62696  (120.3s)
+[done] k_32                 seed=1 valid=0.62886 test=0.62686  (121.1s)
+[done] k_32                 seed=2 valid=0.62704 test=0.62713  (107.9s)
+[done] nbuckets_5           seed=0 valid=0.62789 test=0.62565  (98.5s)
+[done] nbuckets_5           seed=1 valid=0.62797 test=0.62469  (107.9s)
+[done] nbuckets_5           seed=2 valid=0.62766 test=0.62285  (109.0s)
+[done] nbuckets_10          seed=0 valid=0.62902 test=0.62599  (112.7s)
+[done] nbuckets_10          seed=1 valid=0.62907 test=0.62684  (101.2s)
+[done] nbuckets_10          seed=2 valid=0.62990 test=0.62613  (108.3s)
+[done] nbuckets_20          seed=0 valid=0.62973 test=0.62996  (85.9s)
+[done] nbuckets_20          seed=1 valid=0.63007 test=0.62881  (83.7s)
+[done] nbuckets_20          seed=2 valid=0.63006 test=0.63105  (78.1s)
+
+Axis B complete.

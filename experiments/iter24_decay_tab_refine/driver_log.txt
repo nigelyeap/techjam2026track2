@@ -1,0 +1,42 @@
+loading extended dataset (cached after first run)...
+loaded in 3.2s
+
+=== Step 1: fine halflife sweep (decay_rate_H+decay_act_H+tab+last1+lastk_rate+gap) ===
+[done] decay_rate_2+decay_act_2+tab+mom              seed=0 valid=0.62932 test=0.62200  (47.2s)
+[done] decay_rate_2+decay_act_2+tab+mom              seed=1 valid=0.63059 test=0.62158  (70.4s)
+[done] decay_rate_2+decay_act_2+tab+mom              seed=2 valid=0.62892 test=0.62075  (107.5s)
+[done] decay_rate_2.5+decay_act_2.5+tab+mom          seed=0 valid=0.62929 test=0.62443  (110.6s)
+[done] decay_rate_2.5+decay_act_2.5+tab+mom          seed=1 valid=0.62988 test=0.62266  (116.7s)
+[done] decay_rate_2.5+decay_act_2.5+tab+mom          seed=2 valid=0.63073 test=0.62574  (110.7s)
+[done] decay_rate_3+decay_act_3+tab+mom              seed=0 valid=0.62902 test=0.62599  (112.6s)
+[done] decay_rate_3+decay_act_3+tab+mom              seed=1 valid=0.62907 test=0.62684  (112.0s)
+[done] decay_rate_3+decay_act_3+tab+mom              seed=2 valid=0.62990 test=0.62613  (116.9s)
+[done] decay_rate_3.5+decay_act_3.5+tab+mom          seed=0 valid=0.62798 test=0.62595  (116.6s)
+[done] decay_rate_3.5+decay_act_3.5+tab+mom          seed=1 valid=0.62820 test=0.62671  (112.7s)
+[done] decay_rate_3.5+decay_act_3.5+tab+mom          seed=2 valid=0.62929 test=0.62738  (119.3s)
+
+Step 1 valid means: {2: 0.62961, 2.5: 0.62997, 3: 0.62933, 3.5: 0.62849}
+Step 1 best halflife: 2.5 (valid mean 0.62997)
+
+=== Step 2: decayed tab_pos (base halflife=2.5) + momentum ===
+[done] decay_rate_2.5+decay_act_2.5+decay_tab_3+mom  seed=0 valid=0.63260 test=0.62839  (117.6s)
+[done] decay_rate_2.5+decay_act_2.5+decay_tab_3+mom  seed=1 valid=0.63308 test=0.62942  (108.9s)
+[done] decay_rate_2.5+decay_act_2.5+decay_tab_3+mom  seed=2 valid=0.63179 test=0.62687  (118.7s)
+[done] decay_rate_2.5+decay_act_2.5+decay_tab_7+mom  seed=0 valid=0.63142 test=0.62848  (102.2s)
+[done] decay_rate_2.5+decay_act_2.5+decay_tab_7+mom  seed=1 valid=0.63282 test=0.62909  (77.8s)
+[done] decay_rate_2.5+decay_act_2.5+decay_tab_7+mom  seed=2 valid=0.63229 test=0.62906  (81.1s)
+Step 2 valid means (decayed tab): {3: 0.63249, 7: 0.63218}
+Flat-tab baseline (best_h=2.5) valid mean: 0.62997
+
+Best overall 3-seed config: decay_rate_2.5+decay_act_2.5+decay_tab_3+mom (valid mean 0.63249) vs iter19 5-seed reference 0.62898
+Margin vs iter19 5-seed valid mean: +0.00351
+
+=== Step 3: 5-seed confirmation of decay_rate_2.5+decay_act_2.5+decay_tab_3+mom ===
+[skip] decay_rate_2.5+decay_act_2.5+decay_tab_3+mom seed=0 already done
+[skip] decay_rate_2.5+decay_act_2.5+decay_tab_3+mom seed=1 already done
+[skip] decay_rate_2.5+decay_act_2.5+decay_tab_3+mom seed=2 already done
+[done] decay_rate_2.5+decay_act_2.5+decay_tab_3+mom  seed=3 valid=0.63208 test=0.62855  (72.4s)
+[done] decay_rate_2.5+decay_act_2.5+decay_tab_3+mom  seed=4 valid=0.63298 test=0.62892  (78.1s)
+5-seed valid mean for decay_rate_2.5+decay_act_2.5+decay_tab_3+mom: 0.63251
+
+Sweep complete.

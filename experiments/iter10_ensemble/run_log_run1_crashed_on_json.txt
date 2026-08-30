@@ -1,0 +1,181 @@
+loading ../../KuaiRand-Pure/data ...
+{'train': 1141112, 'valid': 124909, 'test': 170588} fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket'] dim=40260
+
+=== training seed 0 (pointwise + bpr) ===
+  [pointwise] epoch  1 | loss 0.6391 | valid GAUC 0.6467 nDCG@5 0.5272 primary 0.5869 | 2.8s
+  [pointwise] epoch  2 | loss 0.5479 | valid GAUC 0.6589 nDCG@5 0.5323 primary 0.5956 | 2.7s
+  [pointwise] epoch  3 | loss 0.5129 | valid GAUC 0.6642 nDCG@5 0.5344 primary 0.5993 | 2.4s
+  [pointwise] epoch  4 | loss 0.5004 | valid GAUC 0.6642 nDCG@5 0.5346 primary 0.5994 | 2.3s
+  [pointwise] epoch  5 | loss 0.4941 | valid GAUC 0.6661 nDCG@5 0.5360 primary 0.6010 | 2.3s
+  [pointwise] epoch  6 | loss 0.4897 | valid GAUC 0.6658 nDCG@5 0.5354 primary 0.6006 | 2.9s
+  [pointwise] epoch  7 | loss 0.4859 | valid GAUC 0.6671 nDCG@5 0.5358 primary 0.6015 | 2.6s
+  [pointwise] epoch  8 | loss 0.4821 | valid GAUC 0.6665 nDCG@5 0.5359 primary 0.6012 | 2.7s
+  [pointwise] epoch  9 | loss 0.4784 | valid GAUC 0.6666 nDCG@5 0.5348 primary 0.6007 | 2.6s
+  [pointwise] epoch 10 | loss 0.4744 | valid GAUC 0.6650 nDCG@5 0.5342 primary 0.5996 | 2.8s
+  [pointwise] epoch 11 | loss 0.4705 | valid GAUC 0.6640 nDCG@5 0.5341 primary 0.5990 | 2.8s
+  [pointwise] early stop at epoch 11
+  [bpr] eligible train users: 24290 | 47 steps/epoch | activity-weighted user sampling
+  [bpr] epoch  1 | loss 0.6746 | valid GAUC 0.6566 nDCG@5 0.5299 primary 0.5932 | 1.6s
+  [bpr] epoch  2 | loss 0.6159 | valid GAUC 0.6624 nDCG@5 0.5327 primary 0.5975 | 1.7s
+  [bpr] epoch  3 | loss 0.5725 | valid GAUC 0.6666 nDCG@5 0.5352 primary 0.6009 | 1.7s
+  [bpr] epoch  4 | loss 0.5566 | valid GAUC 0.6686 nDCG@5 0.5363 primary 0.6025 | 1.7s
+  [bpr] epoch  5 | loss 0.5487 | valid GAUC 0.6677 nDCG@5 0.5353 primary 0.6015 | 1.6s
+  [bpr] epoch  6 | loss 0.5432 | valid GAUC 0.6676 nDCG@5 0.5361 primary 0.6018 | 1.7s
+  [bpr] epoch  7 | loss 0.5399 | valid GAUC 0.6684 nDCG@5 0.5358 primary 0.6021 | 1.6s
+  [bpr] epoch  8 | loss 0.5343 | valid GAUC 0.6682 nDCG@5 0.5357 primary 0.6019 | 1.8s
+  [bpr] early stop at epoch 8
+seed 0: pointwise trained in 29.1s (best ep 7), bpr trained in 13.8s (best ep 4)
+
+=== training seed 1 (pointwise + bpr) ===
+  [pointwise] epoch  1 | loss 0.6406 | valid GAUC 0.6448 nDCG@5 0.5262 primary 0.5855 | 3.1s
+  [pointwise] epoch  2 | loss 0.5509 | valid GAUC 0.6601 nDCG@5 0.5328 primary 0.5964 | 2.8s
+  [pointwise] epoch  3 | loss 0.5136 | valid GAUC 0.6648 nDCG@5 0.5348 primary 0.5998 | 2.9s
+  [pointwise] epoch  4 | loss 0.5007 | valid GAUC 0.6674 nDCG@5 0.5361 primary 0.6018 | 3.0s
+  [pointwise] epoch  5 | loss 0.4946 | valid GAUC 0.6661 nDCG@5 0.5353 primary 0.6007 | 3.1s
+  [pointwise] epoch  6 | loss 0.4904 | valid GAUC 0.6667 nDCG@5 0.5356 primary 0.6011 | 3.2s
+  [pointwise] epoch  7 | loss 0.4868 | valid GAUC 0.6673 nDCG@5 0.5355 primary 0.6014 | 2.8s
+  [pointwise] epoch  8 | loss 0.4832 | valid GAUC 0.6667 nDCG@5 0.5356 primary 0.6011 | 2.9s
+  [pointwise] early stop at epoch 8
+  [bpr] eligible train users: 24290 | 47 steps/epoch | activity-weighted user sampling
+  [bpr] epoch  1 | loss 0.6753 | valid GAUC 0.6560 nDCG@5 0.5298 primary 0.5929 | 1.8s
+  [bpr] epoch  2 | loss 0.6191 | valid GAUC 0.6635 nDCG@5 0.5332 primary 0.5984 | 1.8s
+  [bpr] epoch  3 | loss 0.5747 | valid GAUC 0.6651 nDCG@5 0.5343 primary 0.5997 | 1.8s
+  [bpr] epoch  4 | loss 0.5567 | valid GAUC 0.6658 nDCG@5 0.5349 primary 0.6003 | 2.0s
+  [bpr] epoch  5 | loss 0.5481 | valid GAUC 0.6681 nDCG@5 0.5361 primary 0.6021 | 2.0s
+  [bpr] epoch  6 | loss 0.5425 | valid GAUC 0.6683 nDCG@5 0.5357 primary 0.6020 | 1.8s
+  [bpr] epoch  7 | loss 0.5344 | valid GAUC 0.6692 nDCG@5 0.5357 primary 0.6025 | 1.8s
+  [bpr] epoch  8 | loss 0.5303 | valid GAUC 0.6679 nDCG@5 0.5358 primary 0.6018 | 1.8s
+  [bpr] epoch  9 | loss 0.5235 | valid GAUC 0.6670 nDCG@5 0.5358 primary 0.6014 | 1.9s
+  [bpr] epoch 10 | loss 0.5169 | valid GAUC 0.6666 nDCG@5 0.5356 primary 0.6011 | 1.8s
+  [bpr] epoch 11 | loss 0.5109 | valid GAUC 0.6666 nDCG@5 0.5346 primary 0.6006 | 2.0s
+  [bpr] early stop at epoch 11
+seed 1: pointwise trained in 23.8s (best ep 4), bpr trained in 20.7s (best ep 7)
+
+=== training seed 2 (pointwise + bpr) ===
+  [pointwise] epoch  1 | loss 0.6410 | valid GAUC 0.6460 nDCG@5 0.5266 primary 0.5863 | 2.7s
+  [pointwise] epoch  2 | loss 0.5522 | valid GAUC 0.6587 nDCG@5 0.5320 primary 0.5954 | 3.2s
+  [pointwise] epoch  3 | loss 0.5142 | valid GAUC 0.6640 nDCG@5 0.5344 primary 0.5992 | 3.5s
+  [pointwise] epoch  4 | loss 0.5006 | valid GAUC 0.6650 nDCG@5 0.5345 primary 0.5998 | 3.2s
+  [pointwise] epoch  5 | loss 0.4940 | valid GAUC 0.6655 nDCG@5 0.5352 primary 0.6004 | 2.9s
+  [pointwise] epoch  6 | loss 0.4896 | valid GAUC 0.6668 nDCG@5 0.5349 primary 0.6008 | 3.2s
+  [pointwise] epoch  7 | loss 0.4857 | valid GAUC 0.6671 nDCG@5 0.5351 primary 0.6011 | 3.0s
+  [pointwise] epoch  8 | loss 0.4820 | valid GAUC 0.6658 nDCG@5 0.5350 primary 0.6004 | 2.8s
+  [pointwise] epoch  9 | loss 0.4782 | valid GAUC 0.6647 nDCG@5 0.5345 primary 0.5996 | 2.9s
+  [pointwise] epoch 10 | loss 0.4743 | valid GAUC 0.6638 nDCG@5 0.5338 primary 0.5988 | 2.5s
+  [pointwise] epoch 11 | loss 0.4704 | valid GAUC 0.6621 nDCG@5 0.5327 primary 0.5974 | 2.4s
+  [pointwise] early stop at epoch 11
+  [bpr] eligible train users: 24290 | 47 steps/epoch | activity-weighted user sampling
+  [bpr] epoch  1 | loss 0.6754 | valid GAUC 0.6544 nDCG@5 0.5290 primary 0.5917 | 1.5s
+  [bpr] epoch  2 | loss 0.6186 | valid GAUC 0.6624 nDCG@5 0.5327 primary 0.5976 | 1.5s
+  [bpr] epoch  3 | loss 0.5730 | valid GAUC 0.6652 nDCG@5 0.5345 primary 0.5998 | 2.9s
+  [bpr] epoch  4 | loss 0.5565 | valid GAUC 0.6666 nDCG@5 0.5355 primary 0.6010 | 3.1s
+  [bpr] epoch  5 | loss 0.5471 | valid GAUC 0.6676 nDCG@5 0.5364 primary 0.6020 | 2.3s
+  [bpr] epoch  6 | loss 0.5402 | valid GAUC 0.6676 nDCG@5 0.5364 primary 0.6020 | 2.0s
+  [bpr] epoch  7 | loss 0.5353 | valid GAUC 0.6680 nDCG@5 0.5362 primary 0.6021 | 1.8s
+  [bpr] epoch  8 | loss 0.5300 | valid GAUC 0.6671 nDCG@5 0.5356 primary 0.6014 | 1.8s
+  [bpr] epoch  9 | loss 0.5241 | valid GAUC 0.6663 nDCG@5 0.5350 primary 0.6007 | 1.5s
+  [bpr] epoch 10 | loss 0.5176 | valid GAUC 0.6651 nDCG@5 0.5343 primary 0.5997 | 1.6s
+  [bpr] epoch 11 | loss 0.5125 | valid GAUC 0.6645 nDCG@5 0.5339 primary 0.5992 | 1.5s
+  [bpr] early stop at epoch 11
+seed 2: pointwise trained in 32.4s (best ep 7), bpr trained in 21.8s (best ep 7)
+
+=== training seed 3 (pointwise + bpr) ===
+  [pointwise] epoch  1 | loss 0.6404 | valid GAUC 0.6490 nDCG@5 0.5278 primary 0.5884 | 2.7s
+  [pointwise] epoch  2 | loss 0.5520 | valid GAUC 0.6579 nDCG@5 0.5316 primary 0.5947 | 2.5s
+  [pointwise] epoch  3 | loss 0.5149 | valid GAUC 0.6633 nDCG@5 0.5339 primary 0.5986 | 2.6s
+  [pointwise] epoch  4 | loss 0.5014 | valid GAUC 0.6655 nDCG@5 0.5345 primary 0.6000 | 2.6s
+  [pointwise] epoch  5 | loss 0.4951 | valid GAUC 0.6667 nDCG@5 0.5355 primary 0.6011 | 2.7s
+  [pointwise] epoch  6 | loss 0.4906 | valid GAUC 0.6675 nDCG@5 0.5355 primary 0.6015 | 2.7s
+  [pointwise] epoch  7 | loss 0.4868 | valid GAUC 0.6667 nDCG@5 0.5350 primary 0.6009 | 2.7s
+  [pointwise] epoch  8 | loss 0.4834 | valid GAUC 0.6660 nDCG@5 0.5343 primary 0.6001 | 2.4s
+  [pointwise] epoch  9 | loss 0.4798 | valid GAUC 0.6652 nDCG@5 0.5348 primary 0.6000 | 2.5s
+  [pointwise] epoch 10 | loss 0.4761 | valid GAUC 0.6646 nDCG@5 0.5342 primary 0.5994 | 2.4s
+  [pointwise] early stop at epoch 10
+  [bpr] eligible train users: 24290 | 47 steps/epoch | activity-weighted user sampling
+  [bpr] epoch  1 | loss 0.6748 | valid GAUC 0.6568 nDCG@5 0.5300 primary 0.5934 | 1.5s
+  [bpr] epoch  2 | loss 0.6162 | valid GAUC 0.6642 nDCG@5 0.5339 primary 0.5991 | 1.6s
+  [bpr] epoch  3 | loss 0.5733 | valid GAUC 0.6658 nDCG@5 0.5350 primary 0.6004 | 1.7s
+  [bpr] epoch  4 | loss 0.5569 | valid GAUC 0.6669 nDCG@5 0.5358 primary 0.6013 | 1.5s
+  [bpr] epoch  5 | loss 0.5498 | valid GAUC 0.6679 nDCG@5 0.5358 primary 0.6018 | 1.6s
+  [bpr] epoch  6 | loss 0.5450 | valid GAUC 0.6687 nDCG@5 0.5362 primary 0.6024 | 1.9s
+  [bpr] epoch  7 | loss 0.5424 | valid GAUC 0.6681 nDCG@5 0.5364 primary 0.6022 | 1.9s
+  [bpr] epoch  8 | loss 0.5373 | valid GAUC 0.6680 nDCG@5 0.5362 primary 0.6021 | 1.8s
+  [bpr] epoch  9 | loss 0.5323 | valid GAUC 0.6687 nDCG@5 0.5370 primary 0.6028 | 1.9s
+  [bpr] epoch 10 | loss 0.5290 | valid GAUC 0.6680 nDCG@5 0.5361 primary 0.6021 | 1.9s
+  [bpr] epoch 11 | loss 0.5251 | valid GAUC 0.6677 nDCG@5 0.5360 primary 0.6018 | 2.0s
+  [bpr] epoch 12 | loss 0.5189 | valid GAUC 0.6682 nDCG@5 0.5365 primary 0.6024 | 2.0s
+  [bpr] epoch 13 | loss 0.5134 | valid GAUC 0.6677 nDCG@5 0.5359 primary 0.6018 | 2.0s
+  [bpr] early stop at epoch 13
+seed 3: pointwise trained in 26.2s (best ep 6), bpr trained in 23.7s (best ep 9)
+
+=== training seed 4 (pointwise + bpr) ===
+  [pointwise] epoch  1 | loss 0.6404 | valid GAUC 0.6483 nDCG@5 0.5284 primary 0.5884 | 3.1s
+  [pointwise] epoch  2 | loss 0.5506 | valid GAUC 0.6596 nDCG@5 0.5325 primary 0.5960 | 3.2s
+  [pointwise] epoch  3 | loss 0.5132 | valid GAUC 0.6652 nDCG@5 0.5351 primary 0.6001 | 3.6s
+  [pointwise] epoch  4 | loss 0.5001 | valid GAUC 0.6662 nDCG@5 0.5355 primary 0.6009 | 3.1s
+  [pointwise] epoch  5 | loss 0.4937 | valid GAUC 0.6674 nDCG@5 0.5362 primary 0.6018 | 3.2s
+  [pointwise] epoch  6 | loss 0.4894 | valid GAUC 0.6675 nDCG@5 0.5357 primary 0.6016 | 2.7s
+  [pointwise] epoch  7 | loss 0.4855 | valid GAUC 0.6679 nDCG@5 0.5361 primary 0.6020 | 2.6s
+  [pointwise] epoch  8 | loss 0.4817 | valid GAUC 0.6674 nDCG@5 0.5357 primary 0.6015 | 2.3s
+  [pointwise] epoch  9 | loss 0.4777 | valid GAUC 0.6657 nDCG@5 0.5350 primary 0.6004 | 2.3s
+  [pointwise] epoch 10 | loss 0.4737 | valid GAUC 0.6646 nDCG@5 0.5338 primary 0.5992 | 2.7s
+  [pointwise] epoch 11 | loss 0.4697 | valid GAUC 0.6635 nDCG@5 0.5336 primary 0.5986 | 2.7s
+  [pointwise] early stop at epoch 11
+  [bpr] eligible train users: 24290 | 47 steps/epoch | activity-weighted user sampling
+  [bpr] epoch  1 | loss 0.6751 | valid GAUC 0.6567 nDCG@5 0.5301 primary 0.5934 | 1.9s
+  [bpr] epoch  2 | loss 0.6182 | valid GAUC 0.6638 nDCG@5 0.5338 primary 0.5988 | 1.8s
+  [bpr] epoch  3 | loss 0.5729 | valid GAUC 0.6658 nDCG@5 0.5344 primary 0.6001 | 2.1s
+  [bpr] epoch  4 | loss 0.5556 | valid GAUC 0.6663 nDCG@5 0.5346 primary 0.6005 | 2.2s
+  [bpr] epoch  5 | loss 0.5468 | valid GAUC 0.6683 nDCG@5 0.5360 primary 0.6022 | 2.5s
+  [bpr] epoch  6 | loss 0.5414 | valid GAUC 0.6692 nDCG@5 0.5360 primary 0.6026 | 2.8s
+  [bpr] epoch  7 | loss 0.5348 | valid GAUC 0.6698 nDCG@5 0.5363 primary 0.6030 | 2.7s
+  [bpr] epoch  8 | loss 0.5309 | valid GAUC 0.6692 nDCG@5 0.5359 primary 0.6026 | 2.5s
+  [bpr] epoch  9 | loss 0.5257 | valid GAUC 0.6685 nDCG@5 0.5359 primary 0.6022 | 2.3s
+  [bpr] epoch 10 | loss 0.5198 | valid GAUC 0.6672 nDCG@5 0.5355 primary 0.6014 | 2.4s
+  [bpr] epoch 11 | loss 0.5135 | valid GAUC 0.6663 nDCG@5 0.5346 primary 0.6005 | 2.2s
+  [bpr] early stop at epoch 11
+seed 4: pointwise trained in 31.9s (best ep 7), bpr trained in 25.7s (best ep 7)
+w=0.25: valid primary per seed ['0.6031', '0.6032', '0.6028'] -> mean 0.60303
+w=0.5: valid primary per seed ['0.6036', '0.6032', '0.6025'] -> mean 0.60309
+w=0.75: valid primary per seed ['0.6034', '0.6026', '0.6020'] -> mean 0.60266
+
+winning w (by mean valid primary over seeds [0, 1, 2]): 0.5
+seed 0 ensemble (w=0.5): valid primary 0.6036 | test primary 0.5977
+seed 1 ensemble (w=0.5): valid primary 0.6032 | test primary 0.5976
+seed 2 ensemble (w=0.5): valid primary 0.6025 | test primary 0.5978
+seed 3 ensemble (w=0.5): valid primary 0.6030 | test primary 0.5974
+seed 4 ensemble (w=0.5): valid primary 0.6036 | test primary 0.5971
+
+=== ENSEMBLE (w=0.5), 5 seeds ===
+valid primary: mean 0.60317 std 0.00043
+test  primary: mean 0.59753 std 0.00025
+Traceback (most recent call last):
+  File "/Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter10_ensemble/train.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter10_ensemble/train.py", line 259, in main
+    json.dump(out, fh, indent=2)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.14/json/__init__.py", line 181, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "/opt/miniconda3/lib/python3.14/json/encoder.py", line 444, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/opt/miniconda3/lib/python3.14/json/encoder.py", line 413, in _iterencode_dict
+    yield from chunks
+  File "/opt/miniconda3/lib/python3.14/json/encoder.py", line 413, in _iterencode_dict
+    yield from chunks
+  File "/opt/miniconda3/lib/python3.14/json/encoder.py", line 413, in _iterencode_dict
+    yield from chunks
+  File "/opt/miniconda3/lib/python3.14/json/encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "/opt/miniconda3/lib/python3.14/json/encoder.py", line 451, in _iterencode
+    newobj = _default(o)
+  File "/opt/miniconda3/lib/python3.14/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type float32 is not JSON serializable
+when serializing list item 0
+when serializing dict item 'per_seed_valid_primary'
+when serializing dict item '0.25'
+when serializing dict item 'sweep'

@@ -1,0 +1,13 @@
+seed0: valid primary 0.6016 test primary 0.5952 (47.9s)
+seed1: valid primary 0.6020 test primary 0.5946 (44.7s)
+seed2: valid primary 0.6012 test primary 0.5949 (332.2s)
+  early stop at epoch 9
+
+=== fm+hybrid (bpr_weight=0.5, seed=3) ===
+  valid  GAUC 0.6666 | nDCG@5 0.5352 | primary 0.6009
+  test   GAUC 0.6605 | nDCG@5 0.5281 | primary 0.5943
+  early stop at epoch 7
+
+=== fm+hybrid (bpr_weight=0.5, seed=4) ===
+  valid  GAUC 0.6679 | nDCG@5 0.5357 | primary 0.6018
+  test   GAUC 0.6603 | nDCG@5 0.5278 | primary 0.5940

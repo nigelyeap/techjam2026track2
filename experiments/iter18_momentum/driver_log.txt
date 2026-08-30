@@ -1,0 +1,492 @@
+
+=== running base seed=0 features=('activity', 'tab', 'rate') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate'] dim=40292
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6631 | valid GAUC 0.6616 nDCG@5 0.5316 primary 0.5966 | 1.7s
+  epoch  2 | loss 0.5801 | valid GAUC 0.6699 nDCG@5 0.5363 primary 0.6031 | 1.8s
+  epoch  3 | loss 0.5504 | valid GAUC 0.6764 nDCG@5 0.5399 primary 0.6081 | 1.8s
+  epoch  4 | loss 0.5430 | valid GAUC 0.6778 nDCG@5 0.5410 primary 0.6094 | 1.9s
+  epoch  5 | loss 0.5378 | valid GAUC 0.6772 nDCG@5 0.5406 primary 0.6089 | 1.7s
+  epoch  6 | loss 0.5337 | valid GAUC 0.6769 nDCG@5 0.5408 primary 0.6088 | 1.9s
+  epoch  7 | loss 0.5300 | valid GAUC 0.6779 nDCG@5 0.5411 primary 0.6095 | 1.9s
+  epoch  8 | loss 0.5239 | valid GAUC 0.6794 nDCG@5 0.5412 primary 0.6103 | 2.0s
+  epoch  9 | loss 0.5192 | valid GAUC 0.6780 nDCG@5 0.5406 primary 0.6093 | 2.0s
+  epoch 10 | loss 0.5130 | valid GAUC 0.6772 nDCG@5 0.5403 primary 0.6087 | 2.0s
+  epoch 11 | loss 0.5052 | valid GAUC 0.6771 nDCG@5 0.5403 primary 0.6087 | 2.7s
+  epoch 12 | loss 0.4988 | valid GAUC 0.6772 nDCG@5 0.5403 primary 0.6088 | 2.3s
+  early stop at epoch 12
+=== done base__seed0 in 41.0s | valid primary=0.61028 test primary=0.60562 ===
+
+=== running base seed=1 features=('activity', 'tab', 'rate') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate'] dim=40292
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6616 | valid GAUC 0.6606 nDCG@5 0.5315 primary 0.5961 | 1.7s
+  epoch  2 | loss 0.5778 | valid GAUC 0.6716 nDCG@5 0.5372 primary 0.6044 | 1.8s
+  epoch  3 | loss 0.5513 | valid GAUC 0.6758 nDCG@5 0.5395 primary 0.6077 | 1.7s
+  epoch  4 | loss 0.5442 | valid GAUC 0.6767 nDCG@5 0.5399 primary 0.6083 | 1.7s
+  epoch  5 | loss 0.5413 | valid GAUC 0.6773 nDCG@5 0.5408 primary 0.6090 | 1.7s
+  epoch  6 | loss 0.5380 | valid GAUC 0.6782 nDCG@5 0.5409 primary 0.6095 | 2.0s
+  epoch  7 | loss 0.5315 | valid GAUC 0.6797 nDCG@5 0.5411 primary 0.6104 | 2.0s
+  epoch  8 | loss 0.5280 | valid GAUC 0.6794 nDCG@5 0.5412 primary 0.6103 | 2.1s
+  epoch  9 | loss 0.5220 | valid GAUC 0.6775 nDCG@5 0.5409 primary 0.6092 | 2.0s
+  epoch 10 | loss 0.5151 | valid GAUC 0.6774 nDCG@5 0.5402 primary 0.6088 | 2.0s
+  epoch 11 | loss 0.5085 | valid GAUC 0.6791 nDCG@5 0.5409 primary 0.6100 | 2.0s
+  early stop at epoch 11
+=== done base__seed1 in 36.2s | valid primary=0.61038 test primary=0.60567 ===
+
+=== running base seed=2 features=('activity', 'tab', 'rate') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate'] dim=40292
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6643 | valid GAUC 0.6579 nDCG@5 0.5300 primary 0.5940 | 2.2s
+  epoch  2 | loss 0.5807 | valid GAUC 0.6691 nDCG@5 0.5363 primary 0.6027 | 2.0s
+  epoch  3 | loss 0.5490 | valid GAUC 0.6759 nDCG@5 0.5397 primary 0.6078 | 2.2s
+  epoch  4 | loss 0.5436 | valid GAUC 0.6772 nDCG@5 0.5410 primary 0.6091 | 2.2s
+  epoch  5 | loss 0.5381 | valid GAUC 0.6776 nDCG@5 0.5411 primary 0.6094 | 2.1s
+  epoch  6 | loss 0.5329 | valid GAUC 0.6785 nDCG@5 0.5416 primary 0.6101 | 2.0s
+  epoch  7 | loss 0.5290 | valid GAUC 0.6771 nDCG@5 0.5411 primary 0.6091 | 2.1s
+  epoch  8 | loss 0.5234 | valid GAUC 0.6775 nDCG@5 0.5411 primary 0.6093 | 2.0s
+  epoch  9 | loss 0.5170 | valid GAUC 0.6764 nDCG@5 0.5406 primary 0.6085 | 2.1s
+  epoch 10 | loss 0.5106 | valid GAUC 0.6772 nDCG@5 0.5400 primary 0.6086 | 2.1s
+  early stop at epoch 10
+=== done base__seed2 in 35.8s | valid primary=0.61006 test primary=0.60585 ===
+
+=== running +last1 seed=0 features=('activity', 'tab', 'rate', 'last1') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1'] dim=40296
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6576 | valid GAUC 0.6510 nDCG@5 0.5266 primary 0.5888 | 2.2s
+  epoch  2 | loss 0.5717 | valid GAUC 0.6678 nDCG@5 0.5355 primary 0.6017 | 2.4s
+  epoch  3 | loss 0.5487 | valid GAUC 0.6706 nDCG@5 0.5372 primary 0.6039 | 2.3s
+  epoch  4 | loss 0.5438 | valid GAUC 0.6737 nDCG@5 0.5390 primary 0.6063 | 2.2s
+  epoch  5 | loss 0.5397 | valid GAUC 0.6718 nDCG@5 0.5381 primary 0.6050 | 2.3s
+  epoch  6 | loss 0.5362 | valid GAUC 0.6708 nDCG@5 0.5383 primary 0.6045 | 2.3s
+  epoch  7 | loss 0.5330 | valid GAUC 0.6710 nDCG@5 0.5375 primary 0.6043 | 2.8s
+  epoch  8 | loss 0.5268 | valid GAUC 0.6714 nDCG@5 0.5377 primary 0.6046 | 2.4s
+  early stop at epoch 8
+=== done +last1__seed0 in 35.5s | valid primary=0.60632 test primary=0.60202 ===
+
+=== running +last1 seed=1 features=('activity', 'tab', 'rate', 'last1') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1'] dim=40296
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6590 | valid GAUC 0.6453 nDCG@5 0.5237 primary 0.5845 | 2.4s
+  epoch  2 | loss 0.5729 | valid GAUC 0.6665 nDCG@5 0.5344 primary 0.6004 | 2.4s
+  epoch  3 | loss 0.5492 | valid GAUC 0.6728 nDCG@5 0.5383 primary 0.6056 | 2.4s
+  epoch  4 | loss 0.5422 | valid GAUC 0.6693 nDCG@5 0.5367 primary 0.6030 | 2.4s
+  epoch  5 | loss 0.5389 | valid GAUC 0.6712 nDCG@5 0.5378 primary 0.6045 | 2.3s
+  epoch  6 | loss 0.5350 | valid GAUC 0.6720 nDCG@5 0.5383 primary 0.6051 | 2.4s
+  epoch  7 | loss 0.5278 | valid GAUC 0.6729 nDCG@5 0.5380 primary 0.6055 | 2.2s
+  early stop at epoch 7
+=== done +last1__seed1 in 33.7s | valid primary=0.60556 test primary=0.60129 ===
+
+=== running +last1 seed=2 features=('activity', 'tab', 'rate', 'last1') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1'] dim=40296
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6608 | valid GAUC 0.6499 nDCG@5 0.5261 primary 0.5880 | 2.2s
+  epoch  2 | loss 0.5739 | valid GAUC 0.6651 nDCG@5 0.5342 primary 0.5997 | 2.3s
+  epoch  3 | loss 0.5472 | valid GAUC 0.6712 nDCG@5 0.5374 primary 0.6043 | 2.3s
+  epoch  4 | loss 0.5433 | valid GAUC 0.6721 nDCG@5 0.5390 primary 0.6055 | 2.3s
+  epoch  5 | loss 0.5380 | valid GAUC 0.6728 nDCG@5 0.5391 primary 0.6060 | 2.4s
+  epoch  6 | loss 0.5332 | valid GAUC 0.6726 nDCG@5 0.5388 primary 0.6057 | 2.2s
+  epoch  7 | loss 0.5290 | valid GAUC 0.6688 nDCG@5 0.5370 primary 0.6029 | 2.3s
+  epoch  8 | loss 0.5231 | valid GAUC 0.6695 nDCG@5 0.5370 primary 0.6033 | 2.3s
+  epoch  9 | loss 0.5163 | valid GAUC 0.6707 nDCG@5 0.5376 primary 0.6041 | 2.5s
+  early stop at epoch 9
+=== done +last1__seed2 in 37.4s | valid primary=0.60597 test primary=0.60203 ===
+
+=== running +lastk_rate seed=0 features=('activity', 'tab', 'rate', 'lastk_rate') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'lastk_rate'] dim=40300
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6582 | valid GAUC 0.6636 nDCG@5 0.5300 primary 0.5968 | 2.4s
+  epoch  2 | loss 0.5719 | valid GAUC 0.6718 nDCG@5 0.5356 primary 0.6037 | 2.3s
+  epoch  3 | loss 0.5486 | valid GAUC 0.6760 nDCG@5 0.5371 primary 0.6065 | 2.8s
+  epoch  4 | loss 0.5436 | valid GAUC 0.6785 nDCG@5 0.5398 primary 0.6092 | 2.4s
+  epoch  5 | loss 0.5391 | valid GAUC 0.6765 nDCG@5 0.5378 primary 0.6072 | 2.6s
+  epoch  6 | loss 0.5355 | valid GAUC 0.6758 nDCG@5 0.5384 primary 0.6071 | 2.2s
+  epoch  7 | loss 0.5319 | valid GAUC 0.6769 nDCG@5 0.5388 primary 0.6078 | 2.3s
+  epoch  8 | loss 0.5260 | valid GAUC 0.6781 nDCG@5 0.5386 primary 0.6084 | 2.3s
+  early stop at epoch 8
+=== done +lastk_rate__seed0 in 39.2s | valid primary=0.60915 test primary=0.60398 ===
+
+=== running +lastk_rate seed=1 features=('activity', 'tab', 'rate', 'lastk_rate') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'lastk_rate'] dim=40300
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6588 | valid GAUC 0.6572 nDCG@5 0.5266 primary 0.5919 | 2.7s
+  epoch  2 | loss 0.5727 | valid GAUC 0.6728 nDCG@5 0.5356 primary 0.6042 | 2.4s
+  epoch  3 | loss 0.5495 | valid GAUC 0.6763 nDCG@5 0.5379 primary 0.6071 | 2.5s
+  epoch  4 | loss 0.5428 | valid GAUC 0.6757 nDCG@5 0.5372 primary 0.6065 | 2.2s
+  epoch  5 | loss 0.5399 | valid GAUC 0.6774 nDCG@5 0.5396 primary 0.6085 | 2.3s
+  epoch  6 | loss 0.5360 | valid GAUC 0.6771 nDCG@5 0.5383 primary 0.6077 | 2.2s
+  epoch  7 | loss 0.5289 | valid GAUC 0.6793 nDCG@5 0.5393 primary 0.6093 | 2.5s
+  epoch  8 | loss 0.5246 | valid GAUC 0.6779 nDCG@5 0.5387 primary 0.6083 | 2.5s
+  epoch  9 | loss 0.5183 | valid GAUC 0.6751 nDCG@5 0.5379 primary 0.6065 | 2.6s
+  epoch 10 | loss 0.5112 | valid GAUC 0.6775 nDCG@5 0.5392 primary 0.6083 | 2.4s
+  epoch 11 | loss 0.5043 | valid GAUC 0.6770 nDCG@5 0.5381 primary 0.6075 | 2.5s
+  early stop at epoch 11
+=== done +lastk_rate__seed1 in 46.8s | valid primary=0.60927 test primary=0.60431 ===
+
+=== running +lastk_rate seed=2 features=('activity', 'tab', 'rate', 'lastk_rate') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'lastk_rate'] dim=40300
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6606 | valid GAUC 0.6573 nDCG@5 0.5267 primary 0.5920 | 2.0s
+  epoch  2 | loss 0.5737 | valid GAUC 0.6703 nDCG@5 0.5354 primary 0.6029 | 2.0s
+  epoch  3 | loss 0.5472 | valid GAUC 0.6763 nDCG@5 0.5383 primary 0.6073 | 1.9s
+  epoch  4 | loss 0.5431 | valid GAUC 0.6773 nDCG@5 0.5401 primary 0.6087 | 1.7s
+  epoch  5 | loss 0.5378 | valid GAUC 0.6781 nDCG@5 0.5396 primary 0.6088 | 1.6s
+  epoch  6 | loss 0.5326 | valid GAUC 0.6773 nDCG@5 0.5397 primary 0.6085 | 1.7s
+  epoch  7 | loss 0.5283 | valid GAUC 0.6741 nDCG@5 0.5384 primary 0.6063 | 1.6s
+  epoch  8 | loss 0.5223 | valid GAUC 0.6753 nDCG@5 0.5392 primary 0.6072 | 1.7s
+  epoch  9 | loss 0.5157 | valid GAUC 0.6747 nDCG@5 0.5390 primary 0.6068 | 1.6s
+  early stop at epoch 9
+=== done +lastk_rate__seed2 in 36.3s | valid primary=0.60885 test primary=0.60425 ===
+
+=== running +last1+lastk_rate seed=0 features=('activity', 'tab', 'rate', 'last1', 'lastk_rate') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1', 'lastk_rate'] dim=40304
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6551 | valid GAUC 0.6522 nDCG@5 0.5232 primary 0.5877 | 1.7s
+  epoch  2 | loss 0.5678 | valid GAUC 0.6695 nDCG@5 0.5344 primary 0.6020 | 1.8s
+  epoch  3 | loss 0.5467 | valid GAUC 0.6705 nDCG@5 0.5348 primary 0.6026 | 1.8s
+  epoch  4 | loss 0.5416 | valid GAUC 0.6728 nDCG@5 0.5375 primary 0.6051 | 1.8s
+  epoch  5 | loss 0.5367 | valid GAUC 0.6704 nDCG@5 0.5354 primary 0.6029 | 1.8s
+  epoch  6 | loss 0.5323 | valid GAUC 0.6683 nDCG@5 0.5355 primary 0.6019 | 1.7s
+  epoch  7 | loss 0.5286 | valid GAUC 0.6701 nDCG@5 0.5359 primary 0.6030 | 1.4s
+  epoch  8 | loss 0.5224 | valid GAUC 0.6731 nDCG@5 0.5367 primary 0.6049 | 1.4s
+  early stop at epoch 8
+=== done +last1+lastk_rate__seed0 in 27.5s | valid primary=0.60514 test primary=0.60102 ===
+
+=== running +last1+lastk_rate seed=1 features=('activity', 'tab', 'rate', 'last1', 'lastk_rate') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1', 'lastk_rate'] dim=40304
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6550 | valid GAUC 0.6472 nDCG@5 0.5212 primary 0.5842 | 1.5s
+  epoch  2 | loss 0.5682 | valid GAUC 0.6687 nDCG@5 0.5332 primary 0.6009 | 1.4s
+  epoch  3 | loss 0.5483 | valid GAUC 0.6742 nDCG@5 0.5370 primary 0.6056 | 1.4s
+  epoch  4 | loss 0.5420 | valid GAUC 0.6707 nDCG@5 0.5346 primary 0.6026 | 1.5s
+  epoch  5 | loss 0.5389 | valid GAUC 0.6731 nDCG@5 0.5377 primary 0.6054 | 1.7s
+  epoch  6 | loss 0.5348 | valid GAUC 0.6729 nDCG@5 0.5365 primary 0.6047 | 1.6s
+  epoch  7 | loss 0.5275 | valid GAUC 0.6740 nDCG@5 0.5371 primary 0.6055 | 1.6s
+  early stop at epoch 7
+=== done +last1+lastk_rate__seed1 in 22.3s | valid primary=0.60556 test primary=0.60160 ===
+
+=== running +last1+lastk_rate seed=2 features=('activity', 'tab', 'rate', 'last1', 'lastk_rate') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1', 'lastk_rate'] dim=40304
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6567 | valid GAUC 0.6534 nDCG@5 0.5244 primary 0.5889 | 1.9s
+  epoch  2 | loss 0.5682 | valid GAUC 0.6687 nDCG@5 0.5345 primary 0.6016 | 1.8s
+  epoch  3 | loss 0.5457 | valid GAUC 0.6736 nDCG@5 0.5367 primary 0.6052 | 1.8s
+  epoch  4 | loss 0.5423 | valid GAUC 0.6745 nDCG@5 0.5389 primary 0.6067 | 1.8s
+  epoch  5 | loss 0.5368 | valid GAUC 0.6724 nDCG@5 0.5372 primary 0.6048 | 1.8s
+  epoch  6 | loss 0.5317 | valid GAUC 0.6725 nDCG@5 0.5377 primary 0.6051 | 1.8s
+  epoch  7 | loss 0.5272 | valid GAUC 0.6679 nDCG@5 0.5354 primary 0.6017 | 1.8s
+  epoch  8 | loss 0.5207 | valid GAUC 0.6711 nDCG@5 0.5370 primary 0.6041 | 1.8s
+  early stop at epoch 8
+=== done +last1+lastk_rate__seed2 in 28.1s | valid primary=0.60671 test primary=0.60329 ===
+
+=== running +last1+lastk_rate+gap seed=0 features=('activity', 'tab', 'rate', 'last1', 'lastk_rate', 'gap') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1', 'lastk_rate', 'gap'] dim=40316
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6519 | valid GAUC 0.6538 nDCG@5 0.5244 primary 0.5891 | 2.0s
+  epoch  2 | loss 0.5640 | valid GAUC 0.6723 nDCG@5 0.5358 primary 0.6040 | 2.0s
+  epoch  3 | loss 0.5446 | valid GAUC 0.6737 nDCG@5 0.5363 primary 0.6050 | 2.0s
+  epoch  4 | loss 0.5398 | valid GAUC 0.6765 nDCG@5 0.5394 primary 0.6079 | 2.1s
+  epoch  5 | loss 0.5349 | valid GAUC 0.6751 nDCG@5 0.5377 primary 0.6064 | 1.9s
+  epoch  6 | loss 0.5303 | valid GAUC 0.6744 nDCG@5 0.5385 primary 0.6064 | 1.9s
+  epoch  7 | loss 0.5260 | valid GAUC 0.6778 nDCG@5 0.5397 primary 0.6087 | 1.9s
+  epoch  8 | loss 0.5191 | valid GAUC 0.6815 nDCG@5 0.5413 primary 0.6114 | 2.0s
+  epoch  9 | loss 0.5130 | valid GAUC 0.6807 nDCG@5 0.5408 primary 0.6107 | 2.0s
+  epoch 10 | loss 0.5053 | valid GAUC 0.6843 nDCG@5 0.5422 primary 0.6133 | 2.0s
+  epoch 11 | loss 0.4969 | valid GAUC 0.6826 nDCG@5 0.5415 primary 0.6121 | 2.0s
+  epoch 12 | loss 0.4887 | valid GAUC 0.6836 nDCG@5 0.5427 primary 0.6131 | 2.1s
+  epoch 13 | loss 0.4811 | valid GAUC 0.6847 nDCG@5 0.5422 primary 0.6135 | 2.0s
+  epoch 14 | loss 0.4730 | valid GAUC 0.6848 nDCG@5 0.5422 primary 0.6135 | 1.9s
+  epoch 15 | loss 0.4663 | valid GAUC 0.6819 nDCG@5 0.5407 primary 0.6113 | 1.9s
+  epoch 16 | loss 0.4570 | valid GAUC 0.6816 nDCG@5 0.5414 primary 0.6115 | 1.9s
+  epoch 17 | loss 0.4500 | valid GAUC 0.6810 nDCG@5 0.5418 primary 0.6114 | 1.9s
+  epoch 18 | loss 0.4432 | valid GAUC 0.6781 nDCG@5 0.5394 primary 0.6087 | 1.9s
+  early stop at epoch 18
+=== done +last1+lastk_rate+gap__seed0 in 52.7s | valid primary=0.61349 test primary=0.60871 ===
+
+=== running +last1+lastk_rate+gap seed=1 features=('activity', 'tab', 'rate', 'last1', 'lastk_rate', 'gap') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1', 'lastk_rate', 'gap'] dim=40316
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6519 | valid GAUC 0.6505 nDCG@5 0.5229 primary 0.5867 | 2.0s
+  epoch  2 | loss 0.5638 | valid GAUC 0.6702 nDCG@5 0.5344 primary 0.6023 | 2.0s
+  epoch  3 | loss 0.5442 | valid GAUC 0.6762 nDCG@5 0.5382 primary 0.6072 | 1.9s
+  epoch  4 | loss 0.5372 | valid GAUC 0.6731 nDCG@5 0.5368 primary 0.6049 | 1.9s
+  epoch  5 | loss 0.5334 | valid GAUC 0.6773 nDCG@5 0.5398 primary 0.6085 | 1.9s
+  epoch  6 | loss 0.5286 | valid GAUC 0.6789 nDCG@5 0.5397 primary 0.6093 | 1.9s
+  epoch  7 | loss 0.5211 | valid GAUC 0.6812 nDCG@5 0.5409 primary 0.6111 | 1.9s
+  epoch  8 | loss 0.5158 | valid GAUC 0.6810 nDCG@5 0.5407 primary 0.6108 | 1.9s
+  epoch  9 | loss 0.5092 | valid GAUC 0.6827 nDCG@5 0.5419 primary 0.6123 | 1.9s
+  epoch 10 | loss 0.5017 | valid GAUC 0.6849 nDCG@5 0.5430 primary 0.6140 | 1.9s
+  epoch 11 | loss 0.4943 | valid GAUC 0.6850 nDCG@5 0.5423 primary 0.6137 | 1.9s
+  epoch 12 | loss 0.4856 | valid GAUC 0.6850 nDCG@5 0.5432 primary 0.6141 | 1.9s
+  epoch 13 | loss 0.4769 | valid GAUC 0.6838 nDCG@5 0.5427 primary 0.6132 | 1.9s
+  epoch 14 | loss 0.4706 | valid GAUC 0.6829 nDCG@5 0.5416 primary 0.6123 | 2.0s
+  epoch 15 | loss 0.4636 | valid GAUC 0.6852 nDCG@5 0.5440 primary 0.6146 | 2.0s
+  epoch 16 | loss 0.4547 | valid GAUC 0.6837 nDCG@5 0.5430 primary 0.6133 | 2.0s
+  epoch 17 | loss 0.4477 | valid GAUC 0.6808 nDCG@5 0.5414 primary 0.6111 | 2.0s
+  epoch 18 | loss 0.4407 | valid GAUC 0.6794 nDCG@5 0.5416 primary 0.6105 | 1.9s
+  epoch 19 | loss 0.4338 | valid GAUC 0.6785 nDCG@5 0.5407 primary 0.6096 | 2.0s
+  early stop at epoch 19
+=== done +last1+lastk_rate+gap__seed1 in 54.0s | valid primary=0.61457 test primary=0.60998 ===
+
+=== running +last1+lastk_rate+gap seed=2 features=('activity', 'tab', 'rate', 'last1', 'lastk_rate', 'gap') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1', 'lastk_rate', 'gap'] dim=40316
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6531 | valid GAUC 0.6584 nDCG@5 0.5273 primary 0.5928 | 1.9s
+  epoch  2 | loss 0.5640 | valid GAUC 0.6724 nDCG@5 0.5362 primary 0.6043 | 2.1s
+  epoch  3 | loss 0.5435 | valid GAUC 0.6763 nDCG@5 0.5379 primary 0.6071 | 1.9s
+  epoch  4 | loss 0.5404 | valid GAUC 0.6786 nDCG@5 0.5413 primary 0.6099 | 2.0s
+  epoch  5 | loss 0.5346 | valid GAUC 0.6783 nDCG@5 0.5401 primary 0.6092 | 1.9s
+  epoch  6 | loss 0.5289 | valid GAUC 0.6807 nDCG@5 0.5420 primary 0.6114 | 1.9s
+  epoch  7 | loss 0.5239 | valid GAUC 0.6762 nDCG@5 0.5401 primary 0.6081 | 1.9s
+  epoch  8 | loss 0.5168 | valid GAUC 0.6803 nDCG@5 0.5421 primary 0.6112 | 1.9s
+  epoch  9 | loss 0.5094 | valid GAUC 0.6837 nDCG@5 0.5432 primary 0.6135 | 1.9s
+  epoch 10 | loss 0.5016 | valid GAUC 0.6843 nDCG@5 0.5435 primary 0.6139 | 1.9s
+  epoch 11 | loss 0.4941 | valid GAUC 0.6830 nDCG@5 0.5434 primary 0.6132 | 1.9s
+  epoch 12 | loss 0.4878 | valid GAUC 0.6866 nDCG@5 0.5440 primary 0.6153 | 1.9s
+  epoch 13 | loss 0.4802 | valid GAUC 0.6874 nDCG@5 0.5448 primary 0.6161 | 1.9s
+  epoch 14 | loss 0.4704 | valid GAUC 0.6841 nDCG@5 0.5430 primary 0.6135 | 1.9s
+  epoch 15 | loss 0.4630 | valid GAUC 0.6830 nDCG@5 0.5424 primary 0.6127 | 1.9s
+  epoch 16 | loss 0.4553 | valid GAUC 0.6841 nDCG@5 0.5434 primary 0.6137 | 1.9s
+  epoch 17 | loss 0.4492 | valid GAUC 0.6849 nDCG@5 0.5437 primary 0.6143 | 1.9s
+  early stop at epoch 17
+=== done +last1+lastk_rate+gap__seed2 in 49.6s | valid primary=0.61612 test primary=0.61136 ===
+
+Phase 1 (3-seed sweep) complete.
+skip base__seed0 (already done): valid primary = 0.61028
+skip base__seed1 (already done): valid primary = 0.61038
+skip base__seed2 (already done): valid primary = 0.61006
+skip +last1__seed0 (already done): valid primary = 0.60632
+skip +last1__seed1 (already done): valid primary = 0.60556
+skip +last1__seed2 (already done): valid primary = 0.60597
+skip +lastk_rate__seed0 (already done): valid primary = 0.60915
+skip +lastk_rate__seed1 (already done): valid primary = 0.60927
+skip +lastk_rate__seed2 (already done): valid primary = 0.60885
+skip +last1+lastk_rate__seed0 (already done): valid primary = 0.60514
+skip +last1+lastk_rate__seed1 (already done): valid primary = 0.60556
+skip +last1+lastk_rate__seed2 (already done): valid primary = 0.60671
+skip +last1+lastk_rate+gap__seed0 (already done): valid primary = 0.61349
+skip +last1+lastk_rate+gap__seed1 (already done): valid primary = 0.61457
+skip +last1+lastk_rate+gap__seed2 (already done): valid primary = 0.61612
+
+=== running +gap seed=0 features=('activity', 'tab', 'rate', 'gap') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'gap'] dim=40304
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6588 | valid GAUC 0.6635 nDCG@5 0.5328 primary 0.5982 | 1.7s
+  epoch  2 | loss 0.5716 | valid GAUC 0.6727 nDCG@5 0.5381 primary 0.6054 | 1.7s
+  epoch  3 | loss 0.5473 | valid GAUC 0.6779 nDCG@5 0.5407 primary 0.6093 | 1.7s
+  epoch  4 | loss 0.5420 | valid GAUC 0.6795 nDCG@5 0.5418 primary 0.6107 | 1.6s
+  epoch  5 | loss 0.5380 | valid GAUC 0.6786 nDCG@5 0.5411 primary 0.6099 | 1.7s
+  epoch  6 | loss 0.5349 | valid GAUC 0.6780 nDCG@5 0.5414 primary 0.6097 | 1.7s
+  epoch  7 | loss 0.5320 | valid GAUC 0.6779 nDCG@5 0.5413 primary 0.6096 | 1.7s
+  epoch  8 | loss 0.5265 | valid GAUC 0.6788 nDCG@5 0.5408 primary 0.6098 | 1.7s
+  early stop at epoch 8
+=== done +gap__seed0 in 30.9s | valid primary=0.61066 test primary=0.60601 ===
+
+=== running +gap seed=1 features=('activity', 'tab', 'rate', 'gap') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'gap'] dim=40304
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6580 | valid GAUC 0.6611 nDCG@5 0.5318 primary 0.5964 | 1.7s
+  epoch  2 | loss 0.5714 | valid GAUC 0.6735 nDCG@5 0.5382 primary 0.6058 | 1.7s
+  epoch  3 | loss 0.5479 | valid GAUC 0.6780 nDCG@5 0.5405 primary 0.6093 | 1.7s
+  epoch  4 | loss 0.5413 | valid GAUC 0.6782 nDCG@5 0.5408 primary 0.6095 | 1.7s
+  epoch  5 | loss 0.5382 | valid GAUC 0.6799 nDCG@5 0.5416 primary 0.6108 | 1.7s
+  epoch  6 | loss 0.5348 | valid GAUC 0.6805 nDCG@5 0.5418 primary 0.6112 | 1.8s
+  epoch  7 | loss 0.5283 | valid GAUC 0.6816 nDCG@5 0.5420 primary 0.6118 | 1.7s
+  epoch  8 | loss 0.5247 | valid GAUC 0.6800 nDCG@5 0.5415 primary 0.6107 | 1.8s
+  epoch  9 | loss 0.5186 | valid GAUC 0.6802 nDCG@5 0.5419 primary 0.6111 | 1.7s
+  epoch 10 | loss 0.5119 | valid GAUC 0.6792 nDCG@5 0.5412 primary 0.6102 | 1.8s
+  epoch 11 | loss 0.5051 | valid GAUC 0.6799 nDCG@5 0.5411 primary 0.6105 | 1.8s
+  early stop at epoch 11
+=== done +gap__seed1 in 33.4s | valid primary=0.61180 test primary=0.60650 ===
+
+=== running +gap seed=2 features=('activity', 'tab', 'rate', 'gap') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'gap'] dim=40304
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6599 | valid GAUC 0.6595 nDCG@5 0.5310 primary 0.5952 | 1.8s
+  epoch  2 | loss 0.5733 | valid GAUC 0.6722 nDCG@5 0.5376 primary 0.6049 | 1.7s
+  epoch  3 | loss 0.5461 | valid GAUC 0.6778 nDCG@5 0.5405 primary 0.6092 | 1.7s
+  epoch  4 | loss 0.5416 | valid GAUC 0.6784 nDCG@5 0.5417 primary 0.6101 | 1.8s
+  epoch  5 | loss 0.5362 | valid GAUC 0.6798 nDCG@5 0.5418 primary 0.6108 | 1.8s
+  epoch  6 | loss 0.5310 | valid GAUC 0.6805 nDCG@5 0.5426 primary 0.6116 | 1.7s
+  epoch  7 | loss 0.5270 | valid GAUC 0.6782 nDCG@5 0.5415 primary 0.6099 | 1.8s
+  epoch  8 | loss 0.5217 | valid GAUC 0.6798 nDCG@5 0.5416 primary 0.6107 | 1.7s
+  epoch  9 | loss 0.5154 | valid GAUC 0.6776 nDCG@5 0.5407 primary 0.6091 | 1.8s
+  epoch 10 | loss 0.5091 | valid GAUC 0.6784 nDCG@5 0.5404 primary 0.6094 | 1.7s
+  early stop at epoch 10
+=== done +gap__seed2 in 31.8s | valid primary=0.61155 test primary=0.60648 ===
+
+=== running +last1+gap seed=0 features=('activity', 'tab', 'rate', 'last1', 'gap') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1', 'gap'] dim=40308
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6543 | valid GAUC 0.6541 nDCG@5 0.5280 primary 0.5910 | 1.9s
+  epoch  2 | loss 0.5671 | valid GAUC 0.6706 nDCG@5 0.5371 primary 0.6039 | 1.9s
+  epoch  3 | loss 0.5452 | valid GAUC 0.6719 nDCG@5 0.5381 primary 0.6050 | 1.8s
+  epoch  4 | loss 0.5395 | valid GAUC 0.6752 nDCG@5 0.5405 primary 0.6078 | 1.9s
+  epoch  5 | loss 0.5348 | valid GAUC 0.6741 nDCG@5 0.5395 primary 0.6068 | 1.9s
+  epoch  6 | loss 0.5311 | valid GAUC 0.6732 nDCG@5 0.5399 primary 0.6065 | 1.9s
+  epoch  7 | loss 0.5276 | valid GAUC 0.6758 nDCG@5 0.5401 primary 0.6079 | 1.9s
+  epoch  8 | loss 0.5213 | valid GAUC 0.6785 nDCG@5 0.5416 primary 0.6101 | 1.9s
+  epoch  9 | loss 0.5159 | valid GAUC 0.6785 nDCG@5 0.5409 primary 0.6097 | 2.0s
+  epoch 10 | loss 0.5086 | valid GAUC 0.6808 nDCG@5 0.5423 primary 0.6116 | 2.0s
+  epoch 11 | loss 0.5001 | valid GAUC 0.6802 nDCG@5 0.5419 primary 0.6111 | 1.9s
+  epoch 12 | loss 0.4920 | valid GAUC 0.6816 nDCG@5 0.5429 primary 0.6123 | 1.8s
+  epoch 13 | loss 0.4840 | valid GAUC 0.6824 nDCG@5 0.5424 primary 0.6124 | 1.9s
+  epoch 14 | loss 0.4758 | valid GAUC 0.6811 nDCG@5 0.5420 primary 0.6115 | 1.8s
+  epoch 15 | loss 0.4693 | valid GAUC 0.6784 nDCG@5 0.5408 primary 0.6096 | 1.9s
+  epoch 16 | loss 0.4601 | valid GAUC 0.6763 nDCG@5 0.5396 primary 0.6079 | 1.8s
+  epoch 17 | loss 0.4528 | valid GAUC 0.6764 nDCG@5 0.5406 primary 0.6085 | 1.8s
+  early stop at epoch 17
+=== done +last1+gap__seed0 in 46.5s | valid primary=0.61239 test primary=0.60654 ===
+
+=== running +last1+gap seed=1 features=('activity', 'tab', 'rate', 'last1', 'gap') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1', 'gap'] dim=40308
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6548 | valid GAUC 0.6496 nDCG@5 0.5263 primary 0.5880 | 1.9s
+  epoch  2 | loss 0.5671 | valid GAUC 0.6685 nDCG@5 0.5355 primary 0.6020 | 1.8s
+  epoch  3 | loss 0.5467 | valid GAUC 0.6751 nDCG@5 0.5394 primary 0.6072 | 1.9s
+  epoch  4 | loss 0.5403 | valid GAUC 0.6721 nDCG@5 0.5379 primary 0.6050 | 1.9s
+  epoch  5 | loss 0.5370 | valid GAUC 0.6742 nDCG@5 0.5391 primary 0.6067 | 2.1s
+  epoch  6 | loss 0.5327 | valid GAUC 0.6759 nDCG@5 0.5404 primary 0.6082 | 1.9s
+  epoch  7 | loss 0.5255 | valid GAUC 0.6772 nDCG@5 0.5400 primary 0.6086 | 1.9s
+  epoch  8 | loss 0.5205 | valid GAUC 0.6767 nDCG@5 0.5402 primary 0.6085 | 1.9s
+  epoch  9 | loss 0.5138 | valid GAUC 0.6783 nDCG@5 0.5412 primary 0.6098 | 1.9s
+  epoch 10 | loss 0.5061 | valid GAUC 0.6798 nDCG@5 0.5422 primary 0.6110 | 1.9s
+  epoch 11 | loss 0.4985 | valid GAUC 0.6820 nDCG@5 0.5422 primary 0.6121 | 1.8s
+  epoch 12 | loss 0.4899 | valid GAUC 0.6810 nDCG@5 0.5417 primary 0.6114 | 1.8s
+  epoch 13 | loss 0.4808 | valid GAUC 0.6817 nDCG@5 0.5426 primary 0.6122 | 1.8s
+  epoch 14 | loss 0.4745 | valid GAUC 0.6791 nDCG@5 0.5411 primary 0.6101 | 1.9s
+  epoch 15 | loss 0.4678 | valid GAUC 0.6803 nDCG@5 0.5416 primary 0.6109 | 1.8s
+  epoch 16 | loss 0.4590 | valid GAUC 0.6796 nDCG@5 0.5417 primary 0.6107 | 1.9s
+  epoch 17 | loss 0.4524 | valid GAUC 0.6745 nDCG@5 0.5393 primary 0.6069 | 1.8s
+  early stop at epoch 17
+=== done +last1+gap__seed1 in 46.6s | valid primary=0.61216 test primary=0.60740 ===
+
+=== running +last1+gap seed=2 features=('activity', 'tab', 'rate', 'last1', 'gap') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1', 'gap'] dim=40308
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6575 | valid GAUC 0.6530 nDCG@5 0.5275 primary 0.5902 | 1.9s
+  epoch  2 | loss 0.5682 | valid GAUC 0.6692 nDCG@5 0.5360 primary 0.6026 | 1.8s
+  epoch  3 | loss 0.5445 | valid GAUC 0.6743 nDCG@5 0.5388 primary 0.6065 | 1.8s
+  epoch  4 | loss 0.5409 | valid GAUC 0.6744 nDCG@5 0.5402 primary 0.6073 | 1.8s
+  epoch  5 | loss 0.5354 | valid GAUC 0.6762 nDCG@5 0.5405 primary 0.6083 | 1.9s
+  epoch  6 | loss 0.5301 | valid GAUC 0.6768 nDCG@5 0.5412 primary 0.6090 | 1.8s
+  epoch  7 | loss 0.5254 | valid GAUC 0.6729 nDCG@5 0.5388 primary 0.6058 | 2.0s
+  epoch  8 | loss 0.5191 | valid GAUC 0.6769 nDCG@5 0.5408 primary 0.6088 | 1.8s
+  epoch  9 | loss 0.5120 | valid GAUC 0.6788 nDCG@5 0.5413 primary 0.6101 | 1.9s
+  epoch 10 | loss 0.5043 | valid GAUC 0.6800 nDCG@5 0.5415 primary 0.6107 | 1.9s
+  epoch 11 | loss 0.4971 | valid GAUC 0.6792 nDCG@5 0.5415 primary 0.6103 | 1.9s
+  epoch 12 | loss 0.4907 | valid GAUC 0.6830 nDCG@5 0.5424 primary 0.6127 | 1.8s
+  epoch 13 | loss 0.4829 | valid GAUC 0.6806 nDCG@5 0.5418 primary 0.6112 | 1.8s
+  epoch 14 | loss 0.4735 | valid GAUC 0.6791 nDCG@5 0.5409 primary 0.6100 | 1.8s
+  epoch 15 | loss 0.4660 | valid GAUC 0.6780 nDCG@5 0.5408 primary 0.6094 | 1.8s
+  epoch 16 | loss 0.4581 | valid GAUC 0.6787 nDCG@5 0.5407 primary 0.6097 | 1.8s
+  early stop at epoch 16
+=== done +last1+gap__seed2 in 44.5s | valid primary=0.61271 test primary=0.60816 ===
+
+=== running +lastk_rate+gap seed=0 features=('activity', 'tab', 'rate', 'lastk_rate', 'gap') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'lastk_rate', 'gap'] dim=40312
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6548 | valid GAUC 0.6646 nDCG@5 0.5313 primary 0.5979 | 1.9s
+  epoch  2 | loss 0.5671 | valid GAUC 0.6739 nDCG@5 0.5366 primary 0.6052 | 1.8s
+  epoch  3 | loss 0.5459 | valid GAUC 0.6777 nDCG@5 0.5384 primary 0.6080 | 1.8s
+  epoch  4 | loss 0.5411 | valid GAUC 0.6799 nDCG@5 0.5406 primary 0.6102 | 1.8s
+  epoch  5 | loss 0.5367 | valid GAUC 0.6785 nDCG@5 0.5393 primary 0.6089 | 1.8s
+  epoch  6 | loss 0.5329 | valid GAUC 0.6778 nDCG@5 0.5394 primary 0.6086 | 1.8s
+  epoch  7 | loss 0.5290 | valid GAUC 0.6789 nDCG@5 0.5397 primary 0.6093 | 1.8s
+  epoch  8 | loss 0.5229 | valid GAUC 0.6806 nDCG@5 0.5402 primary 0.6104 | 1.9s
+  epoch  9 | loss 0.5177 | valid GAUC 0.6792 nDCG@5 0.5393 primary 0.6093 | 1.8s
+  epoch 10 | loss 0.5109 | valid GAUC 0.6792 nDCG@5 0.5397 primary 0.6094 | 1.9s
+  epoch 11 | loss 0.5023 | valid GAUC 0.6793 nDCG@5 0.5402 primary 0.6098 | 1.8s
+  epoch 12 | loss 0.4949 | valid GAUC 0.6807 nDCG@5 0.5413 primary 0.6110 | 1.9s
+  epoch 13 | loss 0.4875 | valid GAUC 0.6810 nDCG@5 0.5404 primary 0.6107 | 1.9s
+  epoch 14 | loss 0.4791 | valid GAUC 0.6815 nDCG@5 0.5413 primary 0.6114 | 1.9s
+  epoch 15 | loss 0.4717 | valid GAUC 0.6834 nDCG@5 0.5418 primary 0.6126 | 1.7s
+  epoch 16 | loss 0.4625 | valid GAUC 0.6819 nDCG@5 0.5423 primary 0.6121 | 1.4s
+  epoch 17 | loss 0.4552 | valid GAUC 0.6824 nDCG@5 0.5434 primary 0.6129 | 1.4s
+  epoch 18 | loss 0.4478 | valid GAUC 0.6820 nDCG@5 0.5418 primary 0.6119 | 1.4s
+  epoch 19 | loss 0.4399 | valid GAUC 0.6817 nDCG@5 0.5418 primary 0.6118 | 1.4s
+  epoch 20 | loss 0.4330 | valid GAUC 0.6831 nDCG@5 0.5433 primary 0.6132 | 1.4s
+  epoch 21 | loss 0.4257 | valid GAUC 0.6823 nDCG@5 0.5435 primary 0.6129 | 1.4s
+  epoch 22 | loss 0.4190 | valid GAUC 0.6810 nDCG@5 0.5424 primary 0.6117 | 1.4s
+  epoch 23 | loss 0.4129 | valid GAUC 0.6820 nDCG@5 0.5433 primary 0.6127 | 1.4s
+  epoch 24 | loss 0.4067 | valid GAUC 0.6791 nDCG@5 0.5427 primary 0.6109 | 1.4s
+  early stop at epoch 24
+=== done +lastk_rate+gap__seed0 in 57.2s | valid primary=0.61319 test primary=0.60670 ===
+
+=== running +lastk_rate+gap seed=1 features=('activity', 'tab', 'rate', 'lastk_rate', 'gap') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'lastk_rate', 'gap'] dim=40312
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6557 | valid GAUC 0.6588 nDCG@5 0.5274 primary 0.5931 | 1.4s
+  epoch  2 | loss 0.5681 | valid GAUC 0.6741 nDCG@5 0.5363 primary 0.6052 | 1.5s
+  epoch  3 | loss 0.5465 | valid GAUC 0.6780 nDCG@5 0.5389 primary 0.6085 | 1.7s
+  epoch  4 | loss 0.5398 | valid GAUC 0.6769 nDCG@5 0.5383 primary 0.6076 | 1.8s
+  epoch  5 | loss 0.5363 | valid GAUC 0.6802 nDCG@5 0.5407 primary 0.6105 | 1.6s
+  epoch  6 | loss 0.5321 | valid GAUC 0.6794 nDCG@5 0.5396 primary 0.6095 | 1.6s
+  epoch  7 | loss 0.5251 | valid GAUC 0.6804 nDCG@5 0.5403 primary 0.6103 | 1.7s
+  epoch  8 | loss 0.5209 | valid GAUC 0.6793 nDCG@5 0.5395 primary 0.6094 | 1.8s
+  epoch  9 | loss 0.5148 | valid GAUC 0.6790 nDCG@5 0.5396 primary 0.6093 | 1.8s
+  early stop at epoch 9
+=== done +lastk_rate+gap__seed1 in 27.7s | valid primary=0.61046 test primary=0.60595 ===
+
+=== running +lastk_rate+gap seed=2 features=('activity', 'tab', 'rate', 'lastk_rate', 'gap') ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'lastk_rate', 'gap'] dim=40312
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6562 | valid GAUC 0.6588 nDCG@5 0.5276 primary 0.5932 | 2.0s
+  epoch  2 | loss 0.5676 | valid GAUC 0.6734 nDCG@5 0.5367 primary 0.6051 | 1.9s
+  epoch  3 | loss 0.5448 | valid GAUC 0.6781 nDCG@5 0.5389 primary 0.6085 | 1.9s
+  epoch  4 | loss 0.5415 | valid GAUC 0.6796 nDCG@5 0.5414 primary 0.6105 | 1.9s
+  epoch  5 | loss 0.5363 | valid GAUC 0.6810 nDCG@5 0.5406 primary 0.6108 | 1.9s
+  epoch  6 | loss 0.5313 | valid GAUC 0.6804 nDCG@5 0.5413 primary 0.6109 | 1.8s
+  epoch  7 | loss 0.5272 | valid GAUC 0.6771 nDCG@5 0.5393 primary 0.6082 | 1.9s
+  epoch  8 | loss 0.5214 | valid GAUC 0.6790 nDCG@5 0.5404 primary 0.6097 | 1.8s
+  epoch  9 | loss 0.5149 | valid GAUC 0.6786 nDCG@5 0.5404 primary 0.6095 | 1.9s
+  epoch 10 | loss 0.5083 | valid GAUC 0.6795 nDCG@5 0.5402 primary 0.6099 | 1.8s
+  early stop at epoch 10
+=== done +lastk_rate+gap__seed2 in 35.6s | valid primary=0.61086 test primary=0.60610 ===
+
+Phase 1 (3-seed sweep) complete.
+
+=== running +last1+lastk_rate+gap seed=3 ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1', 'lastk_rate', 'gap'] dim=40316
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6515 | valid GAUC 0.6574 nDCG@5 0.5264 primary 0.5919 | 2.0s
+  epoch  2 | loss 0.5643 | valid GAUC 0.6717 nDCG@5 0.5356 primary 0.6036 | 2.0s
+  epoch  3 | loss 0.5454 | valid GAUC 0.6751 nDCG@5 0.5379 primary 0.6065 | 2.0s
+  epoch  4 | loss 0.5392 | valid GAUC 0.6776 nDCG@5 0.5391 primary 0.6083 | 2.0s
+  epoch  5 | loss 0.5352 | valid GAUC 0.6762 nDCG@5 0.5382 primary 0.6072 | 2.0s
+  epoch  6 | loss 0.5304 | valid GAUC 0.6785 nDCG@5 0.5397 primary 0.6091 | 2.1s
+  epoch  7 | loss 0.5264 | valid GAUC 0.6774 nDCG@5 0.5394 primary 0.6084 | 2.2s
+  epoch  8 | loss 0.5191 | valid GAUC 0.6753 nDCG@5 0.5378 primary 0.6065 | 2.2s
+  epoch  9 | loss 0.5118 | valid GAUC 0.6828 nDCG@5 0.5420 primary 0.6124 | 2.1s
+  epoch 10 | loss 0.5064 | valid GAUC 0.6816 nDCG@5 0.5410 primary 0.6113 | 2.1s
+  epoch 11 | loss 0.4998 | valid GAUC 0.6845 nDCG@5 0.5419 primary 0.6132 | 2.1s
+  epoch 12 | loss 0.4922 | valid GAUC 0.6856 nDCG@5 0.5422 primary 0.6139 | 1.7s
+  epoch 13 | loss 0.4853 | valid GAUC 0.6845 nDCG@5 0.5415 primary 0.6130 | 1.5s
+  epoch 14 | loss 0.4754 | valid GAUC 0.6815 nDCG@5 0.5417 primary 0.6116 | 1.5s
+  epoch 15 | loss 0.4684 | valid GAUC 0.6824 nDCG@5 0.5413 primary 0.6118 | 1.6s
+  epoch 16 | loss 0.4617 | valid GAUC 0.6819 nDCG@5 0.5413 primary 0.6116 | 1.5s
+  early stop at epoch 16
+=== done +last1+lastk_rate+gap__seed3 in 52.7s | valid primary=0.61390 test primary=0.60797 ===
+
+=== running +last1+lastk_rate+gap seed=4 ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'activity', 'tab', 'rate', 'last1', 'lastk_rate', 'gap'] dim=40316
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | activity-weighted user sampling
+  epoch  1 | loss 0.6497 | valid GAUC 0.6565 nDCG@5 0.5267 primary 0.5916 | 1.5s
+  epoch  2 | loss 0.5624 | valid GAUC 0.6728 nDCG@5 0.5364 primary 0.6046 | 1.5s
+  epoch  3 | loss 0.5421 | valid GAUC 0.6749 nDCG@5 0.5381 primary 0.6065 | 1.5s
+  epoch  4 | loss 0.5373 | valid GAUC 0.6743 nDCG@5 0.5382 primary 0.6063 | 1.5s
+  epoch  5 | loss 0.5327 | valid GAUC 0.6757 nDCG@5 0.5389 primary 0.6073 | 1.5s
+  epoch  6 | loss 0.5281 | valid GAUC 0.6760 nDCG@5 0.5385 primary 0.6073 | 1.5s
+  epoch  7 | loss 0.5222 | valid GAUC 0.6807 nDCG@5 0.5416 primary 0.6112 | 1.5s
+  epoch  8 | loss 0.5184 | valid GAUC 0.6794 nDCG@5 0.5410 primary 0.6102 | 1.5s
+  epoch  9 | loss 0.5115 | valid GAUC 0.6806 nDCG@5 0.5412 primary 0.6109 | 1.5s
+  epoch 10 | loss 0.5043 | valid GAUC 0.6800 nDCG@5 0.5413 primary 0.6106 | 1.5s
+  epoch 11 | loss 0.4970 | valid GAUC 0.6833 nDCG@5 0.5418 primary 0.6125 | 1.5s
+  epoch 12 | loss 0.4904 | valid GAUC 0.6818 nDCG@5 0.5418 primary 0.6118 | 1.5s
+  epoch 13 | loss 0.4821 | valid GAUC 0.6831 nDCG@5 0.5424 primary 0.6128 | 1.5s
+  epoch 14 | loss 0.4746 | valid GAUC 0.6801 nDCG@5 0.5411 primary 0.6106 | 1.5s
+  epoch 15 | loss 0.4665 | valid GAUC 0.6816 nDCG@5 0.5417 primary 0.6117 | 1.5s
+  epoch 16 | loss 0.4595 | valid GAUC 0.6782 nDCG@5 0.5394 primary 0.6088 | 1.5s
+  epoch 17 | loss 0.4505 | valid GAUC 0.6800 nDCG@5 0.5412 primary 0.6106 | 1.5s
+  early stop at epoch 17
+=== done +last1+lastk_rate+gap__seed4 in 38.6s | valid primary=0.61277 test primary=0.60834 ===

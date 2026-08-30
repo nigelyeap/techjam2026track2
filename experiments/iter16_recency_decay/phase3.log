@@ -1,0 +1,54 @@
+loading extended dataset (cached after first run)...
+loaded in 2.7s
+[skip] flat_rate seed=0 already done
+[skip] flat_rate seed=1 already done
+[skip] flat_rate seed=2 already done
+[skip] decay_rate_1 seed=0 already done
+[skip] decay_rate_1 seed=1 already done
+[skip] decay_rate_1 seed=2 already done
+[skip] decay_rate_3 seed=0 already done
+[skip] decay_rate_3 seed=1 already done
+[skip] decay_rate_3 seed=2 already done
+[skip] decay_rate_7 seed=0 already done
+[skip] decay_rate_7 seed=1 already done
+[skip] decay_rate_7 seed=2 already done
+[skip] decay_rate_14 seed=0 already done
+[skip] decay_rate_14 seed=1 already done
+[skip] decay_rate_14 seed=2 already done
+[skip] decay_rate_30 seed=0 already done
+[skip] decay_rate_30 seed=1 already done
+[skip] decay_rate_30 seed=2 already done
+
+Phase 0+1 complete. Proceeding to Phase 2 combos (best halflife=3, runner-up=7).
+[skip] decay_rate_3+tab seed=0 already done
+[skip] decay_rate_3+tab seed=1 already done
+[skip] decay_rate_3+tab seed=2 already done
+[skip] decay_rate_3+decay_act_3+tab seed=0 already done
+[skip] decay_rate_3+decay_act_3+tab seed=1 already done
+[skip] decay_rate_3+decay_act_3+tab seed=2 already done
+[skip] decay_rate_3+flat_rate seed=0 already done
+[skip] decay_rate_3+flat_rate seed=1 already done
+[skip] decay_rate_3+flat_rate seed=2 already done
+[skip] decay_rate_7+tab seed=0 already done
+[skip] decay_rate_7+tab seed=1 already done
+[skip] decay_rate_7+tab seed=2 already done
+[skip] decay_rate_7+decay_act_7+tab seed=0 already done
+[skip] decay_rate_7+decay_act_7+tab seed=1 already done
+[skip] decay_rate_7+decay_act_7+tab seed=2 already done
+[skip] decay_rate_7+flat_rate seed=0 already done
+[skip] decay_rate_7+flat_rate seed=1 already done
+[skip] decay_rate_7+flat_rate seed=2 already done
+
+Phase 2 complete. Proceeding to Phase 3: 5-seed confirmation of top 2 combos.
+[skip] decay_rate_3+decay_act_3+tab seed=0 already done
+[skip] decay_rate_3+decay_act_3+tab seed=1 already done
+[skip] decay_rate_3+decay_act_3+tab seed=2 already done
+[done] decay_rate_3+decay_act_3+tab        seed=3 valid=0.62013 test=0.61482  (35.2s)
+[done] decay_rate_3+decay_act_3+tab        seed=4 valid=0.62050 test=0.61826  (27.6s)
+[skip] decay_rate_3+tab seed=0 already done
+[skip] decay_rate_3+tab seed=1 already done
+[skip] decay_rate_3+tab seed=2 already done
+[done] decay_rate_3+tab                    seed=3 valid=0.61846 test=0.61518  (29.2s)
+[done] decay_rate_3+tab                    seed=4 valid=0.61926 test=0.61590  (29.3s)
+
+Phase 3 complete.

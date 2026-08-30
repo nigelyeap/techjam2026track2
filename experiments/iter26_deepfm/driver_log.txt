@@ -1,0 +1,29 @@
+loading fused dataset (cached after first run)...
+loaded in 1.9s
+
+=== Phase 0: harness-fidelity check (MLP disabled == iter19 FM-only BPR) ===
+[done] fm_only_parity                           seed=0 valid=0.62902 test=0.62599 diverged=False  (102.0s)
+[done] fm_only_parity                           seed=1 valid=0.62907 test=0.62684 diverged=False  (101.1s)
+[done] fm_only_parity                           seed=2 valid=0.62990 test=0.62613 diverged=False  (102.9s)
+
+=== Phase 1: width x depth sweep (3 seeds, mlp_lr=lr=0.001) ===
+[done] deep_h16                                 seed=0 valid=0.62942 test=0.62798 diverged=False  (90.8s)
+[done] deep_h16                                 seed=1 valid=0.63187 test=0.63128 diverged=False  (99.1s)
+[done] deep_h16                                 seed=2 valid=0.63025 test=0.63033 diverged=False  (100.5s)
+[done] deep_h16x16                              seed=0 valid=0.62745 test=0.62670 diverged=False  (98.6s)
+[done] deep_h16x16                              seed=1 valid=0.63038 test=0.63078 diverged=False  (90.7s)
+[done] deep_h16x16                              seed=2 valid=0.63097 test=0.63194 diverged=False  (91.1s)
+[done] deep_h32                                 seed=0 valid=0.62982 test=0.62889 diverged=False  (101.4s)
+[done] deep_h32                                 seed=1 valid=0.63339 test=0.63274 diverged=False  (101.6s)
+[done] deep_h32                                 seed=2 valid=0.62942 test=0.62956 diverged=False  (107.7s)
+[done] deep_h32x32                              seed=0 valid=0.62620 test=0.62468 diverged=False  (106.1s)
+[done] deep_h32x32                              seed=1 valid=0.63214 test=0.63231 diverged=False  (84.8s)
+[done] deep_h32x32                              seed=2 valid=0.63430 test=0.63429 diverged=False  (95.7s)
+[done] deep_h64                                 seed=0 valid=0.62844 test=0.62748 diverged=False  (96.2s)
+[done] deep_h64                                 seed=1 valid=0.63130 test=0.63130 diverged=False  (69.3s)
+[done] deep_h64                                 seed=2 valid=0.63015 test=0.63140 diverged=False  (70.8s)
+[done] deep_h64x64                              seed=0 valid=0.62962 test=0.62773 diverged=False  (62.6s)
+[done] deep_h64x64                              seed=1 valid=0.63466 test=0.63372 diverged=False  (56.8s)
+[done] deep_h64x64                              seed=2 valid=0.63056 test=0.63107 diverged=False  (66.5s)
+
+Phase 0+1 complete.

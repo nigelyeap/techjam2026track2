@@ -1,0 +1,6 @@
+loading /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter6_history_feature/../../KuaiRand-Pure/data ... fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'hist_affinity']
+
+=== iter6 fm+hist_affinity (seed=4) ===
+  valid  GAUC 0.6665 | nDCG@5 0.5359 | primary 0.6012
+  test   GAUC 0.6615 | nDCG@5 0.5284 | primary 0.5950
+{"seed": 4, "valid": {"GAUC": 0.6664576530456543, "nDCG@5": 0.5358864665031433, "primary": 0.6011720895767212, "users": 22377, "rows": 124909}, "test": {"GAUC": 0.6614865660667419, "nDCG@5": 0.5284231901168823, "primary": 0.5949548482894897, "users": 23875, "rows": 170588}}

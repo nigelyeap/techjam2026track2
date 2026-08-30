@@ -1,0 +1,33 @@
+loading iter24-refined-feature dataset (cached, symlinked from iter28)... features=('decay_rate_2.5', 'decay_act_2.5', 'decay_tab_3', 'last1', 'lastk_rate', 'gap')
+loaded in 3.9s
+
+=== Phase 0: harness-fidelity check (deep_h32, init_scale_mult=1.0) ===
+[done] ref_deep_h32             seed=0 valid=0.63196 test=0.62798 diverged=False  (44.7s)
+[done] ref_deep_h32             seed=1 valid=0.63484 test=0.63132 diverged=False  (45.7s)
+[done] ref_deep_h32             seed=2 valid=0.63125 test=0.62979 diverged=False  (55.1s)
+ref_deep_h32 3-seed: valid mean=0.63268 std=0.00155 | test mean=0.62970 std=0.00136
+  seed=0 vs iter28 published: Δvalid=+0.0000000 Δtest=+0.0000000
+  seed=1 vs iter28 published: Δvalid=+0.0000000 Δtest=+0.0000000
+  seed=2 vs iter28 published: Δvalid=+0.0000000 Δtest=+0.0000000
+
+=== Phase 1: init_scale_mult=0.5 (iter30's recommended lever), 3 seeds ===
+[done] stab_0.5                 seed=0 valid=0.63341 test=0.62902 diverged=False  (52.4s)
+[done] stab_0.5                 seed=1 valid=0.63470 test=0.63089 diverged=False  (59.4s)
+[done] stab_0.5                 seed=2 valid=0.63148 test=0.63007 diverged=False  (78.4s)
+stab_0.5 3-seed: valid mean=0.63320 std=0.00132 | test mean=0.62999 std=0.00076
+
+3-seed valid delta (stab_0.5 - ref_deep_h32): +0.00052
+
+Positive/flat direction at 3 seeds -- extending BOTH configs to 5 seeds (2,3,4->3,4).
+[done] ref_deep_h32             seed=3 valid=0.63183 test=0.63051 diverged=False  (72.8s)
+[done] ref_deep_h32             seed=4 valid=0.63234 test=0.63020 diverged=False  (72.2s)
+[done] stab_0.5                 seed=3 valid=0.63123 test=0.62831 diverged=False  (75.5s)
+[done] stab_0.5                 seed=4 valid=0.63180 test=0.63112 diverged=False  (91.9s)
+
+ref_deep_h32 5-seed: valid mean=0.63244 std=0.00125 | test mean=0.62996 std=0.00111
+stab_0.5     5-seed: valid mean=0.63252 std=0.00133 | test mean=0.62988 std=0.00108
+
+5-seed valid delta (stab_0.5 - ref_deep_h32): +0.00008
+5-seed valid delta (stab_0.5 - iter24 reference 0.63251): +0.00001
+
+Driver complete.

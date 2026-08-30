@@ -1,0 +1,9 @@
+  BPR/listwise-eligible train users: 24290 | 300 steps/epoch | G=256 M_max=16 | sampling_alpha=0.75 decay_halflife=3
+  epoch  1 | loss 0.2025 | valid primary 0.6162 | 3.9s
+  epoch  2 | loss 0.2013 | valid primary 0.6104 | 3.4s
+  epoch  3 | loss 0.2006 | valid primary 0.6078 | 3.2s
+  epoch  4 | loss 0.1997 | valid primary 0.6015 | 3.2s
+  epoch  5 | loss 0.1987 | valid primary 0.5974 | 3.3s
+  early stop at epoch 5
+done 37.41193389892578
+{'valid': {'GAUC': np.float32(0.6819373), 'nDCG@5': np.float32(0.5505139), 'primary': np.float32(0.6162256), 'users': 22377, 'rows': 124909}, 'test': {'GAUC': np.float32(0.6817673), 'nDCG@5': np.float32(0.55435354), 'primary': np.float32(0.6180604), 'users': 23875, 'rows': 170588}}

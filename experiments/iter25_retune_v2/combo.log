@@ -1,0 +1,25 @@
+=== seed 0 ===
+=== iter25 fm+bpr_weighted+decay_rate_3+decay_act_3+tab+last1+lastk_rate+gap (seed=0) ===
+  valid  GAUC 0.7072 | nDCG@5 0.5539 | primary 0.6306
+  test   GAUC 0.7053 | nDCG@5 0.5568 | primary 0.6311
+{"seed": 0, "features": ["decay_rate_3", "decay_act_3", "tab", "last1", "lastk_rate", "gap"], "valid": {"GAUC": 0.7072246670722961, "nDCG@5": 0.5539302229881287, "primary": 0.6305774450302124, "users": 22377, "rows": 124909}, "test": {"GAUC": 0.7052854299545288, "nDCG@5": 0.5568497776985168, "primary": 0.6310676336288452, "users": 23875, "rows": 170588}}
+=== seed 1 ===
+=== iter25 fm+bpr_weighted+decay_rate_3+decay_act_3+tab+last1+lastk_rate+gap (seed=1) ===
+  valid  GAUC 0.7073 | nDCG@5 0.5537 | primary 0.6305
+  test   GAUC 0.7062 | nDCG@5 0.5573 | primary 0.6317
+{"seed": 1, "features": ["decay_rate_3", "decay_act_3", "tab", "last1", "lastk_rate", "gap"], "valid": {"GAUC": 0.7073216438293457, "nDCG@5": 0.5536732077598572, "primary": 0.6304974555969238, "users": 22377, "rows": 124909}, "test": {"GAUC": 0.7061732411384583, "nDCG@5": 0.5572899580001831, "primary": 0.6317316293716431, "users": 23875, "rows": 170588}}
+=== seed 2 ===
+=== iter25 fm+bpr_weighted+decay_rate_3+decay_act_3+tab+last1+lastk_rate+gap (seed=2) ===
+  valid  GAUC 0.7067 | nDCG@5 0.5542 | primary 0.6305
+  test   GAUC 0.7058 | nDCG@5 0.5577 | primary 0.6317
+{"seed": 2, "features": ["decay_rate_3", "decay_act_3", "tab", "last1", "lastk_rate", "gap"], "valid": {"GAUC": 0.7066844701766968, "nDCG@5": 0.5542230606079102, "primary": 0.6304537653923035, "users": 22377, "rows": 124909}, "test": {"GAUC": 0.7057934999465942, "nDCG@5": 0.5576989054679871, "primary": 0.6317461729049683, "users": 23875, "rows": 170588}}
+=== seed 3 ===
+=== iter25 fm+bpr_weighted+decay_rate_3+decay_act_3+tab+last1+lastk_rate+gap (seed=3) ===
+  valid  GAUC 0.7056 | nDCG@5 0.5532 | primary 0.6294
+  test   GAUC 0.7055 | nDCG@5 0.5576 | primary 0.6315
+{"seed": 3, "features": ["decay_rate_3", "decay_act_3", "tab", "last1", "lastk_rate", "gap"], "valid": {"GAUC": 0.7056134939193726, "nDCG@5": 0.5531824231147766, "primary": 0.629397988319397, "users": 22377, "rows": 124909}, "test": {"GAUC": 0.705453634262085, "nDCG@5": 0.5575515627861023, "primary": 0.631502628326416, "users": 23875, "rows": 170588}}
+=== seed 4 ===
+=== iter25 fm+bpr_weighted+decay_rate_3+decay_act_3+tab+last1+lastk_rate+gap (seed=4) ===
+  valid  GAUC 0.7071 | nDCG@5 0.5538 | primary 0.6305
+  test   GAUC 0.7073 | nDCG@5 0.5592 | primary 0.6332
+{"seed": 4, "features": ["decay_rate_3", "decay_act_3", "tab", "last1", "lastk_rate", "gap"], "valid": {"GAUC": 0.7070716023445129, "nDCG@5": 0.5538464188575745, "primary": 0.6304590106010437, "users": 22377, "rows": 124909}, "test": {"GAUC": 0.7072570323944092, "nDCG@5": 0.5591958165168762, "primary": 0.6332263946533203, "users": 23875, "rows": 170588}}

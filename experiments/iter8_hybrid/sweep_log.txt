@@ -1,0 +1,10 @@
+bw0.5_seed0: valid primary 0.6016 test primary 0.5952 (25.4s)
+bw0.5_seed1: valid primary 0.6020 test primary 0.5946 (25.9s)
+bw0.5_seed2: valid primary 0.6012 test primary 0.5949 (26.7s)
+bw1.0_seed0: valid primary 0.6016 test primary 0.5942 (32.0s)
+bw1.0_seed1: valid primary 0.6013 test primary 0.5934 (40.3s)
+bw1.0_seed2: valid primary 0.6013 test primary 0.5939 (39.3s)
+bw2.0_seed0: valid primary 0.6015 test primary 0.5930 (47.1s)
+bw2.0_seed1: valid primary 0.6014 test primary 0.5933 (38.7s)
+bw2.0_seed2: valid primary 0.6012 test primary 0.5936 (40.7s)
+done

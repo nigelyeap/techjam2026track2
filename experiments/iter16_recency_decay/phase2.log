@@ -1,0 +1,42 @@
+loading extended dataset (cached after first run)...
+loaded in 2.7s
+[skip] flat_rate seed=0 already done
+[skip] flat_rate seed=1 already done
+[skip] flat_rate seed=2 already done
+[skip] decay_rate_1 seed=0 already done
+[skip] decay_rate_1 seed=1 already done
+[skip] decay_rate_1 seed=2 already done
+[skip] decay_rate_3 seed=0 already done
+[skip] decay_rate_3 seed=1 already done
+[skip] decay_rate_3 seed=2 already done
+[skip] decay_rate_7 seed=0 already done
+[skip] decay_rate_7 seed=1 already done
+[skip] decay_rate_7 seed=2 already done
+[skip] decay_rate_14 seed=0 already done
+[skip] decay_rate_14 seed=1 already done
+[skip] decay_rate_14 seed=2 already done
+[skip] decay_rate_30 seed=0 already done
+[skip] decay_rate_30 seed=1 already done
+[skip] decay_rate_30 seed=2 already done
+
+Phase 0+1 complete. Proceeding to Phase 2 combos (best halflife=3, runner-up=7).
+[done] decay_rate_3+tab                    seed=0 valid=0.61854 test=0.61727  (24.9s)
+[done] decay_rate_3+tab                    seed=1 valid=0.61864 test=0.61679  (26.2s)
+[done] decay_rate_3+tab                    seed=2 valid=0.61901 test=0.61772  (25.5s)
+[done] decay_rate_3+decay_act_3+tab        seed=0 valid=0.61943 test=0.61761  (30.2s)
+[done] decay_rate_3+decay_act_3+tab        seed=1 valid=0.62064 test=0.61479  (38.0s)
+[done] decay_rate_3+decay_act_3+tab        seed=2 valid=0.62078 test=0.61941  (29.0s)
+[done] decay_rate_3+flat_rate              seed=0 valid=0.61153 test=0.60810  (20.3s)
+[done] decay_rate_3+flat_rate              seed=1 valid=0.60989 test=0.60704  (16.7s)
+[done] decay_rate_3+flat_rate              seed=2 valid=0.61135 test=0.60789  (18.9s)
+[done] decay_rate_7+tab                    seed=0 valid=0.61487 test=0.61370  (27.9s)
+[done] decay_rate_7+tab                    seed=1 valid=0.61533 test=0.61299  (26.5s)
+[done] decay_rate_7+tab                    seed=2 valid=0.61519 test=0.61388  (25.3s)
+[done] decay_rate_7+decay_act_7+tab        seed=0 valid=0.61656 test=0.61472  (40.6s)
+[done] decay_rate_7+decay_act_7+tab        seed=1 valid=0.61647 test=0.61495  (40.5s)
+[done] decay_rate_7+decay_act_7+tab        seed=2 valid=0.61576 test=0.61532  (29.1s)
+[done] decay_rate_7+flat_rate              seed=0 valid=0.61141 test=0.60786  (22.2s)
+[done] decay_rate_7+flat_rate              seed=1 valid=0.61065 test=0.60628  (26.3s)
+[done] decay_rate_7+flat_rate              seed=2 valid=0.61160 test=0.60806  (23.9s)
+
+Phase 2 complete. Inspect results.json for the overall winner.

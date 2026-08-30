@@ -1,0 +1,172 @@
+[
+  {
+    "tag": "ref_deep_h32",
+    "seed": 0,
+    "hidden": [
+      32
+    ],
+    "init_scale_mult": 1.0,
+    "use_deep": true,
+    "diverged": false,
+    "valid_primary": 0.6319554448127747,
+    "valid_gauc": 0.7084775567054749,
+    "valid_ndcg5": 0.5554333329200745,
+    "test_primary": 0.6279833316802979,
+    "test_gauc": 0.6999683976173401,
+    "test_ndcg5": 0.5559982657432556,
+    "seconds": 44.7217378616333
+  },
+  {
+    "tag": "ref_deep_h32",
+    "seed": 1,
+    "hidden": [
+      32
+    ],
+    "init_scale_mult": 1.0,
+    "use_deep": true,
+    "diverged": false,
+    "valid_primary": 0.6348360776901245,
+    "valid_gauc": 0.7123735547065735,
+    "valid_ndcg5": 0.5572986602783203,
+    "test_primary": 0.6313208341598511,
+    "test_gauc": 0.7043279409408569,
+    "test_ndcg5": 0.55831378698349,
+    "seconds": 45.68594670295715
+  },
+  {
+    "tag": "ref_deep_h32",
+    "seed": 2,
+    "hidden": [
+      32
+    ],
+    "init_scale_mult": 1.0,
+    "use_deep": true,
+    "diverged": false,
+    "valid_primary": 0.6312517523765564,
+    "valid_gauc": 0.7071553468704224,
+    "valid_ndcg5": 0.5553481578826904,
+    "test_primary": 0.6297892332077026,
+    "test_gauc": 0.7030141949653625,
+    "test_ndcg5": 0.5565642714500427,
+    "seconds": 55.12844800949097
+  },
+  {
+    "tag": "stab_0.5",
+    "seed": 0,
+    "hidden": [
+      32
+    ],
+    "init_scale_mult": 0.5,
+    "use_deep": true,
+    "diverged": false,
+    "valid_primary": 0.6334083080291748,
+    "valid_gauc": 0.710155725479126,
+    "valid_ndcg5": 0.5566608309745789,
+    "test_primary": 0.6290245056152344,
+    "test_gauc": 0.7013506293296814,
+    "test_ndcg5": 0.5566983222961426,
+    "seconds": 52.400392055511475
+  },
+  {
+    "tag": "stab_0.5",
+    "seed": 1,
+    "hidden": [
+      32
+    ],
+    "init_scale_mult": 0.5,
+    "use_deep": true,
+    "diverged": false,
+    "valid_primary": 0.6347037553787231,
+    "valid_gauc": 0.7119797468185425,
+    "valid_ndcg5": 0.5574278235435486,
+    "test_primary": 0.6308853626251221,
+    "test_gauc": 0.7038700580596924,
+    "test_ndcg5": 0.5579007267951965,
+    "seconds": 59.41098189353943
+  },
+  {
+    "tag": "stab_0.5",
+    "seed": 2,
+    "hidden": [
+      32
+    ],
+    "init_scale_mult": 0.5,
+    "use_deep": true,
+    "diverged": false,
+    "valid_primary": 0.631481409072876,
+    "valid_gauc": 0.7072862982749939,
+    "valid_ndcg5": 0.5556765198707581,
+    "test_primary": 0.6300698518753052,
+    "test_gauc": 0.7022519111633301,
+    "test_ndcg5": 0.5578877329826355,
+    "seconds": 78.43760204315186
+  },
+  {
+    "tag": "ref_deep_h32",
+    "seed": 3,
+    "hidden": [
+      32
+    ],
+    "init_scale_mult": 1.0,
+    "use_deep": true,
+    "diverged": false,
+    "valid_primary": 0.6318346261978149,
+    "valid_gauc": 0.7080996036529541,
+    "valid_ndcg5": 0.5555696487426758,
+    "test_primary": 0.630510687828064,
+    "test_gauc": 0.7030349969863892,
+    "test_ndcg5": 0.557986319065094,
+    "seconds": 72.80482316017151
+  },
+  {
+    "tag": "ref_deep_h32",
+    "seed": 4,
+    "hidden": [
+      32
+    ],
+    "init_scale_mult": 1.0,
+    "use_deep": true,
+    "diverged": false,
+    "valid_primary": 0.6323376893997192,
+    "valid_gauc": 0.7085776329040527,
+    "valid_ndcg5": 0.5560977458953857,
+    "test_primary": 0.6302011609077454,
+    "test_gauc": 0.7030952572822571,
+    "test_ndcg5": 0.5573070645332336,
+    "seconds": 72.24061298370361
+  },
+  {
+    "tag": "stab_0.5",
+    "seed": 3,
+    "hidden": [
+      32
+    ],
+    "init_scale_mult": 0.5,
+    "use_deep": true,
+    "diverged": false,
+    "valid_primary": 0.6312276124954224,
+    "valid_gauc": 0.707610011100769,
+    "valid_ndcg5": 0.5548452138900757,
+    "test_primary": 0.6283083558082581,
+    "test_gauc": 0.7009481191635132,
+    "test_ndcg5": 0.5556685924530029,
+    "seconds": 75.54952502250671
+  },
+  {
+    "tag": "stab_0.5",
+    "seed": 4,
+    "hidden": [
+      32
+    ],
+    "init_scale_mult": 0.5,
+    "use_deep": true,
+    "diverged": false,
+    "valid_primary": 0.6318020820617676,
+    "valid_gauc": 0.7075281143188477,
+    "valid_ndcg5": 0.5560761094093323,
+    "test_primary": 0.6311200857162476,
+    "test_gauc": 0.7039595246315002,
+    "test_ndcg5": 0.5582805871963501,
+    "seconds": 91.91241002082825
+  }
+]

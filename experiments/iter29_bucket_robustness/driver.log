@@ -1,0 +1,15 @@
+loading extended dataset (shifted split, cached after first run)...
+loaded in 0.8s  sizes={k: len(v) for k, v in SPLITS_CACHE.items()}
+{'train': 1079797, 'valid': 143394, 'test': 170150}
+[done] nbuckets_10          seed=0 valid=0.62777 test=0.63053  (74.1s)
+[done] nbuckets_10          seed=1 valid=0.62955 test=0.63167  (79.2s)
+[done] nbuckets_10          seed=2 valid=0.62925 test=0.63131  (68.0s)
+[done] nbuckets_10          seed=3 valid=0.62966 test=0.63261  (107.2s)
+[done] nbuckets_10          seed=4 valid=0.63024 test=0.63317  (103.9s)
+[done] nbuckets_20          seed=0 valid=0.62948 test=0.63135  (108.1s)
+[done] nbuckets_20          seed=1 valid=0.62845 test=0.63301  (98.5s)
+[done] nbuckets_20          seed=2 valid=0.62944 test=0.63209  (102.0s)
+[done] nbuckets_20          seed=3 valid=0.62862 test=0.63241  (843.8s)
+[done] nbuckets_20          seed=4 valid=0.63013 test=0.63323  (136.4s)
+
+iter29 shifted-split n_buckets sweep complete.
