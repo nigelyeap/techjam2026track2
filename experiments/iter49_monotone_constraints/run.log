@@ -1,0 +1,10 @@
+columns: ['user_id', 'video_id', 'author_id', 'tab', 'last1', 'duration_ms', 'decay_rate_2.5', 'decay_act_2.5', 'decay_tab_3', 'lastk_rate', 'gap']
+monotone_constraints: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0]
+best_iteration=237  valid={'GAUC': np.float32(0.652532), 'nDCG@5': np.float32(0.5305806), 'primary': np.float32(0.5915563), 'users': 22377, 'rows': 124909}  test={'GAUC': np.float32(0.6469823), 'nDCG@5': np.float32(0.5232368), 'primary': np.float32(0.5851096), 'users': 23875, 'rows': 170588}
+
+[harness check] baseline iter44 (no constraints): valid=0.66135 test=0.64794
+[iter49] with monotone_constraints: valid=0.59156 test=0.58511
+
+(gain does not clear the 0.0003 look-threshold -- no further seeds run)
+
+[exited with code 0]

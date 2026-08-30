@@ -1204,7 +1204,7 @@ available proxy.
 | 12 | 0 agents (1 experiment run directly by orchestrator) — convergence declared, iteration ends here | 0 |
 | 13 | 0 agents (2 experiments — iter38, iter39 — run directly by orchestrator, reopened post-convergence on request) | 0 |
 | 14 | 0 agents (iter44 and all its verification passes — sweeps, ablation, seed/date-shift robustness, blend — run directly by orchestrator) | 0 |
-| 15 | 0 agents (iter45-48 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner, time-of-day feature — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
+| 15 | 0 agents (iter45-49 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner, time-of-day feature, monotonic constraints — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
 
 **GPU time is 0 throughout and will remain 0** — every model, including
 iter44's LightGBM ranker, trains CPU-only. The FM/BPR line (iter1-iter39)
@@ -1550,20 +1550,38 @@ because the recency/decay features already capture the relevant
 session-level pattern more directly than raw clock time does. **Verdict:
 REJECT.** Full detail: `experiments/iter48_hour_of_day/RESULT.md`.
 
+### iter49 — monotonic constraints on the engagement-rate features
+A structural lever, distinct from every hyperparameter/feature change in
+iter44-48: constrained `decay_rate_2.5`, `decay_act_2.5`, `decay_tab_3`,
+`lastk_rate` to a monotonically non-decreasing relationship with the
+score via LightGBM's `monotone_constraints`, on iter44's exact
+pipeline/hyperparameters otherwise unchanged. Result: a large, decisive
+regression — valid 0.59156 vs. baseline 0.66135 (-0.070), test 0.58511 vs.
+0.64794. Plausible mechanism: at `num_leaves=2` (one split per tree), a
+constrained split-finding search across 5 categorical + 4 constrained
+numeric columns sharing the same trees leaves little room to find a split
+that is both monotonicity-satisfying and informative, so most trees
+likely fall back to routing through the unconstrained categorical columns
+instead — a much worse trade at this capacity than the intended
+regularization benefit. **Verdict: REJECT, clearly and by a wide margin.**
+Full detail: `experiments/iter49_monotone_constraints/RESULT.md`.
+
 ## Round 15 complete — summary
-Four independent methods tested (CatBoost-native, extreme-low-capacity
-GBM hyperparameter depth, stacking meta-learner, time-of-day feature),
-all directly by the orchestrator, no subagent dispatch. All four landed
-as clean, well-diagnosed REJECTs rather than gains — but each closes a
-real open question: CatBoost's native-encoding ceiling is now known
-(iter45), the GBM hyperparameter search space at num_leaves=2 is now
-exhaustively checked (iter46), both "does stacking beat a fixed alpha"
-and "does a third model add blend diversity" are answered no with a
-doubly-confirmed diagnosis (iter47), and a previously-never-touched raw
-field (hour-of-day) is now shown to carry no signal at this feature set
-(iter48). No change to the final selected model. **Convergence
-reaffirmed**: iter44's blend (valid 0.66473 / test 0.65197) remains the
-best result after 15 rounds / 48 iterations.
+Five independent methods tested (CatBoost-native, extreme-low-capacity
+GBM hyperparameter depth, stacking meta-learner, time-of-day feature,
+monotonic constraints), all directly by the orchestrator, no subagent
+dispatch. All five landed as clean, well-diagnosed REJECTs rather than
+gains — but each closes a real open question: CatBoost's native-encoding
+ceiling is now known (iter45), the GBM hyperparameter search space at
+num_leaves=2 is now exhaustively checked (iter46), both "does stacking
+beat a fixed alpha" and "does a third model add blend diversity" are
+answered no with a doubly-confirmed diagnosis (iter47), a previously-
+never-touched raw field (hour-of-day) carries no signal at this feature
+set (iter48), and structural monotonicity constraints are actively
+harmful at this ultra-low-capacity regime (iter49). No change to the
+final selected model. **Convergence reaffirmed**: iter44's blend (valid
+0.66473 / test 0.65197) remains the best result after 15 rounds / 49
+iterations.
 
 ## Final result (as of end of Round 15 — unchanged from Round 14, reaffirmed by iter45-47)
 **Final selected model: iter44 blend** — a score-level blend (alpha=0.1,
