@@ -1,0 +1,20 @@
+{
+  "gbm_5seed_ensemble": {
+    "valid": 0.6701626777648926,
+    "test": 0.652275025844574
+  },
+  "fm_standalone": {
+    "valid": 0.6398779153823853,
+    "test": 0.6418731808662415
+  },
+  "best_blend": {
+    "alpha": 0.12,
+    "valid": 0.6742448806762695,
+    "test": 0.6581778526306152
+  },
+  "iter55_blend_for_comparison": {
+    "alpha": 0.1,
+    "valid": 0.67451,
+    "test": 0.65832
+  }
+}

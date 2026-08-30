@@ -1206,7 +1206,7 @@ available proxy.
 | 14 | 0 agents (iter44 and all its verification passes — sweeps, ablation, seed/date-shift robustness, blend — run directly by orchestrator) | 0 |
 | 15 | 0 agents (iter45-50 — CatBoost native, extreme-capacity depth sweep, stacking meta-learner, time-of-day feature, monotonic constraints, GOSS boosting — run directly by orchestrator, continuing the cost-control pivot on explicit instruction to conserve tokens) | 0 |
 | 16 | 0 agents (iter51 — LightGBM linear_tree=True, standalone + blend — run directly by orchestrator) | 0 |
-| 17 | 0 agents (iter52-58 — capacity/linear_lambda/hour-of-day retests, learning_rate sweep and blend (promoted), fine learning_rate resweep, reg_lambda resweep, min_child_samples resweep — run directly by orchestrator, continued on explicit post-promotion instruction) | 0 |
+| 17 | 0 agents (iter52-59 — capacity/linear_lambda/hour-of-day retests, learning_rate sweep and blend (promoted), fine learning_rate resweep, reg_lambda resweep, min_child_samples resweep, GBM seed-ensemble blend — run directly by orchestrator, continued on explicit post-promotion instruction) | 0 |
 
 **GPU time is 0 throughout and will remain 0** — every model, including
 iter44's LightGBM ranker, trains CPU-only. The FM/BPR line (iter1-iter39)
@@ -1722,6 +1722,19 @@ this closes all three tree-structure regularization knobs as flat/moot at
 this capacity setting — the GBM side of the hyperparameter space is now
 considered exhausted for this architecture. Full detail:
 `experiments/iter58_min_child_samples_resweep/RESULT.md`.
+
+### iter59 — GBM 5-seed prediction-averaged ensemble, blended with FM
+Every prior blend used a single GBM seed while the FM side has always
+been a genuine 5-seed ensemble; checked whether prediction-averaging the
+GBM across 5 seeds (same treatment as FM) beats the single seed=0. GBM
+5-seed ensemble standalone (0.67016) is *worse* than seed=0 alone
+(0.67052) — of the 5 seeds only seed=0 sits at the top of the tight
+variance band, so averaging pulls the mean down. Blend with FM
+correspondingly slightly worse (alpha=0.12, valid=0.67424/test=0.65818
+vs iter55's 0.67451/0.65832). **Verdict: REJECT** — unlike FM, GBM seed
+variance is tight enough that the single selected seed is not a
+denoising opportunity. Full detail:
+`experiments/iter59_gbm_seed_ensemble/RESULT.md`.
 
 ## Round 17 — post-promotion, continued iteration on explicit instruction ("keep testing further, push harder")
 iter51 (linear_tree=True blend, valid 0.67297/test 0.65643) was promoted
