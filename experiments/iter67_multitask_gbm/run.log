@@ -1,0 +1,48 @@
+=== preparing iter63 rate_only features (cached) ===
+=== re-parsing raw CSVs for aux engagement labels ===
+  alignment check [train]: 1141112 rows, mismatches=0
+  alignment check [valid]: 124909 rows, mismatches=0
+  alignment check [test]: 170588 rows, mismatches=0
+  PASS: orig_idx alignment exact on all splits (0 mismatches)
+  train prevalence is_like: 1.8677%
+  train prevalence is_follow: 0.1007%
+  train prevalence is_comment: 0.2568%
+  train prevalence is_forward: 0.0996%
+
+=== baseline (rate_only, no aux columns) seed=0 ===
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+[rate_only] best_iteration=48  valid=0.67168  test=0.65353
+
+=== training 4 auxiliary classifiers (5-fold OOF on train) ===
+  is_like: OOF train AP-ish mean_pred=0.0178 (actual rate=0.0187)
+  is_follow: OOF train AP-ish mean_pred=0.0020 (actual rate=0.0010)
+  is_comment: OOF train AP-ish mean_pred=0.0020 (actual rate=0.0026)
+  is_forward: OOF train AP-ish mean_pred=0.0020 (actual rate=0.0010)
+
+=== training main GBM WITH 4 aux columns (seed=0) ===
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+
+baseline (no aux):  valid=0.67168 test=0.65353
+with aux columns:   valid=0.67168 test=0.65353
+delta:              valid=+0.00000 test=+0.00000
+
+aux column importances (split count):
+  aux_is_like: 0
+  aux_is_follow: 0
+  aux_is_comment: 0
+  aux_is_forward: 0
+  total trees actually built: 48

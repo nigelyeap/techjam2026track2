@@ -1,0 +1,10 @@
+  epoch 1: loss=0.6266 valid_primary=0.58162 (27s)
+  epoch 2: loss=0.5953 valid_primary=0.58138 (52s)
+  epoch 3: loss=0.5846 valid_primary=0.58265 (78s)
+  epoch 4: loss=0.5708 valid_primary=0.58333 (103s)
+  epoch 5: loss=0.5544 valid_primary=0.58251 (129s)
+  epoch 6: loss=0.5363 valid_primary=0.58168 (155s)
+  epoch 7: loss=0.5183 valid_primary=0.57931 (181s)
+  epoch 8: loss=0.5028 valid_primary=0.57474 (206s)
+[iter64 SASRec] best valid=0.58333 test=0.57797
+SAVED

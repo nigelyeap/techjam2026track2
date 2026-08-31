@@ -1844,12 +1844,531 @@ approval** (per standing protocol, promotion to submission deliverables is
 never done unilaterally). Full detail:
 `experiments/iter63_decay_tab_rate/RESULT.md`.
 
-## Best-known candidate / final result as currently submitted (iter55, promoted end of Round 17)
-**iter63 blend (valid=0.67606/test=0.65955) is a confirmed, real improvement
-over this and awaits explicit user approval to promote — see Round 19
-above and `experiments/iter63_decay_tab_rate/RESULT.md`.**
+## Round 20 — non-FM-family sequence model (user-directed pivot, explicit permission to use open-source libraries/papers/pretrained weights)
 
-**Final selected model: iter55 blend** — a score-level blend (alpha=0.10,
+With iter63 (Round 19) still pending user go-ahead to promote, the user
+authorized drawing on any open-source library (PyTorch, RecBole, TorchRec,
+LightGBM, ...), published papers, or pretrained weights, framing this as
+core to what makes the pipeline a genuine research agent. iter40's own
+closing diagnosis (Round 10-era, three prior sequence-modeling REJECTs —
+iter32, iter34, iter40) had pinned the failure specifically on sharing the
+FM's own embedding table/BPR gradient path, and named "a non-FM-family
+model combined only by score-blending" as the untried, structurally
+different lever. Round 20 builds exactly that.
+
+### iter64 — SASRec-style self-attention history encoder, independent model — REJECT
+
+A from-scratch PyTorch SASRec-style model (own item embedding, own
+positional embedding, one manual multi-head self-attention block, masked
+mean-pool, dot-product scoring, own BPR loss/optimizer — zero parameter or
+gradient sharing with the FM or GBM) over each user's causally-ordered
+interaction history (`(time_ms, orig_idx)` total order, same convention as
+iter18; brute-force verified 900/900 rows, 0 mismatches). Standalone (seed
+0): valid=0.58333, test=0.57797 — well below both existing families (GBM
+0.67168/0.65353, FM 0.63988/0.64187) and even the project's original FM
+baseline (test 0.5946), with a training curve showing classic overfitting
+to a weak signal (train loss keeps falling after valid peaks at epoch 4).
+Per the project's "check blend-level effect early" discipline (the iter61
+lesson — a real standalone gain does not automatically imply a blend
+gain), the blend-level effect was checked immediately via a single-seed
+beta-sweep on top of the unchanged iter63 blend: **monotonically
+decreasing at every tested beta from 0.00 to 0.30, on both valid and
+test** — beta=0.00 (i.e. not using the model at all) is strictly optimal.
+This is a clean, unambiguous negative (no interior optimum to
+disambiguate from noise), so no 5-seed confirmation was needed. Diagnosis:
+unlike iter32/34/40, this REJECT is not explained by gradient-path
+conflict (there is none here) — more likely the model is simply
+underpowered for the available scale (7,551 items, ~1.1M train rows, no
+side features beyond video_id), a separate and larger fix (richer
+per-item features, next-item pretraining) than fits the remaining time
+budget. Also surfaced a reusable environment finding: `torch` +
+`lightgbm` in the same Python process reliably segfaults here (exit code
+139, unaffected by `KMP_DUPLICATE_LIB_OK`); worked around via a
+three-process/`.npz`-handoff split. **Verdict: REJECT.** Full detail:
+`experiments/iter64_sasrec_history/RESULT.md`.
+
+This closes out sequence/attention-based modeling as a direction for this
+project: four independent attempts (iter32, iter34, iter40, iter64) across
+two structurally different mechanisms (shared-embedding co-training and
+fully-independent score-blended) have now all REJECTed.
+
+## Parallel track — teammate ("Xuxia") independent continuation, reported via `XUXIA_SUMMARY.md`
+
+A teammate ran an independent Claude Code instance on a separate clone of
+this repo, working from a handoff doc (`XUXIA_INSTRUCTIONS.md`, not present
+in this clone) whose harness-fidelity reference pointed at the
+now-superseded iter44 blend; their own fresh-clone reproduction correctly
+caught the drift (`main` was 19 commits ahead by then) and, per direct user
+instruction, used the current iter63 blend as the baseline to beat instead
+— all three results below are relative to iter63 (valid=0.67606/
+test=0.65955), not iter44. **Note on provenance**: this section originally
+summarized their self-reported findings only, since the underlying
+`iterXUXIA*` folders and raw results live only on their clone, not this
+one. **Update**: per direct user instruction ("if you have nothing to do,
+try the methods listed under xuxia's yourself"), all three were
+subsequently reimplemented from scratch and independently re-verified on
+this clone — see Round 21 below. All three reproduced as clean REJECTs.
+
+- **Per-segment blend alpha** (by `tab`, 15 segments; by activity tertile,
+  3 segments) in place of the single global alpha=0.14 — both regressed in
+  every one of 5 GBM seeds (tab: mean −0.00499 valid; tier: mean −0.00568
+  valid). Tier segments were large/balanced (~41.6k rows each) and still
+  regressed, suggesting no exploitable GBM/FM heterogeneity by activity
+  level — the global alpha is already close to optimal. **REJECT.**
+- **Rank-based / calibrated blending** — Borda rank fusion, reciprocal-rank
+  fusion, and isotonic-regression calibration, all vs. the current
+  linear+minmax blend. All three regressed in every one of 5 seeds (Borda
+  mean −0.00146, RRF mean −0.00133, isotonic mean −0.03584 — isotonic's
+  collapse traced to it pooling the GBM's ~123k-unique raw scores into only
+  37 calibrated levels, a structural tie-artifact, not a tuning issue).
+  **REJECT (all three).**
+- **Reopening multi-task learning via GBM-side stacking** (not shared
+  embeddings, unlike iter31/36) — 4 auxiliary LightGBM classifiers
+  (`is_like`/`is_follow`/`is_comment`/`is_forward`) trained via 5-fold OOF
+  on train, fed back as 4 new columns into the main GBM. Single-seed
+  valid 0.67168→0.67192 (+0.00024, below the 0.0003 "even look twice"
+  threshold — no 5-seed confirm run). Feature importance corroborates: 3/4
+  auxiliary columns never used as a split across 48 trees. Points to the
+  engagement signals themselves being low-information for `long_view`,
+  not an artifact of iter31/36's specific shared-gradient mechanism.
+  **REJECT.**
+
+No promotion resulted; iter63 remains the current best. Combined with
+Round 20, this leaves blend-strategy variants, GBM-stacked multi-task
+augmentation, and sequence/attention modeling all closed off as directions
+for any further search.
+
+## Round 21 — independent re-verification of the parallel-track (Xuxia) findings
+
+Per direct user instruction ("if you have nothing to do, try the methods
+listed under xuxia's yourself"), all three findings reported in the
+"Parallel track" section above were reimplemented from scratch on this
+clone (not ported from their code, which this clone doesn't have) and
+re-checked against ground truth this orchestrator directly computed. All
+three reproduced as clean REJECTs, in most cases even more unambiguously
+than the original single-seed reports.
+
+- **iter65 (segment blend alpha)**: own `gen_scores.py` trained iter63's
+  `rate_only` GBM at 5 seeds + the unchanged iter38 FM ensemble, with an
+  explicit harness-fidelity check (seed-0 global blend reproduced iter63's
+  documented valid=0.67606/test=0.65955 exactly) before trusting anything
+  new. By-tab and by-activity-tertile segment alphas both regressed in
+  **every one of 5 seeds** (mean Δvalid −0.00878 and −0.00510
+  respectively) — magnitudes differ from Xuxia's report (different alpha
+  grid / per-segment `evaluate()` semantics) but the conclusion is
+  identical: the global alpha is already near-optimal. See
+  [iter65_segment_blend/RESULT.md](iter65_segment_blend/RESULT.md).
+  **REJECT (confirmed).**
+- **iter66 (rank-based / calibrated blending)**: per-user Borda and RRF
+  rank fusion both regressed in every one of 5 seeds (mean Δvalid −0.00991
+  and −0.00996). Isotonic calibration reproduced Xuxia's exact collapse
+  mechanism digit-for-digit — GBM standalone valid 0.67168→**0.54189**,
+  raw scores pooled into exactly **37** calibrated levels on valid (both
+  numbers match their report precisely), confirming the tie-artifact is a
+  structural incompatibility between lambdarank-style scores and isotonic
+  regression, not an implementation quirk of either clone. See
+  [iter66_calibrated_blend/RESULT.md](iter66_calibrated_blend/RESULT.md).
+  **REJECT (confirmed, all three sub-methods).**
+- **iter67 (GBM-side multi-task stacking)**: `aux_labels.py` recovered
+  `is_like`/`is_follow`/`is_comment`/`is_forward` from the raw CSVs via
+  `orig_idx`, with an exhaustive alignment check (reconstructed
+  `long_view` compared against the trusted `y` array for all 1,141,112 +
+  124,909 + 170,588 rows across train/valid/test — 0 mismatches, not a
+  spot check). 4 auxiliary LightGBM classifiers (5-fold OOF on train, full
+  fit for valid/test) fed back as new columns produced an **exact-zero**
+  delta (valid 0.67168→0.67168, test 0.65353→0.65353) with **all 4**
+  auxiliary columns unused across all 48 trees built — an even cleaner
+  null than Xuxia's own (+0.00024, 1 column used once), consistent with
+  the same underlying mechanism: these engagement labels are too rare
+  (<2% prevalence) and too weakly informative to ever win a split against
+  the existing recency/decay features. See
+  [iter67_multitask_gbm/RESULT.md](iter67_multitask_gbm/RESULT.md).
+  **REJECT (confirmed, even more cleanly).**
+
+No promotion resulted. iter63 remains the current best and correctly
+promoted candidate (`SUBMISSION.md`/`submission.csv`/`DEVPOST.md` all
+confirmed up to date via `submit.py --check`, 170,588 rows, PASSED).
+Combined with Round 20 and the parallel-track findings above, every
+currently-known direction — sequence/attention modeling, blend-strategy
+variants (segment alpha, rank fusion, isotonic calibration), and
+GBM-stacked multi-task augmentation — is now closed off, independently and
+consistently, from two separate clones run by two separate people.
+
+## Round 22 — self-directed research: side-info retest + tag-decay-rate feature
+
+Per direct user instruction ("i want you to comprehensively test that field
+in xuxia's direction, you are a self researching agent. find more methods,
+or maybe combine methods that work with our current existing model"), this
+round is fully self-directed rather than reproducing a specific reported
+finding: a census of all 67 prior iterations was used to find a genuinely
+untested gap, and a follow-up experiment was designed by combining an
+already-proven project mechanism (iter63's decayed-rate transformation)
+with a newly-discovered signal.
+
+- **iter68 (static side-info, GBM-native retest)**: iter15 tested static
+  user/video side-info only on the FM-bucketed representation (pre-iter44),
+  never on the GBM-native representation where several other directions
+  flipped from REJECT to ACCEPT. Retested `user_features_pure.csv`,
+  `video_features_statistic_pure.csv` (both from iter15), and
+  `video_features_basic_pure.csv` (never touched by any prior iteration —
+  video_type, upload_type, content tag) as native LightGBM
+  categoricals/numerics on top of iter63's `rate_only` set. `user` is an
+  exact no-op; `video_stat` regresses (Δvalid −0.03157); `video_basic`
+  regresses identically (Δvalid −0.02900), isolated via per-sub-field
+  ablation to a single cause: `v_tag_primary`, a 44-level unordered
+  categorical, while `v_type` and `v_upload_type` are a no-op/negligible.
+  5-seed-confirmed (mean Δvalid −0.03411, wins 0/5) given the unusually
+  large magnitude. Diagnosis: a high-cardinality unordered categorical
+  destabilizes the shallow `num_leaves=2` booster even with a small direct
+  split-count footprint. See
+  [iter68_side_info_native/RESULT.md](iter68_side_info_native/RESULT.md).
+  **REJECT** (user: no-op; video_stat: REJECT; video_basic: REJECT via
+  v_tag_primary, no-op via v_type/v_upload_type).
+- **iter69 (decayed per-tag rate)**: rather than abandoning the content-tag
+  signal after iter68's REJECT, reapplies the exact "raw count → Laplace
+  -smoothed decayed rate" transformation that iter63 itself used to turn
+  `decay_tab_3` (a real, promoted gain) — generalizing the same
+  lazy-decay-per-key mechanism from `(user, tab)` to `(user, content-tag)`
+  instead of using the tag as a raw categorical split. New causal traversal
+  (`decayed_tag_pos`/`decayed_tag_total`, halflives 3d/7d) independently
+  verified leak-free via brute-force spot-check (30 random rows, max abs
+  err 3.55e-15) and monotonicity sanity check (5000 rows), mirroring
+  iter63's own verification precedent exactly. All three halflife
+  configurations (3d, 7d, both) produced an **exact-zero delta** (valid
+  0.67168→0.67168, test 0.65353→0.65353) on top of `rate_only`. Checked
+  the "0 splits ≠ 0 effect" trap that applies under `linear_tree=True`
+  (which is exactly why `decay_tab_rate_3` itself shows 0 splits despite
+  being a real contributor) by confirming the new features have genuine
+  variance (std 0.170-0.182, 84k-107k distinct values, comparable to
+  `decay_tab_rate_3`'s own distribution) rather than being degenerate —
+  ruling out a bug. Diagnosis: the tag-level rate is fully redundant given
+  `video_id`/`author_id` are already in the feature set, since each video
+  has exactly one fixed tag, so `video_id` alone already fingerprints any
+  tag-level effect at finer granularity. See
+  [iter69_tag_decay_rate/RESULT.md](iter69_tag_decay_rate/RESULT.md).
+  **REJECT** (clean no-op — harmless, unlike iter68's raw-categorical
+  version, but zero measurable benefit).
+
+Both the raw-categorical and decayed-rate forms of the content-tag signal
+are now closed off. No promotion resulted; iter63 remains the current best
+and correctly promoted candidate.
+
+- **iter70 (decayed-rate interaction terms)**: `rate_only` contains two
+  independently-proven decayed-rate features (`decay_rate_2.5`, global
+  per-user; `decay_tab_rate_3`, per-(user,tab)) never combined via an
+  explicit cross term — `linear_tree=True`'s leaf regression is linear in
+  its inputs, so it cannot represent a genuine multiplicative interaction
+  without one. Tested product, ratio, and diff terms. `diff` and `ratio`
+  are exact no-ops (expected — the leaf-linear model already represents
+  any linear combination without a dedicated column; a ratio is likewise
+  representable to first order). `product`, the genuinely non-linear term,
+  causes a small regression (Δvalid −0.00185), and `all3` matches
+  `product` exactly, confirming it as the sole active (and net-negative)
+  ingredient. See
+  [iter70_decay_rate_interaction/RESULT.md](iter70_decay_rate_interaction/RESULT.md).
+  **REJECT.**
+
+- **iter71 (decayed per-author rate)**: `author_id` is already a strong raw
+  categorical, but no iteration had tracked a *decayed engagement rate* at
+  author granularity. Generalized the same shared per-key lazy-decay
+  mechanism to `(user, author_id)` — no new CSV join needed, `author_id`
+  is already in every row. Causality verified (30-row brute-force spot
+  check, max abs err 0.00e+00). Result: **exact-zero delta** across all
+  three halflife configs, identical pattern to iter69's tag-rate null.
+  This unifies both nulls into one diagnosis: the decayed-rate
+  transformation adds value specifically when applied to a grouping axis
+  **coarser** than what's already in the categorical feature set (as
+  `tab` is relative to `user_id`/`video_id`/`author_id`) — at author or
+  tag granularity, which sits at-or-below the existing categoricals, the
+  model can already fit the effect directly via the raw categorical
+  split, leaving no residual for a smoothed-rate summary to add. See
+  [iter71_decay_author_rate/RESULT.md](iter71_decay_author_rate/RESULT.md).
+  **REJECT** (clean no-op). **This "coarseness" diagnosis is corrected by
+  iter72 immediately below** — treat it as provisional, not settled.
+
+- **iter72 (decayed per-duration-bucket rate — direct test of iter71's
+  coarseness theory)**: built a 6-level `duration_ms` bucket axis
+  (edges from train quantiles: 15s/30s/60s/120s/300s), deliberately as
+  coarse as `tab` (~7 levels) and, unlike tag/author, not represented
+  anywhere else in the feature set as a categorical — a clean test of
+  whether coarseness alone predicts success. Causality verified (30-row
+  brute-force spot check, max abs err 3.55e-15; monotonicity over 5000
+  rows). Result: **exact-zero delta** across all three halflife configs
+  — identical to tag's and author's nulls, **despite matching `tab`'s
+  coarseness**. This falsifies iter71's "coarseness is the deciding
+  factor" theory as stated. Revised diagnosis: `tab` is not simply a
+  coarse content property — it's a **recommendation-surface/traffic-
+  source context signal** (which UI feed served the video), structurally
+  different from intrinsic content properties (duration, tag, author).
+  A user's engagement rate conditional on serving surface plausibly
+  reflects real targeting-quality/intent differences that no
+  content-property axis can capture, regardless of its cardinality. Not
+  independently re-verified by a second context-type axis in this round
+  (no other traffic-source column exists in KuaiRand-Pure) — treat as
+  the best available explanation given 3 consistent content-axis nulls
+  vs. 1 real gain on the one context axis tested, not as proven. See
+  [iter72_decay_durbucket_rate/RESULT.md](iter72_decay_durbucket_rate/RESULT.md).
+  **REJECT** (clean no-op; falsifies iter71's stated theory).
+
+- **iter73 (decayed per-hour-of-day-bucket rate — direct test of iter72's
+  content-vs-context theory)**: `hourmin` (time-of-day served) has been
+  carried in the row tuple since iter18/iter48 but never used as a decayed
+  rate on the current representation (iter48 only tried a raw sin/cos
+  numeric on the pre-`linear_tree`, pre-`decay_tab_rate` iter44 baseline).
+  Bucketed into 6 four-hour windows, comparable cardinality to `tab`.
+  Causality verified (30-row brute-force spot check, max abs err 7.11e-15;
+  monotonicity over 5000 rows). Result: **exact-zero delta** across all
+  three halflife configs — identical to tag/author/duration's nulls,
+  **despite being an unambiguous context/session property**, which
+  falsifies iter72's "context vs. content" theory as stated. See
+  [iter73_decay_hour_rate/RESULT.md](iter73_decay_hour_rate/RESULT.md).
+  **REJECT** (clean no-op; falsifies iter72's stated theory).
+
+No promotion resulted from Round 22 (iter68, iter69, iter70, iter71,
+iter72, iter73). iter63 remains the current best and correctly promoted
+candidate. **The decayed-rate-generalization family is now closed
+entirely**: 4 consecutive REJECTs (tag, author, duration-bucket,
+hour-of-day) spanning both content and context properties and both fine
+and coarse cardinalities, with two successive explanatory theories
+(coarseness; content-vs-context) each proposed and then falsified by the
+very next iteration. Only the original `tab` axis (iter16) produces a real
+gain — the most defensible remaining explanation is that this is closer to
+a dataset-specific empirical fact discovered by iter16's original search,
+not an instance of a generalizable rule about axis properties. Any further
+member of this family needs a fundamentally new hypothesis for why it
+would differ from all four tested axes, not another guess at the dividing
+property; future rounds should pivot to a structurally different
+feature/model lever instead.
+
+## Round 23 — hyperparameter staleness retest (structurally different lever from Round 22)
+
+- **iter74 (num_leaves resweep on the current final feature set)**:
+  `num_leaves` was last swept in iter52 (`linear_tree` resweep), which
+  chronologically predates iter63's introduction of `decay_tab_rate_3` — the
+  one real feature gain in the project. Round 17 declared the GBM
+  hyperparameter space "exhausted" on a strictly weaker, pre-iter63 feature
+  set, so this retests whether `num_leaves=2` is still optimal now. Reused
+  iter63's `run()` unchanged, swept `num_leaves ∈ {2,3,4,5,6,7,8,10}` on the
+  `rate_only` feature set with every other hyperparameter fixed at iter63's
+  exact config; features prepared once and shared across the sweep.
+  Harness-fidelity check at `num_leaves=2` reproduced iter63's exact
+  baseline (valid=0.67168, test=0.65353) before trusting the rest. Result:
+  **monotonic, substantial degradation** as `num_leaves` increases —
+  valid 0.67168 (nl=2) → 0.66935 (nl=3) → 0.66635 (nl=4) → 0.66273 (nl=5) →
+  0.65834 (nl=6) → 0.65657 (nl=7) → 0.65612 (nl=8) → 0.64741 (nl=10), with
+  `best_iteration` collapsing in lockstep (48 → 24 → 15 → 8 → 6 → 8 → 7 →
+  70), consistent with each additional leaf giving individual trees enough
+  capacity to overfit far earlier. No seed noise involved — the effect is
+  ~2 orders of magnitude larger than this project's "even look twice"
+  threshold (~0.0003 valid), so no 5-seed confirmation needed. See
+  [iter74_num_leaves_resweep/RESULT.md](iter74_num_leaves_resweep/RESULT.md).
+  **REJECT** (clean, no promotion) — `num_leaves=2` reconfirmed optimal on
+  the current feature set, resolving the staleness concern that motivated
+  the retest.
+
+No promotion resulted from Round 23. iter63 remains the current best and
+correctly promoted candidate. This closes the immediate hyperparameter-
+staleness question; the GBM hyperparameter space is genuinely exhausted
+again given the current feature set, not just the pre-iter63 one.
+
+## Round 24 — remaining static side-info retest
+
+- **iter75 (video orientation + music_type)**: iter68 tested `video_type`/
+  `upload_type`/`tag` from `video_features_basic_pure.csv` and found only
+  `v_tag_primary` (44 levels) regressed; two columns from that file were
+  never touched by any iteration: `server_width`/`server_height` (video
+  orientation) and `music_type`. `music_id` deliberately excluded (7202
+  unique values, same cardinality risk as `v_tag_primary`). Derived
+  `v_orientation` (3 levels: portrait/landscape/square, from width vs.
+  height, not the raw 156/120-level pixel dimensions) and `v_music_type` (5
+  levels + UNK). Same harness as iter68: single seed=0, iter55's config,
+  harness-fidelity check passed. Result: **exact-zero delta** for
+  `+orientation`, `+music_type`, and `+both` alike. See
+  [iter75_side_info_v2/RESULT.md](iter75_side_info_v2/RESULT.md).
+  **REJECT** (clean no-op). Diagnosis: consistent with a structural property
+  of `num_leaves=2` — a single-split-per-round tree only ever picks one
+  categorical split variable, and `linear_tree`'s leaf regression only fits
+  numeric features, so a new categorical weaker than the existing
+  `tab`/`user_id`/`video_id`/`author_id`/`last1` split candidates never gets
+  selected across any of the 500 boosting rounds, producing bit-identical
+  output rather than a small residual. This closes out
+  `video_features_basic_pure.csv`: every static column in that file
+  (video_type, upload_type, tag, orientation, music_type) is now tested,
+  with only `v_tag_primary` producing a (negative) effect.
+
+- **iter76 (can num_leaves=3 be tamed by regularization it was never given?)**:
+  iter57/iter58 found `reg_lambda`/`min_child_samples` flat/moot, but only
+  **at `num_leaves=2`**, where iter57 itself diagnosed that nearly all model
+  flexibility lives in the per-leaf linear fit, leaving the tree-structure
+  regularizer nothing to do. `num_leaves=3` (iter74's regressed variant,
+  Δvalid -0.00233) introduces an actual split decision and less data per
+  leaf, so these regularizers — plus `linear_lambda` (iter53, tuned only at
+  `num_leaves=2`) — could plausibly bind differently. Staged
+  coordinate-descent at `num_leaves=3`: `reg_lambda ∈ {1,3,10,30,100}` →
+  best 10.0 (valid 0.66991); `min_child_samples ∈ {200..4000}` → bit-identical
+  across the whole range, reconfirming iter58's flat/moot finding at a
+  different `num_leaves`; `linear_lambda ∈ {0,0.1,0.5,1,3}` → default 0.0
+  remains best. **Best num_leaves=3 config found still Δvalid -0.00177 vs.
+  num_leaves=2** — regularization narrowed but did not close the gap. See
+  [iter76_nl3_regularization_retune/RESULT.md](iter76_nl3_regularization_retune/RESULT.md).
+  **REJECT** (clean, no promotion; single seed sufficient — gap is large and
+  consistent across the entire regularization grid). Closes the GBM
+  capacity/regularization question decisively: `num_leaves=2` is optimal
+  both at default regularization and across a wide sweep designed to give
+  `num_leaves=3` its best possible chance.
+
+No promotion resulted from Round 24. iter63 remains the current best and
+correctly promoted candidate.
+
+## Round 25 — decayed-rate axis-crossing / interaction test
+
+- **iter77 (decayed (user, tab, duration-bucket) cross rate)**: distinct
+  lever from both Round 22's closed "decay a new axis alone" family and
+  iter70's closed "multiply two already-computed rate columns together"
+  test — this crosses the one proven decayed-rate axis (`tab`) with the
+  best-explored secondary axis (duration-bucket, null alone in iter72) at
+  the raw joint-count level, *before* any rate division, asking whether
+  finer per-(user,tab,durbucket) conditioning reveals interaction signal
+  that flat `tab` alone misses. 77 distinct (tab, dur_bucket) cells in
+  train, several very sparse (smallest cells count 1-3), handled by the
+  existing Laplace smoothing. Causality verified: 30-row brute-force
+  spot-check (max abs err 4.44e-15), 5000-row monotonicity check, both
+  clean. Harness-fidelity check reproduced iter63's exact baseline before
+  trusting any new number. Result: **exact-zero delta** across
+  `cross_rate_h3`, `cross_rate_h7`, and `cross_rate_both` alike. See
+  [iter77_decay_tab_durbucket_cross/RESULT.md](iter77_decay_tab_durbucket_cross/RESULT.md).
+  **REJECT** (clean no-op). Diagnosis: unlike the categorical-addition
+  nulls (iter68/75), this is a numeric feature fed directly into
+  `linear_tree`'s per-leaf linear regression, so it isn't excluded by the
+  "never gets picked as a split variable" mechanism — instead, with 77
+  sparse cells most values collapse toward the smoothing prior and are
+  highly correlated with the already-present `decay_tab_rate_3` (which
+  pools far more data per cell), so the leaf-linear model gets nothing a
+  near-collinear, noisier column could add. Consistent with iter70's
+  finding that the linear-leaf model doesn't need dedicated interaction
+  terms when it can already express linear combinations of its existing
+  inputs.
+
+No promotion resulted from Round 25. iter63 remains the current best and
+correctly promoted candidate. Combined with iter70 and the closed Round
+22 decayed-rate-generalization family (iter68-73), this closes off
+"decayed-rate interactions/crosses" — at both the raw-count-crossing level
+(this round) and the post-hoc rate-multiplication level (iter70) — as a
+productive direction for this model/feature combination.
+
+## Round 26 — remaining hyperparameter staleness (completes Round 23's `num_leaves` closure)
+
+- **iter78 (learning_rate / reg_lambda / min_child_samples resweep)**:
+  `learning_rate` (iter55/56), `reg_lambda` (iter57), and
+  `min_child_samples` (iter58) were all tuned before iter63's
+  `decay_tab_rate_3`-replaces-`decay_tab_3` feature swap and never
+  re-checked against the actual current feature set — the same staleness
+  gap iter74 closed for `num_leaves`. Staged coordinate-descent
+  (`learning_rate` → `reg_lambda` → `min_child_samples`), reusing iter63's
+  own `run()`/`prepare()` unchanged; harness-fidelity check passed before
+  trusting the sweep. Result: `learning_rate=0.10` reconfirmed exact
+  optimum (unchanged); `min_child_samples` reconfirmed completely flat
+  across a 32x range (50-1600, unchanged from iter58); `reg_lambda=10.0`
+  gives a **+0.00018 valid / +0.00007 test** bump over the default 1.0 —
+  well below this project's single-seed noise floor and its ~0.001
+  5-seed-confirmation threshold, not a real lever. See
+  [iter78_lr_reg_staleness_resweep/RESULT.md](iter78_lr_reg_staleness_resweep/RESULT.md).
+  **REJECT** (negligible, no promotion, no confirmation warranted).
+
+No promotion resulted from Round 26. iter63 remains the current best and
+correctly promoted candidate. Combined with iter74 (`num_leaves`), this
+closes the hyperparameter-staleness question completely: all four of the
+GBM's core hyperparameters have now been independently reconfirmed
+optimal (or negligibly improvable) on the actual current feature set.
+
+## Round 27 — FM-side parity test (does iter63's GBM win port to the FM?)
+
+- **iter79 (FM `decay_tab_rate_3`, count→rate swap)**: after 10 consecutive
+  closed GBM-side iterations (iter68-78) suggested that axis was saturated,
+  tested a genuinely different-in-kind hypothesis: does the FM half of the
+  ensemble (`iter27_triple_fusion`/`iter38`, still using `decay_tab_3` as a
+  bucketed COUNT, unchanged since Round 7) benefit from the same
+  count→Laplace-smoothed-rate swap that gave the GBM a real gain in iter63?
+  Built `data_ext.py` as iter27's file + iter63's already-verified
+  `decayed_tab_total`-tracking diff + a new `decay_tab_rate` kind in
+  `encode_ext`'s three dispatch points; reused iter27's `train.py`
+  unchanged. Harness-fidelity check reproduced iter27's own published
+  seed-0 result for the exact promoted config (valid=0.63894/test=0.63989)
+  before trusting anything. Result: **-0.00358 valid / -0.00660 test**, a
+  clear regression (~4.8σ / ~8.8σ vs. iter27's own 5-seed std of 0.00075),
+  opposite sign from iter63's GBM gain. Diagnosis: the GBM feeds the rate
+  as a numeric column into `linear_tree`'s L2-regularized leaf regression,
+  which can extract signal from a noisy rate while shrinking sparse cells
+  toward zero; the FM instead quantile-buckets the rate into a categorical
+  embedding lookup, discarding the numeric ordering and forcing thinly-
+  populated, high-variance buckets (from cells with small
+  `decayed_tab_total`) to each learn their own BPR-trained embedding —
+  a representation mismatch, not a data problem. See
+  [iter79_fm_decay_tab_rate/RESULT.md](iter79_fm_decay_tab_rate/RESULT.md).
+  **REJECT** (real regression, unambiguous direction — no 5-seed
+  confirmation needed, mirrors iter77's precedent for skipping confirmation
+  on a clean, decisive single-seed result).
+
+No promotion resulted from Round 27. iter38's FM ensemble (`decay_tab_3`
+count, unchanged) remains part of the current best/submitted model. This
+closes off "porting the GBM-side count→rate insight to the FM" as a
+productive direction — the two model families need opposite feature
+representations (numeric-regression vs. bucketed-embedding) for this
+particular signal, a genuinely new finding about *why* good features don't
+always transfer across model architectures, not just *whether* they do.
+
+## Round 28 — last untested static resource + a structural finding
+
+- **iter80 (`onehot_feat0..17`, anonymized user categoricals, GBM-native)**:
+  the one dataset column block every iteration since iter15 explicitly
+  excluded ("anonymized/undocumented — left unused, out of scope"), never
+  revisited even when iter68 retested the rest of `user_features_pure.csv`
+  natively. Inspection showed these are discrete anonymized category codes
+  (cardinality 2 to 1471, not literal one-hot vectors), added as native
+  LightGBM categoricals joined by `user_id`, reusing iter63's harness
+  unchanged. Result: **exact-zero delta** (valid=0.67168, test=0.65353,
+  identical to baseline to 5 decimal places). See
+  [iter80_onehot_user_feats/RESULT.md](iter80_onehot_user_feats/RESULT.md).
+  **REJECT** (clean no-op, no confirmation needed).
+
+Diagnosis generalizes iter68/75's finding into a structural one: at
+`num_leaves=2` there is exactly one split in the whole tree (already won by
+`tab`/the decay-rate features), and a *categorical* column only affects
+`linear_tree`'s prediction by winning that split — the leaf-linear
+regression only regresses on numeric inputs, so no categorical addition, no
+matter its content or cardinality, can ever matter at this tree depth. This
+closes off literally every static-side-info column in every provided CSV
+(now individually tested at least once, GBM-native) and reframes the
+"no more feature signal" finding as a **capacity/architecture** limit, not
+a **missing-data** one — any future categorical-side-info attempt needs
+either more tree capacity (iter74/76 already found `num_leaves=3` overfits
+under current regularization) or exposing categoricals as one-hot *numeric*
+dummy columns instead, so they can enter the leaf regression directly
+without needing to win the split.
+
+## Best-known candidate / final result as currently submitted (iter63, promoted end of Round 19)
+
+**Final selected model: iter63 blend** — a score-level blend (alpha=0.14)
+of (a) a single `LGBMRanker(num_leaves=2, learning_rate=0.10,
+n_estimators=500, min_child_samples=200, reg_lambda=1.0, linear_tree=True)`
+trained on the `rate_only` feature variant (decayed per-tab rate feature,
+`decay_tab_rate_3`, replacing `decay_tab_3`), and (b) the iter38 5-seed
+FM+BPR sigmoid-mean ensemble (unchanged) — **valid primary 0.67606**,
+**test primary 0.65955**, selected on valid per the stated protocol. Total
+improvement over the FM baseline (iter1, test 0.5946): **+0.06495 test
+primary (+10.93% relative)**, across 19 rounds / 63 iterations. Promoted
+to `SUBMISSION.md`, `make_submission.py`, and `submission.csv` after
+explicit user approval; the regenerated `submission.csv` was independently
+re-validated with `submit.py --check` (170,588 rows, split=test, PASSED).
+See `experiments/iter63_decay_tab_rate/RESULT.md` for the full
+verification chain. Round 21 (above) independently re-verified all three
+alternative directions a teammate explored on a separate clone
+(per-segment blend alpha, rank/calibrated blending, GBM-stacked
+multi-task augmentation) — all three REJECT, so iter63 remains the
+best-known candidate with no further promotion pending.
+
+### Prior final result (iter55, end of Round 17 — superseded by iter63)
+**Selected model: iter55 blend** — a score-level blend (alpha=0.10,
 90% weight on the GBM) of (a) a single
 `LGBMRanker(num_leaves=2, learning_rate=0.10, n_estimators=500,
 min_child_samples=200, reg_lambda=1.0, linear_tree=True)` trained on

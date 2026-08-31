@@ -1,0 +1,64 @@
+[
+  {
+    "tag": "baseline_decay_tab_3_count",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3",
+      "last1",
+      "lastk_rate",
+      "gap"
+    ],
+    "seed": 0,
+    "sampling_mode": "decay",
+    "sampling_alpha": 0.75,
+    "decay_halflife": 3,
+    "alpha": 0.5,
+    "n_buckets": 20,
+    "valid": {
+      "GAUC": 0.7172883152961731,
+      "nDCG@5": 0.5605467557907104,
+      "primary": 0.6389175653457642,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.7129330635070801,
+      "nDCG@5": 0.5667030215263367,
+      "primary": 0.6398180723190308,
+      "users": 23875,
+      "rows": 170588
+    }
+  },
+  {
+    "tag": "decay_tab_rate_3",
+    "features": [
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_rate_3",
+      "last1",
+      "lastk_rate",
+      "gap"
+    ],
+    "seed": 0,
+    "sampling_mode": "decay",
+    "sampling_alpha": 0.75,
+    "decay_halflife": 3,
+    "alpha": 0.5,
+    "n_buckets": 20,
+    "valid": {
+      "GAUC": 0.7130469083786011,
+      "nDCG@5": 0.5576367974281311,
+      "primary": 0.6353418827056885,
+      "users": 22377,
+      "rows": 124909
+    },
+    "test": {
+      "GAUC": 0.7069008350372314,
+      "nDCG@5": 0.5595256090164185,
+      "primary": 0.633213222026825,
+      "users": 23875,
+      "rows": 170588
+    }
+  }
+]

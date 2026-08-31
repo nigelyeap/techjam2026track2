@@ -1,0 +1,48 @@
+=== loading features (cached once across both runs) ===
+
+=== harness-fidelity check (decay_tab_3 count, seed 0) ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'decay_rate_2.5', 'decay_act_2.5', 'decay_tab_3', 'last1', 'lastk_rate', 'gap'] dim=40361
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | sampling_mode=decay sampling_alpha=0.75 decay_halflife=3 | alpha(Laplace)=0.5 n_buckets=20
+  epoch  1 | loss 0.6514 | valid GAUC 0.6765 nDCG@5 0.5329 primary 0.6047 | 1.7s
+  epoch  2 | loss 0.5618 | valid GAUC 0.6961 nDCG@5 0.5479 primary 0.6220 | 1.8s
+  epoch  3 | loss 0.5416 | valid GAUC 0.7030 nDCG@5 0.5520 primary 0.6275 | 1.7s
+  epoch  4 | loss 0.5322 | valid GAUC 0.7031 nDCG@5 0.5526 primary 0.6278 | 1.9s
+  epoch  5 | loss 0.5279 | valid GAUC 0.7095 nDCG@5 0.5569 primary 0.6332 | 1.9s
+  epoch  6 | loss 0.5200 | valid GAUC 0.7108 nDCG@5 0.5576 primary 0.6342 | 1.7s
+  epoch  7 | loss 0.5119 | valid GAUC 0.7117 nDCG@5 0.5587 primary 0.6352 | 1.7s
+  epoch  8 | loss 0.5040 | valid GAUC 0.7111 nDCG@5 0.5579 primary 0.6345 | 1.6s
+  epoch  9 | loss 0.4963 | valid GAUC 0.7124 nDCG@5 0.5580 primary 0.6352 | 1.9s
+  epoch 10 | loss 0.4874 | valid GAUC 0.7173 nDCG@5 0.5605 primary 0.6389 | 1.7s
+  epoch 11 | loss 0.4783 | valid GAUC 0.7145 nDCG@5 0.5594 primary 0.6369 | 1.9s
+  epoch 12 | loss 0.4711 | valid GAUC 0.7126 nDCG@5 0.5594 primary 0.6360 | 1.8s
+  epoch 13 | loss 0.4625 | valid GAUC 0.7118 nDCG@5 0.5585 primary 0.6351 | 1.6s
+  epoch 14 | loss 0.4546 | valid GAUC 0.7113 nDCG@5 0.5585 primary 0.6349 | 1.7s
+  early stop at epoch 14
+  got valid=0.6389176 test=0.6398181
+  expect valid=0.6389359 test=0.6398863
+  PASS
+
+=== decay_tab_rate_3 swap (seed 0) ===
+  fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'decay_rate_2.5', 'decay_act_2.5', 'decay_tab_rate_3', 'last1', 'lastk_rate', 'gap'] dim=40363
+  BPR-eligible train users: 24290 (>=1 pos & >=1 neg) | 47 steps/epoch | sampling_mode=decay sampling_alpha=0.75 decay_halflife=3 | alpha(Laplace)=0.5 n_buckets=20
+  epoch  1 | loss 0.6491 | valid GAUC 0.6814 nDCG@5 0.5352 primary 0.6083 | 1.7s
+  epoch  2 | loss 0.5611 | valid GAUC 0.6960 nDCG@5 0.5470 primary 0.6215 | 1.8s
+  epoch  3 | loss 0.5429 | valid GAUC 0.7022 nDCG@5 0.5508 primary 0.6265 | 1.5s
+  epoch  4 | loss 0.5346 | valid GAUC 0.7002 nDCG@5 0.5501 primary 0.6252 | 1.8s
+  epoch  5 | loss 0.5316 | valid GAUC 0.7041 nDCG@5 0.5533 primary 0.6287 | 1.8s
+  epoch  6 | loss 0.5240 | valid GAUC 0.7053 nDCG@5 0.5539 primary 0.6296 | 1.9s
+  epoch  7 | loss 0.5162 | valid GAUC 0.7063 nDCG@5 0.5553 primary 0.6308 | 1.7s
+  epoch  8 | loss 0.5085 | valid GAUC 0.7059 nDCG@5 0.5544 primary 0.6301 | 1.7s
+  epoch  9 | loss 0.5007 | valid GAUC 0.7062 nDCG@5 0.5541 primary 0.6301 | 1.6s
+  epoch 10 | loss 0.4916 | valid GAUC 0.7130 nDCG@5 0.5576 primary 0.6353 | 1.7s
+  epoch 11 | loss 0.4821 | valid GAUC 0.7109 nDCG@5 0.5565 primary 0.6337 | 1.8s
+  epoch 12 | loss 0.4750 | valid GAUC 0.7093 nDCG@5 0.5561 primary 0.6327 | 1.7s
+  epoch 13 | loss 0.4665 | valid GAUC 0.7077 nDCG@5 0.5545 primary 0.6311 | 1.8s
+  epoch 14 | loss 0.4580 | valid GAUC 0.7071 nDCG@5 0.5547 primary 0.6309 | 1.7s
+  early stop at epoch 14
+  valid=0.6353419 test=0.6332132
+
+=== summary ===
+  baseline (decay_tab_3 count):  valid=0.63892 test=0.63982
+  decay_tab_rate_3:               valid=0.63534 test=0.63321
+  delta:                          valid=-0.00358 test=-0.00660

@@ -1,0 +1,11 @@
+loading /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter72_decay_durbucket_rate/../../KuaiRand-Pure/data ...
+{'train': 1141112, 'valid': 124909, 'test': 170588}   (12.2s)
+
+=== bucket distribution (train) ===
+{0: 163680, 1: 163765, 2: 170517, 3: 309590, 4: 287784, 5: 45776}
+
+=== causal spot-check: decayed_dur_total (brute force) ===
+30 random rows x 2 dur-halflives: decayed_dur_total matches brute force (max abs err 3.55e-15). No leakage detected.
+sanity (5000 rows x 2 halflives): decayed_dur_total >= decayed_dur_pos everywhere. OK.
+
+All causal spot-checks passed.
