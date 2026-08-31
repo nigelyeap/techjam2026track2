@@ -1,0 +1,236 @@
+{
+  "candidate": {
+    "best_iteration": 50,
+    "columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "lastk_rate",
+      "gap",
+      "decay_tab_rate_3",
+      "decay_rate_x_log_activity"
+    ],
+    "delta_vs_C0": -0.0010973215103149414,
+    "feature_gain_fraction": {
+      "author_id": 0.1976433462122327,
+      "decay_act_2.5": 0.0,
+      "decay_rate_2.5": 0.0784767922725768,
+      "decay_rate_x_log_activity": 0.1312705978953732,
+      "decay_tab_rate_3": 0.0,
+      "duration_ms": 0.02245378558374854,
+      "gap": 0.0,
+      "last1": 0.0,
+      "lastk_rate": 0.029604931575678447,
+      "tab": 0.4067467085640926,
+      "user_id": 0.0,
+      "video_id": 0.13380383789629766
+    },
+    "model_family": "lgb",
+    "name": "C1_add_exact_rate_log_activity_cross",
+    "seed": 0,
+    "valid": {
+      "GAUC": 0.7555359601974487,
+      "nDCG@5": 0.5856268405914307,
+      "primary": 0.6705814003944397,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "diagnostics": {
+    "candidate_ties": {
+      "mean_per_user_unique_fraction": 0.9864295939595744,
+      "rows": 124909,
+      "unique_scores_overall": 122637
+    },
+    "cross_definition": "decay_rate_2.5 * log1p(decay_act_2.5)",
+    "cross_gain_fraction": 0.1312705978953732,
+    "cross_redesigned": false
+  },
+  "environment": {
+    "lightgbm": "4.6.0",
+    "numpy": "2.4.3",
+    "python": "3.13.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterYIXI6_phase_c_lgb_cross",
+  "feature_metadata": {
+    "available_columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "lastk_rate",
+      "gap",
+      "decay_tab_3",
+      "decay_tab_rate_3",
+      "decay_rate_5",
+      "decay_act_5",
+      "decay_rate_x_log_activity"
+    ],
+    "causality": {
+      "checks": [
+        {
+          "date": 20220422,
+          "errors": {
+            "h5_pos": 5.551115123125783e-17,
+            "h5_total": 0.0,
+            "tab_h3_pos": 0.0,
+            "tab_h3_total": 3.3306690738754696e-16
+          },
+          "max_abs_error": 3.3306690738754696e-16,
+          "row_index": 1141112
+        },
+        {
+          "date": 20220427,
+          "errors": {
+            "h5_pos": 8.881784197001252e-16,
+            "h5_total": 1.7763568394002505e-15,
+            "tab_h3_pos": 4.440892098500626e-16,
+            "tab_h3_total": 2.6645352591003757e-15
+          },
+          "max_abs_error": 2.6645352591003757e-15,
+          "row_index": 1145275
+        },
+        {
+          "date": 20220424,
+          "errors": {
+            "h5_pos": 4.163336342344337e-17,
+            "h5_total": 0.0,
+            "tab_h3_pos": 2.7755575615628914e-17,
+            "tab_h3_total": 7.105427357601002e-15
+          },
+          "max_abs_error": 7.105427357601002e-15,
+          "row_index": 1149439
+        }
+      ],
+      "global_max_abs_error": 7.105427357601002e-15,
+      "method": "independent direct sums over strictly earlier dates",
+      "passed": true,
+      "same_date_matching_rows_explicitly_excluded": 39
+    },
+    "lengths": {
+      "test": 170588,
+      "train": 1141112,
+      "valid": 124909
+    },
+    "provenance": {
+      "definitions_redesigned": false,
+      "iter63_data": "experiments/iter63_decay_tab_rate/data_ext.py",
+      "iter63_data_sha256": "49890ee258b4f4dd99007c0fd5e9eb8dc7897d3718c12e7cc7044a1c5f606545",
+      "iter63_train": "experiments/iter63_decay_tab_rate/train.py",
+      "iter63_train_sha256": "147213c5cc4f1001c336eceb8821e4069d76929992ffa725b36cd036b1fda8c8",
+      "yixi4_feature_source": "experiments/iterYIXI2_feature_depth/features.py",
+      "yixi4_feature_source_sha256": "bef9dab34fc7c159f561ed95f1ca2542627857ec0d54104f9934378d68a90b14"
+    }
+  },
+  "five_seed_confirmation": {
+    "confirmed": false,
+    "performed": false,
+    "reason": "seed-0 gain below 0.001 promotion threshold",
+    "rows": []
+  },
+  "fixed_lgb_config": {
+    "decay_tab_feature": "decay_tab_rate_3",
+    "learning_rate": 0.1,
+    "linear_tree": true,
+    "n_estimators": 500,
+    "num_leaves": 2
+  },
+  "preliminary_pass": false,
+  "question": "Does the exact 2.5-day rate x log-activity cross help current LightGBM?",
+  "reference": {
+    "best_iteration": 48,
+    "columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "lastk_rate",
+      "gap",
+      "decay_tab_rate_3"
+    ],
+    "feature_gain_fraction": {
+      "author_id": 0.22972780304401055,
+      "decay_act_2.5": 0.0,
+      "decay_rate_2.5": 0.1494134216792189,
+      "decay_tab_rate_3": 0.0,
+      "duration_ms": 0.02411986164090843,
+      "gap": 0.0,
+      "last1": 0.0,
+      "lastk_rate": 0.027070006595108685,
+      "tab": 0.4271162470856084,
+      "user_id": 0.0,
+      "video_id": 0.14255265995514504
+    },
+    "model_family": "lgb",
+    "name": "C0_current_lgb",
+    "seed": 0,
+    "valid": {
+      "GAUC": 0.7588735222816467,
+      "nDCG@5": 0.5844839215278625,
+      "primary": 0.6716787219047546,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "selected_representation": {
+    "best_iteration": 48,
+    "columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "lastk_rate",
+      "gap",
+      "decay_tab_rate_3"
+    ],
+    "feature_gain_fraction": {
+      "author_id": 0.22972780304401055,
+      "decay_act_2.5": 0.0,
+      "decay_rate_2.5": 0.1494134216792189,
+      "decay_tab_rate_3": 0.0,
+      "duration_ms": 0.02411986164090843,
+      "gap": 0.0,
+      "last1": 0.0,
+      "lastk_rate": 0.027070006595108685,
+      "tab": 0.4271162470856084,
+      "user_id": 0.0,
+      "video_id": 0.14255265995514504
+    },
+    "model_family": "lgb",
+    "name": "C0_current_lgb",
+    "seed": 0,
+    "valid": {
+      "GAUC": 0.7588735222816467,
+      "nDCG@5": 0.5844839215278625,
+      "primary": 0.6716787219047546,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "selection_policy": {
+    "preliminary_delta": 0.0003,
+    "promotion_delta": 0.001,
+    "selector": "official standalone validation primary only",
+    "test_access": "none in this phase"
+  },
+  "standalone_verdict": "REJECT",
+  "test_accessed": false
+}

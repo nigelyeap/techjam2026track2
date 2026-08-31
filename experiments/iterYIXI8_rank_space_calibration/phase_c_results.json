@@ -1,0 +1,27 @@
+{
+  "eligible": false,
+  "experiment": "iterYIXI8_phase_c_temporal_robustness_gate",
+  "identity_check": {
+    "candidate_minus_reference_on_any_split": 0.0,
+    "same_transform_by_model": true,
+    "same_weights": true
+  },
+  "performed": false,
+  "predeclared_shift": {
+    "test": [
+      20220426,
+      20220505
+    ],
+    "train": [
+      20220405,
+      20220418
+    ],
+    "valid": [
+      20220419,
+      20220425
+    ]
+  },
+  "reason": "no non-reference transform passed the +0.0003 preliminary gate; the selected calibration is exactly the percentile reference",
+  "selection_effect": "none",
+  "test_access": "none"
+}

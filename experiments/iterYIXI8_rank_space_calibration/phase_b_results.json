@@ -1,0 +1,3910 @@
+{
+  "calibrated_common_transforms": {},
+  "current_best_transfer": {
+    "gate": "selected non-reference common/model-specific transform",
+    "performed": false,
+    "reason": "percentile itself remained selected",
+    "reference": {
+      "valid": {
+        "GAUC": 0.7744517922401428,
+        "nDCG@5": 0.5938588976860046,
+        "primary": 0.6841553449630737,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.42,
+        "xgb": 0.34
+      }
+    }
+  },
+  "experiment": "iterYIXI8_phase_b_gated_weight_calibration",
+  "five_seed_confirmation": {
+    "performed": false,
+    "reason": "no new candidate cleared +0.001 after the preliminary gate"
+  },
+  "model_specific_refinement": {
+    "gate": "common calibrated transform delta >= +0.0003",
+    "performed": false,
+    "predeclared_candidates": "hold the selected common transform on two components and restore percentile on exactly one component",
+    "reason": "no common non-reference transform cleared the gate"
+  },
+  "phase_a_promising_transforms": [],
+  "reference_weight_grid": {
+    "best_including_ablations": {
+      "stage": "refine_0.02",
+      "transform_by_model": {
+        "fm": "percentile",
+        "lgb": "percentile",
+        "xgb": "percentile"
+      },
+      "valid": {
+        "GAUC": 0.7726407647132874,
+        "nDCG@5": 0.592109739780426,
+        "primary": 0.6823752522468567,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.4,
+        "xgb": 0.36
+      }
+    },
+    "best_three_model": {
+      "stage": "refine_0.02",
+      "transform_by_model": {
+        "fm": "percentile",
+        "lgb": "percentile",
+        "xgb": "percentile"
+      },
+      "valid": {
+        "GAUC": 0.7726407647132874,
+        "nDCG@5": 0.592109739780426,
+        "primary": 0.6823752522468567,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.4,
+        "xgb": 0.36
+      }
+    },
+    "nearby_plateau": [
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7726407647132874,
+          "nDCG@5": 0.592109739780426,
+          "primary": 0.6823752522468567,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.4,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7724984288215637,
+          "nDCG@5": 0.592241644859314,
+          "primary": 0.6823700666427612,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.34,
+          "xgb": 0.42
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7725587487220764,
+          "nDCG@5": 0.5920870900154114,
+          "primary": 0.6823229193687439,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.42,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7723791599273682,
+          "nDCG@5": 0.592219889163971,
+          "primary": 0.6822994947433472,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.42,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7725544571876526,
+          "nDCG@5": 0.5919493436813354,
+          "primary": 0.6822519302368164,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.36,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7725147604942322,
+          "nDCG@5": 0.5919383764266968,
+          "primary": 0.6822265386581421,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.38,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7723779678344727,
+          "nDCG@5": 0.5920286178588867,
+          "primary": 0.6822032928466797,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.36,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7719955444335938,
+          "nDCG@5": 0.5924035906791687,
+          "primary": 0.6821995973587036,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.18,
+          "lgb": 0.42,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7722526788711548,
+          "nDCG@5": 0.5921316146850586,
+          "primary": 0.6821921467781067,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.4,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7724509239196777,
+          "nDCG@5": 0.5919064283370972,
+          "primary": 0.6821786761283875,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.4,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7721057534217834,
+          "nDCG@5": 0.592248797416687,
+          "primary": 0.6821773052215576,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.34,
+          "xgb": 0.44
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7721429467201233,
+          "nDCG@5": 0.5921768546104431,
+          "primary": 0.6821599006652832,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.36,
+          "xgb": 0.42
+        }
+      }
+    ],
+    "records": [
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7588735222816467,
+          "nDCG@5": 0.5844839215278625,
+          "primary": 0.6716787219047546,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.0,
+          "lgb": 1.0,
+          "xgb": 0.0
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7590881586074829,
+          "nDCG@5": 0.5847601890563965,
+          "primary": 0.6719241738319397,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.0,
+          "lgb": 0.9,
+          "xgb": 0.1
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7603883743286133,
+          "nDCG@5": 0.5857532024383545,
+          "primary": 0.6730707883834839,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.0,
+          "lgb": 0.8,
+          "xgb": 0.2
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7626569867134094,
+          "nDCG@5": 0.5876778364181519,
+          "primary": 0.675167441368103,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.0,
+          "lgb": 0.7,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7658419609069824,
+          "nDCG@5": 0.5895869135856628,
+          "primary": 0.677714467048645,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.0,
+          "lgb": 0.6,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7671811580657959,
+          "nDCG@5": 0.5899069905281067,
+          "primary": 0.6785440444946289,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.0,
+          "lgb": 0.5,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7671060562133789,
+          "nDCG@5": 0.5910505056381226,
+          "primary": 0.6790782809257507,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.0,
+          "lgb": 0.4,
+          "xgb": 0.6
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7635773420333862,
+          "nDCG@5": 0.5897210240364075,
+          "primary": 0.6766492128372192,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.0,
+          "lgb": 0.3,
+          "xgb": 0.7
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7595680952072144,
+          "nDCG@5": 0.5880073308944702,
+          "primary": 0.6737877130508423,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.0,
+          "lgb": 0.2,
+          "xgb": 0.8
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7567872405052185,
+          "nDCG@5": 0.5867379903793335,
+          "primary": 0.6717625856399536,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.0,
+          "lgb": 0.1,
+          "xgb": 0.9
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7519985437393188,
+          "nDCG@5": 0.5831098556518555,
+          "primary": 0.6675541996955872,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.0,
+          "lgb": 0.0,
+          "xgb": 1.0
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7594153881072998,
+          "nDCG@5": 0.5846341252326965,
+          "primary": 0.6720247268676758,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.9,
+          "xgb": 0.0
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7605874538421631,
+          "nDCG@5": 0.5853233933448792,
+          "primary": 0.6729553937911987,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.8,
+          "xgb": 0.1
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7633174061775208,
+          "nDCG@5": 0.5869768261909485,
+          "primary": 0.6751471161842346,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.7,
+          "xgb": 0.2
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7669273614883423,
+          "nDCG@5": 0.5894201397895813,
+          "primary": 0.6781737804412842,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.6,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7697699069976807,
+          "nDCG@5": 0.5912426710128784,
+          "primary": 0.6805062890052795,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.5,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7701788544654846,
+          "nDCG@5": 0.5923559665679932,
+          "primary": 0.6812673807144165,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.4,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7679511308670044,
+          "nDCG@5": 0.5914772152900696,
+          "primary": 0.6797142028808594,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.3,
+          "xgb": 0.6
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7639800906181335,
+          "nDCG@5": 0.5894073247909546,
+          "primary": 0.6766936779022217,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.2,
+          "xgb": 0.7
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7597985863685608,
+          "nDCG@5": 0.5875046849250793,
+          "primary": 0.6736516356468201,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.1,
+          "xgb": 0.8
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7564153075218201,
+          "nDCG@5": 0.5861843228340149,
+          "primary": 0.6712998151779175,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.0,
+          "xgb": 0.9
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7619468569755554,
+          "nDCG@5": 0.5854003429412842,
+          "primary": 0.6736736297607422,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.8,
+          "xgb": 0.0
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7640069723129272,
+          "nDCG@5": 0.5866239070892334,
+          "primary": 0.6753154397010803,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.7,
+          "xgb": 0.1
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7673579454421997,
+          "nDCG@5": 0.5886908173561096,
+          "primary": 0.678024411201477,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.6,
+          "xgb": 0.2
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7703048586845398,
+          "nDCG@5": 0.5903506278991699,
+          "primary": 0.6803277730941772,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.5,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.772063136100769,
+          "nDCG@5": 0.5920096039772034,
+          "primary": 0.6820363998413086,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.4,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7709504961967468,
+          "nDCG@5": 0.591943621635437,
+          "primary": 0.6814470291137695,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.3,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7679145932197571,
+          "nDCG@5": 0.5911667943000793,
+          "primary": 0.6795406937599182,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.2,
+          "xgb": 0.6
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7638940215110779,
+          "nDCG@5": 0.5892956852912903,
+          "primary": 0.6765948534011841,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.1,
+          "xgb": 0.7
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7598413228988647,
+          "nDCG@5": 0.5874980092048645,
+          "primary": 0.673669695854187,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.0,
+          "xgb": 0.8
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7634496688842773,
+          "nDCG@5": 0.5856977701187134,
+          "primary": 0.6745737195014954,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.7,
+          "xgb": 0.0
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7665972113609314,
+          "nDCG@5": 0.5873987674713135,
+          "primary": 0.6769980192184448,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.6,
+          "xgb": 0.1
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7698758840560913,
+          "nDCG@5": 0.5891139507293701,
+          "primary": 0.6794949173927307,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.5,
+          "xgb": 0.2
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7717943787574768,
+          "nDCG@5": 0.5910595059394836,
+          "primary": 0.6814269423484802,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.4,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7714818716049194,
+          "nDCG@5": 0.5912831425666809,
+          "primary": 0.6813825368881226,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.3,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7700050473213196,
+          "nDCG@5": 0.5910636782646179,
+          "primary": 0.6805343627929688,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.2,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7671310901641846,
+          "nDCG@5": 0.590282678604126,
+          "primary": 0.6787068843841553,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.1,
+          "xgb": 0.6
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.763016402721405,
+          "nDCG@5": 0.5880768895149231,
+          "primary": 0.6755466461181641,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.0,
+          "xgb": 0.7
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7626495957374573,
+          "nDCG@5": 0.5842786431312561,
+          "primary": 0.6734641194343567,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.4,
+          "lgb": 0.6,
+          "xgb": 0.0
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7661657929420471,
+          "nDCG@5": 0.5861766934394836,
+          "primary": 0.6761712431907654,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.4,
+          "lgb": 0.5,
+          "xgb": 0.1
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7676935791969299,
+          "nDCG@5": 0.5874404907226562,
+          "primary": 0.6775670051574707,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.4,
+          "lgb": 0.4,
+          "xgb": 0.2
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.768170177936554,
+          "nDCG@5": 0.5882733464241028,
+          "primary": 0.6782217621803284,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.4,
+          "lgb": 0.3,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.767473578453064,
+          "nDCG@5": 0.5882493257522583,
+          "primary": 0.6778614521026611,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.4,
+          "lgb": 0.2,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7663534283638,
+          "nDCG@5": 0.5879272818565369,
+          "primary": 0.6771403551101685,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.4,
+          "lgb": 0.1,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7638776302337646,
+          "nDCG@5": 0.5871889591217041,
+          "primary": 0.6755332946777344,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.4,
+          "lgb": 0.0,
+          "xgb": 0.6
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7539496421813965,
+          "nDCG@5": 0.5779415369033813,
+          "primary": 0.6659455895423889,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.5,
+          "lgb": 0.5,
+          "xgb": 0.0
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7587350010871887,
+          "nDCG@5": 0.5814483761787415,
+          "primary": 0.6700916886329651,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.5,
+          "lgb": 0.4,
+          "xgb": 0.1
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7590372562408447,
+          "nDCG@5": 0.5813045501708984,
+          "primary": 0.6701709032058716,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.5,
+          "lgb": 0.3,
+          "xgb": 0.2
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7592095732688904,
+          "nDCG@5": 0.5816431045532227,
+          "primary": 0.6704263687133789,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.5,
+          "lgb": 0.2,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7582953572273254,
+          "nDCG@5": 0.5821105241775513,
+          "primary": 0.6702029705047607,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.5,
+          "lgb": 0.1,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7559947967529297,
+          "nDCG@5": 0.5808893442153931,
+          "primary": 0.6684420704841614,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.5,
+          "lgb": 0.0,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7439377307891846,
+          "nDCG@5": 0.5737766623497009,
+          "primary": 0.6588572263717651,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.6,
+          "lgb": 0.4,
+          "xgb": 0.0
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7442651987075806,
+          "nDCG@5": 0.5738709568977356,
+          "primary": 0.6590681076049805,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.6,
+          "lgb": 0.3,
+          "xgb": 0.1
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7451204061508179,
+          "nDCG@5": 0.5742893815040588,
+          "primary": 0.6597049236297607,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.6,
+          "lgb": 0.2,
+          "xgb": 0.2
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7452934980392456,
+          "nDCG@5": 0.5745934247970581,
+          "primary": 0.6599434614181519,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.6,
+          "lgb": 0.1,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7448115944862366,
+          "nDCG@5": 0.5743272304534912,
+          "primary": 0.6595693826675415,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.6,
+          "lgb": 0.0,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7325423359870911,
+          "nDCG@5": 0.567922830581665,
+          "primary": 0.6502325534820557,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.7,
+          "lgb": 0.3,
+          "xgb": 0.0
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7328652739524841,
+          "nDCG@5": 0.5681692957878113,
+          "primary": 0.6505172848701477,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.7,
+          "lgb": 0.2,
+          "xgb": 0.1
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7331310510635376,
+          "nDCG@5": 0.5682559609413147,
+          "primary": 0.6506935358047485,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.7,
+          "lgb": 0.1,
+          "xgb": 0.2
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7334734201431274,
+          "nDCG@5": 0.5687234997749329,
+          "primary": 0.6510984897613525,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.7,
+          "lgb": 0.0,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7243521809577942,
+          "nDCG@5": 0.5641741752624512,
+          "primary": 0.6442631483078003,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.8,
+          "lgb": 0.2,
+          "xgb": 0.0
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7236989736557007,
+          "nDCG@5": 0.5639622211456299,
+          "primary": 0.6438305974006653,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.8,
+          "lgb": 0.1,
+          "xgb": 0.1
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7246144413948059,
+          "nDCG@5": 0.5647802352905273,
+          "primary": 0.6446973085403442,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.8,
+          "lgb": 0.0,
+          "xgb": 0.2
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7191498875617981,
+          "nDCG@5": 0.5616926550865173,
+          "primary": 0.6404212713241577,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.9,
+          "lgb": 0.1,
+          "xgb": 0.0
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7191254496574402,
+          "nDCG@5": 0.561833381652832,
+          "primary": 0.6404794454574585,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.9,
+          "lgb": 0.0,
+          "xgb": 0.1
+        }
+      },
+      {
+        "stage": "coarse_0.10",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7183587551116943,
+          "nDCG@5": 0.5613970756530762,
+          "primary": 0.6398779153823853,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 1.0,
+          "lgb": 0.0,
+          "xgb": 0.0
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7674354910850525,
+          "nDCG@5": 0.5897275805473328,
+          "primary": 0.6785815358161926,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.58,
+          "xgb": 0.32
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7682631015777588,
+          "nDCG@5": 0.5904075503349304,
+          "primary": 0.679335355758667,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.56,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7687323689460754,
+          "nDCG@5": 0.5908388495445251,
+          "primary": 0.6797856092453003,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.54,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7689986228942871,
+          "nDCG@5": 0.5910394787788391,
+          "primary": 0.6800190210342407,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.52,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7704427242279053,
+          "nDCG@5": 0.5921645760536194,
+          "primary": 0.6813036203384399,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.48,
+          "xgb": 0.42
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7706987261772156,
+          "nDCG@5": 0.5923218727111816,
+          "primary": 0.681510329246521,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.46,
+          "xgb": 0.44
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7703048586845398,
+          "nDCG@5": 0.5922107100486755,
+          "primary": 0.6812577843666077,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.44,
+          "xgb": 0.46
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7699697613716125,
+          "nDCG@5": 0.5920264720916748,
+          "primary": 0.6809980869293213,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.42,
+          "xgb": 0.48
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7675376534461975,
+          "nDCG@5": 0.5898066163063049,
+          "primary": 0.6786721348762512,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.58,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7683842182159424,
+          "nDCG@5": 0.5902519822120667,
+          "primary": 0.6793180704116821,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.56,
+          "xgb": 0.32
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7692455053329468,
+          "nDCG@5": 0.5908787846565247,
+          "primary": 0.6800621747970581,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.54,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7691277861595154,
+          "nDCG@5": 0.5909941792488098,
+          "primary": 0.6800609827041626,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.52,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7700300812721252,
+          "nDCG@5": 0.5912654995918274,
+          "primary": 0.6806477904319763,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.5,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7709057331085205,
+          "nDCG@5": 0.5922337770462036,
+          "primary": 0.6815697550773621,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.48,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7710310220718384,
+          "nDCG@5": 0.5923591256141663,
+          "primary": 0.6816951036453247,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.46,
+          "xgb": 0.42
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7707825899124146,
+          "nDCG@5": 0.5922365784645081,
+          "primary": 0.6815096139907837,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.44,
+          "xgb": 0.44
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7706637978553772,
+          "nDCG@5": 0.5922030210494995,
+          "primary": 0.6814334392547607,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.42,
+          "xgb": 0.46
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7700996994972229,
+          "nDCG@5": 0.5918959975242615,
+          "primary": 0.6809978485107422,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.4,
+          "xgb": 0.48
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7701925039291382,
+          "nDCG@5": 0.5921693444252014,
+          "primary": 0.6811809539794922,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.38,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7686635255813599,
+          "nDCG@5": 0.5903502702713013,
+          "primary": 0.6795068979263306,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.56,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7688673734664917,
+          "nDCG@5": 0.5904048681259155,
+          "primary": 0.6796361207962036,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.54,
+          "xgb": 0.32
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7696620225906372,
+          "nDCG@5": 0.5910053849220276,
+          "primary": 0.6803337335586548,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.52,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7703628540039062,
+          "nDCG@5": 0.5913132429122925,
+          "primary": 0.6808380484580994,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.5,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7712262272834778,
+          "nDCG@5": 0.5921962261199951,
+          "primary": 0.6817111968994141,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.48,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7713639140129089,
+          "nDCG@5": 0.5923317670822144,
+          "primary": 0.6818478107452393,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.46,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.771174967288971,
+          "nDCG@5": 0.5924043655395508,
+          "primary": 0.6817896366119385,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.44,
+          "xgb": 0.42
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7711840867996216,
+          "nDCG@5": 0.5922114253044128,
+          "primary": 0.6816977262496948,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.42,
+          "xgb": 0.44
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7707563638687134,
+          "nDCG@5": 0.5919620394706726,
+          "primary": 0.6813591718673706,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.4,
+          "xgb": 0.46
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7703138589859009,
+          "nDCG@5": 0.591740071773529,
+          "primary": 0.6810269355773926,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.38,
+          "xgb": 0.48
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7708051800727844,
+          "nDCG@5": 0.592205286026001,
+          "primary": 0.6815052032470703,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.36,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7691142559051514,
+          "nDCG@5": 0.5904961824417114,
+          "primary": 0.6798052191734314,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.16,
+          "lgb": 0.54,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7692798972129822,
+          "nDCG@5": 0.5904969573020935,
+          "primary": 0.6798884272575378,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.16,
+          "lgb": 0.52,
+          "xgb": 0.32
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7706305980682373,
+          "nDCG@5": 0.5912095904350281,
+          "primary": 0.6809201240539551,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.16,
+          "lgb": 0.5,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7713528275489807,
+          "nDCG@5": 0.5920504331588745,
+          "primary": 0.68170166015625,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.16,
+          "lgb": 0.48,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7716088891029358,
+          "nDCG@5": 0.5921986103057861,
+          "primary": 0.6819037199020386,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.16,
+          "lgb": 0.46,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7718819379806519,
+          "nDCG@5": 0.592399001121521,
+          "primary": 0.6821404695510864,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.16,
+          "lgb": 0.44,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7715600728988647,
+          "nDCG@5": 0.5923781991004944,
+          "primary": 0.681969165802002,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.16,
+          "lgb": 0.42,
+          "xgb": 0.42
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7714554667472839,
+          "nDCG@5": 0.5921861529350281,
+          "primary": 0.681820809841156,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.16,
+          "lgb": 0.4,
+          "xgb": 0.44
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7709591388702393,
+          "nDCG@5": 0.5920186638832092,
+          "primary": 0.6814888715744019,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.16,
+          "lgb": 0.38,
+          "xgb": 0.46
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7705245018005371,
+          "nDCG@5": 0.5918693542480469,
+          "primary": 0.681196928024292,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.16,
+          "lgb": 0.36,
+          "xgb": 0.48
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7709335088729858,
+          "nDCG@5": 0.59229975938797,
+          "primary": 0.6816166639328003,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.16,
+          "lgb": 0.34,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7693134546279907,
+          "nDCG@5": 0.5904017090797424,
+          "primary": 0.679857611656189,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.18,
+          "lgb": 0.52,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7700521349906921,
+          "nDCG@5": 0.5905463099479675,
+          "primary": 0.6802992224693298,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.18,
+          "lgb": 0.5,
+          "xgb": 0.32
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7715392708778381,
+          "nDCG@5": 0.5920762419700623,
+          "primary": 0.6818077564239502,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.18,
+          "lgb": 0.48,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7715920805931091,
+          "nDCG@5": 0.5921657681465149,
+          "primary": 0.681878924369812,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.18,
+          "lgb": 0.46,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7717100381851196,
+          "nDCG@5": 0.5922605395317078,
+          "primary": 0.6819852590560913,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.18,
+          "lgb": 0.44,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7719955444335938,
+          "nDCG@5": 0.5924035906791687,
+          "primary": 0.6821995973587036,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.18,
+          "lgb": 0.42,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.771773099899292,
+          "nDCG@5": 0.5921929478645325,
+          "primary": 0.6819829940795898,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.18,
+          "lgb": 0.4,
+          "xgb": 0.42
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.771569550037384,
+          "nDCG@5": 0.5921149253845215,
+          "primary": 0.6818422079086304,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.18,
+          "lgb": 0.38,
+          "xgb": 0.44
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7712907195091248,
+          "nDCG@5": 0.5919246077537537,
+          "primary": 0.6816076636314392,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.18,
+          "lgb": 0.36,
+          "xgb": 0.46
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7709395885467529,
+          "nDCG@5": 0.592018187046051,
+          "primary": 0.6814788579940796,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.18,
+          "lgb": 0.34,
+          "xgb": 0.48
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7708765864372253,
+          "nDCG@5": 0.5920683145523071,
+          "primary": 0.6814724206924438,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.18,
+          "lgb": 0.32,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7711766362190247,
+          "nDCG@5": 0.5913476347923279,
+          "primary": 0.6812621355056763,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.48,
+          "xgb": 0.32
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7717283368110657,
+          "nDCG@5": 0.591873049736023,
+          "primary": 0.6818007230758667,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.46,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7720841765403748,
+          "nDCG@5": 0.5921749472618103,
+          "primary": 0.6821295619010925,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.44,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7719705700874329,
+          "nDCG@5": 0.5921314358711243,
+          "primary": 0.6820510029792786,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.42,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7720034122467041,
+          "nDCG@5": 0.5921347737312317,
+          "primary": 0.6820690631866455,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.38,
+          "xgb": 0.42
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7717413902282715,
+          "nDCG@5": 0.592078685760498,
+          "primary": 0.6819100379943848,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.36,
+          "xgb": 0.44
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7714621424674988,
+          "nDCG@5": 0.5919812917709351,
+          "primary": 0.6817216873168945,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.34,
+          "xgb": 0.46
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7708219885826111,
+          "nDCG@5": 0.5917582511901855,
+          "primary": 0.6812901496887207,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.2,
+          "lgb": 0.32,
+          "xgb": 0.48
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7710726857185364,
+          "nDCG@5": 0.5912777781486511,
+          "primary": 0.6811752319335938,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.48,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7712055444717407,
+          "nDCG@5": 0.5913690328598022,
+          "primary": 0.6812872886657715,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.46,
+          "xgb": 0.32
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7722049951553345,
+          "nDCG@5": 0.5919848084449768,
+          "primary": 0.682094931602478,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.44,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7723791599273682,
+          "nDCG@5": 0.592219889163971,
+          "primary": 0.6822994947433472,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.42,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7722526788711548,
+          "nDCG@5": 0.5921316146850586,
+          "primary": 0.6821921467781067,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.4,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7721084356307983,
+          "nDCG@5": 0.5919756889343262,
+          "primary": 0.6820420622825623,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.38,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7721429467201233,
+          "nDCG@5": 0.5921768546104431,
+          "primary": 0.6821599006652832,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.36,
+          "xgb": 0.42
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7721057534217834,
+          "nDCG@5": 0.592248797416687,
+          "primary": 0.6821773052215576,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.34,
+          "xgb": 0.44
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7714830040931702,
+          "nDCG@5": 0.5920045375823975,
+          "primary": 0.6817437410354614,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.32,
+          "xgb": 0.46
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7709378600120544,
+          "nDCG@5": 0.5917299389839172,
+          "primary": 0.6813338994979858,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.3,
+          "xgb": 0.48
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7710723876953125,
+          "nDCG@5": 0.592071533203125,
+          "primary": 0.6815719604492188,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.22,
+          "lgb": 0.28,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7715405821800232,
+          "nDCG@5": 0.5911514759063721,
+          "primary": 0.68134605884552,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.46,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.771816074848175,
+          "nDCG@5": 0.5913870334625244,
+          "primary": 0.6816015243530273,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.44,
+          "xgb": 0.32
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7725587487220764,
+          "nDCG@5": 0.5920870900154114,
+          "primary": 0.6823229193687439,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.42,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7726407647132874,
+          "nDCG@5": 0.592109739780426,
+          "primary": 0.6823752522468567,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.4,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7725147604942322,
+          "nDCG@5": 0.5919383764266968,
+          "primary": 0.6822265386581421,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.38,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7723779678344727,
+          "nDCG@5": 0.5920286178588867,
+          "primary": 0.6822032928466797,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.36,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7724984288215637,
+          "nDCG@5": 0.592241644859314,
+          "primary": 0.6823700666427612,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.34,
+          "xgb": 0.42
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7720304727554321,
+          "nDCG@5": 0.5921726822853088,
+          "primary": 0.6821016073226929,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.32,
+          "xgb": 0.44
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7714605927467346,
+          "nDCG@5": 0.5918645858764648,
+          "primary": 0.6816625595092773,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.3,
+          "xgb": 0.46
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7709826827049255,
+          "nDCG@5": 0.5916942358016968,
+          "primary": 0.6813384294509888,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.28,
+          "xgb": 0.48
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7712354063987732,
+          "nDCG@5": 0.591969907283783,
+          "primary": 0.6816026568412781,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.24,
+          "lgb": 0.26,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7715895175933838,
+          "nDCG@5": 0.5911884307861328,
+          "primary": 0.6813889741897583,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.44,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7719570398330688,
+          "nDCG@5": 0.5914477705955505,
+          "primary": 0.6817023754119873,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.42,
+          "xgb": 0.32
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7724509239196777,
+          "nDCG@5": 0.5919064283370972,
+          "primary": 0.6821786761283875,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.4,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7724376320838928,
+          "nDCG@5": 0.5917510390281677,
+          "primary": 0.6820943355560303,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.38,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7725544571876526,
+          "nDCG@5": 0.5919493436813354,
+          "primary": 0.6822519302368164,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.36,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.772375762462616,
+          "nDCG@5": 0.5919408798217773,
+          "primary": 0.682158350944519,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.34,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7720717787742615,
+          "nDCG@5": 0.591903567314148,
+          "primary": 0.6819876432418823,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.32,
+          "xgb": 0.42
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7717738747596741,
+          "nDCG@5": 0.5918821096420288,
+          "primary": 0.6818280220031738,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.3,
+          "xgb": 0.44
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7712885737419128,
+          "nDCG@5": 0.5916714668273926,
+          "primary": 0.6814800500869751,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.28,
+          "xgb": 0.46
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7705159783363342,
+          "nDCG@5": 0.5912629961967468,
+          "primary": 0.6808894872665405,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.26,
+          "xgb": 0.48
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7701324224472046,
+          "nDCG@5": 0.5913549661636353,
+          "primary": 0.6807436943054199,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.26,
+          "lgb": 0.24,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.771892786026001,
+          "nDCG@5": 0.591242253780365,
+          "primary": 0.6815675497055054,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.28,
+          "lgb": 0.42,
+          "xgb": 0.3
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7719045877456665,
+          "nDCG@5": 0.5911877155303955,
+          "primary": 0.681546151638031,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.28,
+          "lgb": 0.4,
+          "xgb": 0.32
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7723646759986877,
+          "nDCG@5": 0.591716468334198,
+          "primary": 0.6820405721664429,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.28,
+          "lgb": 0.38,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7724873423576355,
+          "nDCG@5": 0.5917981266975403,
+          "primary": 0.6821427345275879,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.28,
+          "lgb": 0.36,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7723392248153687,
+          "nDCG@5": 0.5917661190032959,
+          "primary": 0.6820526719093323,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.28,
+          "lgb": 0.34,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7721046805381775,
+          "nDCG@5": 0.591739296913147,
+          "primary": 0.6819219589233398,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.28,
+          "lgb": 0.32,
+          "xgb": 0.4
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7717976570129395,
+          "nDCG@5": 0.5916556119918823,
+          "primary": 0.6817266345024109,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.28,
+          "lgb": 0.3,
+          "xgb": 0.42
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7713383436203003,
+          "nDCG@5": 0.5914396047592163,
+          "primary": 0.6813889741897583,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.28,
+          "lgb": 0.28,
+          "xgb": 0.44
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7708026170730591,
+          "nDCG@5": 0.5914046764373779,
+          "primary": 0.6811036467552185,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.28,
+          "lgb": 0.26,
+          "xgb": 0.46
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7701574563980103,
+          "nDCG@5": 0.5912342667579651,
+          "primary": 0.6806958913803101,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.28,
+          "lgb": 0.24,
+          "xgb": 0.48
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7702271342277527,
+          "nDCG@5": 0.5913709402084351,
+          "primary": 0.6807990074157715,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.28,
+          "lgb": 0.22,
+          "xgb": 0.5
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.771717369556427,
+          "nDCG@5": 0.5909444093704224,
+          "primary": 0.6813309192657471,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.38,
+          "xgb": 0.32
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.772495448589325,
+          "nDCG@5": 0.5916557908058167,
+          "primary": 0.6820756196975708,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.36,
+          "xgb": 0.34
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7723699808120728,
+          "nDCG@5": 0.5916380882263184,
+          "primary": 0.6820040345191956,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.34,
+          "xgb": 0.36
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7719451189041138,
+          "nDCG@5": 0.5915243029594421,
+          "primary": 0.6817346811294556,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.32,
+          "xgb": 0.38
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7710345387458801,
+          "nDCG@5": 0.5913100838661194,
+          "primary": 0.6811723113059998,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.28,
+          "xgb": 0.42
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7709395885467529,
+          "nDCG@5": 0.5912525653839111,
+          "primary": 0.681096076965332,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.26,
+          "xgb": 0.44
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7703210115432739,
+          "nDCG@5": 0.5910485982894897,
+          "primary": 0.6806848049163818,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.24,
+          "xgb": 0.46
+        }
+      },
+      {
+        "stage": "refine_0.02",
+        "transform_by_model": {
+          "fm": "percentile",
+          "lgb": "percentile",
+          "xgb": "percentile"
+        },
+        "valid": {
+          "GAUC": 0.7699700593948364,
+          "nDCG@5": 0.5908188223838806,
+          "primary": 0.6803944110870361,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.3,
+          "lgb": 0.22,
+          "xgb": 0.48
+        }
+      }
+    ]
+  },
+  "selected_on_validation": {
+    "delta_vs_yixi5_reference": 0.0,
+    "delta_vs_yixi7_current_best": -0.001780092716217041,
+    "is_new_candidate": false,
+    "name": "percentile",
+    "transform_by_model": {
+      "fm": "percentile",
+      "lgb": "percentile",
+      "xgb": "percentile"
+    },
+    "valid": {
+      "GAUC": 0.7726407647132874,
+      "nDCG@5": 0.592109739780426,
+      "primary": 0.6823752522468567,
+      "rows": 124909,
+      "users": 22377
+    },
+    "weights": {
+      "fm": 0.24,
+      "lgb": 0.4,
+      "xgb": 0.36
+    }
+  },
+  "selection_policy": {
+    "preliminary_delta": 0.0003,
+    "selector": "official validation primary only",
+    "test_access": "none",
+    "weight_grid": "coarse 0.10 simplex plus local 0.02 refinement"
+  },
+  "verdict": "REJECT"
+}

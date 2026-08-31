@@ -1,0 +1,548 @@
+{
+  "attention_selection": {
+    "delta_vs_h5_valid": -0.008076310157775879,
+    "preliminary_pass": false,
+    "winner": "attention_k40",
+    "winner_valid": {
+      "GAUC": 0.7391552925109863,
+      "nDCG@5": 0.5776732563972473,
+      "primary": 0.6584142446517944,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "blend_eligible": false,
+  "candidates": [
+    {
+      "added": [],
+      "best_internal_ndcg_at_5_minus": 0.5824813320751475,
+      "best_iteration": 340,
+      "columns": [
+        "user_id",
+        "video_id",
+        "author_id",
+        "tab",
+        "last1",
+        "duration_ms",
+        "decay_tab_3",
+        "lastk_rate",
+        "gap",
+        "decay_rate_5",
+        "decay_act_5"
+      ],
+      "family": "reference",
+      "feature_gain_fraction": {
+        "author_id": 0.12155257711420761,
+        "decay_act_5": 0.0,
+        "decay_rate_5": 0.11024951742484836,
+        "decay_tab_3": 0.13771157040858367,
+        "duration_ms": 0.11151703420527592,
+        "gap": 0.06534754841846448,
+        "last1": 0.07201456945941138,
+        "lastk_rate": 0.10826891645491245,
+        "tab": 0.203068259812881,
+        "user_id": 0.0,
+        "video_id": 0.07027000670141509
+      },
+      "name": "h5_xgb_reference",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7504962086677551,
+        "nDCG@5": 0.5824848413467407,
+        "primary": 0.6664905548095703,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added": [
+        "attn_rate_20"
+      ],
+      "added_feature_gain_fraction": {
+        "attn_rate_20": 0.14918763879364907
+      },
+      "best_internal_ndcg_at_5_minus": 0.5521652711825359,
+      "best_iteration": 74,
+      "columns": [
+        "user_id",
+        "video_id",
+        "author_id",
+        "tab",
+        "last1",
+        "duration_ms",
+        "decay_tab_3",
+        "lastk_rate",
+        "gap",
+        "decay_rate_5",
+        "decay_act_5",
+        "attn_rate_20"
+      ],
+      "delta_vs_h5_valid": -0.050510942935943604,
+      "family": "attention",
+      "feature_gain_fraction": {
+        "attn_rate_20": 0.14918763879364907,
+        "author_id": 0.14559038615406936,
+        "decay_act_5": 0.0,
+        "decay_rate_5": 0.1473432009690315,
+        "decay_tab_3": 0.095178245174675,
+        "duration_ms": 0.17735055862550456,
+        "gap": 0.0,
+        "last1": 0.0,
+        "lastk_rate": 0.07664493741808634,
+        "tab": 0.2087050328649842,
+        "user_id": 0.0,
+        "video_id": 0.0
+      },
+      "name": "attention_k20",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.6797923445701599,
+        "nDCG@5": 0.5521668791770935,
+        "primary": 0.6159796118736267,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added": [
+        "attn_rate_40"
+      ],
+      "added_feature_gain_fraction": {
+        "attn_rate_40": 0.1499035451029802
+      },
+      "best_internal_ndcg_at_5_minus": 0.5776704283380384,
+      "best_iteration": 358,
+      "columns": [
+        "user_id",
+        "video_id",
+        "author_id",
+        "tab",
+        "last1",
+        "duration_ms",
+        "decay_tab_3",
+        "lastk_rate",
+        "gap",
+        "decay_rate_5",
+        "decay_act_5",
+        "attn_rate_40"
+      ],
+      "delta_vs_h5_valid": -0.008076310157775879,
+      "family": "attention",
+      "feature_gain_fraction": {
+        "attn_rate_40": 0.1499035451029802,
+        "author_id": 0.10382470274727582,
+        "decay_act_5": 0.0,
+        "decay_rate_5": 0.10349049168119939,
+        "decay_tab_3": 0.10473694838416975,
+        "duration_ms": 0.12207556391434732,
+        "gap": 0.05553548495385506,
+        "last1": 0.0,
+        "lastk_rate": 0.08764357826926057,
+        "tab": 0.19980476857999466,
+        "user_id": 0.0,
+        "video_id": 0.07298491636691727
+      },
+      "name": "attention_k40",
+      "seed": 0,
+      "test": {
+        "GAUC": 0.7155219912528992,
+        "nDCG@5": 0.5827025771141052,
+        "primary": 0.6491122841835022,
+        "rows": 170588,
+        "users": 23875
+      },
+      "valid": {
+        "GAUC": 0.7391552925109863,
+        "nDCG@5": 0.5776732563972473,
+        "primary": 0.6584142446517944,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "added": [
+        "uniform_rate_40"
+      ],
+      "added_feature_gain_fraction": {
+        "uniform_rate_40": 0.12230269418994306
+      },
+      "best_internal_ndcg_at_5_minus": 0.567526703361077,
+      "best_iteration": 167,
+      "columns": [
+        "user_id",
+        "video_id",
+        "author_id",
+        "tab",
+        "last1",
+        "duration_ms",
+        "decay_tab_3",
+        "lastk_rate",
+        "gap",
+        "decay_rate_5",
+        "decay_act_5",
+        "uniform_rate_40"
+      ],
+      "delta_vs_h5_valid": -0.033547818660736084,
+      "family": "diagnostic_control",
+      "feature_gain_fraction": {
+        "author_id": 0.10856741599373392,
+        "decay_act_5": 0.0,
+        "decay_rate_5": 0.14380307681714036,
+        "decay_tab_3": 0.09839871745153678,
+        "duration_ms": 0.14032014981445676,
+        "gap": 0.0,
+        "last1": 0.0,
+        "lastk_rate": 0.08190882678404278,
+        "tab": 0.17775314223633798,
+        "uniform_rate_40": 0.12230269418994306,
+        "user_id": 0.0,
+        "video_id": 0.12694597671280838
+      },
+      "name": "uniform_control_for_attention_k40",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.698356032371521,
+        "nDCG@5": 0.5675294399261475,
+        "primary": 0.6329427361488342,
+        "rows": 124909,
+        "users": 22377
+      }
+    }
+  ],
+  "environment": {
+    "numpy": "2.4.3",
+    "python": "3.13.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterYIXI3_attention_pool_feature_standalone",
+  "feature_metadata": {
+    "attention_columns": [
+      "attn_rate_20",
+      "attn_rate_40"
+    ],
+    "base_columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "decay_tab_3",
+      "lastk_rate",
+      "gap"
+    ],
+    "causality": {
+      "attention": {
+        "checks": [
+          {
+            "history_rows_available": 8,
+            "max_abs_error": 0.0,
+            "row_index": 1141112,
+            "same_time_nonprior_rows_excluded": 1
+          },
+          {
+            "history_rows_available": 29,
+            "max_abs_error": 0.0,
+            "row_index": 1172344,
+            "same_time_nonprior_rows_excluded": 1
+          },
+          {
+            "history_rows_available": 48,
+            "max_abs_error": 0.0,
+            "row_index": 1203566,
+            "same_time_nonprior_rows_excluded": 1
+          },
+          {
+            "history_rows_available": 124,
+            "max_abs_error": 0.0,
+            "row_index": 1234795,
+            "same_time_nonprior_rows_excluded": 1
+          },
+          {
+            "history_rows_available": 79,
+            "max_abs_error": 0.0,
+            "row_index": 1266020,
+            "same_time_nonprior_rows_excluded": 1
+          }
+        ],
+        "max_abs_error": 0.0,
+        "passed": true,
+        "same_time_nonprior_rows_excluded": 5,
+        "semantics": "strict prior (time_ms, orig_idx) only",
+        "zero_history_sentinels_checked": 20
+      },
+      "h5_decay": {
+        "checks": [
+          {
+            "date": 20220422,
+            "max_abs_error": 5.551115123125783e-17,
+            "row_index": 1141112,
+            "same_date_matching_rows_excluded": 1
+          },
+          {
+            "date": 20220425,
+            "max_abs_error": 5.329070518200751e-15,
+            "row_index": 1203604,
+            "same_date_matching_rows_excluded": 0
+          },
+          {
+            "date": 20220425,
+            "max_abs_error": 3.552713678800501e-15,
+            "row_index": 1266020,
+            "same_date_matching_rows_excluded": 0
+          }
+        ],
+        "max_abs_error": 5.329070518200751e-15,
+        "passed": true,
+        "same_date_matching_rows_excluded": 1,
+        "semantics": "strict prior dates only"
+      },
+      "passed": true
+    },
+    "diagnostics": {
+      "attn_rate_20": {
+        "corr_with_decay_rate_5": 0.7050297032394918,
+        "corr_with_lastk_rate": 0.7416062565827894,
+        "corr_with_uniform": 0.9164775482716448,
+        "coverage": 0.9770311766066784,
+        "finite_fraction": 1.0,
+        "max": 1.0000000000000004,
+        "mean": 0.30984294236767457,
+        "mean_abs_delta_vs_uniform": 0.06192247426511767,
+        "min": -1.0,
+        "rows": 1141112,
+        "std": 0.3300986785862493
+      },
+      "attn_rate_40": {
+        "corr_with_decay_rate_5": 0.736019014699682,
+        "corr_with_lastk_rate": 0.7159597357390765,
+        "corr_with_uniform": 0.9150930249617893,
+        "coverage": 0.9770311766066784,
+        "finite_fraction": 1.0,
+        "max": 1.0000000000000004,
+        "mean": 0.31343365011325774,
+        "mean_abs_delta_vs_uniform": 0.06019346550231363,
+        "min": -1.0,
+        "rows": 1141112,
+        "std": 0.32561517551899716
+      },
+      "decay_act_5": {
+        "finite_fraction": 1.0,
+        "max": 460.648492599197,
+        "mean": 24.078655668975745,
+        "min": 0.0,
+        "rows": 1141112,
+        "std": 30.185050457517654
+      },
+      "decay_rate_5": {
+        "finite_fraction": 1.0,
+        "max": 0.9702970050206923,
+        "mean": 0.3729199908911533,
+        "min": 0.0019056475377956792,
+        "rows": 1141112,
+        "std": 0.19995656066982206
+      },
+      "uniform_rate_20": {
+        "finite_fraction": 1.0,
+        "max": 1.0,
+        "mean": 0.31153948904618894,
+        "min": -1.0,
+        "rows": 1141112,
+        "std": 0.3108648054613565
+      },
+      "uniform_rate_40": {
+        "finite_fraction": 1.0,
+        "max": 1.0,
+        "mean": 0.3143222112448429,
+        "min": -1.0,
+        "rows": 1141112,
+        "std": 0.30630517998247303
+      }
+    },
+    "embedding_diagnostics": {
+      "items": 7538,
+      "mean_l2_norm": 1.203673810268827,
+      "std_l2_norm": 0.6133891463532826
+    },
+    "feature_definition": "frozen k=8 train-only item embeddings; scaled dot-product softmax over strictly prior user interactions; attention-weighted pool of prior labels",
+    "h5_columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_tab_3",
+      "lastk_rate",
+      "gap",
+      "decay_rate_5",
+      "decay_act_5"
+    ],
+    "identity": {
+      "embedding_dim": 8,
+      "embedding_epochs": 8,
+      "embedding_lr": 0.005,
+      "embedding_seed": 0,
+      "h5_halflife": 5.0,
+      "iter32_sha256": "56bd046dae250ea997bd3d6c16218fc967062f2285861a4bcaf5bfda5e961dad",
+      "version": 1,
+      "windows": [
+        20,
+        40
+      ],
+      "yixi2_sha256": "bef9dab34fc7c159f561ed95f1ca2542627857ec0d54104f9934378d68a90b14"
+    },
+    "lengths": {
+      "test": 170588,
+      "train": 1141112,
+      "valid": 124909
+    },
+    "uniform_control_columns": [
+      "uniform_rate_20",
+      "uniform_rate_40"
+    ]
+  },
+  "five_seed_confirmation": null,
+  "fixed_model": {
+    "columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_tab_3",
+      "lastk_rate",
+      "gap",
+      "decay_rate_5",
+      "decay_act_5"
+    ],
+    "early_stopping_rounds": 30,
+    "feature_reference": "YIXI4 h5 replacement",
+    "learning_rate": 0.05,
+    "max_depth": 1,
+    "n_estimators": 500,
+    "objective": "rank:ndcg"
+  },
+  "project_context": {
+    "promotion_note": "standalone attention utility is compared with h5; project promotion must be established separately by blend.py against YIXI1",
+    "yixi1_promoted_blend_test": 0.6564562320709229,
+    "yixi1_promoted_blend_valid": 0.6700649857521057,
+    "yixi2_verdict": "REJECT on native LightGBM after five-seed verification",
+    "yixi4_h5_xgb_test": 0.6519709825515747,
+    "yixi4_h5_xgb_valid": 0.6664905548095703
+  },
+  "provenance": {
+    "feature_builder": "experiments/iterYIXI3_attention_pool_feature/features.py",
+    "feature_builder_sha256": "2516b4b2d060160399228529d9fd1ffabc0aa566c272e9481308403d795d9bcf",
+    "reused_iter32_sha256": "56bd046dae250ea997bd3d6c16218fc967062f2285861a4bcaf5bfda5e961dad",
+    "reused_yixi2_sha256": "bef9dab34fc7c159f561ed95f1ca2542627857ec0d54104f9934378d68a90b14",
+    "xgb_builder": "experiments/iterYIXI1_xgboost_native/run_experiment.py",
+    "xgb_builder_sha256": "6c7f4cb480a36e9deb9d23e69217b09e9912cd3696c765edeaf1ef43cfe847b4"
+  },
+  "scope": "attention feature utility on fixed YIXI4 h5 XGBoost component",
+  "selected_delta_vs_h5_test": -0.0028586983680725098,
+  "selected_on_validation": {
+    "added": [
+      "attn_rate_40"
+    ],
+    "added_feature_gain_fraction": {
+      "attn_rate_40": 0.1499035451029802
+    },
+    "best_internal_ndcg_at_5_minus": 0.5776704283380384,
+    "best_iteration": 358,
+    "columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_tab_3",
+      "lastk_rate",
+      "gap",
+      "decay_rate_5",
+      "decay_act_5",
+      "attn_rate_40"
+    ],
+    "delta_vs_h5_valid": -0.008076310157775879,
+    "family": "attention",
+    "feature_gain_fraction": {
+      "attn_rate_40": 0.1499035451029802,
+      "author_id": 0.10382470274727582,
+      "decay_act_5": 0.0,
+      "decay_rate_5": 0.10349049168119939,
+      "decay_tab_3": 0.10473694838416975,
+      "duration_ms": 0.12207556391434732,
+      "gap": 0.05553548495385506,
+      "last1": 0.0,
+      "lastk_rate": 0.08764357826926057,
+      "tab": 0.19980476857999466,
+      "user_id": 0.0,
+      "video_id": 0.07298491636691727
+    },
+    "name": "attention_k40",
+    "seed": 0,
+    "test": {
+      "GAUC": 0.7155219912528992,
+      "nDCG@5": 0.5827025771141052,
+      "primary": 0.6491122841835022,
+      "rows": 170588,
+      "users": 23875
+    },
+    "valid": {
+      "GAUC": 0.7391552925109863,
+      "nDCG@5": 0.5776732563972473,
+      "primary": 0.6584142446517944,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "selection_policy": {
+    "preliminary_delta": 0.0003,
+    "promotion_delta": 0.001,
+    "selector": "official validation primary only",
+    "test_access": "one selected attention candidate after all validation decisions"
+  },
+  "standalone_feature_verdict": "REJECT_ATTENTION",
+  "test_evaluation": {
+    "performed": true,
+    "reference_test_source": "published YIXI4 h5 result; not recomputed here",
+    "timing": "after attention selection, control, confirmation, and diagnostics"
+  },
+  "tie_diagnostic": {
+    "constant_valid": {
+      "GAUC": 0.5,
+      "nDCG@5": 0.4673425257205963,
+      "primary": 0.48367124795913696,
+      "rows": 124909,
+      "users": 22377
+    },
+    "random_valid": {
+      "GAUC": 0.49903032183647156,
+      "nDCG@5": 0.466287761926651,
+      "primary": 0.4826590418815613,
+      "rows": 124909,
+      "users": 22377
+    },
+    "selected": {
+      "mean_per_user_unique_fraction": 0.8638678019355919,
+      "rows": 124909,
+      "unique_scores_overall": 11288
+    }
+  },
+  "uniform_control": {
+    "candidate": "uniform_control_for_attention_k40",
+    "delta_vs_h5_valid": -0.033547818660736084,
+    "not_selection_eligible": true,
+    "valid": {
+      "GAUC": 0.698356032371521,
+      "nDCG@5": 0.5675294399261475,
+      "primary": 0.6329427361488342,
+      "rows": 124909,
+      "users": 22377
+    }
+  }
+}

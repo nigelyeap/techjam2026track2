@@ -1,0 +1,82 @@
+{
+  "eligible": false,
+  "experiment": "iterYIXI11_phase_c_shifted_robustness_gate",
+  "performed": false,
+  "predeclared_shift": {
+    "evaluation": [
+      20220419,
+      20220425
+    ],
+    "history": [
+      20220405,
+      20220418
+    ],
+    "threshold_train": [
+      20220405,
+      20220418
+    ]
+  },
+  "reason": "official adaptive delta +0.00019157 is below the +0.0003 preliminary gate and +0.001 confirmation threshold",
+  "selection_effect": "no promotable adaptive system",
+  "shifted_regime_metadata": {
+    "policy": {
+      "high_history": "history count > training median",
+      "history_variable": "number of impressions strictly before the evaluation date boundary",
+      "label_free": true,
+      "low_history": "1 <= history count <= training median",
+      "no_prior": "history count == 0",
+      "threshold_rule": "lower integer median of positive per-user counts in the threshold-training range",
+      "unit": "user; one fixed regime for every row in the evaluation window"
+    },
+    "ranges": {
+      "evaluation": [
+        20220419,
+        20220425
+      ],
+      "history": [
+        20220405,
+        20220418
+      ],
+      "threshold_train": [
+        20220405,
+        20220418
+      ]
+    },
+    "regimes": {
+      "high_history": {
+        "history_count_max": 758,
+        "history_count_median": 58.0,
+        "history_count_min": 30,
+        "rows": 100286,
+        "users": 12187
+      },
+      "low_history": {
+        "history_count_max": 29,
+        "history_count_median": 14.0,
+        "history_count_min": 1,
+        "rows": 40474,
+        "users": 10096
+      },
+      "no_prior": {
+        "history_count_max": 0,
+        "history_count_median": 0.0,
+        "history_count_min": 0,
+        "rows": 2634,
+        "users": 533
+      }
+    },
+    "threshold": 29,
+    "threshold_distribution": {
+      "0.0": 1.0,
+      "0.1": 5.0,
+      "0.25": 12.0,
+      "0.5": 29.0,
+      "0.75": 56.0,
+      "0.9": 93.0,
+      "0.99": 200.27999999999884,
+      "1.0": 758.0
+    },
+    "threshold_training_users": 25973
+  },
+  "test_access": "none"
+}

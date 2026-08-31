@@ -1,0 +1,493 @@
+{
+  "constant_score_valid": {
+    "GAUC": 0.5,
+    "nDCG@5": 0.4673425257205963,
+    "primary": 0.48367124795913696,
+    "rows": 124909,
+    "users": 22377
+  },
+  "experiment": "iterYIXI10_post_selection_artifact_diagnostics",
+  "metric_delta_vs_reference": {
+    "GAUC": 0.009728729724884033,
+    "nDCG@5": 0.007371068000793457,
+    "primary": 0.008549869060516357
+  },
+  "model_confound_checks": {
+    "added_columns": [
+      "meta_upload_type"
+    ],
+    "candidate_columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_5",
+      "decay_act_5",
+      "lastk_rate",
+      "gap",
+      "decay_tab_rate_3",
+      "hist_watch_decay_mean_5",
+      "meta_upload_type"
+    ],
+    "candidate_upload_type_gain_fraction": 0.08017149002197094,
+    "reference_columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_5",
+      "decay_act_5",
+      "lastk_rate",
+      "gap",
+      "decay_tab_rate_3",
+      "hist_watch_decay_mean_5"
+    ],
+    "removed_columns": [],
+    "same_all_other_feature_columns": true,
+    "same_lightgbm_hyperparameters": true,
+    "same_training_rows_and_labels": true,
+    "unchanged_fm": true,
+    "unchanged_xgboost": true
+  },
+  "random_score_seed0_valid": {
+    "GAUC": 0.49903032183647156,
+    "nDCG@5": 0.466287761926651,
+    "primary": 0.4826590418815613,
+    "rows": 124909,
+    "users": 22377
+  },
+  "selection_role": "none; branch, weights, verdict, and test already frozen",
+  "source_and_leakage_checks": {
+    "join_unmatched_rows": 0,
+    "metadata_static_per_video": true,
+    "only_source_read": "video_features_basic_pure.csv",
+    "prohibited_columns_in_frames": [],
+    "source_sha256": "a6f7ee02684c5777422306cdc416e170302288aa89aca9dfea995edbd625bcc2",
+    "statistic_file_read": false,
+    "upload_type_known_at_upload": true,
+    "upload_type_missing_or_unseen_rows": {
+      "test": 0,
+      "train": 0,
+      "valid": 0
+    },
+    "upload_type_train_categories": 14
+  },
+  "tie_checks": {
+    "candidate_fixed_ensemble": {
+      "mean_per_user_unique_fraction": 0.9990867638961394,
+      "rows": 124909,
+      "unique_scores_overall": 14926
+    },
+    "candidate_lgb": {
+      "mean_per_user_unique_fraction": 0.9750836278839146,
+      "rows": 124909,
+      "unique_scores_overall": 120557
+    },
+    "candidate_selected_ensemble": {
+      "mean_per_user_unique_fraction": 0.9989640305496245,
+      "rows": 124909,
+      "unique_scores_overall": 18926
+    },
+    "reference_ensemble": {
+      "mean_per_user_unique_fraction": 0.9993691111360954,
+      "rows": 124909,
+      "unique_scores_overall": 14267
+    },
+    "reference_lgb": {
+      "mean_per_user_unique_fraction": 0.9807064729020024,
+      "rows": 124909,
+      "unique_scores_overall": 122030
+    },
+    "xgb": {
+      "mean_per_user_unique_fraction": 0.9362812859317556,
+      "rows": 124909,
+      "unique_scores_overall": 15776
+    }
+  },
+  "upload_type_label_rate_diagnostic": {
+    "role": "post-selection descriptive check only",
+    "train": [
+      {
+        "long_view_rate": 0.3475940846506884,
+        "rows": 490250,
+        "upload_type": "LongImport"
+      },
+      {
+        "long_view_rate": 0.3735728027055266,
+        "rows": 343593,
+        "upload_type": "Web"
+      },
+      {
+        "long_view_rate": 0.2927032365901839,
+        "rows": 164525,
+        "upload_type": "ShortImport"
+      },
+      {
+        "long_view_rate": 0.3086430267093903,
+        "rows": 93937,
+        "upload_type": "Kmovie"
+      },
+      {
+        "long_view_rate": 0.07335628609506886,
+        "rows": 18008,
+        "upload_type": "LongPicture"
+      },
+      {
+        "long_view_rate": 0.31582850208979374,
+        "rows": 14834,
+        "upload_type": "UNKNOWN"
+      },
+      {
+        "long_view_rate": 0.09173604687018193,
+        "rows": 6486,
+        "upload_type": "ShortCamera"
+      },
+      {
+        "long_view_rate": 0.06435643564356436,
+        "rows": 3232,
+        "upload_type": "PictureSet"
+      },
+      {
+        "long_view_rate": 0.25191570881226055,
+        "rows": 3132,
+        "upload_type": "ShareFromOtherApp"
+      },
+      {
+        "long_view_rate": 0.200202565833896,
+        "rows": 2962,
+        "upload_type": "LongCamera"
+      },
+      {
+        "long_view_rate": 0.088,
+        "rows": 125,
+        "upload_type": "FollowShoot"
+      },
+      {
+        "long_view_rate": 0.21052631578947367,
+        "rows": 19,
+        "upload_type": "AiCutVideo"
+      },
+      {
+        "long_view_rate": 0.0,
+        "rows": 6,
+        "upload_type": "PhotoCopy"
+      },
+      {
+        "long_view_rate": 0.0,
+        "rows": 3,
+        "upload_type": "LipsSync"
+      }
+    ],
+    "valid": [
+      {
+        "long_view_rate": 0.32341847181808386,
+        "rows": 55674,
+        "upload_type": "LongImport"
+      },
+      {
+        "long_view_rate": 0.34493044600602324,
+        "rows": 34865,
+        "upload_type": "Web"
+      },
+      {
+        "long_view_rate": 0.2761800219538968,
+        "rows": 18220,
+        "upload_type": "ShortImport"
+      },
+      {
+        "long_view_rate": 0.2793515054338144,
+        "rows": 11226,
+        "upload_type": "Kmovie"
+      },
+      {
+        "long_view_rate": 0.2967233009708738,
+        "rows": 1648,
+        "upload_type": "UNKNOWN"
+      },
+      {
+        "long_view_rate": 0.08344459279038718,
+        "rows": 1498,
+        "upload_type": "LongPicture"
+      },
+      {
+        "long_view_rate": 0.23735408560311283,
+        "rows": 514,
+        "upload_type": "ShareFromOtherApp"
+      },
+      {
+        "long_view_rate": 0.13829787234042554,
+        "rows": 470,
+        "upload_type": "ShortCamera"
+      },
+      {
+        "long_view_rate": 0.2576530612244898,
+        "rows": 392,
+        "upload_type": "LongCamera"
+      },
+      {
+        "long_view_rate": 0.07179487179487179,
+        "rows": 390,
+        "upload_type": "PictureSet"
+      },
+      {
+        "long_view_rate": 0.16666666666666666,
+        "rows": 12,
+        "upload_type": "FollowShoot"
+      }
+    ]
+  },
+  "verdict": "PASSED: intrinsic static source, no aggregates, no tie artifact, no isolated weight spike",
+  "weight_plateau": {
+    "best_valid": 0.6994343996047974,
+    "fixed_old_weight_delta": 0.007736802101135254,
+    "points_within_0.0003": 13,
+    "selected_weight_delta": 0.008549869060516357,
+    "three_model_points_searched": 140,
+    "top_points": [
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7941505908966064,
+          "nDCG@5": 0.6047182679176331,
+          "primary": 0.6994343996047974,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.52,
+          "xgb": 0.38
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7942395210266113,
+          "nDCG@5": 0.6045973300933838,
+          "primary": 0.6994184255599976,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.54,
+          "xgb": 0.34
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7941240668296814,
+          "nDCG@5": 0.6046819686889648,
+          "primary": 0.6994030475616455,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.54,
+          "xgb": 0.36
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7939321994781494,
+          "nDCG@5": 0.6048142313957214,
+          "primary": 0.6993732452392578,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.08,
+          "lgb": 0.56,
+          "xgb": 0.36
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7940406799316406,
+          "nDCG@5": 0.6047022938728333,
+          "primary": 0.6993714570999146,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.56,
+          "xgb": 0.34
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7939277291297913,
+          "nDCG@5": 0.6047531366348267,
+          "primary": 0.6993404626846313,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.08,
+          "lgb": 0.54,
+          "xgb": 0.38
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.794158935546875,
+          "nDCG@5": 0.60444176197052,
+          "primary": 0.6993003487586975,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.52,
+          "xgb": 0.36
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7943035960197449,
+          "nDCG@5": 0.6042922139167786,
+          "primary": 0.6992979049682617,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.52,
+          "xgb": 0.34
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7941640019416809,
+          "nDCG@5": 0.604324221611023,
+          "primary": 0.6992441415786743,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.12,
+          "lgb": 0.56,
+          "xgb": 0.32
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7935301065444946,
+          "nDCG@5": 0.6049081087112427,
+          "primary": 0.6992191076278687,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.06,
+          "lgb": 0.58,
+          "xgb": 0.36
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7935934662818909,
+          "nDCG@5": 0.604841411113739,
+          "primary": 0.6992174386978149,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.06,
+          "lgb": 0.56,
+          "xgb": 0.38
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7937375903129578,
+          "nDCG@5": 0.6046854853630066,
+          "primary": 0.6992115378379822,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.08,
+          "lgb": 0.58,
+          "xgb": 0.34
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7942161560058594,
+          "nDCG@5": 0.6040809750556946,
+          "primary": 0.6991485357284546,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.14,
+          "lgb": 0.54,
+          "xgb": 0.32
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7938360571861267,
+          "nDCG@5": 0.6043952107429504,
+          "primary": 0.6991156339645386,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.1,
+          "lgb": 0.58,
+          "xgb": 0.32
+        }
+      },
+      {
+        "normalization": "within_user_percentile",
+        "stage": "refine_0.02",
+        "valid": {
+          "GAUC": 0.7932901382446289,
+          "nDCG@5": 0.6048344373703003,
+          "primary": 0.6990622878074646,
+          "rows": 124909,
+          "users": 22377
+        },
+        "weights": {
+          "fm": 0.06,
+          "lgb": 0.6,
+          "xgb": 0.34
+        }
+      }
+    ]
+  }
+}
