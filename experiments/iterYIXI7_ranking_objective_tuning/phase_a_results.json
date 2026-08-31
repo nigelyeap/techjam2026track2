@@ -1,0 +1,962 @@
+{
+  "confirmed_branch": true,
+  "environment": {
+    "lightgbm": "4.6.0",
+    "numpy": "2.4.3",
+    "python": "3.13.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterYIXI7_phase_a_lightgbm_ranking_objective",
+  "feature_metadata": {
+    "available_columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "lastk_rate",
+      "gap",
+      "decay_tab_3",
+      "decay_tab_rate_3",
+      "decay_rate_5",
+      "decay_act_5",
+      "decay_rate_x_log_activity"
+    ],
+    "causality": {
+      "checks": [
+        {
+          "date": 20220422,
+          "errors": {
+            "h5_pos": 5.551115123125783e-17,
+            "h5_total": 0.0,
+            "tab_h3_pos": 0.0,
+            "tab_h3_total": 3.3306690738754696e-16
+          },
+          "max_abs_error": 3.3306690738754696e-16,
+          "row_index": 1141112
+        },
+        {
+          "date": 20220427,
+          "errors": {
+            "h5_pos": 8.881784197001252e-16,
+            "h5_total": 1.7763568394002505e-15,
+            "tab_h3_pos": 4.440892098500626e-16,
+            "tab_h3_total": 2.6645352591003757e-15
+          },
+          "max_abs_error": 2.6645352591003757e-15,
+          "row_index": 1145275
+        },
+        {
+          "date": 20220424,
+          "errors": {
+            "h5_pos": 4.163336342344337e-17,
+            "h5_total": 0.0,
+            "tab_h3_pos": 2.7755575615628914e-17,
+            "tab_h3_total": 7.105427357601002e-15
+          },
+          "max_abs_error": 7.105427357601002e-15,
+          "row_index": 1149439
+        }
+      ],
+      "global_max_abs_error": 7.105427357601002e-15,
+      "method": "independent direct sums over strictly earlier dates",
+      "passed": true,
+      "same_date_matching_rows_explicitly_excluded": 39
+    },
+    "lengths": {
+      "test": 170588,
+      "train": 1141112,
+      "valid": 124909
+    },
+    "provenance": {
+      "definitions_redesigned": false,
+      "iter63_data": "experiments/iter63_decay_tab_rate/data_ext.py",
+      "iter63_data_sha256": "49890ee258b4f4dd99007c0fd5e9eb8dc7897d3718c12e7cc7044a1c5f606545",
+      "iter63_train": "experiments/iter63_decay_tab_rate/train.py",
+      "iter63_train_sha256": "147213c5cc4f1001c336eceb8821e4069d76929992ffa725b36cd036b1fda8c8",
+      "yixi4_feature_source": "experiments/iterYIXI2_feature_depth/features.py",
+      "yixi4_feature_source_sha256": "bef9dab34fc7c159f561ed95f1ca2542627857ec0d54104f9934378d68a90b14"
+    }
+  },
+  "features": [
+    "user_id",
+    "video_id",
+    "author_id",
+    "tab",
+    "last1",
+    "duration_ms",
+    "decay_rate_5",
+    "decay_act_5",
+    "lastk_rate",
+    "gap",
+    "decay_tab_rate_3"
+  ],
+  "five_seed_confirmation": {
+    "confirmed": true,
+    "mean_delta": 0.0028025627136230467,
+    "min_delta": 0.002219259738922119,
+    "performed": true,
+    "rows": [
+      {
+        "candidate_valid": {
+          "GAUC": 0.7646524310112,
+          "nDCG@5": 0.5891302824020386,
+          "primary": 0.6768913269042969,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.003774106502532959,
+        "reference_valid": {
+          "GAUC": 0.7609431743621826,
+          "nDCG@5": 0.5852912664413452,
+          "primary": 0.6731172204017639,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 0
+      },
+      {
+        "candidate_valid": {
+          "GAUC": 0.7648134231567383,
+          "nDCG@5": 0.5889071226119995,
+          "primary": 0.6768602728843689,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.0026940107345581055,
+        "reference_valid": {
+          "GAUC": 0.762413501739502,
+          "nDCG@5": 0.5859190225601196,
+          "primary": 0.6741662621498108,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 1
+      },
+      {
+        "candidate_valid": {
+          "GAUC": 0.7642403244972229,
+          "nDCG@5": 0.5885107517242432,
+          "primary": 0.6763755083084106,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.002219259738922119,
+        "reference_valid": {
+          "GAUC": 0.7624099254608154,
+          "nDCG@5": 0.5859025716781616,
+          "primary": 0.6741562485694885,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 2
+      },
+      {
+        "candidate_valid": {
+          "GAUC": 0.7646241784095764,
+          "nDCG@5": 0.5888823866844177,
+          "primary": 0.6767532825469971,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.002597033977508545,
+        "reference_valid": {
+          "GAUC": 0.7624099254608154,
+          "nDCG@5": 0.5859025716781616,
+          "primary": 0.6741562485694885,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 3
+      },
+      {
+        "candidate_valid": {
+          "GAUC": 0.7647566795349121,
+          "nDCG@5": 0.5890125632286072,
+          "primary": 0.676884651184082,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.002728402614593506,
+        "reference_valid": {
+          "GAUC": 0.7624099254608154,
+          "nDCG@5": 0.5859025716781616,
+          "primary": 0.6741562485694885,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 4
+      }
+    ],
+    "std_delta": 0.0005183946388380555
+  },
+  "fixed_tree_config": {
+    "eval_at": [
+      5
+    ],
+    "learning_rate": 0.1,
+    "linear_tree": true,
+    "metric": "ndcg",
+    "min_child_samples": 200,
+    "n_estimators": 500,
+    "n_jobs": -1,
+    "num_leaves": 2,
+    "reg_lambda": 1.0,
+    "verbosity": -1
+  },
+  "harness_fidelity_passed": true,
+  "metric_delta_vs_reference": {
+    "GAUC": 0.003709256649017334,
+    "nDCG@5": 0.0038390159606933594,
+    "primary": 0.003774106502532959
+  },
+  "rank_xendcg_branch": {
+    "accepted": false,
+    "candidate": {
+      "best_iteration": 32,
+      "feature_gain_fraction": {
+        "author_id": 0.11480926003581679,
+        "decay_act_5": 0.0,
+        "decay_rate_5": 0.008509822163866329,
+        "decay_tab_rate_3": 0.0,
+        "duration_ms": 0.0,
+        "gap": 0.0,
+        "last1": 0.0,
+        "lastk_rate": 0.0,
+        "tab": 0.8321028393114118,
+        "user_id": 0.0,
+        "video_id": 0.044578078488905076
+      },
+      "name": "rank_xendcg",
+      "rank_config": {
+        "objective": "rank_xendcg"
+      },
+      "ties": {
+        "mean_per_user_unique_fraction": 0.7625726008542681,
+        "rows": 124909,
+        "unique_scores_overall": 76312
+      },
+      "valid": {
+        "GAUC": 0.723168671131134,
+        "nDCG@5": 0.5683033466339111,
+        "primary": 0.6457359790802002,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    "gain_vs_carried_lambdarank": -0.03115534782409668
+  },
+  "reference": {
+    "best_iteration": 47,
+    "feature_gain_fraction": {
+      "author_id": 0.22397215881828725,
+      "decay_act_5": 0.0,
+      "decay_rate_5": 0.16062914211525275,
+      "decay_tab_rate_3": 0.0,
+      "duration_ms": 0.023424300805289646,
+      "gap": 0.0,
+      "last1": 0.0,
+      "lastk_rate": 0.02603457595693067,
+      "tab": 0.4220518366456475,
+      "user_id": 0.0,
+      "video_id": 0.14388798565859215
+    },
+    "name": "post6f_lambdarank_reference",
+    "rank_config": {
+      "objective": "lambdarank"
+    },
+    "ties": {
+      "mean_per_user_unique_fraction": 0.9864137949090523,
+      "rows": 124909,
+      "unique_scores_overall": 122611
+    },
+    "valid": {
+      "GAUC": 0.7609431743621826,
+      "nDCG@5": 0.5852912664413452,
+      "primary": 0.6731172204017639,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "selected_on_validation": {
+    "best_iteration": 41,
+    "delta_vs_reference": 0.003774106502532959,
+    "feature_gain_fraction": {
+      "author_id": 0.19472276062405616,
+      "decay_act_5": 0.0,
+      "decay_rate_5": 0.20666376667071235,
+      "decay_tab_rate_3": 0.0,
+      "duration_ms": 0.024022838294321305,
+      "gap": 0.0,
+      "last1": 0.0,
+      "lastk_rate": 0.03809732733676158,
+      "tab": 0.45829923705538383,
+      "user_id": 0.0,
+      "video_id": 0.07819407001876481
+    },
+    "name": "sigmoid_2.0",
+    "rank_config": {
+      "lambdarank_truncation_level": 50,
+      "objective": "lambdarank",
+      "sigmoid": 2.0
+    },
+    "ties": {
+      "mean_per_user_unique_fraction": 0.986402780713831,
+      "rows": 124909,
+      "unique_scores_overall": 122609
+    },
+    "valid": {
+      "GAUC": 0.7646524310112,
+      "nDCG@5": 0.5891302824020386,
+      "primary": 0.6768913269042969,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "selection_policy": {
+    "method": "sequential lambdarank axes plus one independent rank_xendcg branch; no Cartesian product",
+    "preliminary_delta": 0.0003,
+    "promotion_delta": 0.001,
+    "selector": "official validation primary only",
+    "test_access": "none in this runner"
+  },
+  "sequential_sweeps": {
+    "normalization": {
+      "accepted": false,
+      "axis": "lambdarank_norm",
+      "candidates": [
+        {
+          "best_iteration": 41,
+          "feature_gain_fraction": {
+            "author_id": 0.19472276062405616,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.20666376667071235,
+            "decay_tab_rate_3": 0.0,
+            "duration_ms": 0.024022838294321305,
+            "gap": 0.0,
+            "last1": 0.0,
+            "lastk_rate": 0.03809732733676158,
+            "tab": 0.45829923705538383,
+            "user_id": 0.0,
+            "video_id": 0.07819407001876481
+          },
+          "name": "lambdarank_norm_true",
+          "rank_config": {
+            "lambdarank_norm": true,
+            "lambdarank_truncation_level": 50,
+            "objective": "lambdarank",
+            "sigmoid": 2.0
+          },
+          "ties": {
+            "mean_per_user_unique_fraction": 0.986402780713831,
+            "rows": 124909,
+            "unique_scores_overall": 122609
+          },
+          "valid": {
+            "GAUC": 0.7646524310112,
+            "nDCG@5": 0.5891302824020386,
+            "primary": 0.6768913269042969,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_iteration": 110,
+          "feature_gain_fraction": {
+            "author_id": 0.13191198078187594,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.036430754521223165,
+            "decay_tab_rate_3": 0.0,
+            "duration_ms": 0.039694645031336594,
+            "gap": 0.00578417817028713,
+            "last1": 0.0,
+            "lastk_rate": 0.0,
+            "tab": 0.7348866680056759,
+            "user_id": 0.0,
+            "video_id": 0.05129177348960119
+          },
+          "name": "lambdarank_norm_false",
+          "rank_config": {
+            "lambdarank_norm": false,
+            "lambdarank_truncation_level": 50,
+            "objective": "lambdarank",
+            "sigmoid": 2.0
+          },
+          "ties": {
+            "mean_per_user_unique_fraction": 0.9999200671410714,
+            "rows": 124909,
+            "unique_scores_overall": 124758
+          },
+          "valid": {
+            "GAUC": 0.6871766448020935,
+            "nDCG@5": 0.5458428263664246,
+            "primary": 0.616509735584259,
+            "rows": 124909,
+            "users": 22377
+          }
+        }
+      ],
+      "carried": {
+        "best_iteration": 41,
+        "delta_vs_reference": 0.003774106502532959,
+        "feature_gain_fraction": {
+          "author_id": 0.19472276062405616,
+          "decay_act_5": 0.0,
+          "decay_rate_5": 0.20666376667071235,
+          "decay_tab_rate_3": 0.0,
+          "duration_ms": 0.024022838294321305,
+          "gap": 0.0,
+          "last1": 0.0,
+          "lastk_rate": 0.03809732733676158,
+          "tab": 0.45829923705538383,
+          "user_id": 0.0,
+          "video_id": 0.07819407001876481
+        },
+        "name": "sigmoid_2.0",
+        "rank_config": {
+          "lambdarank_truncation_level": 50,
+          "objective": "lambdarank",
+          "sigmoid": 2.0
+        },
+        "ties": {
+          "mean_per_user_unique_fraction": 0.986402780713831,
+          "rows": 124909,
+          "unique_scores_overall": 122609
+        },
+        "valid": {
+          "GAUC": 0.7646524310112,
+          "nDCG@5": 0.5891302824020386,
+          "primary": 0.6768913269042969,
+          "rows": 124909,
+          "users": 22377
+        }
+      },
+      "gain_vs_carried": 0.0,
+      "starting_point": {
+        "best_iteration": 41,
+        "delta_vs_reference": 0.003774106502532959,
+        "feature_gain_fraction": {
+          "author_id": 0.19472276062405616,
+          "decay_act_5": 0.0,
+          "decay_rate_5": 0.20666376667071235,
+          "decay_tab_rate_3": 0.0,
+          "duration_ms": 0.024022838294321305,
+          "gap": 0.0,
+          "last1": 0.0,
+          "lastk_rate": 0.03809732733676158,
+          "tab": 0.45829923705538383,
+          "user_id": 0.0,
+          "video_id": 0.07819407001876481
+        },
+        "name": "sigmoid_2.0",
+        "rank_config": {
+          "lambdarank_truncation_level": 50,
+          "objective": "lambdarank",
+          "sigmoid": 2.0
+        },
+        "ties": {
+          "mean_per_user_unique_fraction": 0.986402780713831,
+          "rows": 124909,
+          "unique_scores_overall": 122609
+        },
+        "valid": {
+          "GAUC": 0.7646524310112,
+          "nDCG@5": 0.5891302824020386,
+          "primary": 0.6768913269042969,
+          "rows": 124909,
+          "users": 22377
+        }
+      },
+      "winner": {
+        "best_iteration": 41,
+        "feature_gain_fraction": {
+          "author_id": 0.19472276062405616,
+          "decay_act_5": 0.0,
+          "decay_rate_5": 0.20666376667071235,
+          "decay_tab_rate_3": 0.0,
+          "duration_ms": 0.024022838294321305,
+          "gap": 0.0,
+          "last1": 0.0,
+          "lastk_rate": 0.03809732733676158,
+          "tab": 0.45829923705538383,
+          "user_id": 0.0,
+          "video_id": 0.07819407001876481
+        },
+        "name": "lambdarank_norm_true",
+        "rank_config": {
+          "lambdarank_norm": true,
+          "lambdarank_truncation_level": 50,
+          "objective": "lambdarank",
+          "sigmoid": 2.0
+        },
+        "ties": {
+          "mean_per_user_unique_fraction": 0.986402780713831,
+          "rows": 124909,
+          "unique_scores_overall": 122609
+        },
+        "valid": {
+          "GAUC": 0.7646524310112,
+          "nDCG@5": 0.5891302824020386,
+          "primary": 0.6768913269042969,
+          "rows": 124909,
+          "users": 22377
+        }
+      }
+    },
+    "sigmoid": {
+      "accepted": true,
+      "axis": "sigmoid",
+      "candidates": [
+        {
+          "best_iteration": 6,
+          "feature_gain_fraction": {
+            "author_id": 0.27405631434742395,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.07370449446531224,
+            "decay_tab_rate_3": 0.0,
+            "duration_ms": 0.0,
+            "gap": 0.0,
+            "last1": 0.0,
+            "lastk_rate": 0.0,
+            "tab": 0.4954011304599707,
+            "user_id": 0.0,
+            "video_id": 0.15683806072729312
+          },
+          "name": "sigmoid_0.5",
+          "rank_config": {
+            "lambdarank_truncation_level": 50,
+            "objective": "lambdarank",
+            "sigmoid": 0.5
+          },
+          "ties": {
+            "mean_per_user_unique_fraction": 0.7405743037255667,
+            "rows": 124909,
+            "unique_scores_overall": 72295
+          },
+          "valid": {
+            "GAUC": 0.7205557823181152,
+            "nDCG@5": 0.5680659413337708,
+            "primary": 0.6443108320236206,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_iteration": 49,
+          "feature_gain_fraction": {
+            "author_id": 0.1485028025519615,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.16447510623652478,
+            "decay_tab_rate_3": 0.0,
+            "duration_ms": 0.023551850165526408,
+            "gap": 0.0,
+            "last1": 0.0,
+            "lastk_rate": 0.026240876344516495,
+            "tab": 0.4249567638309057,
+            "user_id": 0.0,
+            "video_id": 0.21227260087056515
+          },
+          "name": "sigmoid_1.0",
+          "rank_config": {
+            "lambdarank_truncation_level": 50,
+            "objective": "lambdarank",
+            "sigmoid": 1.0
+          },
+          "ties": {
+            "mean_per_user_unique_fraction": 0.986433656572566,
+            "rows": 124909,
+            "unique_scores_overall": 122613
+          },
+          "valid": {
+            "GAUC": 0.7615503072738647,
+            "nDCG@5": 0.5858345627784729,
+            "primary": 0.6736924648284912,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_iteration": 41,
+          "delta_vs_reference": 0.003774106502532959,
+          "feature_gain_fraction": {
+            "author_id": 0.19472276062405616,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.20666376667071235,
+            "decay_tab_rate_3": 0.0,
+            "duration_ms": 0.024022838294321305,
+            "gap": 0.0,
+            "last1": 0.0,
+            "lastk_rate": 0.03809732733676158,
+            "tab": 0.45829923705538383,
+            "user_id": 0.0,
+            "video_id": 0.07819407001876481
+          },
+          "name": "sigmoid_2.0",
+          "rank_config": {
+            "lambdarank_truncation_level": 50,
+            "objective": "lambdarank",
+            "sigmoid": 2.0
+          },
+          "ties": {
+            "mean_per_user_unique_fraction": 0.986402780713831,
+            "rows": 124909,
+            "unique_scores_overall": 122609
+          },
+          "valid": {
+            "GAUC": 0.7646524310112,
+            "nDCG@5": 0.5891302824020386,
+            "primary": 0.6768913269042969,
+            "rows": 124909,
+            "users": 22377
+          }
+        }
+      ],
+      "carried": {
+        "best_iteration": 41,
+        "delta_vs_reference": 0.003774106502532959,
+        "feature_gain_fraction": {
+          "author_id": 0.19472276062405616,
+          "decay_act_5": 0.0,
+          "decay_rate_5": 0.20666376667071235,
+          "decay_tab_rate_3": 0.0,
+          "duration_ms": 0.024022838294321305,
+          "gap": 0.0,
+          "last1": 0.0,
+          "lastk_rate": 0.03809732733676158,
+          "tab": 0.45829923705538383,
+          "user_id": 0.0,
+          "video_id": 0.07819407001876481
+        },
+        "name": "sigmoid_2.0",
+        "rank_config": {
+          "lambdarank_truncation_level": 50,
+          "objective": "lambdarank",
+          "sigmoid": 2.0
+        },
+        "ties": {
+          "mean_per_user_unique_fraction": 0.986402780713831,
+          "rows": 124909,
+          "unique_scores_overall": 122609
+        },
+        "valid": {
+          "GAUC": 0.7646524310112,
+          "nDCG@5": 0.5891302824020386,
+          "primary": 0.6768913269042969,
+          "rows": 124909,
+          "users": 22377
+        }
+      },
+      "gain_vs_carried": 0.003198862075805664,
+      "starting_point": {
+        "best_iteration": 49,
+        "feature_gain_fraction": {
+          "author_id": 0.1485028025519615,
+          "decay_act_5": 0.0,
+          "decay_rate_5": 0.16447510623652478,
+          "decay_tab_rate_3": 0.0,
+          "duration_ms": 0.023551850165526408,
+          "gap": 0.0,
+          "last1": 0.0,
+          "lastk_rate": 0.026240876344516495,
+          "tab": 0.4249567638309057,
+          "user_id": 0.0,
+          "video_id": 0.21227260087056515
+        },
+        "name": "truncation_50",
+        "rank_config": {
+          "lambdarank_truncation_level": 50,
+          "objective": "lambdarank"
+        },
+        "ties": {
+          "mean_per_user_unique_fraction": 0.986433656572566,
+          "rows": 124909,
+          "unique_scores_overall": 122613
+        },
+        "valid": {
+          "GAUC": 0.7615503072738647,
+          "nDCG@5": 0.5858345627784729,
+          "primary": 0.6736924648284912,
+          "rows": 124909,
+          "users": 22377
+        }
+      },
+      "winner": {
+        "best_iteration": 41,
+        "delta_vs_reference": 0.003774106502532959,
+        "feature_gain_fraction": {
+          "author_id": 0.19472276062405616,
+          "decay_act_5": 0.0,
+          "decay_rate_5": 0.20666376667071235,
+          "decay_tab_rate_3": 0.0,
+          "duration_ms": 0.024022838294321305,
+          "gap": 0.0,
+          "last1": 0.0,
+          "lastk_rate": 0.03809732733676158,
+          "tab": 0.45829923705538383,
+          "user_id": 0.0,
+          "video_id": 0.07819407001876481
+        },
+        "name": "sigmoid_2.0",
+        "rank_config": {
+          "lambdarank_truncation_level": 50,
+          "objective": "lambdarank",
+          "sigmoid": 2.0
+        },
+        "ties": {
+          "mean_per_user_unique_fraction": 0.986402780713831,
+          "rows": 124909,
+          "unique_scores_overall": 122609
+        },
+        "valid": {
+          "GAUC": 0.7646524310112,
+          "nDCG@5": 0.5891302824020386,
+          "primary": 0.6768913269042969,
+          "rows": 124909,
+          "users": 22377
+        }
+      }
+    },
+    "truncation": {
+      "accepted": true,
+      "axis": "lambdarank_truncation_level",
+      "candidates": [
+        {
+          "best_iteration": 3,
+          "feature_gain_fraction": {
+            "author_id": 0.2183822263849067,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.19406302883903712,
+            "decay_tab_rate_3": 0.0,
+            "duration_ms": 0.0,
+            "gap": 0.0,
+            "last1": 0.0,
+            "lastk_rate": 0.0,
+            "tab": 0.5875547447760562,
+            "user_id": 0.0,
+            "video_id": 0.0
+          },
+          "name": "truncation_5",
+          "rank_config": {
+            "lambdarank_truncation_level": 5,
+            "objective": "lambdarank"
+          },
+          "ties": {
+            "mean_per_user_unique_fraction": 0.7253283150519135,
+            "rows": 124909,
+            "unique_scores_overall": 69738
+          },
+          "valid": {
+            "GAUC": 0.7260804176330566,
+            "nDCG@5": 0.5729555487632751,
+            "primary": 0.6495180130004883,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_iteration": 50,
+          "feature_gain_fraction": {
+            "author_id": 0.23480749918718874,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.20139919508250972,
+            "decay_tab_rate_3": 0.0,
+            "duration_ms": 0.0201155760197739,
+            "gap": 0.0,
+            "last1": 0.0,
+            "lastk_rate": 0.037028518838221045,
+            "tab": 0.38233817744609155,
+            "user_id": 0.0,
+            "video_id": 0.12431103342621505
+          },
+          "name": "truncation_10",
+          "rank_config": {
+            "lambdarank_truncation_level": 10,
+            "objective": "lambdarank"
+          },
+          "ties": {
+            "mean_per_user_unique_fraction": 0.9864295939595744,
+            "rows": 124909,
+            "unique_scores_overall": 122612
+          },
+          "valid": {
+            "GAUC": 0.7607405781745911,
+            "nDCG@5": 0.5857118368148804,
+            "primary": 0.6732262372970581,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_iteration": 50,
+          "feature_gain_fraction": {
+            "author_id": 0.17565363640059264,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.1775604501390095,
+            "decay_tab_rate_3": 0.0,
+            "duration_ms": 0.022249026055933714,
+            "gap": 0.0,
+            "last1": 0.0,
+            "lastk_rate": 0.027059078664037017,
+            "tab": 0.4103627984100386,
+            "user_id": 0.0,
+            "video_id": 0.18711501033038855
+          },
+          "name": "truncation_20",
+          "rank_config": {
+            "lambdarank_truncation_level": 20,
+            "objective": "lambdarank"
+          },
+          "ties": {
+            "mean_per_user_unique_fraction": 0.986433656572566,
+            "rows": 124909,
+            "unique_scores_overall": 122613
+          },
+          "valid": {
+            "GAUC": 0.7616602778434753,
+            "nDCG@5": 0.585716962814331,
+            "primary": 0.6736886501312256,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_iteration": 49,
+          "feature_gain_fraction": {
+            "author_id": 0.1485028025519615,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.16447510623652478,
+            "decay_tab_rate_3": 0.0,
+            "duration_ms": 0.023551850165526408,
+            "gap": 0.0,
+            "last1": 0.0,
+            "lastk_rate": 0.026240876344516495,
+            "tab": 0.4249567638309057,
+            "user_id": 0.0,
+            "video_id": 0.21227260087056515
+          },
+          "name": "truncation_50",
+          "rank_config": {
+            "lambdarank_truncation_level": 50,
+            "objective": "lambdarank"
+          },
+          "ties": {
+            "mean_per_user_unique_fraction": 0.986433656572566,
+            "rows": 124909,
+            "unique_scores_overall": 122613
+          },
+          "valid": {
+            "GAUC": 0.7615503072738647,
+            "nDCG@5": 0.5858345627784729,
+            "primary": 0.6736924648284912,
+            "rows": 124909,
+            "users": 22377
+          }
+        }
+      ],
+      "carried": {
+        "best_iteration": 49,
+        "feature_gain_fraction": {
+          "author_id": 0.1485028025519615,
+          "decay_act_5": 0.0,
+          "decay_rate_5": 0.16447510623652478,
+          "decay_tab_rate_3": 0.0,
+          "duration_ms": 0.023551850165526408,
+          "gap": 0.0,
+          "last1": 0.0,
+          "lastk_rate": 0.026240876344516495,
+          "tab": 0.4249567638309057,
+          "user_id": 0.0,
+          "video_id": 0.21227260087056515
+        },
+        "name": "truncation_50",
+        "rank_config": {
+          "lambdarank_truncation_level": 50,
+          "objective": "lambdarank"
+        },
+        "ties": {
+          "mean_per_user_unique_fraction": 0.986433656572566,
+          "rows": 124909,
+          "unique_scores_overall": 122613
+        },
+        "valid": {
+          "GAUC": 0.7615503072738647,
+          "nDCG@5": 0.5858345627784729,
+          "primary": 0.6736924648284912,
+          "rows": 124909,
+          "users": 22377
+        }
+      },
+      "gain_vs_carried": 0.0005752444267272949,
+      "starting_point": {
+        "best_iteration": 47,
+        "feature_gain_fraction": {
+          "author_id": 0.22397215881828725,
+          "decay_act_5": 0.0,
+          "decay_rate_5": 0.16062914211525275,
+          "decay_tab_rate_3": 0.0,
+          "duration_ms": 0.023424300805289646,
+          "gap": 0.0,
+          "last1": 0.0,
+          "lastk_rate": 0.02603457595693067,
+          "tab": 0.4220518366456475,
+          "user_id": 0.0,
+          "video_id": 0.14388798565859215
+        },
+        "name": "post6f_lambdarank_reference",
+        "rank_config": {
+          "objective": "lambdarank"
+        },
+        "ties": {
+          "mean_per_user_unique_fraction": 0.9864137949090523,
+          "rows": 124909,
+          "unique_scores_overall": 122611
+        },
+        "valid": {
+          "GAUC": 0.7609431743621826,
+          "nDCG@5": 0.5852912664413452,
+          "primary": 0.6731172204017639,
+          "rows": 124909,
+          "users": 22377
+        }
+      },
+      "winner": {
+        "best_iteration": 49,
+        "feature_gain_fraction": {
+          "author_id": 0.1485028025519615,
+          "decay_act_5": 0.0,
+          "decay_rate_5": 0.16447510623652478,
+          "decay_tab_rate_3": 0.0,
+          "duration_ms": 0.023551850165526408,
+          "gap": 0.0,
+          "last1": 0.0,
+          "lastk_rate": 0.026240876344516495,
+          "tab": 0.4249567638309057,
+          "user_id": 0.0,
+          "video_id": 0.21227260087056515
+        },
+        "name": "truncation_50",
+        "rank_config": {
+          "lambdarank_truncation_level": 50,
+          "objective": "lambdarank"
+        },
+        "ties": {
+          "mean_per_user_unique_fraction": 0.986433656572566,
+          "rows": 124909,
+          "unique_scores_overall": 122613
+        },
+        "valid": {
+          "GAUC": 0.7615503072738647,
+          "nDCG@5": 0.5858345627784729,
+          "primary": 0.6736924648284912,
+          "rows": 124909,
+          "users": 22377
+        }
+      }
+    }
+  },
+  "standalone_verdict": "CONFIRMED",
+  "support_source": "support_results.json"
+}

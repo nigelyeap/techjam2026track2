@@ -1,0 +1,106 @@
+{
+  "confound_checks": {
+    "added_columns": [
+      "hist_watch_decay_mean_5"
+    ],
+    "candidate_columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_5",
+      "decay_act_5",
+      "lastk_rate",
+      "gap",
+      "decay_tab_rate_3",
+      "hist_watch_decay_mean_5"
+    ],
+    "causality_audit_passed": true,
+    "current_row_play_time_reaches_model": false,
+    "outcome_columns_present": [],
+    "reference_columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_5",
+      "decay_act_5",
+      "lastk_rate",
+      "gap",
+      "decay_tab_rate_3"
+    ],
+    "removed_columns": [],
+    "same_all_other_feature_columns": true,
+    "same_lightgbm_hyperparameters": true,
+    "same_training_rows_and_labels": true,
+    "strict_timestamp_rule": "per user by time_ms; all exact time_ms ties read before group update; orig_idx orders tied rows only for future last-five windows"
+  },
+  "constant_score_valid": {
+    "GAUC": 0.5,
+    "nDCG@5": 0.4673425257205963,
+    "primary": 0.48367124795913696,
+    "rows": 124909,
+    "users": 22377
+  },
+  "experiment": "iterYIXI9_post_selection_artifact_diagnostics",
+  "metric_delta_vs_reference": {
+    "GAUC": 0.00997006893157959,
+    "nDCG@5": 0.003488302230834961,
+    "primary": 0.006729185581207275
+  },
+  "random_score_seed0_valid": {
+    "GAUC": 0.49903032183647156,
+    "nDCG@5": 0.466287761926651,
+    "primary": 0.4826590418815613,
+    "rows": 124909,
+    "users": 22377
+  },
+  "selection_role": "none; selected branch and weights already frozen",
+  "tie_checks": {
+    "candidate_ensemble": {
+      "mean_per_user_unique_fraction": 0.9993691111360954,
+      "rows": 124909,
+      "unique_scores_overall": 14267
+    },
+    "candidate_lgb": {
+      "mean_per_user_unique_fraction": 0.9807064729020024,
+      "rows": 124909,
+      "unique_scores_overall": 122030
+    },
+    "candidate_xgb": {
+      "mean_per_user_unique_fraction": 0.9362812859317556,
+      "rows": 124909,
+      "unique_scores_overall": 15776
+    },
+    "reference_ensemble": {
+      "mean_per_user_unique_fraction": 0.9994412511362982,
+      "rows": 124909,
+      "unique_scores_overall": 18588
+    },
+    "reference_lgb": {
+      "mean_per_user_unique_fraction": 0.986402780713831,
+      "rows": 124909,
+      "unique_scores_overall": 122609
+    },
+    "reference_xgb_A0": {
+      "mean_per_user_unique_fraction": 0.9362812859317556,
+      "rows": 124909,
+      "unique_scores_overall": 15776
+    },
+    "reference_xgb_A1": {
+      "mean_per_user_unique_fraction": 0.9417892267210864,
+      "rows": 124909,
+      "unique_scores_overall": 24984
+    }
+  },
+  "verdict": "PASSED: not a stable-sort tie artifact and no silent model-input confound",
+  "weight_confound_check": {
+    "fixed_reference_weights_delta": 0.006282687187194824,
+    "gain_exists_before_weight_recalibration": true,
+    "selected_weight_delta": 0.006729185581207275
+  }
+}

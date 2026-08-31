@@ -1,0 +1,443 @@
+{
+  "environment": {
+    "lightgbm": "4.6.0",
+    "numpy": "2.4.3",
+    "pandas": "3.0.2",
+    "python": "3.13.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterYIXI9_post6h_harness",
+  "feature_metadata": {
+    "base_feature_metadata": {
+      "available_columns": [
+        "user_id",
+        "video_id",
+        "author_id",
+        "tab",
+        "last1",
+        "duration_ms",
+        "decay_rate_2.5",
+        "decay_act_2.5",
+        "lastk_rate",
+        "gap",
+        "decay_tab_3",
+        "decay_tab_rate_3",
+        "decay_rate_5",
+        "decay_act_5",
+        "decay_rate_x_log_activity"
+      ],
+      "causality": {
+        "checks": [
+          {
+            "date": 20220422,
+            "errors": {
+              "h5_pos": 5.551115123125783e-17,
+              "h5_total": 0.0,
+              "tab_h3_pos": 0.0,
+              "tab_h3_total": 3.3306690738754696e-16
+            },
+            "max_abs_error": 3.3306690738754696e-16,
+            "row_index": 1141112
+          },
+          {
+            "date": 20220427,
+            "errors": {
+              "h5_pos": 8.881784197001252e-16,
+              "h5_total": 1.7763568394002505e-15,
+              "tab_h3_pos": 4.440892098500626e-16,
+              "tab_h3_total": 2.6645352591003757e-15
+            },
+            "max_abs_error": 2.6645352591003757e-15,
+            "row_index": 1145275
+          },
+          {
+            "date": 20220424,
+            "errors": {
+              "h5_pos": 4.163336342344337e-17,
+              "h5_total": 0.0,
+              "tab_h3_pos": 2.7755575615628914e-17,
+              "tab_h3_total": 7.105427357601002e-15
+            },
+            "max_abs_error": 7.105427357601002e-15,
+            "row_index": 1149439
+          }
+        ],
+        "global_max_abs_error": 7.105427357601002e-15,
+        "method": "independent direct sums over strictly earlier dates",
+        "passed": true,
+        "same_date_matching_rows_explicitly_excluded": 39
+      },
+      "lengths": {
+        "test": 170588,
+        "train": 1141112,
+        "valid": 124909
+      },
+      "provenance": {
+        "definitions_redesigned": false,
+        "iter63_data": "experiments/iter63_decay_tab_rate/data_ext.py",
+        "iter63_data_sha256": "49890ee258b4f4dd99007c0fd5e9eb8dc7897d3718c12e7cc7044a1c5f606545",
+        "iter63_train": "experiments/iter63_decay_tab_rate/train.py",
+        "iter63_train_sha256": "147213c5cc4f1001c336eceb8821e4069d76929992ffa725b36cd036b1fda8c8",
+        "yixi4_feature_source": "experiments/iterYIXI2_feature_depth/features.py",
+        "yixi4_feature_source_sha256": "bef9dab34fc7c159f561ed95f1ca2542627857ec0d54104f9934378d68a90b14"
+      }
+    },
+    "causality": {
+      "checks": [
+        {
+          "date": 20220428,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 1.1102230246251565e-16,
+            "hist_watch_decay_mean_5": 5.551115123125783e-17,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 0.0
+          },
+          "max_abs_error": 1.1102230246251565e-16,
+          "row_index": 1213849,
+          "same_date_earlier_rows_included": 0,
+          "same_date_equal_or_later_rows_excluded": 1,
+          "same_timestamp_rows_explicitly_excluded": 1,
+          "strict_prior_count": 121,
+          "time_ms": 1651150710456
+        },
+        {
+          "date": 20220427,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 1.3877787807814457e-17,
+            "hist_watch_decay_mean_5": 1.1102230246251565e-16,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 0.0
+          },
+          "max_abs_error": 1.1102230246251565e-16,
+          "row_index": 1220070,
+          "same_date_earlier_rows_included": 3,
+          "same_date_equal_or_later_rows_excluded": 2,
+          "same_timestamp_rows_explicitly_excluded": 0,
+          "strict_prior_count": 36,
+          "time_ms": 1651053451536
+        },
+        {
+          "date": 20220426,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 8.326672684688674e-17,
+            "hist_watch_decay_mean_5": 1.1102230246251565e-16,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 5.551115123125783e-17
+          },
+          "max_abs_error": 1.1102230246251565e-16,
+          "row_index": 1239509,
+          "same_date_earlier_rows_included": 0,
+          "same_date_equal_or_later_rows_excluded": 0,
+          "same_timestamp_rows_explicitly_excluded": 0,
+          "strict_prior_count": 79,
+          "time_ms": 1650925238700
+        },
+        {
+          "date": 20220422,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 2.7755575615628914e-16,
+            "hist_watch_decay_mean_5": 1.1102230246251565e-16,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 5.551115123125783e-17
+          },
+          "max_abs_error": 2.7755575615628914e-16,
+          "row_index": 1185349,
+          "same_date_earlier_rows_included": 2,
+          "same_date_equal_or_later_rows_excluded": 1,
+          "same_timestamp_rows_explicitly_excluded": 0,
+          "strict_prior_count": 126,
+          "time_ms": 1650633879235
+        },
+        {
+          "date": 20220427,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 0.0,
+            "hist_watch_decay_mean_5": 0.0,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 1.6653345369377348e-16
+          },
+          "max_abs_error": 1.6653345369377348e-16,
+          "row_index": 1258662,
+          "same_date_earlier_rows_included": 0,
+          "same_date_equal_or_later_rows_excluded": 2,
+          "same_timestamp_rows_explicitly_excluded": 0,
+          "strict_prior_count": 112,
+          "time_ms": 1651028918145
+        },
+        {
+          "date": 20220425,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 5.551115123125783e-17,
+            "hist_watch_decay_mean_5": 5.551115123125783e-17,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 1.1102230246251565e-16
+          },
+          "max_abs_error": 1.1102230246251565e-16,
+          "row_index": 1244729,
+          "same_date_earlier_rows_included": 2,
+          "same_date_equal_or_later_rows_excluded": 0,
+          "same_timestamp_rows_explicitly_excluded": 0,
+          "strict_prior_count": 21,
+          "time_ms": 1650871057884
+        },
+        {
+          "date": 20220424,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 3.469446951953614e-18,
+            "hist_watch_decay_mean_5": 2.0816681711721685e-17,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 1.3877787807814457e-17
+          },
+          "max_abs_error": 2.0816681711721685e-17,
+          "row_index": 1177417,
+          "same_date_earlier_rows_included": 2,
+          "same_date_equal_or_later_rows_excluded": 2,
+          "same_timestamp_rows_explicitly_excluded": 0,
+          "strict_prior_count": 113,
+          "time_ms": 1650784966272
+        },
+        {
+          "date": 20220422,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 1.1102230246251565e-16,
+            "hist_watch_decay_mean_5": 0.0,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 1.3877787807814457e-17
+          },
+          "max_abs_error": 1.1102230246251565e-16,
+          "row_index": 1239214,
+          "same_date_earlier_rows_included": 0,
+          "same_date_equal_or_later_rows_excluded": 1,
+          "same_timestamp_rows_explicitly_excluded": 0,
+          "strict_prior_count": 12,
+          "time_ms": 1650599987437
+        },
+        {
+          "date": 20220425,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 5.551115123125783e-17,
+            "hist_watch_decay_mean_5": 5.551115123125783e-17,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 0.0
+          },
+          "max_abs_error": 5.551115123125783e-17,
+          "row_index": 1177080,
+          "same_date_earlier_rows_included": 1,
+          "same_date_equal_or_later_rows_excluded": 0,
+          "same_timestamp_rows_explicitly_excluded": 0,
+          "strict_prior_count": 35,
+          "time_ms": 1650879452715
+        },
+        {
+          "date": 20220428,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 2.7755575615628914e-17,
+            "hist_watch_decay_mean_5": 2.7755575615628914e-17,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 1.3877787807814457e-16
+          },
+          "max_abs_error": 1.3877787807814457e-16,
+          "row_index": 1189756,
+          "same_date_earlier_rows_included": 2,
+          "same_date_equal_or_later_rows_excluded": 0,
+          "same_timestamp_rows_explicitly_excluded": 0,
+          "strict_prior_count": 119,
+          "time_ms": 1651087104748
+        },
+        {
+          "date": 20220424,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 6.938893903907228e-18,
+            "hist_watch_decay_mean_5": 1.3877787807814457e-17,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 5.551115123125783e-17
+          },
+          "max_abs_error": 5.551115123125783e-17,
+          "row_index": 1145720,
+          "same_date_earlier_rows_included": 1,
+          "same_date_equal_or_later_rows_excluded": 2,
+          "same_timestamp_rows_explicitly_excluded": 0,
+          "strict_prior_count": 160,
+          "time_ms": 1650768431711
+        },
+        {
+          "date": 20220426,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 5.551115123125783e-17,
+            "hist_watch_decay_mean_5": 0.0,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 2.7755575615628914e-17
+          },
+          "max_abs_error": 5.551115123125783e-17,
+          "row_index": 1254897,
+          "same_date_earlier_rows_included": 4,
+          "same_date_equal_or_later_rows_excluded": 3,
+          "same_timestamp_rows_explicitly_excluded": 1,
+          "strict_prior_count": 198,
+          "time_ms": 1650976262604
+        },
+        {
+          "date": 20220423,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 0.0,
+            "hist_watch_decay_mean_5": 1.6653345369377348e-16,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 0.0
+          },
+          "max_abs_error": 1.6653345369377348e-16,
+          "row_index": 1141126,
+          "same_date_earlier_rows_included": 0,
+          "same_date_equal_or_later_rows_excluded": 1,
+          "same_timestamp_rows_explicitly_excluded": 1,
+          "strict_prior_count": 56,
+          "time_ms": 1650722026682
+        },
+        {
+          "date": 20220427,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 0.0,
+            "hist_watch_decay_mean_5": 2.7755575615628914e-17,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 0.0
+          },
+          "max_abs_error": 2.7755575615628914e-17,
+          "row_index": 1141144,
+          "same_date_earlier_rows_included": 1,
+          "same_date_equal_or_later_rows_excluded": 1,
+          "same_timestamp_rows_explicitly_excluded": 1,
+          "strict_prior_count": 104,
+          "time_ms": 1651068654698
+        },
+        {
+          "date": 20220428,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 0.0,
+            "hist_watch_decay_mean_5": 0.0,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 0.0
+          },
+          "max_abs_error": 0.0,
+          "row_index": 1141160,
+          "same_date_earlier_rows_included": 1,
+          "same_date_equal_or_later_rows_excluded": 1,
+          "same_timestamp_rows_explicitly_excluded": 1,
+          "strict_prior_count": 29,
+          "time_ms": 1651159091290
+        },
+        {
+          "date": 20220422,
+          "errors": {
+            "hist_watch_decay_mean_2.5": 1.6653345369377348e-16,
+            "hist_watch_decay_mean_5": 2.220446049250313e-16,
+            "hist_watch_last5_mean": 0.0,
+            "hist_watch_tab_decay_mean_3": 0.0
+          },
+          "max_abs_error": 2.220446049250313e-16,
+          "row_index": 1141172,
+          "same_date_earlier_rows_included": 1,
+          "same_date_equal_or_later_rows_excluded": 0,
+          "same_timestamp_rows_explicitly_excluded": 1,
+          "strict_prior_count": 62,
+          "time_ms": 1650642130406
+        }
+      ],
+      "current_row_outcome_access": "none; snapshot precedes group update",
+      "global_max_abs_error": 2.7755575615628914e-16,
+      "method": "independent brute-force recomputation over time_ms < target_time_ms",
+      "passed": true,
+      "random_seed": 20260901,
+      "real_exact_timestamp_groups": 90386,
+      "real_exact_timestamp_rows": 187073,
+      "real_tied_targets_checked": 4,
+      "rows_checked": 16,
+      "same_date_earlier_inclusion_exercised": true,
+      "synthetic_same_timestamp_stress_test": "passed; tied rows saw no values from one another and the later row saw their mean"
+    },
+    "feature_definitions": {
+      "hist_watch_decay_mean_2.5": "timestamp-decayed mean clipped watch fraction, user history, 2.5-day half-life",
+      "hist_watch_decay_mean_5": "timestamp-decayed mean clipped watch fraction, user history, 5-day half-life",
+      "hist_watch_last5_mean": "mean defined clipped fractions among the five strictly-prior interactions; invalid-duration rows occupy window positions but do not enter the mean",
+      "hist_watch_tab_decay_mean_3": "timestamp-decayed mean clipped watch fraction for matching user/tab history, 3-day half-life"
+    },
+    "lengths": {
+      "test": 170588,
+      "train": 1141112,
+      "valid": 124909
+    },
+    "ordering": "per user by time_ms; all exact time_ms ties read before group update; orig_idx orders tied rows only for future last-five windows",
+    "provenance": {
+      "base_features": "experiments/iterYIXI6_cross_model_feature_transfer/features.py",
+      "base_features_sha256": "49fc1b6b9304c4b0fc2d49e67ea16da909c7a0b09cc29f97b7c7d8642980c027",
+      "raw_files": {
+        "log_standard_4_08_to_4_21_pure.csv": "5bb6eb0b3d9f47e5436cb5dc82ee1899b845ebf9750a5560b801e929e18bd41c",
+        "log_standard_4_22_to_5_08_pure.csv": "429e3b948828942e572f2c3a5be5a25799ffe75591d22d18cf417b9b534d31fd"
+      }
+    },
+    "watch_fraction_distribution": {
+      "clipped_quantiles": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.25": 0.016612849374138886,
+        "0.5": 0.10041718704328648,
+        "0.75": 0.6366088368985283,
+        "0.9": 1.0,
+        "0.95": 1.0,
+        "0.99": 1.0,
+        "1.0": 1.0
+      },
+      "defined_fraction_rows": 1407735,
+      "negative_duration_rows": 0,
+      "negative_play_rows": 0,
+      "policy": {
+        "clipping": "clip to [0, 1] because completion saturates at 1 and the raw upper tail reaches 68.31",
+        "current_row_play_time": "never read into its own feature; update occurs only after feature snapshot",
+        "defined": "play_time_ms / duration_ms when duration_ms > 0",
+        "duration_ms_equal_0": "undefined; row stays in interaction ordering but does not update watch-value numerator/denominator"
+      },
+      "raw_fraction_gt_1_rate": 0.15252799710172724,
+      "raw_fraction_gt_1_rows": 214719,
+      "raw_fraction_gt_2_rate": 0.012395088564253925,
+      "raw_fraction_gt_5_rate": 0.0010179472699052023,
+      "raw_quantiles": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.25": 0.016612849374138886,
+        "0.5": 0.10041718704328648,
+        "0.75": 0.6366088368985283,
+        "0.9": 1.0366634407801683,
+        "0.95": 1.1510234734447569,
+        "0.99": 2.0897408741840544,
+        "0.999": 5.042427621999991,
+        "1.0": 68.31012555030165
+      },
+      "rows": 1436609,
+      "zero_duration_rows_excluded_from_history_updates": 28874
+    }
+  },
+  "passed": true,
+  "references": {
+    "ensemble": {
+      "GAUC": 0.7744517922401428,
+      "nDCG@5": 0.5938588976860046,
+      "primary": 0.6841553449630737,
+      "rows": 124909,
+      "users": 22377
+    },
+    "lightgbm": {
+      "GAUC": 0.7646524310112,
+      "nDCG@5": 0.5891302824020386,
+      "primary": 0.6768913269042969,
+      "rows": 124909,
+      "users": 22377
+    },
+    "xgboost": {
+      "GAUC": 0.7547547221183777,
+      "nDCG@5": 0.5847681760787964,
+      "primary": 0.6697614192962646,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "test_metrics_computed": false,
+  "tolerance": 1e-08
+}

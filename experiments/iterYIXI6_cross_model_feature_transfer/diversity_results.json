@@ -1,0 +1,46 @@
+{
+  "correlation_change": 0.026526690293153576,
+  "current_tree_rank_correlation": 0.7868585718690613,
+  "experiment": "iterYIXI6_post_selection_diversity_diagnostic",
+  "method": "Pearson correlation of within-user average-tie percentile scores",
+  "selected_tree_rank_correlation": 0.8133852621622149,
+  "selection_effect": "none; verdict was frozen before this diagnostic",
+  "split": "validation only",
+  "standalone_valid": {
+    "current_lgb": {
+      "GAUC": 0.7588735222816467,
+      "nDCG@5": 0.5844839215278625,
+      "primary": 0.6716787219047546,
+      "rows": 124909,
+      "users": 22377
+    },
+    "current_xgb": {
+      "GAUC": 0.7519985437393188,
+      "nDCG@5": 0.5831098556518555,
+      "primary": 0.6675541996955872,
+      "rows": 124909,
+      "users": 22377
+    },
+    "selected_lgb": {
+      "GAUC": 0.7609431743621826,
+      "nDCG@5": 0.5852912664413452,
+      "primary": 0.6731172204017639,
+      "rows": 124909,
+      "users": 22377
+    },
+    "selected_xgb": {
+      "GAUC": 0.7547547221183777,
+      "nDCG@5": 0.5847681760787964,
+      "primary": 0.6697614192962646,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "test_accessed": false,
+  "within_model_rank_change": {
+    "lgb_current_vs_selected_correlation": 0.9556870067644001,
+    "lgb_mean_absolute_percentile_change": 0.03296785702795576,
+    "xgb_current_vs_selected_correlation": 0.9284938436658006,
+    "xgb_mean_absolute_percentile_change": 0.04739552363039454
+  }
+}

@@ -1,0 +1,2366 @@
+{
+  "artifact_and_confound_checks": {
+    "changed_parameters_only": {
+      "early_stopping_rounds": {
+        "reference": 30,
+        "selected": 120
+      },
+      "learning_rate": {
+        "reference": 0.05,
+        "selected": 0.025
+      },
+      "n_estimators": {
+        "reference": 500,
+        "selected": 1000
+      }
+    },
+    "constant_valid": {
+      "GAUC": 0.5,
+      "nDCG@5": 0.4673425257205963,
+      "primary": 0.48367124795913696,
+      "rows": 124909,
+      "users": 22377
+    },
+    "exact_feature_columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_tab_3",
+      "lastk_rate",
+      "gap",
+      "decay_rate_5",
+      "decay_act_5"
+    ],
+    "feature_width": 11,
+    "metric_delta_vs_reference": {
+      "GAUC": 0.0015023350715637207,
+      "nDCG@5": 0.0006250143051147461,
+      "primary": 0.0010636448860168457
+    },
+    "random_valid": {
+      "GAUC": 0.49903032183647156,
+      "nDCG@5": 0.466287761926651,
+      "primary": 0.4826590418815613,
+      "rows": 124909,
+      "users": 22377
+    },
+    "rejected_6d_features_absent": true,
+    "selected_ties": {
+      "mean_per_user_unique_fraction": 0.9362812859317556,
+      "rows": 124909,
+      "unique_scores_overall": 15776
+    }
+  },
+  "environment": {
+    "numpy": "2.4.3",
+    "python": "3.13.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterYIXI5_xgboost_optimization_standalone",
+  "five_seed_confirmation": {
+    "confirmed": true,
+    "mean_delta": 0.0010636448860168457,
+    "min_delta": 0.0010636448860168457,
+    "performed": true,
+    "rows": [
+      {
+        "candidate_valid": {
+          "GAUC": 0.7519985437393188,
+          "nDCG@5": 0.5831098556518555,
+          "primary": 0.6675541996955872,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.0010636448860168457,
+        "reference_valid": {
+          "GAUC": 0.7504962086677551,
+          "nDCG@5": 0.5824848413467407,
+          "primary": 0.6664905548095703,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 0
+      },
+      {
+        "candidate_valid": {
+          "GAUC": 0.7519985437393188,
+          "nDCG@5": 0.5831098556518555,
+          "primary": 0.6675541996955872,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.0010636448860168457,
+        "reference_valid": {
+          "GAUC": 0.7504962086677551,
+          "nDCG@5": 0.5824848413467407,
+          "primary": 0.6664905548095703,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 1
+      },
+      {
+        "candidate_valid": {
+          "GAUC": 0.7519985437393188,
+          "nDCG@5": 0.5831098556518555,
+          "primary": 0.6675541996955872,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.0010636448860168457,
+        "reference_valid": {
+          "GAUC": 0.7504962086677551,
+          "nDCG@5": 0.5824848413467407,
+          "primary": 0.6664905548095703,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 2
+      },
+      {
+        "candidate_valid": {
+          "GAUC": 0.7519985437393188,
+          "nDCG@5": 0.5831098556518555,
+          "primary": 0.6675541996955872,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.0010636448860168457,
+        "reference_valid": {
+          "GAUC": 0.7504962086677551,
+          "nDCG@5": 0.5824848413467407,
+          "primary": 0.6664905548095703,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 3
+      },
+      {
+        "candidate_valid": {
+          "GAUC": 0.7519985437393188,
+          "nDCG@5": 0.5831098556518555,
+          "primary": 0.6675541996955872,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.0010636448860168457,
+        "reference_valid": {
+          "GAUC": 0.7504962086677551,
+          "nDCG@5": 0.5824848413467407,
+          "primary": 0.6664905548095703,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 4
+      }
+    ],
+    "std_delta": 0.0
+  },
+  "phases": [
+    {
+      "candidates": [
+        {
+          "best_internal_ndcg_at_5_minus": 0.5738873976103271,
+          "best_iteration": 194,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 30,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.05,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 2,
+            "min_child_weight": 1.0,
+            "n_estimators": 500,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.014084219932556152,
+          "delta_vs_reference": -0.014084219932556152,
+          "feature_gain_fraction": {
+            "author_id": 0.06817799113951042,
+            "decay_act_5": 0.0632626845989897,
+            "decay_rate_5": 0.08832077341282171,
+            "decay_tab_3": 0.15258981530123178,
+            "duration_ms": 0.07791570471527462,
+            "gap": 0.05673631741757446,
+            "last1": 0.08979986317943421,
+            "lastk_rate": 0.10267536420343215,
+            "tab": 0.2036706000098925,
+            "user_id": 0.04479155103836644,
+            "video_id": 0.052059334983471955
+          },
+          "name": "max_depth_2",
+          "phase": "tree_capacity",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7309234738349915,
+            "nDCG@5": 0.5738892555236816,
+            "primary": 0.6524063348770142,
+            "rows": 124909,
+            "users": 22377
+          }
+        }
+      ],
+      "carried": false,
+      "decision": "abandon axis as noise",
+      "end_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 30,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.05,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 500,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "post_6d_h5_reference",
+        "valid_primary": 0.6664905548095703
+      },
+      "name": "tree_capacity",
+      "raw_winner": "max_depth_2",
+      "raw_winner_gain_vs_phase_start": -0.014084219932556152,
+      "start_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 30,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.05,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 500,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "post_6d_h5_reference",
+        "valid_primary": 0.6664905548095703
+      }
+    },
+    {
+      "candidates": [
+        {
+          "best_internal_ndcg_at_5_minus": 0.5803050076872419,
+          "best_iteration": 248,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 30,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.1,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 250,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.002281367778778076,
+          "delta_vs_reference": -0.002281367778778076,
+          "feature_gain_fraction": {
+            "author_id": 0.10661950611020132,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.11446680699358322,
+            "decay_tab_3": 0.14153019153621274,
+            "duration_ms": 0.12076691991833526,
+            "gap": 0.0604108724822984,
+            "last1": 0.04620925148818687,
+            "lastk_rate": 0.11216888588614478,
+            "tab": 0.21817222808618753,
+            "user_id": 0.0,
+            "video_id": 0.07965533749884987
+          },
+          "name": "lr_0.10_trees_250",
+          "phase": "boosting_rate_and_trees",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7481110692024231,
+            "nDCG@5": 0.5803073048591614,
+            "primary": 0.6642091870307922,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5824484822494914,
+          "best_iteration": 309,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 30,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.075,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 400,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": 0.0007582306861877441,
+          "delta_vs_reference": 0.0007582306861877441,
+          "feature_gain_fraction": {
+            "author_id": 0.12848966768117803,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.1064934058524399,
+            "decay_tab_3": 0.14113879755309924,
+            "duration_ms": 0.10834086347781591,
+            "gap": 0.058499936173515676,
+            "last1": 0.0684642704540308,
+            "lastk_rate": 0.10799574807364239,
+            "tab": 0.21080556308435364,
+            "user_id": 0.0,
+            "video_id": 0.06977174764992441
+          },
+          "name": "lr_0.075_trees_400",
+          "phase": "boosting_rate_and_trees",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7520456314086914,
+            "nDCG@5": 0.5824519395828247,
+            "primary": 0.6672487854957581,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5587808809323975,
+          "best_iteration": 148,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 30,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.03802323341369629,
+          "delta_vs_reference": -0.03802323341369629,
+          "feature_gain_fraction": {
+            "author_id": 0.12276216417696191,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.14868944578382434,
+            "decay_tab_3": 0.1279119716372238,
+            "duration_ms": 0.14930910144533402,
+            "gap": 0.0,
+            "last1": 0.0,
+            "lastk_rate": 0.10641612458997829,
+            "tab": 0.19202228881239847,
+            "user_id": 0.0,
+            "video_id": 0.15288890355427917
+          },
+          "name": "lr_0.025_trees_1000",
+          "phase": "boosting_rate_and_trees",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.6981521844863892,
+            "nDCG@5": 0.5587823987007141,
+            "primary": 0.628467321395874,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5831063779544186,
+          "best_iteration": 791,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": 0.0010636448860168457,
+          "delta_vs_reference": 0.0010636448860168457,
+          "feature_gain_fraction": {
+            "author_id": 0.10900883012844152,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10807902435458003,
+            "decay_tab_3": 0.1430972745157711,
+            "duration_ms": 0.09674547435164209,
+            "gap": 0.059358267812710516,
+            "last1": 0.08704147175650606,
+            "lastk_rate": 0.11014965858159056,
+            "tab": 0.21120981824993473,
+            "user_id": 0.0,
+            "video_id": 0.0753101802488234
+          },
+          "name": "lr_0.025_trees_1000_patience_120",
+          "phase": "boosting_rate_and_trees",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7519985437393188,
+            "nDCG@5": 0.5831098556518555,
+            "primary": 0.6675541996955872,
+            "rows": 124909,
+            "users": 22377
+          }
+        }
+      ],
+      "carried": true,
+      "decision": "carry validation winner",
+      "end_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      },
+      "name": "boosting_rate_and_trees",
+      "raw_winner": "lr_0.025_trees_1000_patience_120",
+      "raw_winner_gain_vs_phase_start": 0.0010636448860168457,
+      "start_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 30,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.05,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 500,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "post_6d_h5_reference",
+        "valid_primary": 0.6664905548095703
+      }
+    },
+    {
+      "candidates": [
+        {
+          "best_internal_ndcg_at_5_minus": 0.5831063779544186,
+          "best_iteration": 791,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 0.5,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": 0.0,
+          "delta_vs_reference": 0.0010636448860168457,
+          "feature_gain_fraction": {
+            "author_id": 0.10900883012844152,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10807902435458003,
+            "decay_tab_3": 0.1430972745157711,
+            "duration_ms": 0.09674547435164209,
+            "gap": 0.059358267812710516,
+            "last1": 0.08704147175650606,
+            "lastk_rate": 0.11014965858159056,
+            "tab": 0.21120981824993473,
+            "user_id": 0.0,
+            "video_id": 0.0753101802488234
+          },
+          "name": "min_child_0.5",
+          "phase": "min_child_weight",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7519985437393188,
+            "nDCG@5": 0.5831098556518555,
+            "primary": 0.6675541996955872,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5831063779544186,
+          "best_iteration": 791,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 2.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": 0.0,
+          "delta_vs_reference": 0.0010636448860168457,
+          "feature_gain_fraction": {
+            "author_id": 0.10900883012844152,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10807902435458003,
+            "decay_tab_3": 0.1430972745157711,
+            "duration_ms": 0.09674547435164209,
+            "gap": 0.059358267812710516,
+            "last1": 0.08704147175650606,
+            "lastk_rate": 0.11014965858159056,
+            "tab": 0.21120981824993473,
+            "user_id": 0.0,
+            "video_id": 0.0753101802488234
+          },
+          "name": "min_child_2",
+          "phase": "min_child_weight",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7519985437393188,
+            "nDCG@5": 0.5831098556518555,
+            "primary": 0.6675541996955872,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5831063779544186,
+          "best_iteration": 791,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 5.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": 0.0,
+          "delta_vs_reference": 0.0010636448860168457,
+          "feature_gain_fraction": {
+            "author_id": 0.10900883012844152,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10807902435458003,
+            "decay_tab_3": 0.1430972745157711,
+            "duration_ms": 0.09674547435164209,
+            "gap": 0.059358267812710516,
+            "last1": 0.08704147175650606,
+            "lastk_rate": 0.11014965858159056,
+            "tab": 0.21120981824993473,
+            "user_id": 0.0,
+            "video_id": 0.0753101802488234
+          },
+          "name": "min_child_5",
+          "phase": "min_child_weight",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7519985437393188,
+            "nDCG@5": 0.5831098556518555,
+            "primary": 0.6675541996955872,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5831063779544186,
+          "best_iteration": 791,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 10.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": 0.0,
+          "delta_vs_reference": 0.0010636448860168457,
+          "feature_gain_fraction": {
+            "author_id": 0.10900883012844152,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10807902435458003,
+            "decay_tab_3": 0.1430972745157711,
+            "duration_ms": 0.09674547435164209,
+            "gap": 0.059358267812710516,
+            "last1": 0.08704147175650606,
+            "lastk_rate": 0.11014965858159056,
+            "tab": 0.21120981824993473,
+            "user_id": 0.0,
+            "video_id": 0.0753101802488234
+          },
+          "name": "min_child_10",
+          "phase": "min_child_weight",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7519985437393188,
+            "nDCG@5": 0.5831098556518555,
+            "primary": 0.6675541996955872,
+            "rows": 124909,
+            "users": 22377
+          }
+        }
+      ],
+      "carried": false,
+      "decision": "abandon axis as noise",
+      "end_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      },
+      "name": "min_child_weight",
+      "raw_winner": "min_child_0.5",
+      "raw_winner_gain_vs_phase_start": 0.0,
+      "start_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      }
+    },
+    {
+      "candidates": [
+        {
+          "best_internal_ndcg_at_5_minus": 0.5831063779544186,
+          "best_iteration": 791,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.01,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": 0.0,
+          "delta_vs_reference": 0.0010636448860168457,
+          "feature_gain_fraction": {
+            "author_id": 0.10900883012844152,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10807902435458003,
+            "decay_tab_3": 0.1430972745157711,
+            "duration_ms": 0.09674547435164209,
+            "gap": 0.059358267812710516,
+            "last1": 0.08704147175650606,
+            "lastk_rate": 0.11014965858159056,
+            "tab": 0.21120981824993473,
+            "user_id": 0.0,
+            "video_id": 0.0753101802488234
+          },
+          "name": "gamma_0.01",
+          "phase": "gamma",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7519985437393188,
+            "nDCG@5": 0.5831098556518555,
+            "primary": 0.6675541996955872,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5831063779544186,
+          "best_iteration": 791,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.05,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": 0.0,
+          "delta_vs_reference": 0.0010636448860168457,
+          "feature_gain_fraction": {
+            "author_id": 0.10900883012844152,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10807902435458003,
+            "decay_tab_3": 0.1430972745157711,
+            "duration_ms": 0.09674547435164209,
+            "gap": 0.059358267812710516,
+            "last1": 0.08704147175650606,
+            "lastk_rate": 0.11014965858159056,
+            "tab": 0.21120981824993473,
+            "user_id": 0.0,
+            "video_id": 0.0753101802488234
+          },
+          "name": "gamma_0.05",
+          "phase": "gamma",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7519985437393188,
+            "nDCG@5": 0.5831098556518555,
+            "primary": 0.6675541996955872,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5831063779544186,
+          "best_iteration": 791,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.1,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": 0.0,
+          "delta_vs_reference": 0.0010636448860168457,
+          "feature_gain_fraction": {
+            "author_id": 0.10900883012844152,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10807902435458003,
+            "decay_tab_3": 0.1430972745157711,
+            "duration_ms": 0.09674547435164209,
+            "gap": 0.059358267812710516,
+            "last1": 0.08704147175650606,
+            "lastk_rate": 0.11014965858159056,
+            "tab": 0.21120981824993473,
+            "user_id": 0.0,
+            "video_id": 0.0753101802488234
+          },
+          "name": "gamma_0.1",
+          "phase": "gamma",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7519985437393188,
+            "nDCG@5": 0.5831098556518555,
+            "primary": 0.6675541996955872,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5831063779544186,
+          "best_iteration": 791,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.5,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": 0.0,
+          "delta_vs_reference": 0.0010636448860168457,
+          "feature_gain_fraction": {
+            "author_id": 0.10900883012844152,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10807902435458003,
+            "decay_tab_3": 0.1430972745157711,
+            "duration_ms": 0.09674547435164209,
+            "gap": 0.059358267812710516,
+            "last1": 0.08704147175650606,
+            "lastk_rate": 0.11014965858159056,
+            "tab": 0.21120981824993473,
+            "user_id": 0.0,
+            "video_id": 0.0753101802488234
+          },
+          "name": "gamma_0.5",
+          "phase": "gamma",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7519985437393188,
+            "nDCG@5": 0.5831098556518555,
+            "primary": 0.6675541996955872,
+            "rows": 124909,
+            "users": 22377
+          }
+        }
+      ],
+      "carried": false,
+      "decision": "abandon axis as noise",
+      "end_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      },
+      "name": "gamma",
+      "raw_winner": "gamma_0.01",
+      "raw_winner_gain_vs_phase_start": 0.0,
+      "start_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      }
+    },
+    {
+      "candidates": [
+        {
+          "best_internal_ndcg_at_5_minus": 0.5818195303890032,
+          "best_iteration": 912,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 0.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.0017812848091125488,
+          "delta_vs_reference": -0.0007176399230957031,
+          "feature_gain_fraction": {
+            "author_id": 0.0,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.12642781475090706,
+            "decay_tab_3": 0.1862409529424555,
+            "duration_ms": 0.11300418462729953,
+            "gap": 0.06402505662732366,
+            "last1": 0.10834762558347165,
+            "lastk_rate": 0.14056375678384042,
+            "tab": 0.2613906086847022,
+            "user_id": 0.0,
+            "video_id": 0.0
+          },
+          "name": "lambda_0",
+          "phase": "reg_lambda",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7497232556343079,
+            "nDCG@5": 0.5818225741386414,
+            "primary": 0.6657729148864746,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.583175813967289,
+          "best_iteration": 837,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 0.25,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.0004760622978210449,
+          "delta_vs_reference": 0.0005875825881958008,
+          "feature_gain_fraction": {
+            "author_id": 0.06873205885961267,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.11008447369766279,
+            "decay_tab_3": 0.15417996236654366,
+            "duration_ms": 0.10523000551404676,
+            "gap": 0.05982561098203406,
+            "last1": 0.08834563893271756,
+            "lastk_rate": 0.11792504609252104,
+            "tab": 0.22391427215657314,
+            "user_id": 0.0,
+            "video_id": 0.07176293139828835
+          },
+          "name": "lambda_0.25",
+          "phase": "reg_lambda",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7509769797325134,
+            "nDCG@5": 0.5831792950630188,
+            "primary": 0.6670781373977661,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5828098492342314,
+          "best_iteration": 725,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 0.5,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.0008949637413024902,
+          "delta_vs_reference": 0.00016868114471435547,
+          "feature_gain_fraction": {
+            "author_id": 0.09528221927707985,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.11196914710014105,
+            "decay_tab_3": 0.14395422484422807,
+            "duration_ms": 0.10284875337421874,
+            "gap": 0.06479839458449596,
+            "last1": 0.08184530578502236,
+            "lastk_rate": 0.11075805934908224,
+            "tab": 0.2133413853799174,
+            "user_id": 0.0,
+            "video_id": 0.07520251030581433
+          },
+          "name": "lambda_0.5",
+          "phase": "reg_lambda",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.750505268573761,
+            "nDCG@5": 0.5828132033348083,
+            "primary": 0.6666592359542847,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5768239903505035,
+          "best_iteration": 938,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 2.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.007696747779846191,
+          "delta_vs_reference": -0.006633102893829346,
+          "feature_gain_fraction": {
+            "author_id": 0.17760016613230853,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.11143810276792196,
+            "decay_tab_3": 0.14083507882517748,
+            "duration_ms": 0.09542504702023202,
+            "gap": 0.062091694849982816,
+            "last1": 0.0,
+            "lastk_rate": 0.1056916564443498,
+            "tab": 0.220629678823798,
+            "user_id": 0.0,
+            "video_id": 0.08628857513622941
+          },
+          "name": "lambda_2",
+          "phase": "reg_lambda",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.742888867855072,
+            "nDCG@5": 0.5768260359764099,
+            "primary": 0.659857451915741,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5757789013913248,
+          "best_iteration": 712,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 4.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.009792149066925049,
+          "delta_vs_reference": -0.008728504180908203,
+          "feature_gain_fraction": {
+            "author_id": 0.1738480250564037,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.1081559892161498,
+            "decay_tab_3": 0.1258823196342182,
+            "duration_ms": 0.08689186308391797,
+            "gap": 0.06554763400653622,
+            "last1": 0.0,
+            "lastk_rate": 0.10111597097568135,
+            "tab": 0.21800327963701233,
+            "user_id": 0.0,
+            "video_id": 0.12055491839008041
+          },
+          "name": "lambda_4",
+          "phase": "reg_lambda",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7397425174713135,
+            "nDCG@5": 0.575781524181366,
+            "primary": 0.6577620506286621,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5698761145619051,
+          "best_iteration": 675,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 10.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.016537964344024658,
+          "delta_vs_reference": -0.015474319458007812,
+          "feature_gain_fraction": {
+            "author_id": 0.16737437583248116,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10129911408206817,
+            "decay_tab_3": 0.10830504726017398,
+            "duration_ms": 0.09217080109531332,
+            "gap": 0.052559065048225447,
+            "last1": 0.0,
+            "lastk_rate": 0.08776306589941084,
+            "tab": 0.2179335997199885,
+            "user_id": 0.0,
+            "video_id": 0.1725949310623386
+          },
+          "name": "lambda_10",
+          "phase": "reg_lambda",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7321547269821167,
+            "nDCG@5": 0.5698778033256531,
+            "primary": 0.6510162353515625,
+            "rows": 124909,
+            "users": 22377
+          }
+        }
+      ],
+      "carried": false,
+      "decision": "abandon axis as noise",
+      "end_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      },
+      "name": "reg_lambda",
+      "raw_winner": "lambda_0.25",
+      "raw_winner_gain_vs_phase_start": -0.0004760622978210449,
+      "start_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      }
+    },
+    {
+      "candidates": [
+        {
+          "best_internal_ndcg_at_5_minus": 0.5830787597648092,
+          "best_iteration": 747,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.01,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.00017458200454711914,
+          "delta_vs_reference": 0.0008890628814697266,
+          "feature_gain_fraction": {
+            "author_id": 0.11447629559425776,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10935910412532662,
+            "decay_tab_3": 0.14172299349156858,
+            "duration_ms": 0.10062345132156957,
+            "gap": 0.06216249487209381,
+            "last1": 0.08408395599671364,
+            "lastk_rate": 0.11051929847417163,
+            "tab": 0.20907431480595778,
+            "user_id": 0.0,
+            "video_id": 0.06797809131834061
+          },
+          "name": "alpha_0.01",
+          "phase": "reg_alpha",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7516770362854004,
+            "nDCG@5": 0.5830822587013245,
+            "primary": 0.66737961769104,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.582454924556025,
+          "best_iteration": 858,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.1,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.0004292130470275879,
+          "delta_vs_reference": 0.0006344318389892578,
+          "feature_gain_fraction": {
+            "author_id": 0.1080863146822392,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10911405440547492,
+            "decay_tab_3": 0.14389098117524748,
+            "duration_ms": 0.09623575490179162,
+            "gap": 0.058238998973753044,
+            "last1": 0.08933380762295884,
+            "lastk_rate": 0.11153084162392565,
+            "tab": 0.21324720428086485,
+            "user_id": 0.0,
+            "video_id": 0.07032204233374438
+          },
+          "name": "alpha_0.1",
+          "phase": "reg_alpha",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7517919540405273,
+            "nDCG@5": 0.5824580788612366,
+            "primary": 0.6671249866485596,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.577570260624852,
+          "best_iteration": 875,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.5,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.006989121437072754,
+          "delta_vs_reference": -0.005925476551055908,
+          "feature_gain_fraction": {
+            "author_id": 0.17810675482896943,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10952982446233185,
+            "decay_tab_3": 0.13005436666490375,
+            "duration_ms": 0.10703224506804171,
+            "gap": 0.06479600963030062,
+            "last1": 0.0,
+            "lastk_rate": 0.10679202959929861,
+            "tab": 0.21926813782206336,
+            "user_id": 0.0,
+            "video_id": 0.08442063192409069
+          },
+          "name": "alpha_0.5",
+          "phase": "reg_alpha",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.743557870388031,
+            "nDCG@5": 0.5775722861289978,
+            "primary": 0.6605650782585144,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5730367892570706,
+          "best_iteration": 554,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 1.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.012275874614715576,
+          "delta_vs_reference": -0.01121222972869873,
+          "feature_gain_fraction": {
+            "author_id": 0.19087314612423384,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.11907757262459051,
+            "decay_tab_3": 0.1319775990770297,
+            "duration_ms": 0.12692943174697288,
+            "gap": 0.0,
+            "last1": 0.0,
+            "lastk_rate": 0.10557398752730028,
+            "tab": 0.22386313911510242,
+            "user_id": 0.0,
+            "video_id": 0.10170512378477038
+          },
+          "name": "alpha_1",
+          "phase": "reg_alpha",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7375180721282959,
+            "nDCG@5": 0.573038637638092,
+            "primary": 0.6552783250808716,
+            "rows": 124909,
+            "users": 22377
+          }
+        }
+      ],
+      "carried": false,
+      "decision": "abandon axis as noise",
+      "end_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      },
+      "name": "reg_alpha",
+      "raw_winner": "alpha_0.01",
+      "raw_winner_gain_vs_phase_start": -0.00017458200454711914,
+      "start_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      }
+    },
+    {
+      "candidates": [
+        {
+          "best_internal_ndcg_at_5_minus": 0.5827035914483539,
+          "best_iteration": 686,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.05,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.0007809996604919434,
+          "delta_vs_reference": 0.00028264522552490234,
+          "feature_gain_fraction": {
+            "author_id": 0.12333861987199264,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10926975734022275,
+            "decay_tab_3": 0.13871121395545297,
+            "duration_ms": 0.10717982977211576,
+            "gap": 0.05967981795482573,
+            "last1": 0.08229454802513188,
+            "lastk_rate": 0.10849347029218134,
+            "tab": 0.20390559387727705,
+            "user_id": 0.0,
+            "video_id": 0.06712714891079989
+          },
+          "name": "alpha_0.05_refine",
+          "phase": "reg_alpha_refinement",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.750839352607727,
+            "nDCG@5": 0.5827071070671082,
+            "primary": 0.6667732000350952,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5828978446356777,
+          "best_iteration": 709,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.075,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.0004032254219055176,
+          "delta_vs_reference": 0.0006604194641113281,
+          "feature_gain_fraction": {
+            "author_id": 0.1016728459545528,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.11223450648808031,
+            "decay_tab_3": 0.14083352068314167,
+            "duration_ms": 0.10701384988759312,
+            "gap": 0.060105905786217606,
+            "last1": 0.08258559872661035,
+            "lastk_rate": 0.1117113161615054,
+            "tab": 0.20791612562960538,
+            "user_id": 0.0,
+            "video_id": 0.07592633068269335
+          },
+          "name": "alpha_0.075_refine",
+          "phase": "reg_alpha_refinement",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.751400887966156,
+            "nDCG@5": 0.5829010009765625,
+            "primary": 0.6671509742736816,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5822829040189708,
+          "best_iteration": 822,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.15,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.0006120800971984863,
+          "delta_vs_reference": 0.0004515647888183594,
+          "feature_gain_fraction": {
+            "author_id": 0.11417455226236156,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10631542278885413,
+            "decay_tab_3": 0.1434095226696831,
+            "duration_ms": 0.0987799538999259,
+            "gap": 0.05772884934441191,
+            "last1": 0.08515220381137768,
+            "lastk_rate": 0.10998264662404868,
+            "tab": 0.20916708889974528,
+            "user_id": 0.0,
+            "video_id": 0.07528975969959177
+          },
+          "name": "alpha_0.15_refine",
+          "phase": "reg_alpha_refinement",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7515981793403625,
+            "nDCG@5": 0.5822860598564148,
+            "primary": 0.6669421195983887,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5820294610755662,
+          "best_iteration": 858,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.2,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.000718533992767334,
+          "delta_vs_reference": 0.0003451108932495117,
+          "feature_gain_fraction": {
+            "author_id": 0.1233552898042756,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10180212048896878,
+            "decay_tab_3": 0.14024689011626695,
+            "duration_ms": 0.09847372211127352,
+            "gap": 0.05747723923524863,
+            "last1": 0.09126969857000712,
+            "lastk_rate": 0.1070881536016629,
+            "tab": 0.2047158025819593,
+            "user_id": 0.0,
+            "video_id": 0.07557108349033721
+          },
+          "name": "alpha_0.2_refine",
+          "phase": "reg_alpha_refinement",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7516390681266785,
+            "nDCG@5": 0.582032322883606,
+            "primary": 0.6668356657028198,
+            "rows": 124909,
+            "users": 22377
+          }
+        }
+      ],
+      "carried": false,
+      "decision": "abandon axis as noise",
+      "end_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      },
+      "name": "reg_alpha_refinement",
+      "raw_winner": "alpha_0.075_refine",
+      "raw_winner_gain_vs_phase_start": -0.0004032254219055176,
+      "start_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      }
+    },
+    {
+      "candidates": [
+        {
+          "best_internal_ndcg_at_5_minus": 0.5785229234664254,
+          "best_iteration": 513,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 0.9,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.0058245062828063965,
+          "delta_vs_reference": -0.004760861396789551,
+          "feature_gain_fraction": {
+            "author_id": 0.10880961018103692,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.11035319437794336,
+            "decay_tab_3": 0.12263007120877052,
+            "duration_ms": 0.11132586568469052,
+            "gap": 0.06286060991380196,
+            "last1": 0.06481512943997154,
+            "lastk_rate": 0.09981574713832,
+            "tab": 0.1799271612713478,
+            "user_id": 0.059580996113305175,
+            "video_id": 0.07988161467081219
+          },
+          "name": "subsample_0.9",
+          "phase": "row_stochasticity",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.744933545589447,
+            "nDCG@5": 0.5785257816314697,
+            "primary": 0.6617296934127808,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5720866392701108,
+          "best_iteration": 459,
+          "config": {
+            "colsample_bytree": 1.0,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 0.8,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.015201807022094727,
+          "delta_vs_reference": -0.01413816213607788,
+          "feature_gain_fraction": {
+            "author_id": 0.13220310203843638,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.12403659495637577,
+            "decay_tab_3": 0.13540321746831907,
+            "duration_ms": 0.1430563282377552,
+            "gap": 0.0,
+            "last1": 0.0,
+            "lastk_rate": 0.10936694425615658,
+            "tab": 0.1961039272215637,
+            "user_id": 0.06962763322783248,
+            "video_id": 0.09020225259356081
+          },
+          "name": "subsample_0.8",
+          "phase": "row_stochasticity",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7326155304908752,
+            "nDCG@5": 0.5720892548561096,
+            "primary": 0.6523523926734924,
+            "rows": 124909,
+            "users": 22377
+          }
+        }
+      ],
+      "carried": false,
+      "decision": "abandon axis as noise",
+      "end_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      },
+      "name": "row_stochasticity",
+      "raw_winner": "subsample_0.9",
+      "raw_winner_gain_vs_phase_start": -0.0058245062828063965,
+      "start_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      }
+    },
+    {
+      "candidates": [
+        {
+          "best_internal_ndcg_at_5_minus": 0.5830938646097691,
+          "best_iteration": 768,
+          "config": {
+            "colsample_bytree": 0.9,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -2.4139881134033203e-05,
+          "delta_vs_reference": 0.0010395050048828125,
+          "feature_gain_fraction": {
+            "author_id": 0.11171687448463863,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10911088367765338,
+            "decay_tab_3": 0.14087401467737287,
+            "duration_ms": 0.0950973255502485,
+            "gap": 0.06031906442599191,
+            "last1": 0.08483619564482543,
+            "lastk_rate": 0.10902027380781079,
+            "tab": 0.22048537344592373,
+            "user_id": 0.0,
+            "video_id": 0.06853999428553477
+          },
+          "name": "colsample_0.9",
+          "phase": "feature_stochasticity",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7519630789756775,
+            "nDCG@5": 0.5830971002578735,
+            "primary": 0.6675300598144531,
+            "rows": 124909,
+            "users": 22377
+          }
+        },
+        {
+          "best_internal_ndcg_at_5_minus": 0.5827218822057434,
+          "best_iteration": 714,
+          "config": {
+            "colsample_bytree": 0.8,
+            "early_stopping_rounds": 120,
+            "enable_categorical": true,
+            "eval_metric": "ndcg@5-",
+            "gamma": 0.0,
+            "learning_rate": 0.025,
+            "max_bin": 256,
+            "max_cat_to_onehot": 4,
+            "max_depth": 1,
+            "min_child_weight": 1.0,
+            "n_estimators": 1000,
+            "objective": "rank:ndcg",
+            "reg_alpha": 0.0,
+            "reg_lambda": 1.0,
+            "subsample": 1.0,
+            "tree_method": "hist"
+          },
+          "delta_vs_phase_start": -0.000684201717376709,
+          "delta_vs_reference": 0.0003794431686401367,
+          "feature_gain_fraction": {
+            "author_id": 0.11013926976642217,
+            "decay_act_5": 0.0,
+            "decay_rate_5": 0.10743576467336545,
+            "decay_tab_3": 0.14244831976144207,
+            "duration_ms": 0.09530024054469174,
+            "gap": 0.06048813052463995,
+            "last1": 0.08009815289740504,
+            "lastk_rate": 0.10988188150856283,
+            "tab": 0.2191671957358987,
+            "user_id": 0.0,
+            "video_id": 0.07504104458757202
+          },
+          "name": "colsample_0.8",
+          "phase": "feature_stochasticity",
+          "seed": 0,
+          "valid": {
+            "GAUC": 0.7510149478912354,
+            "nDCG@5": 0.5827251076698303,
+            "primary": 0.6668699979782104,
+            "rows": 124909,
+            "users": 22377
+          }
+        }
+      ],
+      "carried": false,
+      "decision": "abandon axis as noise",
+      "end_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      },
+      "name": "feature_stochasticity",
+      "raw_winner": "colsample_0.9",
+      "raw_winner_gain_vs_phase_start": -2.4139881134033203e-05,
+      "start_incumbent": {
+        "config": {
+          "colsample_bytree": 1.0,
+          "early_stopping_rounds": 120,
+          "enable_categorical": true,
+          "eval_metric": "ndcg@5-",
+          "gamma": 0.0,
+          "learning_rate": 0.025,
+          "max_bin": 256,
+          "max_cat_to_onehot": 4,
+          "max_depth": 1,
+          "min_child_weight": 1.0,
+          "n_estimators": 1000,
+          "objective": "rank:ndcg",
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 1.0,
+          "tree_method": "hist"
+        },
+        "name": "lr_0.025_trees_1000_patience_120",
+        "valid_primary": 0.6675541996955872
+      }
+    }
+  ],
+  "provenance": {
+    "causality": {
+      "families": {
+        "author_decay": {
+          "checks": [
+            {
+              "date": 20220422,
+              "max_abs_error": 7.105427357601002e-15,
+              "row_index": 1141112,
+              "same_date_matching_rows_excluded": 2
+            },
+            {
+              "date": 20220428,
+              "max_abs_error": 1.7763568394002505e-14,
+              "row_index": 1203566,
+              "same_date_matching_rows_excluded": 2
+            },
+            {
+              "date": 20220425,
+              "max_abs_error": 1.4779288903810084e-12,
+              "row_index": 1266020,
+              "same_date_matching_rows_excluded": 308
+            }
+          ],
+          "halflives": [
+            2.5
+          ],
+          "max_abs_error": 1.4779288903810084e-12
+        },
+        "user_decay": {
+          "checks": [
+            {
+              "date": 20220422,
+              "max_abs_error": 1.7763568394002505e-15,
+              "row_index": 1141112,
+              "same_date_matching_rows_excluded": 1
+            },
+            {
+              "date": 20220425,
+              "max_abs_error": 1.0658141036401503e-14,
+              "row_index": 1203604,
+              "same_date_matching_rows_excluded": 0
+            },
+            {
+              "date": 20220425,
+              "max_abs_error": 1.7763568394002505e-14,
+              "row_index": 1266020,
+              "same_date_matching_rows_excluded": 0
+            }
+          ],
+          "halflives": [
+            1.0,
+            5.0,
+            7.0,
+            14.0
+          ],
+          "max_abs_error": 1.7763568394002505e-14
+        },
+        "user_tab_decay": {
+          "checks": [
+            {
+              "date": 20220425,
+              "max_abs_error": 2.220446049250313e-16,
+              "row_index": 1141113,
+              "same_date_matching_rows_excluded": 0
+            },
+            {
+              "date": 20220422,
+              "max_abs_error": 5.329070518200751e-15,
+              "row_index": 1203670,
+              "same_date_matching_rows_excluded": 1
+            },
+            {
+              "date": 20220425,
+              "max_abs_error": 5.329070518200751e-15,
+              "row_index": 1266020,
+              "same_date_matching_rows_excluded": 0
+            }
+          ],
+          "halflives": [
+            1.0,
+            5.0,
+            7.0,
+            14.0
+          ],
+          "max_abs_error": 5.329070518200751e-15
+        },
+        "video_decay": {
+          "checks": [
+            {
+              "date": 20220422,
+              "max_abs_error": 7.105427357601002e-15,
+              "row_index": 1141112,
+              "same_date_matching_rows_excluded": 2
+            },
+            {
+              "date": 20220428,
+              "max_abs_error": 1.7763568394002505e-14,
+              "row_index": 1203566,
+              "same_date_matching_rows_excluded": 2
+            },
+            {
+              "date": 20220425,
+              "max_abs_error": 1.4779288903810084e-12,
+              "row_index": 1266020,
+              "same_date_matching_rows_excluded": 308
+            }
+          ],
+          "halflives": [
+            2.5
+          ],
+          "max_abs_error": 1.4779288903810084e-12
+        }
+      },
+      "global_max_abs_error": 1.4779288903810084e-12,
+      "passed": true,
+      "same_date_matching_rows_excluded_across_checks": 626,
+      "semantics": "strict prior dates only"
+    },
+    "feature_builder": "experiments/iterYIXI2_feature_depth/features.py",
+    "feature_builder_sha256": "bef9dab34fc7c159f561ed95f1ca2542627857ec0d54104f9934378d68a90b14",
+    "fixed_feature_change": {
+      "added": [
+        "decay_rate_5",
+        "decay_act_5"
+      ],
+      "columns": [
+        "user_id",
+        "video_id",
+        "author_id",
+        "tab",
+        "last1",
+        "duration_ms",
+        "decay_tab_3",
+        "lastk_rate",
+        "gap",
+        "decay_rate_5",
+        "decay_act_5"
+      ],
+      "removed": [
+        "decay_rate_2.5",
+        "decay_act_2.5"
+      ]
+    },
+    "rejected_6d_features_included": false
+  },
+  "reference": {
+    "best_internal_ndcg_at_5_minus": 0.5824813320751475,
+    "best_iteration": 340,
+    "config": {
+      "colsample_bytree": 1.0,
+      "early_stopping_rounds": 30,
+      "enable_categorical": true,
+      "eval_metric": "ndcg@5-",
+      "gamma": 0.0,
+      "learning_rate": 0.05,
+      "max_bin": 256,
+      "max_cat_to_onehot": 4,
+      "max_depth": 1,
+      "min_child_weight": 1.0,
+      "n_estimators": 500,
+      "objective": "rank:ndcg",
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 1.0,
+      "tree_method": "hist"
+    },
+    "feature_gain_fraction": {
+      "author_id": 0.12155257711420761,
+      "decay_act_5": 0.0,
+      "decay_rate_5": 0.11024951742484836,
+      "decay_tab_3": 0.13771157040858367,
+      "duration_ms": 0.11151703420527592,
+      "gap": 0.06534754841846448,
+      "last1": 0.07201456945941138,
+      "lastk_rate": 0.10826891645491245,
+      "tab": 0.203068259812881,
+      "user_id": 0.0,
+      "video_id": 0.07027000670141509
+    },
+    "name": "post_6d_h5_reference",
+    "phase": "reference",
+    "seed": 0,
+    "valid": {
+      "GAUC": 0.7504962086677551,
+      "nDCG@5": 0.5824848413467407,
+      "primary": 0.6664905548095703,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "scope": "sequential XGBoost parameter tuning only; blend.py owns ensemble calibration",
+  "selected_on_validation": {
+    "best_internal_ndcg_at_5_minus": 0.5831063779544186,
+    "best_iteration": 791,
+    "config": {
+      "colsample_bytree": 1.0,
+      "early_stopping_rounds": 120,
+      "enable_categorical": true,
+      "eval_metric": "ndcg@5-",
+      "gamma": 0.0,
+      "learning_rate": 0.025,
+      "max_bin": 256,
+      "max_cat_to_onehot": 4,
+      "max_depth": 1,
+      "min_child_weight": 1.0,
+      "n_estimators": 1000,
+      "objective": "rank:ndcg",
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 1.0,
+      "tree_method": "hist"
+    },
+    "delta_vs_reference_test": 0.0012619495391845703,
+    "delta_vs_reference_valid": 0.0010636448860168457,
+    "feature_gain_fraction": {
+      "author_id": 0.10900883012844152,
+      "decay_act_5": 0.0,
+      "decay_rate_5": 0.10807902435458003,
+      "decay_tab_3": 0.1430972745157711,
+      "duration_ms": 0.09674547435164209,
+      "gap": 0.059358267812710516,
+      "last1": 0.08704147175650606,
+      "lastk_rate": 0.11014965858159056,
+      "tab": 0.21120981824993473,
+      "user_id": 0.0,
+      "video_id": 0.0753101802488234
+    },
+    "name": "lr_0.025_trees_1000_patience_120",
+    "phase": "frozen_selection",
+    "seed": 0,
+    "test": {
+      "GAUC": 0.721746563911438,
+      "nDCG@5": 0.5847193002700806,
+      "primary": 0.6532329320907593,
+      "rows": 170588,
+      "users": 23875
+    },
+    "valid": {
+      "GAUC": 0.7519985437393188,
+      "nDCG@5": 0.5831098556518555,
+      "primary": 0.6675541996955872,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "selection_policy": {
+    "phase_carry_gate": 0.0003,
+    "phase_order": [
+      "tree_capacity",
+      "boosting_rate_and_trees",
+      "min_child_weight",
+      "gamma",
+      "reg_lambda",
+      "reg_alpha",
+      "reg_alpha_refinement",
+      "row_stochasticity",
+      "feature_stochasticity"
+    ],
+    "promotion_delta": 0.001,
+    "selector": "official validation primary only",
+    "test_access": "after all phases, validation selection, confirmation, and diagnostics"
+  },
+  "standalone_verdict": "PROMOTE",
+  "test_evaluation": {
+    "performed": true,
+    "timing": "after sequential validation selection, confirmation, and diagnostics"
+  }
+}

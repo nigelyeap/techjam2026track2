@@ -1,0 +1,199 @@
+{
+  "adaptive_weight_sweep_eligible": true,
+  "all_regimes_large_enough": true,
+  "experiment": "iterYIXI11_phase_a_component_regime_diagnostics",
+  "meaningful_order_reversals": [
+    {
+      "model_pair": [
+        "lgb",
+        "xgb"
+      ],
+      "primary_differences_left_minus_right": {
+        "low_history": 0.015840530395507812,
+        "no_prior": -0.007530272006988525
+      },
+      "regimes": [
+        "no_prior",
+        "low_history"
+      ]
+    },
+    {
+      "model_pair": [
+        "lgb",
+        "xgb"
+      ],
+      "primary_differences_left_minus_right": {
+        "high_history": 0.0256803035736084,
+        "no_prior": -0.007530272006988525
+      },
+      "regimes": [
+        "no_prior",
+        "high_history"
+      ]
+    }
+  ],
+  "regime_component_metrics": {
+    "high_history": {
+      "models": {
+        "fm": {
+          "GAUC": 0.7091020941734314,
+          "nDCG@5": 0.5603265166282654,
+          "primary": 0.6347143054008484,
+          "rows": 86172,
+          "users": 12022
+        },
+        "lgb": {
+          "GAUC": 0.7690455913543701,
+          "nDCG@5": 0.6095059514045715,
+          "primary": 0.6892757415771484,
+          "rows": 86172,
+          "users": 12022
+        },
+        "xgb": {
+          "GAUC": 0.7414574027061462,
+          "nDCG@5": 0.5857334733009338,
+          "primary": 0.66359543800354,
+          "rows": 86172,
+          "users": 12022
+        }
+      },
+      "primary_order": [
+        "lgb",
+        "xgb",
+        "fm"
+      ],
+      "rows": 86172,
+      "users": 12022
+    },
+    "low_history": {
+      "models": {
+        "fm": {
+          "GAUC": 0.7370446920394897,
+          "nDCG@5": 0.5632206201553345,
+          "primary": 0.6501326560974121,
+          "rows": 36747,
+          "users": 9933
+        },
+        "lgb": {
+          "GAUC": 0.8013203740119934,
+          "nDCG@5": 0.5852845907211304,
+          "primary": 0.6933025121688843,
+          "rows": 36747,
+          "users": 9933
+        },
+        "xgb": {
+          "GAUC": 0.7747064828872681,
+          "nDCG@5": 0.5802174806594849,
+          "primary": 0.6774619817733765,
+          "rows": 36747,
+          "users": 9933
+        }
+      },
+      "primary_order": [
+        "lgb",
+        "xgb",
+        "fm"
+      ],
+      "rows": 36747,
+      "users": 9933
+    },
+    "no_prior": {
+      "models": {
+        "fm": {
+          "GAUC": 0.7525255084037781,
+          "nDCG@5": 0.5489528775215149,
+          "primary": 0.6507391929626465,
+          "rows": 1990,
+          "users": 422
+        },
+        "lgb": {
+          "GAUC": 0.7585529088973999,
+          "nDCG@5": 0.5679271221160889,
+          "primary": 0.6632400155067444,
+          "rows": 1990,
+          "users": 422
+        },
+        "xgb": {
+          "GAUC": 0.7652459740638733,
+          "nDCG@5": 0.5762945413589478,
+          "primary": 0.6707702875137329,
+          "rows": 1990,
+          "users": 422
+        }
+      },
+      "primary_order": [
+        "xgb",
+        "lgb",
+        "fm"
+      ],
+      "rows": 1990,
+      "users": 422
+    }
+  },
+  "regime_metadata": {
+    "policy": {
+      "high_history": "history count > training median",
+      "history_variable": "number of impressions strictly before the evaluation date boundary",
+      "label_free": true,
+      "low_history": "1 <= history count <= training median",
+      "no_prior": "history count == 0",
+      "threshold_rule": "lower integer median of positive per-user counts in the threshold-training range",
+      "unit": "user; one fixed regime for every row in the evaluation window"
+    },
+    "ranges": {
+      "evaluation": [
+        20220422,
+        20220428
+      ],
+      "history": [
+        20220408,
+        20220421
+      ],
+      "threshold_train": [
+        20220408,
+        20220421
+      ]
+    },
+    "regimes": {
+      "high_history": {
+        "history_count_max": 809,
+        "history_count_median": 61.0,
+        "history_count_min": 32,
+        "rows": 86172,
+        "users": 12022
+      },
+      "low_history": {
+        "history_count_max": 31,
+        "history_count_median": 15.0,
+        "history_count_min": 1,
+        "rows": 36747,
+        "users": 9933
+      },
+      "no_prior": {
+        "history_count_max": 0,
+        "history_count_median": 0.0,
+        "history_count_min": 0,
+        "rows": 1990,
+        "users": 422
+      }
+    },
+    "threshold": 31,
+    "threshold_distribution": {
+      "0.0": 1.0,
+      "0.1": 5.0,
+      "0.25": 13.0,
+      "0.5": 31.0,
+      "0.75": 59.0,
+      "0.9": 97.0,
+      "0.99": 207.0,
+      "1.0": 809.0
+    },
+    "threshold_training_users": 26210
+  },
+  "selection_policy": {
+    "meaningful_order_reversal": "same model pair reverses sign across two regimes with at least 0.001 primary separation in each",
+    "minimum_regime_users": 200,
+    "regimes": "frozen before scores; training-count median and no labels",
+    "test_access": "none"
+  }
+}

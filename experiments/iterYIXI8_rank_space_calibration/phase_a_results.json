@@ -1,0 +1,537 @@
+{
+  "best_fixed_weight": {
+    "blend_unique_scores": {
+      "mean_per_user_unique_fraction": 0.9987715894349323,
+      "rows": 124909,
+      "unique_scores_overall": 13995
+    },
+    "clears_preliminary_threshold": false,
+    "component_unique_scores": {
+      "fm": {
+        "mean_per_user_unique_fraction": 0.9999393888233092,
+        "rows": 124909,
+        "unique_scores_overall": 1106
+      },
+      "lgb": {
+        "mean_per_user_unique_fraction": 0.986433656572566,
+        "rows": 124909,
+        "unique_scores_overall": 1148
+      },
+      "xgb": {
+        "mean_per_user_unique_fraction": 0.9362812859317556,
+        "rows": 124909,
+        "unique_scores_overall": 1318
+      }
+    },
+    "delta_vs_percentile_reference": 0.0,
+    "name": "percentile",
+    "selected_on_validation": true,
+    "spec": {
+      "family": "percentile"
+    },
+    "transform_by_model": {
+      "fm": "percentile",
+      "lgb": "percentile",
+      "xgb": "percentile"
+    },
+    "valid": {
+      "GAUC": 0.7726407647132874,
+      "nDCG@5": 0.592109739780426,
+      "primary": 0.6823752522468567,
+      "rows": 124909,
+      "users": 22377
+    },
+    "weights": {
+      "fm": 0.24,
+      "lgb": 0.4,
+      "xgb": 0.36
+    }
+  },
+  "experiment": "iterYIXI8_phase_a_common_rank_transforms",
+  "harness_fidelity_passed": true,
+  "predeclared_transforms": [
+    {
+      "family": "percentile",
+      "name": "percentile"
+    },
+    {
+      "exponent": 0.5,
+      "family": "power",
+      "name": "power_0.5"
+    },
+    {
+      "exponent": 1.5,
+      "family": "power",
+      "name": "power_1.5"
+    },
+    {
+      "exponent": 2.0,
+      "family": "power",
+      "name": "power_2"
+    },
+    {
+      "exponent": 3.0,
+      "family": "power",
+      "name": "power_3"
+    },
+    {
+      "eps": 0.001,
+      "family": "clipped_logit",
+      "name": "clipped_logit"
+    },
+    {
+      "family": "reciprocal_rank",
+      "name": "reciprocal_rank"
+    },
+    {
+      "family": "ndcg_rank",
+      "name": "ndcg_rank"
+    }
+  ],
+  "promising_transforms": [],
+  "records": [
+    {
+      "blend_unique_scores": {
+        "mean_per_user_unique_fraction": 0.9987715894349323,
+        "rows": 124909,
+        "unique_scores_overall": 13995
+      },
+      "clears_preliminary_threshold": false,
+      "component_unique_scores": {
+        "fm": {
+          "mean_per_user_unique_fraction": 0.9999393888233092,
+          "rows": 124909,
+          "unique_scores_overall": 1106
+        },
+        "lgb": {
+          "mean_per_user_unique_fraction": 0.986433656572566,
+          "rows": 124909,
+          "unique_scores_overall": 1148
+        },
+        "xgb": {
+          "mean_per_user_unique_fraction": 0.9362812859317556,
+          "rows": 124909,
+          "unique_scores_overall": 1318
+        }
+      },
+      "delta_vs_percentile_reference": 0.0,
+      "name": "percentile",
+      "selected_on_validation": true,
+      "spec": {
+        "family": "percentile"
+      },
+      "transform_by_model": {
+        "fm": "percentile",
+        "lgb": "percentile",
+        "xgb": "percentile"
+      },
+      "valid": {
+        "GAUC": 0.7726407647132874,
+        "nDCG@5": 0.592109739780426,
+        "primary": 0.6823752522468567,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.4,
+        "xgb": 0.36
+      }
+    },
+    {
+      "blend_unique_scores": {
+        "mean_per_user_unique_fraction": 0.9999428202803539,
+        "rows": 124909,
+        "unique_scores_overall": 31355
+      },
+      "clears_preliminary_threshold": false,
+      "component_unique_scores": {
+        "fm": {
+          "mean_per_user_unique_fraction": 0.9999393888233092,
+          "rows": 124909,
+          "unique_scores_overall": 1106
+        },
+        "lgb": {
+          "mean_per_user_unique_fraction": 0.986433656572566,
+          "rows": 124909,
+          "unique_scores_overall": 1148
+        },
+        "xgb": {
+          "mean_per_user_unique_fraction": 0.9362812859317556,
+          "rows": 124909,
+          "unique_scores_overall": 1318
+        }
+      },
+      "delta_vs_percentile_reference": -1.7464160919189453e-05,
+      "name": "power_0.5",
+      "spec": {
+        "exponent": 0.5,
+        "family": "power"
+      },
+      "transform_by_model": {
+        "fm": "power_0.5",
+        "lgb": "power_0.5",
+        "xgb": "power_0.5"
+      },
+      "valid": {
+        "GAUC": 0.7727707624435425,
+        "nDCG@5": 0.5919447541236877,
+        "primary": 0.6823577880859375,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.4,
+        "xgb": 0.36
+      }
+    },
+    {
+      "blend_unique_scores": {
+        "mean_per_user_unique_fraction": 0.9999428202803539,
+        "rows": 124909,
+        "unique_scores_overall": 31375
+      },
+      "clears_preliminary_threshold": false,
+      "component_unique_scores": {
+        "fm": {
+          "mean_per_user_unique_fraction": 0.9999393888233092,
+          "rows": 124909,
+          "unique_scores_overall": 1106
+        },
+        "lgb": {
+          "mean_per_user_unique_fraction": 0.986433656572566,
+          "rows": 124909,
+          "unique_scores_overall": 1148
+        },
+        "xgb": {
+          "mean_per_user_unique_fraction": 0.9362812859317556,
+          "rows": 124909,
+          "unique_scores_overall": 1318
+        }
+      },
+      "delta_vs_percentile_reference": -0.000558018684387207,
+      "name": "power_1.5",
+      "spec": {
+        "exponent": 1.5,
+        "family": "power"
+      },
+      "transform_by_model": {
+        "fm": "power_1.5",
+        "lgb": "power_1.5",
+        "xgb": "power_1.5"
+      },
+      "valid": {
+        "GAUC": 0.7717393636703491,
+        "nDCG@5": 0.5918951034545898,
+        "primary": 0.6818172335624695,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.4,
+        "xgb": 0.36
+      }
+    },
+    {
+      "blend_unique_scores": {
+        "mean_per_user_unique_fraction": 0.9991580858120677,
+        "rows": 124909,
+        "unique_scores_overall": 27585
+      },
+      "clears_preliminary_threshold": false,
+      "component_unique_scores": {
+        "fm": {
+          "mean_per_user_unique_fraction": 0.9999393888233092,
+          "rows": 124909,
+          "unique_scores_overall": 1106
+        },
+        "lgb": {
+          "mean_per_user_unique_fraction": 0.986433656572566,
+          "rows": 124909,
+          "unique_scores_overall": 1148
+        },
+        "xgb": {
+          "mean_per_user_unique_fraction": 0.9362812859317556,
+          "rows": 124909,
+          "unique_scores_overall": 1318
+        }
+      },
+      "delta_vs_percentile_reference": -0.0011295676231384277,
+      "name": "power_2",
+      "spec": {
+        "exponent": 2.0,
+        "family": "power"
+      },
+      "transform_by_model": {
+        "fm": "power_2",
+        "lgb": "power_2",
+        "xgb": "power_2"
+      },
+      "valid": {
+        "GAUC": 0.7708431482315063,
+        "nDCG@5": 0.591648280620575,
+        "primary": 0.6812456846237183,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.4,
+        "xgb": 0.36
+      }
+    },
+    {
+      "blend_unique_scores": {
+        "mean_per_user_unique_fraction": 0.9999247837361706,
+        "rows": 124909,
+        "unique_scores_overall": 31332
+      },
+      "clears_preliminary_threshold": false,
+      "component_unique_scores": {
+        "fm": {
+          "mean_per_user_unique_fraction": 0.9999393888233092,
+          "rows": 124909,
+          "unique_scores_overall": 1106
+        },
+        "lgb": {
+          "mean_per_user_unique_fraction": 0.986433656572566,
+          "rows": 124909,
+          "unique_scores_overall": 1148
+        },
+        "xgb": {
+          "mean_per_user_unique_fraction": 0.9362812859317556,
+          "rows": 124909,
+          "unique_scores_overall": 1318
+        }
+      },
+      "delta_vs_percentile_reference": -0.002441108226776123,
+      "name": "power_3",
+      "spec": {
+        "exponent": 3.0,
+        "family": "power"
+      },
+      "transform_by_model": {
+        "fm": "power_3",
+        "lgb": "power_3",
+        "xgb": "power_3"
+      },
+      "valid": {
+        "GAUC": 0.7688224911689758,
+        "nDCG@5": 0.5910457372665405,
+        "primary": 0.6799341440200806,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.4,
+        "xgb": 0.36
+      }
+    },
+    {
+      "blend_unique_scores": {
+        "mean_per_user_unique_fraction": 0.9999428202803539,
+        "rows": 124909,
+        "unique_scores_overall": 31375
+      },
+      "clears_preliminary_threshold": false,
+      "component_unique_scores": {
+        "fm": {
+          "mean_per_user_unique_fraction": 0.9999393888233092,
+          "rows": 124909,
+          "unique_scores_overall": 1106
+        },
+        "lgb": {
+          "mean_per_user_unique_fraction": 0.986433656572566,
+          "rows": 124909,
+          "unique_scores_overall": 1148
+        },
+        "xgb": {
+          "mean_per_user_unique_fraction": 0.9362812859317556,
+          "rows": 124909,
+          "unique_scores_overall": 1318
+        }
+      },
+      "delta_vs_percentile_reference": -0.0027906298637390137,
+      "name": "clipped_logit",
+      "spec": {
+        "eps": 0.001,
+        "family": "clipped_logit"
+      },
+      "transform_by_model": {
+        "fm": "clipped_logit",
+        "lgb": "clipped_logit",
+        "xgb": "clipped_logit"
+      },
+      "valid": {
+        "GAUC": 0.7691065669059753,
+        "nDCG@5": 0.59006267786026,
+        "primary": 0.6795846223831177,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.4,
+        "xgb": 0.36
+      }
+    },
+    {
+      "blend_unique_scores": {
+        "mean_per_user_unique_fraction": 0.9990440670434382,
+        "rows": 124909,
+        "unique_scores_overall": 29140
+      },
+      "clears_preliminary_threshold": false,
+      "component_unique_scores": {
+        "fm": {
+          "mean_per_user_unique_fraction": 0.9999393888233092,
+          "rows": 124909,
+          "unique_scores_overall": 1657
+        },
+        "lgb": {
+          "mean_per_user_unique_fraction": 0.986433656572566,
+          "rows": 124909,
+          "unique_scores_overall": 1869
+        },
+        "xgb": {
+          "mean_per_user_unique_fraction": 0.9362812859317556,
+          "rows": 124909,
+          "unique_scores_overall": 2078
+        }
+      },
+      "delta_vs_percentile_reference": -0.003933727741241455,
+      "name": "reciprocal_rank",
+      "spec": {
+        "family": "reciprocal_rank"
+      },
+      "transform_by_model": {
+        "fm": "reciprocal_rank",
+        "lgb": "reciprocal_rank",
+        "xgb": "reciprocal_rank"
+      },
+      "valid": {
+        "GAUC": 0.7672885060310364,
+        "nDCG@5": 0.5895944833755493,
+        "primary": 0.6784415245056152,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.4,
+        "xgb": 0.36
+      }
+    },
+    {
+      "blend_unique_scores": {
+        "mean_per_user_unique_fraction": 0.9999428202803539,
+        "rows": 124909,
+        "unique_scores_overall": 34457
+      },
+      "clears_preliminary_threshold": false,
+      "component_unique_scores": {
+        "fm": {
+          "mean_per_user_unique_fraction": 0.9999393888233092,
+          "rows": 124909,
+          "unique_scores_overall": 1765
+        },
+        "lgb": {
+          "mean_per_user_unique_fraction": 0.986433656572566,
+          "rows": 124909,
+          "unique_scores_overall": 2019
+        },
+        "xgb": {
+          "mean_per_user_unique_fraction": 0.9362812859317556,
+          "rows": 124909,
+          "unique_scores_overall": 2230
+        }
+      },
+      "delta_vs_percentile_reference": -0.0034821629524230957,
+      "name": "ndcg_rank",
+      "spec": {
+        "family": "ndcg_rank"
+      },
+      "transform_by_model": {
+        "fm": "ndcg_rank",
+        "lgb": "ndcg_rank",
+        "xgb": "ndcg_rank"
+      },
+      "valid": {
+        "GAUC": 0.7679394483566284,
+        "nDCG@5": 0.589846670627594,
+        "primary": 0.6788930892944336,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.4,
+        "xgb": 0.36
+      }
+    }
+  ],
+  "reference": {
+    "blend_unique_scores": {
+      "mean_per_user_unique_fraction": 0.9987715894349323,
+      "rows": 124909,
+      "unique_scores_overall": 13995
+    },
+    "clears_preliminary_threshold": false,
+    "component_unique_scores": {
+      "fm": {
+        "mean_per_user_unique_fraction": 0.9999393888233092,
+        "rows": 124909,
+        "unique_scores_overall": 1106
+      },
+      "lgb": {
+        "mean_per_user_unique_fraction": 0.986433656572566,
+        "rows": 124909,
+        "unique_scores_overall": 1148
+      },
+      "xgb": {
+        "mean_per_user_unique_fraction": 0.9362812859317556,
+        "rows": 124909,
+        "unique_scores_overall": 1318
+      }
+    },
+    "delta_vs_percentile_reference": 0.0,
+    "name": "percentile",
+    "selected_on_validation": true,
+    "spec": {
+      "family": "percentile"
+    },
+    "transform_by_model": {
+      "fm": "percentile",
+      "lgb": "percentile",
+      "xgb": "percentile"
+    },
+    "valid": {
+      "GAUC": 0.7726407647132874,
+      "nDCG@5": 0.592109739780426,
+      "primary": 0.6823752522468567,
+      "rows": 124909,
+      "users": 22377
+    },
+    "weights": {
+      "fm": 0.24,
+      "lgb": 0.4,
+      "xgb": 0.36
+    }
+  },
+  "selection_policy": {
+    "base_model_retraining": false,
+    "base_predictions": "immutable validation arrays from freeze_predictions.py",
+    "model_specific_transforms": false,
+    "preliminary_delta": 0.0003,
+    "selector": "official validation primary only",
+    "test_access": "none",
+    "weights": {
+      "fm": 0.24,
+      "lgb": 0.4,
+      "xgb": 0.36
+    }
+  }
+}

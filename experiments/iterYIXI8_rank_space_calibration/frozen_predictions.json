@@ -1,0 +1,162 @@
+{
+  "array_sha256": {
+    "fm": "28059063d2dd6f59944205c2570cbc323376810f76015ac02fe1d76c68230ea3",
+    "labels": "a6c35a7ae9863534822591123ecfc93ad0f1283387a0106051a129add1ae2d41",
+    "users": "f1401bb44849c3ab33619d3c174a8eb28df80a901b3b1454324b602e6809f873",
+    "xgb": "de378537bb23efc0bd28c1b1c193a000f21359cafc2f88b72c216e00ec69adc3",
+    "yixi5_lgb": "3c107447d9f82add53e4ff244746a62376e9959950a93fe871406cb3a06fc86f",
+    "yixi7_lgb": "c21c72c1db6ad469acf9bd0b9313c588dc2b587c5929bf70db8b4b360190145e"
+  },
+  "components_valid": {
+    "fm": {
+      "GAUC": 0.7183587551116943,
+      "nDCG@5": 0.5613970756530762,
+      "primary": 0.6398779153823853,
+      "rows": 124909,
+      "users": 22377
+    },
+    "xgb": {
+      "GAUC": 0.7519985437393188,
+      "nDCG@5": 0.5831098556518555,
+      "primary": 0.6675541996955872,
+      "rows": 124909,
+      "users": 22377
+    },
+    "yixi5_lgb": {
+      "GAUC": 0.7588735222816467,
+      "nDCG@5": 0.5844839215278625,
+      "primary": 0.6716787219047546,
+      "rows": 124909,
+      "users": 22377
+    },
+    "yixi7_lgb": {
+      "GAUC": 0.7646524310112,
+      "nDCG@5": 0.5891302824020386,
+      "primary": 0.6768913269042969,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "environment": {
+    "lightgbm": "4.6.0",
+    "numpy": "2.4.3",
+    "pandas": "3.0.2",
+    "python": "3.13.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterYIXI8_frozen_validation_predictions",
+  "feature_metadata": {
+    "available_columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "lastk_rate",
+      "gap",
+      "decay_tab_3",
+      "decay_tab_rate_3",
+      "decay_rate_5",
+      "decay_act_5",
+      "decay_rate_x_log_activity"
+    ],
+    "causality": {
+      "checks": [
+        {
+          "date": 20220422,
+          "errors": {
+            "h5_pos": 5.551115123125783e-17,
+            "h5_total": 0.0,
+            "tab_h3_pos": 0.0,
+            "tab_h3_total": 3.3306690738754696e-16
+          },
+          "max_abs_error": 3.3306690738754696e-16,
+          "row_index": 1141112
+        },
+        {
+          "date": 20220427,
+          "errors": {
+            "h5_pos": 8.881784197001252e-16,
+            "h5_total": 1.7763568394002505e-15,
+            "tab_h3_pos": 4.440892098500626e-16,
+            "tab_h3_total": 2.6645352591003757e-15
+          },
+          "max_abs_error": 2.6645352591003757e-15,
+          "row_index": 1145275
+        },
+        {
+          "date": 20220424,
+          "errors": {
+            "h5_pos": 4.163336342344337e-17,
+            "h5_total": 0.0,
+            "tab_h3_pos": 2.7755575615628914e-17,
+            "tab_h3_total": 7.105427357601002e-15
+          },
+          "max_abs_error": 7.105427357601002e-15,
+          "row_index": 1149439
+        }
+      ],
+      "global_max_abs_error": 7.105427357601002e-15,
+      "method": "independent direct sums over strictly earlier dates",
+      "passed": true,
+      "same_date_matching_rows_explicitly_excluded": 39
+    },
+    "lengths": {
+      "test": 170588,
+      "train": 1141112,
+      "valid": 124909
+    },
+    "provenance": {
+      "definitions_redesigned": false,
+      "iter63_data": "experiments/iter63_decay_tab_rate/data_ext.py",
+      "iter63_data_sha256": "49890ee258b4f4dd99007c0fd5e9eb8dc7897d3718c12e7cc7044a1c5f606545",
+      "iter63_train": "experiments/iter63_decay_tab_rate/train.py",
+      "iter63_train_sha256": "147213c5cc4f1001c336eceb8821e4069d76929992ffa725b36cd036b1fda8c8",
+      "yixi4_feature_source": "experiments/iterYIXI2_feature_depth/features.py",
+      "yixi4_feature_source_sha256": "bef9dab34fc7c159f561ed95f1ca2542627857ec0d54104f9934378d68a90b14"
+    }
+  },
+  "fidelity_passed": true,
+  "fidelity_tolerance": 1e-08,
+  "frozen_path": ".frozen_valid_predictions.npz",
+  "references": {
+    "current_yixi7": {
+      "valid": {
+        "GAUC": 0.7744517922401428,
+        "nDCG@5": 0.5938588976860046,
+        "primary": 0.6841553449630737,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.42,
+        "xgb": 0.34
+      }
+    },
+    "requested_yixi5": {
+      "valid": {
+        "GAUC": 0.7726407647132874,
+        "nDCG@5": 0.592109739780426,
+        "primary": 0.6823752522468567,
+        "rows": 124909,
+        "users": 22377
+      },
+      "weights": {
+        "fm": 0.24,
+        "lgb": 0.4,
+        "xgb": 0.36
+      }
+    }
+  },
+  "selection_role": "none; immutable base-prediction harness",
+  "test_predictions_computed": false,
+  "yixi7_lgb_rank_config": {
+    "lambdarank_truncation_level": 50,
+    "objective": "lambdarank",
+    "sigmoid": 2.0
+  }
+}

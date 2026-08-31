@@ -1,0 +1,438 @@
+{
+  "candidates": [
+    {
+      "best_iteration": 971,
+      "columns": [
+        "user_id",
+        "video_id",
+        "author_id",
+        "tab",
+        "last1",
+        "duration_ms",
+        "decay_tab_rate_3",
+        "lastk_rate",
+        "gap",
+        "decay_rate_5",
+        "decay_act_5"
+      ],
+      "delta_vs_A0": 0.0022072196006774902,
+      "feature_gain_fraction": {
+        "author_id": 0.08258570280274402,
+        "decay_act_5": 0.09941654870263308,
+        "decay_rate_5": 0.09415462832618716,
+        "decay_tab_rate_3": 0.14860669659660256,
+        "duration_ms": 0.08246540662615498,
+        "gap": 0.060131260519782216,
+        "last1": 0.10797723993189028,
+        "lastk_rate": 0.08932356076973465,
+        "tab": 0.1665975140833573,
+        "user_id": 0.0,
+        "video_id": 0.06874144164091375
+      },
+      "model_family": "xgb",
+      "name": "A1_replace_with_tab_rate",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7547547221183777,
+        "nDCG@5": 0.5847681760787964,
+        "primary": 0.6697614192962646,
+        "rows": 124909,
+        "users": 22377
+      }
+    },
+    {
+      "best_iteration": 791,
+      "columns": [
+        "user_id",
+        "video_id",
+        "author_id",
+        "tab",
+        "last1",
+        "duration_ms",
+        "decay_tab_3",
+        "decay_tab_rate_3",
+        "lastk_rate",
+        "gap",
+        "decay_rate_5",
+        "decay_act_5"
+      ],
+      "delta_vs_A0": 0.0,
+      "feature_gain_fraction": {
+        "author_id": 0.10900883012844152,
+        "decay_act_5": 0.0,
+        "decay_rate_5": 0.10807902435458003,
+        "decay_tab_3": 0.1430972745157711,
+        "decay_tab_rate_3": 0.0,
+        "duration_ms": 0.09674547435164209,
+        "gap": 0.059358267812710516,
+        "last1": 0.08704147175650606,
+        "lastk_rate": 0.11014965858159056,
+        "tab": 0.21120981824993473,
+        "user_id": 0.0,
+        "video_id": 0.0753101802488234
+      },
+      "model_family": "xgb",
+      "name": "A2_count_plus_tab_rate",
+      "seed": 0,
+      "valid": {
+        "GAUC": 0.7519985437393188,
+        "nDCG@5": 0.5831098556518555,
+        "primary": 0.6675541996955872,
+        "rows": 124909,
+        "users": 22377
+      }
+    }
+  ],
+  "diagnostics": {
+    "constant_valid": {
+      "GAUC": 0.5,
+      "nDCG@5": 0.4673425257205963,
+      "primary": 0.48367124795913696,
+      "rows": 124909,
+      "users": 22377
+    },
+    "exact_change": {
+      "A1": "replace decay_tab_3 with exact iter63 decay_tab_rate_3",
+      "A2": "retain decay_tab_3 and add exact iter63 decay_tab_rate_3"
+    },
+    "random_valid": {
+      "GAUC": 0.49903032183647156,
+      "nDCG@5": 0.466287761926651,
+      "primary": 0.4826590418815613,
+      "rows": 124909,
+      "users": 22377
+    },
+    "selected_ties": {
+      "mean_per_user_unique_fraction": 0.9417892267210864,
+      "rows": 124909,
+      "unique_scores_overall": 24984
+    }
+  },
+  "environment": {
+    "lightgbm": "4.6.0",
+    "numpy": "2.4.3",
+    "python": "3.13.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterYIXI6_phase_a_xgb_tab_rate",
+  "feature_metadata": {
+    "available_columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_rate_2.5",
+      "decay_act_2.5",
+      "lastk_rate",
+      "gap",
+      "decay_tab_3",
+      "decay_tab_rate_3",
+      "decay_rate_5",
+      "decay_act_5",
+      "decay_rate_x_log_activity"
+    ],
+    "causality": {
+      "checks": [
+        {
+          "date": 20220422,
+          "errors": {
+            "h5_pos": 5.551115123125783e-17,
+            "h5_total": 0.0,
+            "tab_h3_pos": 0.0,
+            "tab_h3_total": 3.3306690738754696e-16
+          },
+          "max_abs_error": 3.3306690738754696e-16,
+          "row_index": 1141112
+        },
+        {
+          "date": 20220427,
+          "errors": {
+            "h5_pos": 8.881784197001252e-16,
+            "h5_total": 1.7763568394002505e-15,
+            "tab_h3_pos": 4.440892098500626e-16,
+            "tab_h3_total": 2.6645352591003757e-15
+          },
+          "max_abs_error": 2.6645352591003757e-15,
+          "row_index": 1145275
+        },
+        {
+          "date": 20220424,
+          "errors": {
+            "h5_pos": 4.163336342344337e-17,
+            "h5_total": 0.0,
+            "tab_h3_pos": 2.7755575615628914e-17,
+            "tab_h3_total": 7.105427357601002e-15
+          },
+          "max_abs_error": 7.105427357601002e-15,
+          "row_index": 1149439
+        }
+      ],
+      "global_max_abs_error": 7.105427357601002e-15,
+      "method": "independent direct sums over strictly earlier dates",
+      "passed": true,
+      "same_date_matching_rows_explicitly_excluded": 39
+    },
+    "lengths": {
+      "test": 170588,
+      "train": 1141112,
+      "valid": 124909
+    },
+    "provenance": {
+      "definitions_redesigned": false,
+      "iter63_data": "experiments/iter63_decay_tab_rate/data_ext.py",
+      "iter63_data_sha256": "49890ee258b4f4dd99007c0fd5e9eb8dc7897d3718c12e7cc7044a1c5f606545",
+      "iter63_train": "experiments/iter63_decay_tab_rate/train.py",
+      "iter63_train_sha256": "147213c5cc4f1001c336eceb8821e4069d76929992ffa725b36cd036b1fda8c8",
+      "yixi4_feature_source": "experiments/iterYIXI2_feature_depth/features.py",
+      "yixi4_feature_source_sha256": "bef9dab34fc7c159f561ed95f1ca2542627857ec0d54104f9934378d68a90b14"
+    }
+  },
+  "five_seed_confirmation": {
+    "confirmed": true,
+    "mean_delta": 0.0022072196006774902,
+    "min_delta": 0.0022072196006774902,
+    "performed": true,
+    "rows": [
+      {
+        "candidate_valid": {
+          "GAUC": 0.7547547221183777,
+          "nDCG@5": 0.5847681760787964,
+          "primary": 0.6697614192962646,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.0022072196006774902,
+        "reference_valid": {
+          "GAUC": 0.7519985437393188,
+          "nDCG@5": 0.5831098556518555,
+          "primary": 0.6675541996955872,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 0
+      },
+      {
+        "candidate_valid": {
+          "GAUC": 0.7547547221183777,
+          "nDCG@5": 0.5847681760787964,
+          "primary": 0.6697614192962646,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.0022072196006774902,
+        "reference_valid": {
+          "GAUC": 0.7519985437393188,
+          "nDCG@5": 0.5831098556518555,
+          "primary": 0.6675541996955872,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 1
+      },
+      {
+        "candidate_valid": {
+          "GAUC": 0.7547547221183777,
+          "nDCG@5": 0.5847681760787964,
+          "primary": 0.6697614192962646,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.0022072196006774902,
+        "reference_valid": {
+          "GAUC": 0.7519985437393188,
+          "nDCG@5": 0.5831098556518555,
+          "primary": 0.6675541996955872,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 2
+      },
+      {
+        "candidate_valid": {
+          "GAUC": 0.7547547221183777,
+          "nDCG@5": 0.5847681760787964,
+          "primary": 0.6697614192962646,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.0022072196006774902,
+        "reference_valid": {
+          "GAUC": 0.7519985437393188,
+          "nDCG@5": 0.5831098556518555,
+          "primary": 0.6675541996955872,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 3
+      },
+      {
+        "candidate_valid": {
+          "GAUC": 0.7547547221183777,
+          "nDCG@5": 0.5847681760787964,
+          "primary": 0.6697614192962646,
+          "rows": 124909,
+          "users": 22377
+        },
+        "delta": 0.0022072196006774902,
+        "reference_valid": {
+          "GAUC": 0.7519985437393188,
+          "nDCG@5": 0.5831098556518555,
+          "primary": 0.6675541996955872,
+          "rows": 124909,
+          "users": 22377
+        },
+        "seed": 4
+      }
+    ],
+    "std_delta": 0.0
+  },
+  "fixed_xgb_config": {
+    "colsample_bytree": 1.0,
+    "early_stopping_rounds": 120,
+    "enable_categorical": true,
+    "eval_metric": "ndcg@5-",
+    "gamma": 0.0,
+    "learning_rate": 0.025,
+    "max_bin": 256,
+    "max_cat_to_onehot": 4,
+    "max_depth": 1,
+    "min_child_weight": 1.0,
+    "n_estimators": 1000,
+    "objective": "rank:ndcg",
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 1.0,
+    "tree_method": "hist"
+  },
+  "preliminary_pass": true,
+  "question": "Does iter63 decay_tab_rate_3 transfer to tuned YIXI5 XGBoost?",
+  "reference": {
+    "best_iteration": 791,
+    "columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_tab_3",
+      "lastk_rate",
+      "gap",
+      "decay_rate_5",
+      "decay_act_5"
+    ],
+    "feature_gain_fraction": {
+      "author_id": 0.10900883012844152,
+      "decay_act_5": 0.0,
+      "decay_rate_5": 0.10807902435458003,
+      "decay_tab_3": 0.1430972745157711,
+      "duration_ms": 0.09674547435164209,
+      "gap": 0.059358267812710516,
+      "last1": 0.08704147175650606,
+      "lastk_rate": 0.11014965858159056,
+      "tab": 0.21120981824993473,
+      "user_id": 0.0,
+      "video_id": 0.0753101802488234
+    },
+    "model_family": "xgb",
+    "name": "A0_current_tab_count",
+    "seed": 0,
+    "valid": {
+      "GAUC": 0.7519985437393188,
+      "nDCG@5": 0.5831098556518555,
+      "primary": 0.6675541996955872,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "selected_representation": {
+    "best_iteration": 971,
+    "columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_tab_rate_3",
+      "lastk_rate",
+      "gap",
+      "decay_rate_5",
+      "decay_act_5"
+    ],
+    "delta_vs_A0": 0.0022072196006774902,
+    "feature_gain_fraction": {
+      "author_id": 0.08258570280274402,
+      "decay_act_5": 0.09941654870263308,
+      "decay_rate_5": 0.09415462832618716,
+      "decay_tab_rate_3": 0.14860669659660256,
+      "duration_ms": 0.08246540662615498,
+      "gap": 0.060131260519782216,
+      "last1": 0.10797723993189028,
+      "lastk_rate": 0.08932356076973465,
+      "tab": 0.1665975140833573,
+      "user_id": 0.0,
+      "video_id": 0.06874144164091375
+    },
+    "model_family": "xgb",
+    "name": "A1_replace_with_tab_rate",
+    "seed": 0,
+    "valid": {
+      "GAUC": 0.7547547221183777,
+      "nDCG@5": 0.5847681760787964,
+      "primary": 0.6697614192962646,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "selection_policy": {
+    "preliminary_delta": 0.0003,
+    "promotion_delta": 0.001,
+    "selector": "official standalone validation primary only",
+    "test_access": "none in this phase"
+  },
+  "standalone_verdict": "PROMOTE",
+  "test_accessed": false,
+  "winner": {
+    "best_iteration": 971,
+    "columns": [
+      "user_id",
+      "video_id",
+      "author_id",
+      "tab",
+      "last1",
+      "duration_ms",
+      "decay_tab_rate_3",
+      "lastk_rate",
+      "gap",
+      "decay_rate_5",
+      "decay_act_5"
+    ],
+    "delta_vs_A0": 0.0022072196006774902,
+    "feature_gain_fraction": {
+      "author_id": 0.08258570280274402,
+      "decay_act_5": 0.09941654870263308,
+      "decay_rate_5": 0.09415462832618716,
+      "decay_tab_rate_3": 0.14860669659660256,
+      "duration_ms": 0.08246540662615498,
+      "gap": 0.060131260519782216,
+      "last1": 0.10797723993189028,
+      "lastk_rate": 0.08932356076973465,
+      "tab": 0.1665975140833573,
+      "user_id": 0.0,
+      "video_id": 0.06874144164091375
+    },
+    "model_family": "xgb",
+    "name": "A1_replace_with_tab_rate",
+    "seed": 0,
+    "valid": {
+      "GAUC": 0.7547547221183777,
+      "nDCG@5": 0.5847681760787964,
+      "primary": 0.6697614192962646,
+      "rows": 124909,
+      "users": 22377
+    }
+  }
+}
