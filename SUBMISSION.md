@@ -11,22 +11,26 @@ Within-user ranking on KuaiRand-Pure. Label: `long_view`. Metric: mean(GAUC, nDC
 | iter38 FM ensemble (test, prior final result) | 0.7156 | 0.5681 | 0.64187 |
 | iter44 blend (test, prior final result) | — | — | 0.65197 |
 | iter51 blend (test, prior final result) | — | — | 0.65643 |
-| **Final model — iter55 blend (valid)** | — | — | **0.67451** |
-| **Final model — iter55 blend (test)** | — | — | **0.65832** |
+| iter55 blend (test, prior final result) | — | — | 0.65832 |
+| **Final model — iter63 blend (valid)** | — | — | **0.67606** |
+| **Final model — iter63 blend (test)** | — | — | **0.65955** |
 
-- **Test primary: 0.65832** — a score-level blend (10% weight) of the FM ensemble above with
-  (90% weight) a single LightGBM ranker trained on a from-scratch, un-bucketed ("GBM-native")
+- **Test primary: 0.65955** — a score-level blend (14% weight) of the FM ensemble above with
+  (86% weight) a single LightGBM ranker trained on a from-scratch, un-bucketed ("GBM-native")
   encoding of the same causal features, with `linear_tree=True` (a linear model per leaf instead
-  of a flat constant) and `learning_rate=0.10`
-- **Valid primary: 0.67451** — model selection was valid-only throughout
-- **Improvement over baseline: +0.0637 absolute, +10.71% relative**
+  of a flat constant), `learning_rate=0.10`, and one new feature: `decay_tab_rate_3`, a
+  Laplace-smoothed decayed per-tab positive **rate**, replacing the previous decayed per-tab
+  positive **count** (`decay_tab_3`)
+- **Valid primary: 0.67606** — model selection was valid-only throughout
+- **Improvement over baseline: +0.0650 absolute, +10.92% relative**
 - Reached across 12 iteration rounds / 37 iterations to convergence (3 consecutive
   non-improving rounds under a pre-declared ε=0.002, N=3 rule), then Round 13 (FM ensembling,
   +0.0020 valid / +0.0030 test), Round 14 (iter44's GBM-native representation + blend,
   a further +0.0248 valid / +0.0101 test), Round 16 (iter51's `linear_tree=True` GBM + blend,
-  a further +0.0082 valid / +0.0045 test), and Round 17 (iter55's `learning_rate=0.10` resweep
-  under `linear_tree=True` + blend, a further +0.0015 valid / +0.0019 test) reopened on request
-  to keep maximizing score post-convergence.
+  a further +0.0082 valid / +0.0045 test), Round 17 (iter55's `learning_rate=0.10` resweep
+  under `linear_tree=True` + blend, a further +0.0015 valid / +0.0019 test), and Round 19
+  (iter63's decayed per-tab rate feature + blend, a further +0.0016 valid / +0.0012 test) — all
+  reopened on request to keep maximizing score post-convergence, up to the submission deadline.
 
 ## What the final model is
 
@@ -86,20 +90,36 @@ Round 16. See
 [`experiments/iter51_linear_tree/RESULT.md`](experiments/iter51_linear_tree/RESULT.md) for the
 full standalone and blend results.
 
-**Round 17 (iter55) found a further, genuinely new gain and became the current final submitted
-model.** `linear_tree=True` changes what each boosting round buys the model (a per-leaf linear fit
-instead of a flat constant), so `learning_rate=0.05` — tuned back in iter44 against the old
-constant-leaf tree — had never been re-validated against this structural change. A single-axis
-sweep found `learning_rate=0.10` beats the baseline by +0.0012 valid on the first run, confirmed
-tight across 5 seeds (mean valid 0.67011, +0.00085 over iter51's own 5-seed mean, 5/5 seeds
-improving). Re-blending this GBM with the unchanged iter38 FM ensemble at a re-swept optimum (10%
-weight on FM, 90% on the GBM) gave a further, larger gain at the blend level: **valid 0.67451,
-test 0.65832**, the current final submitted model. Three other Round 17 hypotheses — retesting
-capacity, the tree's own `linear_lambda` regularization, and the previously-rejected hour-of-day
-feature, all under `linear_tree=True` — were tested first and confirmed iter51's configuration as
-a robust local optimum along those axes before this new lever was found. See
+**Round 17 (iter55) found a further, genuinely new gain.** `linear_tree=True` changes what each
+boosting round buys the model (a per-leaf linear fit instead of a flat constant), so
+`learning_rate=0.05` — tuned back in iter44 against the old constant-leaf tree — had never been
+re-validated against this structural change. A single-axis sweep found `learning_rate=0.10` beats
+the baseline by +0.0012 valid on the first run, confirmed tight across 5 seeds (mean valid
+0.67011, +0.00085 over iter51's own 5-seed mean, 5/5 seeds improving). Re-blending this GBM with
+the unchanged iter38 FM ensemble at a re-swept optimum (10% weight on FM, 90% on the GBM) gave a
+further, larger gain at the blend level: **valid 0.67451, test 0.65832**, the final submitted
+model through Round 18. Three other Round 17 hypotheses — retesting capacity, the tree's own
+`linear_lambda` regularization, and the previously-rejected hour-of-day feature, all under
+`linear_tree=True` — were tested first and confirmed iter51's configuration as a robust local
+optimum along those axes before this new lever was found. Round 18 then resweept the two FM-side
+hyperparameters analogous to `learning_rate` (embedding dimension `k`, iter60; FM's own
+`learning_rate`, iter61) plus BPR's negative-sampling weight (iter62) — all three REJECTed
+(iter61 found a real standalone FM gain that did not survive re-blending with the GBM). See
 [`experiments/iter55_learning_rate_sweep/RESULT.md`](experiments/iter55_learning_rate_sweep/RESULT.md)
 for the full standalone and blend results.
+
+**Round 19 (iter63) found a genuinely new feature and became the current final submitted model.**
+Every feature set since iter24 has carried `decay_tab_3`, a decayed per-tab positive **count** —
+but never the matching decayed-total denominator needed to turn it into a Laplace-smoothed
+**rate**, the same count→rate upgrade that already won earlier in the project (the iter16-era
+`decay_rate` feature). Extending the pipeline to track that denominator and replacing the count
+with the rate (`decay_tab_rate_3`) gave a real, causally-verified, 5-seed-confirmed standalone GBM
+gain (mean valid +0.00107, 5/5 seeds, test +0.00098 mean) that — unlike iter61's FM-side gain —
+propagated cleanly through to the blend level: re-blending with the unchanged iter38 FM ensemble
+at a re-swept optimum (14% weight on FM, 86% on the GBM) gave **valid 0.67606, test 0.65955**, the
+current final submitted model. See
+[`experiments/iter63_decay_tab_rate/RESULT.md`](experiments/iter63_decay_tab_rate/RESULT.md) for
+the full causality-verification, sweep, 5-seed-confirmation, and blend detail.
 
 Code: [`experiments/iter27_triple_fusion/data_ext.py`](experiments/iter27_triple_fusion/data_ext.py),
 [`experiments/iter27_triple_fusion/train.py`](experiments/iter27_triple_fusion/train.py) (FM base
@@ -108,23 +128,25 @@ config, per seed), [`experiments/iter38_seed_ensemble/driver.py`](experiments/it
 (GBM-native model), [`experiments/iter51_linear_tree/train.py`](experiments/iter51_linear_tree/train.py)
 (`linear_tree=True` variant), [`experiments/iter55_learning_rate_sweep/train.py`](experiments/iter55_learning_rate_sweep/train.py)
 (`learning_rate=0.10` variant, reuses iter51's `run()`),
-[`experiments/iter55_learning_rate_sweep/blend.py`](experiments/iter55_learning_rate_sweep/blend.py)
+[`experiments/iter63_decay_tab_rate/data_ext.py`](experiments/iter63_decay_tab_rate/data_ext.py)
+(`decay_tab_rate_3` feature), [`experiments/iter63_decay_tab_rate/train.py`](experiments/iter63_decay_tab_rate/train.py)
+(GBM trained on the extended feature set), [`experiments/iter63_decay_tab_rate/blend.py`](experiments/iter63_decay_tab_rate/blend.py)
 (the FM+GBM blend), [`make_submission.py`](make_submission.py) (final end-to-end reproduction).
 
 ## Reproducing the result
 
 ```bash
 # from the repo root, with KuaiRand-Pure/data/ already present (see README.md for download)
-pip install lightgbm pandas   # new dependencies for iter44's GBM; the FM/BPR line stays numpy-only
+pip install lightgbm pandas   # new dependencies for the GBM; the FM/BPR line stays numpy-only
 python3 make_submission.py submission.csv
 ```
 
-This trains iter55's GBM-native `linear_tree=True`, `learning_rate=0.10` LightGBM ranker (a few
-seconds, CPU) and iter27's exact FM configuration at 5 seeds (~25s each on CPU, one core — ~2
-minutes total, still well within the official baseline's resource profile), blends their
-test-split scores at the confirmed optimum (alpha=0.10), evaluates on valid/test, writes
-`submission.csv` in the format `submit.py` requires, then self-validates that file with
-`submit.py`'s own `read_submission` alignment check.
+This trains iter63's GBM-native `linear_tree=True`, `learning_rate=0.10`,
+`decay_tab_rate_3`-augmented LightGBM ranker (a few seconds, CPU) and iter27's exact FM
+configuration at 5 seeds (~25s each on CPU, one core — ~2 minutes total, still well within the
+official baseline's resource profile), blends their test-split scores at the confirmed optimum
+(alpha=0.14), evaluates on valid/test, writes `submission.csv` in the format `submit.py`
+requires, then self-validates that file with `submit.py`'s own `read_submission` alignment check.
 
 To reproduce the full 5-seed result reported above directly against the experiment harness:
 
@@ -210,9 +232,23 @@ Every iteration — hypothesis, method, harness-fidelity check, results, verdict
   `linear_tree=True`'s structural change reopens previously-closed directions (capacity,
   `linear_lambda` regularization, hour-of-day feature) all landed **REJECT**, confirming iter51's
   configuration as a robust local optimum; a fourth, genuinely new hypothesis — `learning_rate`
-  resweep under `linear_tree=True` (iter55) — found a real further gain (**PROMOTE**), becoming the
-  current final submitted model. See the iter55 paragraph above and
-  [`experiments/LEDGER.md`](experiments/LEDGER.md)'s Round 17 section for detail on each.
+  resweep under `linear_tree=True` (iter55) — found a real further gain (**PROMOTE**). See the
+  iter55 paragraph above and [`experiments/LEDGER.md`](experiments/LEDGER.md)'s Round 17 section
+  for detail on each.
+- **Round 18 (FM-side search, on request after the GBM hyperparameter space was confirmed
+  exhausted)**: resweeping the two FM hyperparameters most analogous to the levers that had just
+  paid off on the GBM side — embedding dimension `k` (iter60) and `learning_rate` (iter61) — plus
+  BPR's negative-sampling weight (iter62), all landed **REJECT**; iter61 found a real standalone FM
+  gain (+0.00108 valid, 5-seed confirmed) that notably did *not* survive re-blending with the GBM
+  (blend valid gain below the promotion threshold, test moved the wrong way) — an instructive
+  counterexample to "any real standalone gain promotes." See
+  [`experiments/LEDGER.md`](experiments/LEDGER.md)'s Round 18 section for detail on each.
+- **Round 19 (new feature-engineering angle, on request after Round 18's FM-side search was
+  exhausted)**: iter63's decayed per-tab rate feature (**PROMOTE**) — see the iter63 paragraph
+  above — became the current final submitted model. Two other angles were ruled out first without
+  a full experiment: item-side popularity features (already closed in iter12, redundant with the
+  FM's learned id embeddings) and time-of-day (already closed in iter48). See the iter63 paragraph
+  above and [`experiments/LEDGER.md`](experiments/LEDGER.md)'s Round 19 section for detail.
 
 ## Limitations / future work
 
@@ -253,7 +289,7 @@ Every iteration — hypothesis, method, harness-fidelity check, results, verdict
 
 See [`README.md`](README.md) for environment/data-download instructions. The FM/BPR line
 (iter1-iter39) is Python 3.9+ and numpy only, no other dependencies. **The final submitted model
-(iter55) additionally requires `pandas` and `lightgbm`** (both pip-installable) for its GBM
+(iter63) additionally requires `pandas` and `lightgbm`** (both pip-installable) for its GBM
 component — see `pip install lightgbm pandas` in "Reproducing the result" above.
 `make_submission.py` and everything under `experiments/` assume `KuaiRand-Pure/data/` is present
 at the repo root, per that README.

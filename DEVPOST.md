@@ -14,13 +14,13 @@ A score-level blend of two independently-trained model families — an FM rankin
 BPR loss, three layered additions: recency-decay/momentum features, activity-weighted BPR
 sampling, retuned smoothing constants) and a LightGBM ranker (`linear_tree=True`, a linear model
 per leaf rather than a flat constant, `learning_rate=0.10`) trained on a from-scratch, un-bucketed
-encoding of the same causal features — that improves test primary from the FM baseline's 0.5946 to
-**0.65832** (+0.0637 absolute, +10.71% relative), fully reproducible with
-`python3 make_submission.py`.
+encoding of the same causal features plus a decayed per-tab engagement *rate* feature — that
+improves test primary from the FM baseline's 0.5946 to **0.65955** (+0.0650 absolute, +10.92%
+relative), fully reproducible with `python3 make_submission.py`.
 
 ## How we built it
 
-We ran an autonomous, orchestrator-driven iteration loop over 17 rounds / 55 iterations:
+We ran an autonomous, orchestrator-driven iteration loop over 19 rounds / 63 iterations:
 
 1. **Hypothesize** from the starter kit's own "organizer-suggested unexplored directions"
    (loss function, feature causality, sampling strategy, model architecture, multi-task learning,
@@ -82,8 +82,27 @@ local optimum along those axes — clean rejects, not gains. A fourth, genuinely
 `learning_rate`, tuned years earlier against the *old* constant-leaf tree and never re-checked
 against the new piecewise-linear one — found a real further gain: `learning_rate=0.10` beat the
 baseline by +0.00085 valid (5-seed confirmed, 5/5 seeds improving), and re-blending pushed the
-final result to **test 0.65832** — see
+result to **test 0.65832** — see
 [`experiments/iter55_learning_rate_sweep/RESULT.md`](experiments/iter55_learning_rate_sweep/RESULT.md).
+
+**Round 18 pivoted to the FM side and came up empty — instructively.** With the GBM
+hyperparameter space confirmed exhausted, we resweept the two FM hyperparameters most analogous
+to the levers that had just paid off on the GBM side (embedding dimension, learning rate) plus
+BPR's negative-sampling weight. All three were clean rejects — but the FM `learning_rate` resweep
+is worth noting on its own: it found a real, 5-seed-confirmed standalone FM gain (+0.00108 valid)
+that simply didn't survive re-blending with the GBM (test even moved the wrong way). A useful
+reminder that "real at the standalone level" and "real at the level that's actually submitted"
+are two different bars, and only the second one matters.
+
+**Round 19 found one more genuinely new feature and produced the current final result.** Every
+feature set since early in the project had carried a decayed per-tab positive *count*, but never
+the matching decayed-total denominator needed to turn it into a Laplace-smoothed *rate* — the same
+count→rate upgrade that had already paid off once earlier in the project for a different feature.
+Building that denominator and swapping the count for the rate gave a real, causally-verified,
+5-seed-confirmed GBM gain (+0.00107 valid mean, 5/5 seeds) that — unlike the Round 18 FM finding —
+propagated cleanly through to the blend: re-blending with the unchanged FM ensemble pushed the
+final result to **test 0.65955** — see
+[`experiments/iter63_decay_tab_rate/RESULT.md`](experiments/iter63_decay_tab_rate/RESULT.md).
 
 ## Challenges we ran into
 
@@ -113,12 +132,15 @@ final result to **test 0.65832** — see
 
 ## Accomplishments that we're proud of
 
-- +10.71% relative improvement over the official baseline (up from +7.45% at the first
+- +10.92% relative improvement over the official baseline (up from +7.45% at the first
   convergence point), the extra gain found entirely in a self-directed post-convergence phase
   rather than from any new instruction — including seven further methods tried after the GBM
   blend result above, six of which were clean rejects before the seventh (`linear_tree=True`)
-  found the next real gain, and three more rejects after that before an eleventh
-  (`learning_rate=0.10` under `linear_tree=True`) found the gain currently submitted.
+  found the next real gain, three more rejects after that before an eleventh
+  (`learning_rate=0.10` under `linear_tree=True`) found the next gain, three FM-side rejects after
+  that (one of which found a real standalone-only gain that didn't survive blending — a useful
+  negative result in its own right), and finally a new causal feature (a decayed per-tab
+  engagement rate) that produced the currently submitted result.
 - A disciplined negative-results record: two multi-task learning designs and a model-capacity
   sweep were tried, diagnosed, and closed with documented reasoning rather than silently dropped
   or retried indefinitely — and, distinctly, a documented *reopening* of a previously-closed

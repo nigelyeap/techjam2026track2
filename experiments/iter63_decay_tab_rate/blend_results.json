@@ -1,0 +1,20 @@
+{
+  "gbm_standalone": {
+    "valid": 0.6716787219047546,
+    "test": 0.6535274386405945
+  },
+  "fm_standalone": {
+    "valid": 0.6398779153823853,
+    "test": 0.6418731808662415
+  },
+  "best_blend": {
+    "alpha": 0.14,
+    "valid": 0.6760629415512085,
+    "test": 0.659552812576294
+  },
+  "iter55_blend_for_comparison": {
+    "alpha": 0.1,
+    "valid": 0.67451,
+    "test": 0.65832
+  }
+}

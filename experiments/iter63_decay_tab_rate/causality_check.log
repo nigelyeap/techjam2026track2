@@ -1,0 +1,9 @@
+loading /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter63_decay_tab_rate/../../KuaiRand-Pure/data ...
+{'train': 1141112, 'valid': 124909, 'test': 170588}   (9.6s)
+
+=== causal spot-check: decayed_tab_total (brute force) ===
+30 random rows x 2 tab-halflives: decayed_tab_total matches brute force (max abs err 1.78e-14). No leakage detected.
+sanity (5000 rows x 2 halflives): decayed_tab_total >= decayed_tab_pos everywhere. OK.
+zero-activity rows (5 checked): decayed_tab_total correctly 0.0.
+
+All causal spot-checks passed.

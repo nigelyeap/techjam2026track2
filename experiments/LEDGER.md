@@ -1809,7 +1809,46 @@ monotonically decreasing — a clean interior optimum already at the
 current value. **Verdict: REJECT.** Full detail:
 `experiments/iter62_fm_sampling_alpha_sweep/RESULT.md`.
 
+## Round 19 — new feature-engineering angle (user-directed pivot after FM-side search exhausted)
+With Round 18's FM-hyperparameter resweeps all REJECTed (iter60-62), the
+user was asked for direction and chose to invest in a new feature-
+engineering angle rather than further knob-tuning, given the tight
+deadline. Two previously-explored angles were ruled out first: item-side
+popularity features (iter12 — redundant with FM's learned id embeddings)
+and time-of-day (iter48 — REJECTed). iter63 instead closes a real gap in
+the existing pipeline: `decay_tab_3` (a decayed per-tab positive **count**,
+present in every feature set since iter24) never had a matching decayed-
+total denominator, so the Laplace-smoothed **rate** version — the same
+count→rate upgrade that already won earlier in the project (iter16 era) —
+was never constructible until now.
+
+### iter63 — decayed per-tab rate feature (`decay_tab_rate_3` replacing `decay_tab_3`) — real gain, PENDING user go-ahead to promote
+
+Extended `compute_decay_tab_features` to track a parallel decayed-total
+counter (all tab visits, not just positives), enabling
+`decay_tab_rate_3 = (decayed_pos + 0.5) / (decayed_total + 1.0)`. Causally
+verified (brute-force spot-checks, max err 1.78e-14; no leakage). Single-
+seed sweep found `rate_only` (rate replaces count) beats `baseline` (=
+iter55 exactly) by +0.00116 valid; interestingly `plus_rate` (rate added
+alongside count) is bit-identical to baseline — the linear-leaf GBM
+apparently ignores the rate feature when the count is also present
+(unexplained, not pursued further). **5-seed confirmed**: mean delta valid
+**+0.00107**, 5/5 seeds winning, test also +0.00098 mean — clears the 0.001
+"unambiguously real" bar. Unlike iter61 (real standalone FM gain that did
+NOT survive to blend level), this gain **does** propagate to the blend:
+re-blended with the unchanged iter38 FM ensemble, best alpha shifts
+0.10→0.14 and **valid=0.67606 / test=0.65955 vs iter55's 0.67451/0.65832
+(+0.00155 valid / +0.00123 test)** — both splits improve, clear of the
+0.0003 look-threshold. **Verdict: PROMOTE, pending explicit user
+approval** (per standing protocol, promotion to submission deliverables is
+never done unilaterally). Full detail:
+`experiments/iter63_decay_tab_rate/RESULT.md`.
+
 ## Best-known candidate / final result as currently submitted (iter55, promoted end of Round 17)
+**iter63 blend (valid=0.67606/test=0.65955) is a confirmed, real improvement
+over this and awaits explicit user approval to promote — see Round 19
+above and `experiments/iter63_decay_tab_rate/RESULT.md`.**
+
 **Final selected model: iter55 blend** — a score-level blend (alpha=0.10,
 90% weight on the GBM) of (a) a single
 `LGBMRanker(num_leaves=2, learning_rate=0.10, n_estimators=500,

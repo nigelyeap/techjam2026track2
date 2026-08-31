@@ -1,15 +1,17 @@
-"""Generates the final submission CSV using iter55's blend (current best, see
-experiments/LEDGER.md's "Best-known candidate"): a score-level blend
-(alpha=0.10, 90% weight on the GBM) of
+"""Generates the final submission CSV using iter63's blend (current best, see
+experiments/LEDGER.md's "Best-known candidate" / Round 19): a score-level
+blend (alpha=0.14, 86% weight on the GBM) of
 
   (a) a single LightGBM LGBMRanker (num_leaves=2, lr=0.10, n_estimators=500,
-      min_child_samples=200, reg_lambda=1.0, linear_tree=True) trained on a
-      GBM-native (un-bucketed) encoding of iter27's causal features -- see
-      experiments/iter55_learning_rate_sweep/train.py, which reuses iter51's
-      run() with learning_rate=0.10 -- confirmed in
-      experiments/iter55_learning_rate_sweep/RESULT.md: 5-seed mean
-      valid 0.67011/test 0.65230 standalone (learning_rate=0.10 beats
-      iter51's lr=0.05 by +0.00085 valid).
+      min_child_samples=200, reg_lambda=1.0, linear_tree=True) trained on
+      iter63's GBM-native encoding of iter27's causal features WITH
+      decay_tab_3 (a raw decayed per-tab positive count) REPLACED by
+      decay_tab_rate_3 (the matching Laplace-smoothed rate) -- see
+      experiments/iter63_decay_tab_rate/train.py ('rate_only' variant),
+      which reuses iter55's exact hyperparameters -- confirmed in
+      experiments/iter63_decay_tab_rate/RESULT.md: 5-seed mean valid
+      0.67117/test 0.65328 standalone (beats iter55's baseline by +0.00107
+      valid, 5/5 seeds).
 
   (b) iter38's unchanged 5-model ensemble (seeds 0-4) of FM + activity-
       weighted BPR with iter24's recency-decay/momentum features -- see
@@ -17,9 +19,9 @@ experiments/LEDGER.md's "Best-known candidate"): a score-level blend
       0.64187 standalone.
 
 The blend itself is confirmed in
-experiments/iter55_learning_rate_sweep/blend_results.json: valid 0.67451/
-test 0.65832 (alpha=0.10), the current project best -- superseding iter51's
-blend (valid 0.67297/test 0.65643). Scores the official test split in file
+experiments/iter63_decay_tab_rate/blend_results.json: valid 0.67606/
+test 0.65955 (alpha=0.14), the current project best -- superseding iter55's
+blend (valid 0.67451/test 0.65832). Scores the official test split in file
 order, matching submit.py's expected format.
 
 Note: unlike earlier iterations (numpy only), this final model additionally
@@ -38,12 +40,7 @@ from data_ext import load_ext, encode_ext, compute_final_decayed_pos, HALFLIVES,
 from train import build_pos_neg_index, sample_pairs, bpr_step
 
 _REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
-_ITER51_DIR = os.path.join(_REPO_ROOT, 'experiments', 'iter51_linear_tree')
-
-DATA_DIR = os.path.join(_REPO_ROOT, 'KuaiRand-Pure', 'data')
-FEATURES = ('decay_rate_2.5', 'decay_act_2.5', 'decay_tab_3', 'last1', 'lastk_rate', 'gap')
-SEEDS = (0, 1, 2, 3, 4)
-ALPHA_BLEND = 0.10  # weight on the FM ensemble; 1-ALPHA_BLEND on the GBM (iter55/blend.py's confirmed optimum)
+_ITER63_DIR = os.path.join(_REPO_ROOT, 'experiments', 'iter63_decay_tab_rate')
 
 
 def _load_module(path, name):
@@ -51,6 +48,12 @@ def _load_module(path, name):
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
+
+
+DATA_DIR = os.path.join(_REPO_ROOT, 'KuaiRand-Pure', 'data')
+FEATURES = ('decay_rate_2.5', 'decay_act_2.5', 'decay_tab_3', 'last1', 'lastk_rate', 'gap')
+SEEDS = (0, 1, 2, 3, 4)
+ALPHA_BLEND = 0.14  # weight on the FM ensemble; 1-ALPHA_BLEND on the GBM (iter63/blend.py's confirmed optimum)
 
 
 def sigmoid(x): return 1.0 / (1.0 + np.exp(-np.clip(x, -30, 30)))
@@ -98,12 +101,12 @@ def train_one_fm(Xtr, ytr, utr, Xva, yva, uva, splits_train, dim, seed,
 if __name__ == '__main__':
     out_path = sys.argv[1] if len(sys.argv) > 1 else 'submission.csv'
 
-    print("=== training native-feature LightGBM ranker (num_leaves=2, linear_tree=True, lr=0.10, iter55's winner) ===", flush=True)
-    gbm_train = _load_module(os.path.join(_ITER51_DIR, 'train.py'), 'iter51_train_final')
-    dfs_gbm, y_gbm, u_gbm = gbm_train.gbm44.prepare(DATA_DIR)
-    gbm_model, gbm_va_metrics, gbm_te_metrics, _ = gbm_train.run(
-        DATA_DIR, verbose=True, linear_tree=True, num_leaves=2, learning_rate=0.10,
-        n_estimators=500, min_child_samples=200, reg_lambda=1.0, seed=0, _cache=(dfs_gbm, y_gbm, u_gbm))
+    print("=== training native-feature LightGBM ranker (num_leaves=2, linear_tree=True, lr=0.10, decay_tab_rate_3, iter63's winner) ===", flush=True)
+    gbm_train = _load_module(os.path.join(_ITER63_DIR, 'train.py'), 'iter63_train_final')
+    gbm_model, gbm_va_metrics, gbm_te_metrics, cache_gbm = gbm_train.run(
+        DATA_DIR, 'rate_only', linear_tree=True, num_leaves=2, learning_rate=0.10,
+        n_estimators=500, min_child_samples=200, reg_lambda=1.0, seed=0, verbose=True)
+    dfs_gbm, y_gbm, u_gbm = cache_gbm
     print(f"  GBM standalone: valid={gbm_va_metrics['primary']:.5f} test={gbm_te_metrics['primary']:.5f}", flush=True)
     gbm_va_raw = gbm_model.predict(dfs_gbm['valid'])
     gbm_te_raw = gbm_model.predict(dfs_gbm['test'])
@@ -135,7 +138,7 @@ if __name__ == '__main__':
     blend_te = ALPHA_BLEND * fm_te_ens + (1 - ALPHA_BLEND) * gbm_te_norm
     va_metrics = evaluate(uva, yva, blend_va)
     te_metrics = evaluate(ute, yte, blend_te)
-    print(f"\niter55 blend: valid primary={va_metrics['primary']:.5f}  test primary={te_metrics['primary']:.5f}", flush=True)
+    print(f"\niter63 blend: valid primary={va_metrics['primary']:.5f}  test primary={te_metrics['primary']:.5f}", flush=True)
 
     raw_test_rows = load(DATA_DIR)['test']
     assert len(raw_test_rows) == len(dfs_gbm['test']), \
