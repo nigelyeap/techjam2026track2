@@ -1,0 +1,682 @@
+[
+  {
+    "gbm_seed": 0,
+    "global": {
+      "alpha": 0.13,
+      "valid": 0.6761183738708496,
+      "test": 0.6595803499221802
+    },
+    "tab_segment": {
+      "alphas": {
+        "0": 0.0,
+        "1": 0.13,
+        "10": 0.0,
+        "11": 0.01,
+        "12": 0.01,
+        "13": 0.0,
+        "14": 0.0,
+        "2": 0.15,
+        "3": 0.0,
+        "4": 0.02,
+        "5": 0.4,
+        "6": 0.15,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0
+      },
+      "sizes": {
+        "0": {
+          "valid_rows": 13726,
+          "valid_users": 5579,
+          "test_rows": 14348
+        },
+        "1": {
+          "valid_rows": 92672,
+          "valid_users": 20119,
+          "test_rows": 130841
+        },
+        "10": {
+          "valid_rows": 30,
+          "valid_users": 21,
+          "test_rows": 42
+        },
+        "11": {
+          "valid_rows": 121,
+          "valid_users": 63,
+          "test_rows": 187
+        },
+        "12": {
+          "valid_rows": 226,
+          "valid_users": 112,
+          "test_rows": 412
+        },
+        "13": {
+          "valid_rows": 57,
+          "valid_users": 13,
+          "test_rows": 59
+        },
+        "14": {
+          "valid_rows": 5,
+          "valid_users": 5,
+          "test_rows": 15
+        },
+        "2": {
+          "valid_rows": 3834,
+          "valid_users": 1126,
+          "test_rows": 5239
+        },
+        "3": {
+          "valid_rows": 177,
+          "valid_users": 162,
+          "test_rows": 263
+        },
+        "4": {
+          "valid_rows": 7877,
+          "valid_users": 4209,
+          "test_rows": 9764
+        },
+        "5": {
+          "valid_rows": 291,
+          "valid_users": 129,
+          "test_rows": 476
+        },
+        "6": {
+          "valid_rows": 5170,
+          "valid_users": 2212,
+          "test_rows": 7944
+        },
+        "7": {
+          "valid_rows": 84,
+          "valid_users": 40,
+          "test_rows": 87
+        },
+        "8": {
+          "valid_rows": 547,
+          "valid_users": 340,
+          "test_rows": 811
+        },
+        "9": {
+          "valid_rows": 92,
+          "valid_users": 43,
+          "test_rows": 100
+        }
+      },
+      "valid": 0.6673320531845093,
+      "test": 0.6516913771629333
+    },
+    "tier_segment": {
+      "alphas": {
+        "0": 0.09,
+        "1": 0.07,
+        "2": 0.14
+      },
+      "sizes": {
+        "0": {
+          "valid_rows": 41635,
+          "valid_users": 15034,
+          "test_rows": 94661
+        },
+        "1": {
+          "valid_rows": 41633,
+          "valid_users": 9860,
+          "test_rows": 49102
+        },
+        "2": {
+          "valid_rows": 41641,
+          "valid_users": 5372,
+          "test_rows": 26825
+        }
+      },
+      "edges": [
+        3.384343473454943,
+        7.043420215303604
+      ],
+      "valid": 0.6709256172180176,
+      "test": 0.6572906374931335
+    }
+  },
+  {
+    "gbm_seed": 1,
+    "global": {
+      "alpha": 0.14,
+      "valid": 0.6758275032043457,
+      "test": 0.6594511270523071
+    },
+    "tab_segment": {
+      "alphas": {
+        "0": 0.0,
+        "1": 0.13,
+        "10": 0.0,
+        "11": 0.02,
+        "12": 0.01,
+        "13": 0.01,
+        "14": 0.0,
+        "2": 0.15,
+        "3": 0.0,
+        "4": 0.03,
+        "5": 0.37,
+        "6": 0.15,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0
+      },
+      "sizes": {
+        "0": {
+          "valid_rows": 13726,
+          "valid_users": 5579,
+          "test_rows": 14348
+        },
+        "1": {
+          "valid_rows": 92672,
+          "valid_users": 20119,
+          "test_rows": 130841
+        },
+        "10": {
+          "valid_rows": 30,
+          "valid_users": 21,
+          "test_rows": 42
+        },
+        "11": {
+          "valid_rows": 121,
+          "valid_users": 63,
+          "test_rows": 187
+        },
+        "12": {
+          "valid_rows": 226,
+          "valid_users": 112,
+          "test_rows": 412
+        },
+        "13": {
+          "valid_rows": 57,
+          "valid_users": 13,
+          "test_rows": 59
+        },
+        "14": {
+          "valid_rows": 5,
+          "valid_users": 5,
+          "test_rows": 15
+        },
+        "2": {
+          "valid_rows": 3834,
+          "valid_users": 1126,
+          "test_rows": 5239
+        },
+        "3": {
+          "valid_rows": 177,
+          "valid_users": 162,
+          "test_rows": 263
+        },
+        "4": {
+          "valid_rows": 7877,
+          "valid_users": 4209,
+          "test_rows": 9764
+        },
+        "5": {
+          "valid_rows": 291,
+          "valid_users": 129,
+          "test_rows": 476
+        },
+        "6": {
+          "valid_rows": 5170,
+          "valid_users": 2212,
+          "test_rows": 7944
+        },
+        "7": {
+          "valid_rows": 84,
+          "valid_users": 40,
+          "test_rows": 87
+        },
+        "8": {
+          "valid_rows": 547,
+          "valid_users": 340,
+          "test_rows": 811
+        },
+        "9": {
+          "valid_rows": 92,
+          "valid_users": 43,
+          "test_rows": 100
+        }
+      },
+      "valid": 0.6674256324768066,
+      "test": 0.651891827583313
+    },
+    "tier_segment": {
+      "alphas": {
+        "0": 0.12,
+        "1": 0.08,
+        "2": 0.14
+      },
+      "sizes": {
+        "0": {
+          "valid_rows": 41635,
+          "valid_users": 15034,
+          "test_rows": 94661
+        },
+        "1": {
+          "valid_rows": 41633,
+          "valid_users": 9860,
+          "test_rows": 49102
+        },
+        "2": {
+          "valid_rows": 41641,
+          "valid_users": 5372,
+          "test_rows": 26825
+        }
+      },
+      "edges": [
+        3.384343473454943,
+        7.043420215303604
+      ],
+      "valid": 0.6710245609283447,
+      "test": 0.6572715044021606
+    }
+  },
+  {
+    "gbm_seed": 2,
+    "global": {
+      "alpha": 0.13,
+      "valid": 0.6754034161567688,
+      "test": 0.6592689156532288
+    },
+    "tab_segment": {
+      "alphas": {
+        "0": 0.0,
+        "1": 0.13,
+        "10": 0.0,
+        "11": 0.01,
+        "12": 0.01,
+        "13": 0.0,
+        "14": 0.0,
+        "2": 0.14,
+        "3": 0.0,
+        "4": 0.13,
+        "5": 0.4,
+        "6": 0.15,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0
+      },
+      "sizes": {
+        "0": {
+          "valid_rows": 13726,
+          "valid_users": 5579,
+          "test_rows": 14348
+        },
+        "1": {
+          "valid_rows": 92672,
+          "valid_users": 20119,
+          "test_rows": 130841
+        },
+        "10": {
+          "valid_rows": 30,
+          "valid_users": 21,
+          "test_rows": 42
+        },
+        "11": {
+          "valid_rows": 121,
+          "valid_users": 63,
+          "test_rows": 187
+        },
+        "12": {
+          "valid_rows": 226,
+          "valid_users": 112,
+          "test_rows": 412
+        },
+        "13": {
+          "valid_rows": 57,
+          "valid_users": 13,
+          "test_rows": 59
+        },
+        "14": {
+          "valid_rows": 5,
+          "valid_users": 5,
+          "test_rows": 15
+        },
+        "2": {
+          "valid_rows": 3834,
+          "valid_users": 1126,
+          "test_rows": 5239
+        },
+        "3": {
+          "valid_rows": 177,
+          "valid_users": 162,
+          "test_rows": 263
+        },
+        "4": {
+          "valid_rows": 7877,
+          "valid_users": 4209,
+          "test_rows": 9764
+        },
+        "5": {
+          "valid_rows": 291,
+          "valid_users": 129,
+          "test_rows": 476
+        },
+        "6": {
+          "valid_rows": 5170,
+          "valid_users": 2212,
+          "test_rows": 7944
+        },
+        "7": {
+          "valid_rows": 84,
+          "valid_users": 40,
+          "test_rows": 87
+        },
+        "8": {
+          "valid_rows": 547,
+          "valid_users": 340,
+          "test_rows": 811
+        },
+        "9": {
+          "valid_rows": 92,
+          "valid_users": 43,
+          "test_rows": 100
+        }
+      },
+      "valid": 0.6757156252861023,
+      "test": 0.6594765782356262
+    },
+    "tier_segment": {
+      "alphas": {
+        "0": 0.11,
+        "1": 0.06,
+        "2": 0.14
+      },
+      "sizes": {
+        "0": {
+          "valid_rows": 41635,
+          "valid_users": 15034,
+          "test_rows": 94661
+        },
+        "1": {
+          "valid_rows": 41633,
+          "valid_users": 9860,
+          "test_rows": 49102
+        },
+        "2": {
+          "valid_rows": 41641,
+          "valid_users": 5372,
+          "test_rows": 26825
+        }
+      },
+      "edges": [
+        3.384343473454943,
+        7.043420215303604
+      ],
+      "valid": 0.6685913801193237,
+      "test": 0.6559052467346191
+    }
+  },
+  {
+    "gbm_seed": 3,
+    "global": {
+      "alpha": 0.13,
+      "valid": 0.6754034161567688,
+      "test": 0.6592689156532288
+    },
+    "tab_segment": {
+      "alphas": {
+        "0": 0.0,
+        "1": 0.13,
+        "10": 0.0,
+        "11": 0.01,
+        "12": 0.01,
+        "13": 0.0,
+        "14": 0.0,
+        "2": 0.14,
+        "3": 0.0,
+        "4": 0.13,
+        "5": 0.4,
+        "6": 0.15,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0
+      },
+      "sizes": {
+        "0": {
+          "valid_rows": 13726,
+          "valid_users": 5579,
+          "test_rows": 14348
+        },
+        "1": {
+          "valid_rows": 92672,
+          "valid_users": 20119,
+          "test_rows": 130841
+        },
+        "10": {
+          "valid_rows": 30,
+          "valid_users": 21,
+          "test_rows": 42
+        },
+        "11": {
+          "valid_rows": 121,
+          "valid_users": 63,
+          "test_rows": 187
+        },
+        "12": {
+          "valid_rows": 226,
+          "valid_users": 112,
+          "test_rows": 412
+        },
+        "13": {
+          "valid_rows": 57,
+          "valid_users": 13,
+          "test_rows": 59
+        },
+        "14": {
+          "valid_rows": 5,
+          "valid_users": 5,
+          "test_rows": 15
+        },
+        "2": {
+          "valid_rows": 3834,
+          "valid_users": 1126,
+          "test_rows": 5239
+        },
+        "3": {
+          "valid_rows": 177,
+          "valid_users": 162,
+          "test_rows": 263
+        },
+        "4": {
+          "valid_rows": 7877,
+          "valid_users": 4209,
+          "test_rows": 9764
+        },
+        "5": {
+          "valid_rows": 291,
+          "valid_users": 129,
+          "test_rows": 476
+        },
+        "6": {
+          "valid_rows": 5170,
+          "valid_users": 2212,
+          "test_rows": 7944
+        },
+        "7": {
+          "valid_rows": 84,
+          "valid_users": 40,
+          "test_rows": 87
+        },
+        "8": {
+          "valid_rows": 547,
+          "valid_users": 340,
+          "test_rows": 811
+        },
+        "9": {
+          "valid_rows": 92,
+          "valid_users": 43,
+          "test_rows": 100
+        }
+      },
+      "valid": 0.6757156252861023,
+      "test": 0.6594765782356262
+    },
+    "tier_segment": {
+      "alphas": {
+        "0": 0.11,
+        "1": 0.06,
+        "2": 0.14
+      },
+      "sizes": {
+        "0": {
+          "valid_rows": 41635,
+          "valid_users": 15034,
+          "test_rows": 94661
+        },
+        "1": {
+          "valid_rows": 41633,
+          "valid_users": 9860,
+          "test_rows": 49102
+        },
+        "2": {
+          "valid_rows": 41641,
+          "valid_users": 5372,
+          "test_rows": 26825
+        }
+      },
+      "edges": [
+        3.384343473454943,
+        7.043420215303604
+      ],
+      "valid": 0.6685913801193237,
+      "test": 0.6559052467346191
+    }
+  },
+  {
+    "gbm_seed": 4,
+    "global": {
+      "alpha": 0.14,
+      "valid": 0.6758275032043457,
+      "test": 0.6594523787498474
+    },
+    "tab_segment": {
+      "alphas": {
+        "0": 0.0,
+        "1": 0.13,
+        "10": 0.0,
+        "11": 0.02,
+        "12": 0.01,
+        "13": 0.01,
+        "14": 0.0,
+        "2": 0.15,
+        "3": 0.0,
+        "4": 0.03,
+        "5": 0.37,
+        "6": 0.15,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0
+      },
+      "sizes": {
+        "0": {
+          "valid_rows": 13726,
+          "valid_users": 5579,
+          "test_rows": 14348
+        },
+        "1": {
+          "valid_rows": 92672,
+          "valid_users": 20119,
+          "test_rows": 130841
+        },
+        "10": {
+          "valid_rows": 30,
+          "valid_users": 21,
+          "test_rows": 42
+        },
+        "11": {
+          "valid_rows": 121,
+          "valid_users": 63,
+          "test_rows": 187
+        },
+        "12": {
+          "valid_rows": 226,
+          "valid_users": 112,
+          "test_rows": 412
+        },
+        "13": {
+          "valid_rows": 57,
+          "valid_users": 13,
+          "test_rows": 59
+        },
+        "14": {
+          "valid_rows": 5,
+          "valid_users": 5,
+          "test_rows": 15
+        },
+        "2": {
+          "valid_rows": 3834,
+          "valid_users": 1126,
+          "test_rows": 5239
+        },
+        "3": {
+          "valid_rows": 177,
+          "valid_users": 162,
+          "test_rows": 263
+        },
+        "4": {
+          "valid_rows": 7877,
+          "valid_users": 4209,
+          "test_rows": 9764
+        },
+        "5": {
+          "valid_rows": 291,
+          "valid_users": 129,
+          "test_rows": 476
+        },
+        "6": {
+          "valid_rows": 5170,
+          "valid_users": 2212,
+          "test_rows": 7944
+        },
+        "7": {
+          "valid_rows": 84,
+          "valid_users": 40,
+          "test_rows": 87
+        },
+        "8": {
+          "valid_rows": 547,
+          "valid_users": 340,
+          "test_rows": 811
+        },
+        "9": {
+          "valid_rows": 92,
+          "valid_users": 43,
+          "test_rows": 100
+        }
+      },
+      "valid": 0.6674256324768066,
+      "test": 0.651891827583313
+    },
+    "tier_segment": {
+      "alphas": {
+        "0": 0.12,
+        "1": 0.08,
+        "2": 0.14
+      },
+      "sizes": {
+        "0": {
+          "valid_rows": 41635,
+          "valid_users": 15034,
+          "test_rows": 94661
+        },
+        "1": {
+          "valid_rows": 41633,
+          "valid_users": 9860,
+          "test_rows": 49102
+        },
+        "2": {
+          "valid_rows": 41641,
+          "valid_users": 5372,
+          "test_rows": 26825
+        }
+      },
+      "edges": [
+        3.384343473454943,
+        7.043420215303604
+      ],
+      "valid": 0.6710245609283447,
+      "test": 0.6572710275650024
+    }
+  }
+]
