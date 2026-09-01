@@ -1,0 +1,129 @@
+{
+  "alignment_check": {
+    "test": {
+      "mismatches": 0,
+      "rows": 170588
+    },
+    "train": {
+      "mismatches": 0,
+      "rows": 1141112
+    },
+    "valid": {
+      "mismatches": 0,
+      "rows": 124909
+    }
+  },
+  "aux_classifier_diagnostics": {
+    "is_comment": {
+      "actual_rate": 0.002567670773714781,
+      "oof_mean_pred": 0.002037202411978809
+    },
+    "is_follow": {
+      "actual_rate": 0.001006912556476891,
+      "oof_mean_pred": 0.0021419625941431764
+    },
+    "is_forward": {
+      "actual_rate": 0.0009955201530829072,
+      "oof_mean_pred": 0.00223274353288635
+    },
+    "is_like": {
+      "actual_rate": 0.0186765193939209,
+      "oof_mean_pred": 0.017764870287021
+    }
+  },
+  "aux_prevalence_train": {
+    "is_comment": 0.0025676708333625445,
+    "is_follow": 0.001006912555472206,
+    "is_forward": 0.0009955201592832255,
+    "is_like": 0.018676519044581074
+  },
+  "blend_ablation": {
+    "baseline_baseline": {
+      "test_primary": 0.6843225955963135,
+      "valid_delta_vs_baseline": 0.0,
+      "valid_primary": 0.6994343996047974
+    },
+    "baseline_xgbaux": {
+      "test_primary": 0.6817570328712463,
+      "valid_delta_vs_baseline": -0.003761887550354004,
+      "valid_primary": 0.6956725120544434
+    },
+    "lgbaux_baseline": {
+      "test_primary": 0.6843225955963135,
+      "valid_delta_vs_baseline": 0.0,
+      "valid_primary": 0.6994343996047974
+    },
+    "lgbaux_xgbaux": {
+      "test_primary": 0.6817570328712463,
+      "valid_delta_vs_baseline": -0.003761887550354004,
+      "valid_primary": 0.6956725120544434
+    }
+  },
+  "blend_baseline": {
+    "test_primary": 0.6843225955963135,
+    "valid_primary": 0.6994343996047974
+  },
+  "elapsed_seconds": 1013.5256309509277,
+  "environment": {
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "python": "3.14.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterMERGE4_multitask_aux_3model",
+  "harness_fidelity": {
+    "all_pass_1e-6": true,
+    "blend_test": 0.6843225955963135,
+    "blend_valid": 0.6994343996047974,
+    "claimed": {
+      "blend_test": 0.6843226,
+      "blend_valid": 0.6994344,
+      "fm_valid": 0.63987792,
+      "lgb_candidate_valid": 0.68834144,
+      "xgb_valid": 0.6675542
+    },
+    "deltas": {
+      "blend_test": 0.0,
+      "blend_valid": 0.0,
+      "fm_valid": 0.0,
+      "lgb_candidate_valid": 0.0,
+      "xgb_valid": 0.0
+    },
+    "fm_valid": 0.6398779153823853,
+    "lgb_candidate_valid": 0.6883414387702942,
+    "xgb_valid": 0.6675541996955872
+  },
+  "standalone_ablation": {
+    "lgb_aux_delta": 0.0,
+    "lgb_aux_feature_importance": {
+      "aux_is_comment": 0,
+      "aux_is_follow": 0,
+      "aux_is_forward": 0,
+      "aux_is_like": 0
+    },
+    "lgb_aux_test": 0.673417329788208,
+    "lgb_aux_valid": 0.6883414387702942,
+    "lgb_baseline_test": 0.673417329788208,
+    "lgb_baseline_valid": 0.6883414387702942,
+    "xgb_aux_delta": -0.009180843830108643,
+    "xgb_aux_feature_importance": {
+      "aux_is_comment": 12.0,
+      "aux_is_follow": 2.0,
+      "aux_is_forward": 8.0,
+      "aux_is_like": 9.0
+    },
+    "xgb_aux_test": 0.6475619077682495,
+    "xgb_aux_valid": 0.6583733558654785,
+    "xgb_baseline_test": 0.6532329320907593,
+    "xgb_baseline_valid": 0.6675541996955872
+  },
+  "verdict": {
+    "best_valid_delta": 0.0,
+    "best_variant": "baseline_baseline",
+    "decision": "REJECT",
+    "preliminary_delta_threshold": 0.0003,
+    "promotion_delta_threshold": 0.001,
+    "selection_basis": "valid-only; test reported for the record only"
+  }
+}

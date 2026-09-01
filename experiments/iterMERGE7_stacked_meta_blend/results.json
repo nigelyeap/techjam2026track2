@@ -1,0 +1,187 @@
+{
+  "elapsed_seconds": 427.92322516441345,
+  "environment": {
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "python": "3.14.6"
+  },
+  "experiment": "iterMERGE7_stacked_meta_blend",
+  "harness_fidelity_3model": {
+    "all_pass_1e-6": true,
+    "blend_test": 0.6843225955963135,
+    "blend_valid": 0.6994343996047974,
+    "claimed": {
+      "blend_test": 0.6843226,
+      "blend_valid": 0.6994344,
+      "fm_valid": 0.63987792,
+      "lgb_candidate_valid": 0.68834144,
+      "xgb_valid": 0.6675542
+    },
+    "deltas": {
+      "blend_test": 0.0,
+      "blend_valid": 0.0,
+      "fm_valid": 0.0,
+      "lgb_candidate_valid": 0.0,
+      "xgb_valid": 0.0
+    },
+    "fm_valid": 0.6398779153823853,
+    "lgb_candidate_valid": 0.6883414387702942,
+    "xgb_valid": 0.6675541996955872
+  },
+  "harness_fidelity_iter63_standalone": {
+    "delta_vs_code_verified_reference": 0.0,
+    "note": "0.6716787219047546 is the CORRECT iter63 rate_only reference (NOT 0.6768913269042969, which is a different yixi-chain constant -- see iterMERGE5/RESULT.md).",
+    "pass_1e-6": true,
+    "reference_valid_code_verified": 0.6716787219047546,
+    "reproduced_test": 0.6535274386405945,
+    "reproduced_valid": 0.6716787219047546
+  },
+  "harness_fidelity_merge5_raw4model_sanity": {
+    "claimed_test": 0.68367088,
+    "claimed_valid": 0.69981837,
+    "delta_test": 0.0,
+    "delta_valid": 0.0,
+    "pass_1e-6": true,
+    "reproduced_test": 0.6836708784103394,
+    "reproduced_valid": 0.6998183727264404
+  },
+  "oof_stacking_gbm_sweep": [
+    {
+      "method": "gbm",
+      "num_leaves": 2,
+      "oof_valid_primary": 0.6990456581115723
+    },
+    {
+      "method": "gbm",
+      "num_leaves": 3,
+      "oof_valid_primary": 0.6978927254676819
+    },
+    {
+      "method": "gbm",
+      "num_leaves": 4,
+      "oof_valid_primary": 0.6978302597999573
+    }
+  ],
+  "oof_stacking_logreg_sweep": [
+    {
+      "C": 0.001,
+      "method": "logreg",
+      "oof_valid_primary": 0.6956180334091187
+    },
+    {
+      "C": 0.003,
+      "method": "logreg",
+      "oof_valid_primary": 0.6975374221801758
+    },
+    {
+      "C": 0.01,
+      "method": "logreg",
+      "oof_valid_primary": 0.6981242299079895
+    },
+    {
+      "C": 0.03,
+      "method": "logreg",
+      "oof_valid_primary": 0.6983733177185059
+    },
+    {
+      "C": 0.1,
+      "method": "logreg",
+      "oof_valid_primary": 0.6984562873840332
+    },
+    {
+      "C": 0.3,
+      "method": "logreg",
+      "oof_valid_primary": 0.6985670328140259
+    },
+    {
+      "C": 1.0,
+      "method": "logreg",
+      "oof_valid_primary": 0.6985126733779907
+    },
+    {
+      "C": 3.0,
+      "method": "logreg",
+      "oof_valid_primary": 0.6984891891479492
+    }
+  ],
+  "oof_stacking_results": {
+    "best_gbm": {
+      "method": "gbm",
+      "num_leaves": 2,
+      "oof_valid_primary": 0.6990456581115723
+    },
+    "best_logreg": {
+      "C": 0.3,
+      "method": "logreg",
+      "oof_valid_primary": 0.6985670328140259
+    },
+    "best_overall": {
+      "method": "gbm",
+      "num_leaves": 2,
+      "oof_valid_primary": 0.6990456581115723
+    },
+    "delta_vs_3model": -0.00038874149322509766,
+    "delta_vs_merge5_linear": -0.0007727146148681641,
+    "merge5_linear_optimum_valid": 0.69981837,
+    "reference_3model_valid": 0.6994343996047974
+  },
+  "refit_and_test": {
+    "delta_test_vs_3model_reference": 0.0004941225051879883,
+    "delta_test_vs_merge5_linear": 0.0011458396911621094,
+    "final_model": {
+      "feature_importances": {
+        "fm": 58,
+        "i63": 11,
+        "lgb": 77,
+        "xgb": 54
+      },
+      "method": "gbm",
+      "num_leaves": 2
+    },
+    "merge5_linear_optimum_test": 0.68367088,
+    "oof_valid_primary_selection_number": 0.6990456581115723,
+    "reference_3model_test": 0.6843225955963135,
+    "refit_all_valid_insample_primary": 0.6995120644569397,
+    "test_primary_for_the_record_only": 0.6848167181015015
+  },
+  "row_alignment_check": {
+    "test": {
+      "label_mismatches": 0,
+      "row_count_match": true,
+      "rows_iter63": 170588,
+      "rows_yixi": 170588,
+      "user_id_mismatches_trusted_arrays": 0,
+      "video_id_mismatches_excluding_known_nan": 0
+    },
+    "valid": {
+      "label_mismatches": 0,
+      "row_count_match": true,
+      "rows_iter63": 124909,
+      "rows_yixi": 124909,
+      "user_id_mismatches_trusted_arrays": 0,
+      "video_id_mismatches_excluding_known_nan": 0
+    }
+  },
+  "summary": {
+    "beats_merge5_linear": false,
+    "best_meta_learner": {
+      "method": "gbm",
+      "num_leaves": 2,
+      "oof_valid_primary": 0.6990456581115723
+    },
+    "closes_valid_test_crossover": true,
+    "delta_vs_3model_reference": -0.00038874149322509766,
+    "delta_vs_merge5_linear_optimum": -0.0007727146148681641,
+    "merge5_linear_optimum_test": 0.68367088,
+    "merge5_linear_optimum_valid": 0.69981837,
+    "oof_stacking_valid_primary": 0.6990456581115723,
+    "preliminary_delta_threshold": 0.0003,
+    "promotion_delta_threshold": 0.001,
+    "reference_3model_blend_test": 0.6843225955963135,
+    "reference_3model_blend_valid": 0.6994343996047974,
+    "selection_basis": "K-FOLD OOF valid-only; in-sample refit valid and test reported for the record only, never for selection",
+    "test_primary_for_the_record": 0.6848167181015015,
+    "verdict": "REJECT"
+  }
+}

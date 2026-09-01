@@ -1,0 +1,94 @@
+{
+  "any_promising": false,
+  "axes": {
+    "author": {
+      "column": "decay_author_rate_3",
+      "lgb": {
+        "clears_preliminary": false,
+        "delta_vs_reference": 0.0,
+        "feature_gain_fraction": 0.0,
+        "valid": {
+          "GAUC": 0.7646524310112,
+          "nDCG@5": 0.5891302824020386,
+          "primary": 0.6768913269042969,
+          "rows": 124909,
+          "users": 22377
+        }
+      },
+      "xgb": {
+        "clears_preliminary": false,
+        "delta_vs_reference": 0.0,
+        "feature_gain_fraction": 0.0,
+        "valid": {
+          "GAUC": 0.7547547221183777,
+          "nDCG@5": 0.5847681760787964,
+          "primary": 0.6697614192962646,
+          "rows": 124909,
+          "users": 22377
+        }
+      }
+    },
+    "durbucket": {
+      "column": "decay_durbucket_rate_3",
+      "lgb": {
+        "clears_preliminary": false,
+        "delta_vs_reference": 0.0,
+        "feature_gain_fraction": 0.0,
+        "valid": {
+          "GAUC": 0.7646524310112,
+          "nDCG@5": 0.5891302824020386,
+          "primary": 0.6768913269042969,
+          "rows": 124909,
+          "users": 22377
+        }
+      },
+      "xgb": {
+        "clears_preliminary": false,
+        "delta_vs_reference": 0.0,
+        "feature_gain_fraction": 0.0,
+        "valid": {
+          "GAUC": 0.7547547221183777,
+          "nDCG@5": 0.5847681760787964,
+          "primary": 0.6697614192962646,
+          "rows": 124909,
+          "users": 22377
+        }
+      }
+    },
+    "hour": {
+      "column": "decay_hour_rate_3",
+      "lgb": {
+        "clears_preliminary": false,
+        "delta_vs_reference": 0.0,
+        "feature_gain_fraction": 0.0,
+        "valid": {
+          "GAUC": 0.7646524310112,
+          "nDCG@5": 0.5891302824020386,
+          "primary": 0.6768913269042969,
+          "rows": 124909,
+          "users": 22377
+        }
+      },
+      "xgb": {
+        "clears_preliminary": false,
+        "delta_vs_reference": 0.0,
+        "feature_gain_fraction": 0.0,
+        "valid": {
+          "GAUC": 0.7547547221183777,
+          "nDCG@5": 0.5847681760787964,
+          "primary": 0.6697614192962646,
+          "rows": 124909,
+          "users": 22377
+        }
+      }
+    }
+  },
+  "elapsed_seconds": 355.8268311023712,
+  "environment": {
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "python": "3.14.6",
+    "xgboost": "3.4.1"
+  }
+}

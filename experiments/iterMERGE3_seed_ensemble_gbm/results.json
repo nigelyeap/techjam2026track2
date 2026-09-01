@@ -1,0 +1,183 @@
+{
+  "experiment": "iterMERGE3_seed_ensemble_gbm",
+  "grid_search": {
+    "best": {
+      "fm": 0.1,
+      "lgb": 0.56,
+      "valid_primary": 0.6987848281860352,
+      "xgb": 0.34
+    },
+    "best_test_primary": 0.6832387447357178,
+    "delta_best_vs_production_weights": 0.00010162591934204102,
+    "n_combos": 49,
+    "production_weights_valid": 0.6986832022666931,
+    "top10": [
+      {
+        "fm": 0.1,
+        "lgb": 0.56,
+        "valid_primary": 0.6987848281860352,
+        "xgb": 0.34
+      },
+      {
+        "fm": 0.08,
+        "lgb": 0.56,
+        "valid_primary": 0.6987401247024536,
+        "xgb": 0.36
+      },
+      {
+        "fm": 0.1,
+        "lgb": 0.54,
+        "valid_primary": 0.698735237121582,
+        "xgb": 0.36
+      },
+      {
+        "fm": 0.12,
+        "lgb": 0.54,
+        "valid_primary": 0.6987094879150391,
+        "xgb": 0.34
+      },
+      {
+        "fm": 0.1,
+        "lgb": 0.52,
+        "valid_primary": 0.6986832022666931,
+        "xgb": 0.38
+      },
+      {
+        "fm": 0.14,
+        "lgb": 0.52,
+        "valid_primary": 0.6986533403396606,
+        "xgb": 0.34
+      },
+      {
+        "fm": 0.08,
+        "lgb": 0.58,
+        "valid_primary": 0.6986236572265625,
+        "xgb": 0.34
+      },
+      {
+        "fm": 0.12,
+        "lgb": 0.52,
+        "valid_primary": 0.6986083388328552,
+        "xgb": 0.36
+      },
+      {
+        "fm": 0.06,
+        "lgb": 0.58,
+        "valid_primary": 0.6985893249511719,
+        "xgb": 0.36
+      },
+      {
+        "fm": 0.12,
+        "lgb": 0.56,
+        "valid_primary": 0.6985864639282227,
+        "xgb": 0.32
+      }
+    ]
+  },
+  "harness_fidelity": {
+    "all_pass": true,
+    "blend_test": {
+      "delta": 0.0,
+      "ours": 0.6843225955963135,
+      "ref": 0.6843226
+    },
+    "blend_valid": {
+      "delta": 0.0,
+      "ours": 0.6994343996047974,
+      "ref": 0.6994344
+    },
+    "fm_valid": {
+      "delta": 0.0,
+      "ours": 0.6398779153823853,
+      "ref": 0.63987792
+    },
+    "lgb_valid": {
+      "delta": 0.0,
+      "ours": 0.6883414387702942,
+      "ref": 0.68834144
+    },
+    "tolerance": 1e-06,
+    "xgb_valid": {
+      "delta": 0.0,
+      "ours": 0.6675541996955872,
+      "ref": 0.6675542
+    }
+  },
+  "production_weights_seed_ensembled": {
+    "blend_test": 0.6833600401878357,
+    "blend_valid": 0.6986832022666931,
+    "delta_test": -0.0009625554084777832,
+    "delta_valid": -0.000751197338104248,
+    "lgb_convention_used": "sigmoid_mean",
+    "reference_blend_test": 0.6843226,
+    "reference_blend_valid": 0.6994344,
+    "weights": {
+      "fm": 0.1,
+      "lgb": 0.52,
+      "xgb": 0.38
+    },
+    "xgb_convention_used": "plain_mean"
+  },
+  "seed_ensemble_comparison": {
+    "fm_convention": "sigmoid_mean (unchanged production)",
+    "lgb": {
+      "per_seed_valid": {
+        "0": 0.6883414387702942,
+        "1": 0.6876286268234253,
+        "2": 0.6874644756317139,
+        "3": 0.6871400475502014,
+        "4": 0.6885054707527161
+      },
+      "plain_mean": {
+        "test": 0.67249596118927,
+        "valid": 0.6878174543380737
+      },
+      "sigmoid_mean": {
+        "test": 0.6724954843521118,
+        "valid": 0.6878221035003662
+      }
+    },
+    "xgb": {
+      "per_seed_valid": {
+        "0": 0.6675541996955872,
+        "1": 0.6675541996955872,
+        "2": 0.6675541996955872,
+        "3": 0.6675541996955872,
+        "4": 0.6675541996955872
+      },
+      "plain_mean": {
+        "test": 0.6532329320907593,
+        "valid": 0.6675541996955872
+      },
+      "sigmoid_mean": {
+        "test": 0.6532329320907593,
+        "valid": 0.6675541996955872
+      }
+    }
+  },
+  "summary": {
+    "best_grid_test": 0.6832387447357178,
+    "best_grid_valid": 0.6987848281860352,
+    "best_grid_weights": {
+      "fm": 0.1,
+      "lgb": 0.56,
+      "xgb": 0.34
+    },
+    "environment": {
+      "lightgbm": "4.7.0",
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "python": "3.14.6",
+      "xgboost": "3.4.1"
+    },
+    "final_delta_valid": -0.000649571418762207,
+    "preliminary_delta_threshold": 0.0003,
+    "promotion_delta_threshold": 0.001,
+    "reference_blend_test": 0.6843226,
+    "reference_blend_valid": 0.6994344,
+    "seed_ensembled_production_weights_test": 0.6833600401878357,
+    "seed_ensembled_production_weights_valid": 0.6986832022666931,
+    "total_runtime_sec": 1145.3643441200256,
+    "verdict": "REJECT"
+  }
+}

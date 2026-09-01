@@ -1,0 +1,612 @@
+{
+  "confirm_elapsed_seconds": 206.76191592216492,
+  "elapsed_seconds": 258.6788010597229,
+  "environment": {
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "python": "3.14.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterMERGE5_four_model_blend",
+  "final_summary": {
+    "best_blend_test_ensemble": 0.6836708784103394,
+    "best_blend_valid_ensemble": 0.6998183727264404,
+    "best_weights": {
+      "fm": 0.072,
+      "i63": 0.08,
+      "lgb": 0.5184,
+      "xgb": 0.3296
+    },
+    "final_verdict": "PRELIMINARY",
+    "is_plateau_across_top3_grid_points": true,
+    "preliminary_delta_threshold": 0.0003,
+    "promotion_delta_threshold": 0.001,
+    "robust_across_all_5_iter63_seeds_at_preliminary_bar": true,
+    "selection_basis": "valid-only; test reported for the record only, not used for selection",
+    "test_delta_vs_3model_reference": -0.0006517171859741211,
+    "valid_delta_vs_3model_reference": 0.0003839731216430664
+  },
+  "harness_fidelity_3model": {
+    "all_pass_1e-6": true,
+    "blend_test": 0.6843225955963135,
+    "blend_valid": 0.6994343996047974,
+    "claimed": {
+      "blend_test": 0.6843226,
+      "blend_valid": 0.6994344,
+      "fm_valid": 0.63987792,
+      "lgb_candidate_valid": 0.68834144,
+      "xgb_valid": 0.6675542
+    },
+    "deltas": {
+      "blend_test": 0.0,
+      "blend_valid": 0.0,
+      "fm_valid": 0.0,
+      "lgb_candidate_valid": 0.0,
+      "xgb_valid": 0.0
+    },
+    "fm_valid": 0.6398779153823853,
+    "lgb_candidate_valid": 0.6883414387702942,
+    "xgb_valid": 0.6675541996955872
+  },
+  "harness_fidelity_iter63_standalone": {
+    "delta_vs_code_verified_reference": 0.0,
+    "note": "The dispatch note's stated reference (0.6768913269042969) is iterYIXI9_watch_depth_history/common.py's LGB_REFERENCE_VALID, which is actually a DIFFERENT, richer intermediate model in yixi's own feature chain (LGB_REFERENCE_COLUMNS: decay_rate_5/decay_act_5/hist_watch_decay_mean_5), not iter63's rate_only model. iter63's own code-verified reference is 0.6716787219047546, which matches iterYIXI6_cross_model_feature_transfer/common.py's LGB_REFERENCE_VALID exactly (that file's harness.py labels it 'iter63 LightGBM'), and matches iter63_decay_tab_rate/run.log's own recorded rate_only seed-0 valid=0.67168. This script checks against the code-verified number.",
+    "pass_1e-6": true,
+    "reference_valid_code_verified": 0.6716787219047546,
+    "reference_valid_dispatch_note_stated": 0.6768913269042969,
+    "reproduced_test": 0.6535274386405945,
+    "reproduced_valid": 0.6716787219047546
+  },
+  "iter63_5seed_ensemble": {
+    "ensemble_test_primary": 0.653362512588501,
+    "ensemble_valid_primary": 0.6714167594909668,
+    "per_seed": {
+      "0": {
+        "test_primary": 0.6535274386405945,
+        "valid_primary": 0.6716787219047546
+      },
+      "1": {
+        "test_primary": 0.653233528137207,
+        "valid_primary": 0.6710515022277832
+      },
+      "2": {
+        "test_primary": 0.6532009840011597,
+        "valid_primary": 0.6710430383682251
+      },
+      "3": {
+        "test_primary": 0.6532009840011597,
+        "valid_primary": 0.6710430383682251
+      },
+      "4": {
+        "test_primary": 0.653233528137207,
+        "valid_primary": 0.6710515022277832
+      }
+    }
+  },
+  "plateau_check": {
+    "best": {
+      "test_delta_vs_reference": -0.0006517171859741211,
+      "test_primary": 0.6836708784103394,
+      "valid_delta_vs_reference": 0.0003839731216430664,
+      "valid_primary": 0.6998183727264404,
+      "weights": {
+        "fm": 0.072,
+        "i63": 0.08,
+        "lgb": 0.5184,
+        "xgb": 0.3296
+      }
+    },
+    "second": {
+      "test_delta_vs_reference": -0.0008718967437744141,
+      "test_primary": 0.6834506988525391,
+      "valid_delta_vs_reference": 0.0003660917282104492,
+      "valid_primary": 0.6998004913330078,
+      "weights": {
+        "fm": 0.052,
+        "i63": 0.08,
+        "lgb": 0.5184,
+        "xgb": 0.3496
+      }
+    },
+    "third": {
+      "test_delta_vs_reference": -0.00039768218994140625,
+      "test_primary": 0.6839249134063721,
+      "valid_delta_vs_reference": 0.0003581047058105469,
+      "valid_primary": 0.6997925043106079,
+      "weights": {
+        "fm": 0.072,
+        "i63": 0.06,
+        "lgb": 0.5184,
+        "xgb": 0.3496
+      }
+    }
+  },
+  "row_alignment_check": {
+    "test": {
+      "label_mismatches": 0,
+      "note": "user_id compared using the trusted raw arrays (users[name] from yixi's build_frames() internal assertion, i63_u[name] from iter63's prepare()), not the categorical dfs['user_id'] column (which is train-vocabulary-restricted and legitimately NaNs out cold-start valid/test users -- see comment above).",
+      "row_count_match": true,
+      "rows_iter63": 170588,
+      "rows_yixi": 170588,
+      "user_id_mismatches_trusted_arrays": 0,
+      "video_id_mismatches_excluding_known_nan": 0,
+      "video_id_mismatches_raw": 14,
+      "yixi_nan_video_id_rows": 14
+    },
+    "valid": {
+      "label_mismatches": 0,
+      "note": "user_id compared using the trusted raw arrays (users[name] from yixi's build_frames() internal assertion, i63_u[name] from iter63's prepare()), not the categorical dfs['user_id'] column (which is train-vocabulary-restricted and legitimately NaNs out cold-start valid/test users -- see comment above).",
+      "row_count_match": true,
+      "rows_iter63": 124909,
+      "rows_yixi": 124909,
+      "user_id_mismatches_trusted_arrays": 0,
+      "video_id_mismatches_excluding_known_nan": 0,
+      "video_id_mismatches_raw": 17,
+      "yixi_nan_video_id_rows": 17
+    }
+  },
+  "seed_confirmation": {
+    "ensemble_blend_at_best_weights": {
+      "test_primary": 0.6836708784103394,
+      "valid_delta_vs_reference": 0.0003839731216430664,
+      "valid_primary": 0.6998183727264404
+    },
+    "per_seed_blend_at_best_weights": {
+      "0": {
+        "test_primary": 0.6837276220321655,
+        "valid_delta_vs_reference": 0.0004527568817138672,
+        "valid_primary": 0.6998871564865112
+      },
+      "1": {
+        "test_primary": 0.6837027668952942,
+        "valid_delta_vs_reference": 0.0003255605697631836,
+        "valid_primary": 0.6997599601745605
+      },
+      "2": {
+        "test_primary": 0.6836992502212524,
+        "valid_delta_vs_reference": 0.00034105777740478516,
+        "valid_primary": 0.6997754573822021
+      },
+      "3": {
+        "test_primary": 0.6836992502212524,
+        "valid_delta_vs_reference": 0.00034105777740478516,
+        "valid_primary": 0.6997754573822021
+      },
+      "4": {
+        "test_primary": 0.6837027668952942,
+        "valid_delta_vs_reference": 0.0003255605697631836,
+        "valid_primary": 0.6997599601745605
+      }
+    },
+    "seeds_clearing_preliminary_delta": 5,
+    "seeds_clearing_promotion_delta": 0,
+    "total_seeds": 5,
+    "valid_spread": {
+      "max": 0.6998871564865112,
+      "min": 0.6997599601745605,
+      "std": 4.82791438116692e-05
+    }
+  },
+  "summary": {
+    "best_4model_blend_test": 0.6836676001548767,
+    "best_4model_blend_valid": 0.6998175382614136,
+    "best_4model_weights": {
+      "fm": 0.07200000000000001,
+      "i63": 0.08,
+      "lgb": 0.5184000000000001,
+      "xgb": 0.3296
+    },
+    "best_delta_vs_3model_valid": 0.00038313865661621094,
+    "preliminary_delta_threshold": 0.0003,
+    "promotion_delta_threshold": 0.001,
+    "reference_3model_blend_test": 0.6843225955963135,
+    "reference_3model_blend_valid": 0.6994343996047974,
+    "selection_basis": "valid-only; test reported for the record only, not used for selection",
+    "verdict": "PRELIMINARY"
+  },
+  "weight_search_coarse": [
+    {
+      "test_primary": 0.6843225955963135,
+      "valid_primary": 0.6994343996047974,
+      "weights": {
+        "fm": 0.1,
+        "i63": 0.0,
+        "lgb": 0.52,
+        "xgb": 0.38
+      }
+    },
+    {
+      "test_primary": 0.6842530369758606,
+      "valid_primary": 0.6994649767875671,
+      "weights": {
+        "fm": 0.098,
+        "i63": 0.02,
+        "lgb": 0.5096,
+        "xgb": 0.3724
+      }
+    },
+    {
+      "test_primary": 0.6841143369674683,
+      "valid_primary": 0.6993199586868286,
+      "weights": {
+        "fm": 0.095,
+        "i63": 0.05,
+        "lgb": 0.494,
+        "xgb": 0.361
+      }
+    },
+    {
+      "test_primary": 0.6837255954742432,
+      "valid_primary": 0.6995200514793396,
+      "weights": {
+        "fm": 0.09200000000000001,
+        "i63": 0.08,
+        "lgb": 0.47840000000000005,
+        "xgb": 0.3496
+      }
+    },
+    {
+      "test_primary": 0.6835940480232239,
+      "valid_primary": 0.6994366645812988,
+      "weights": {
+        "fm": 0.09000000000000001,
+        "i63": 0.1,
+        "lgb": 0.468,
+        "xgb": 0.342
+      }
+    },
+    {
+      "test_primary": 0.6834396719932556,
+      "valid_primary": 0.699396014213562,
+      "weights": {
+        "fm": 0.08800000000000001,
+        "i63": 0.12,
+        "lgb": 0.4576,
+        "xgb": 0.33440000000000003
+      }
+    },
+    {
+      "test_primary": 0.6829234957695007,
+      "valid_primary": 0.6989265084266663,
+      "weights": {
+        "fm": 0.085,
+        "i63": 0.15,
+        "lgb": 0.442,
+        "xgb": 0.323
+      }
+    },
+    {
+      "test_primary": 0.6820672154426575,
+      "valid_primary": 0.6983785629272461,
+      "weights": {
+        "fm": 0.08000000000000002,
+        "i63": 0.2,
+        "lgb": 0.41600000000000004,
+        "xgb": 0.30400000000000005
+      }
+    },
+    {
+      "test_primary": 0.6810060739517212,
+      "valid_primary": 0.6974871158599854,
+      "weights": {
+        "fm": 0.07500000000000001,
+        "i63": 0.25,
+        "lgb": 0.39,
+        "xgb": 0.28500000000000003
+      }
+    },
+    {
+      "test_primary": 0.6792864799499512,
+      "valid_primary": 0.6955574750900269,
+      "weights": {
+        "fm": 0.06999999999999999,
+        "i63": 0.3,
+        "lgb": 0.364,
+        "xgb": 0.26599999999999996
+      }
+    }
+  ],
+  "weight_search_fine": [
+    {
+      "test_primary": 0.6836676001548767,
+      "valid_primary": 0.6998175382614136,
+      "weights": {
+        "fm": 0.07200000000000001,
+        "i63": 0.08,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.3296
+      }
+    },
+    {
+      "test_primary": 0.683451771736145,
+      "valid_primary": 0.6998004913330078,
+      "weights": {
+        "fm": 0.05200000000000001,
+        "i63": 0.08,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.3495999999999999
+      }
+    },
+    {
+      "test_primary": 0.6839293241500854,
+      "valid_primary": 0.6997902393341064,
+      "weights": {
+        "fm": 0.07200000000000001,
+        "i63": 0.06,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.3495999999999998
+      }
+    },
+    {
+      "test_primary": 0.6839863061904907,
+      "valid_primary": 0.6997334957122803,
+      "weights": {
+        "fm": 0.09200000000000001,
+        "i63": 0.06,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.3295999999999999
+      }
+    },
+    {
+      "test_primary": 0.6836764812469482,
+      "valid_primary": 0.6997017860412598,
+      "weights": {
+        "fm": 0.07200000000000001,
+        "i63": 0.08,
+        "lgb": 0.49840000000000007,
+        "xgb": 0.3496
+      }
+    },
+    {
+      "test_primary": 0.68416428565979,
+      "valid_primary": 0.699695348739624,
+      "weights": {
+        "fm": 0.11200000000000002,
+        "i63": 0.04,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.3295999999999999
+      }
+    },
+    {
+      "test_primary": 0.6838158369064331,
+      "valid_primary": 0.6996852159500122,
+      "weights": {
+        "fm": 0.09200000000000001,
+        "i63": 0.1,
+        "lgb": 0.49840000000000007,
+        "xgb": 0.3096
+      }
+    },
+    {
+      "test_primary": 0.6841654777526855,
+      "valid_primary": 0.6996465921401978,
+      "weights": {
+        "fm": 0.09200000000000001,
+        "i63": 0.04,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.3495999999999999
+      }
+    },
+    {
+      "test_primary": 0.6838951110839844,
+      "valid_primary": 0.6996344327926636,
+      "weights": {
+        "fm": 0.09200000000000001,
+        "i63": 0.08,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.3096
+      }
+    },
+    {
+      "test_primary": 0.6835746765136719,
+      "valid_primary": 0.6996244192123413,
+      "weights": {
+        "fm": 0.09200000000000001,
+        "i63": 0.1,
+        "lgb": 0.47840000000000005,
+        "xgb": 0.3296
+      }
+    },
+    {
+      "test_primary": 0.6835430860519409,
+      "valid_primary": 0.6996201276779175,
+      "weights": {
+        "fm": 0.05200000000000001,
+        "i63": 0.06,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.3695999999999998
+      }
+    },
+    {
+      "test_primary": 0.6841314435005188,
+      "valid_primary": 0.6996184587478638,
+      "weights": {
+        "fm": 0.11200000000000002,
+        "i63": 0.06,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.3095999999999999
+      }
+    },
+    {
+      "test_primary": 0.6833774447441101,
+      "valid_primary": 0.6995967626571655,
+      "weights": {
+        "fm": 0.07200000000000001,
+        "i63": 0.1,
+        "lgb": 0.49840000000000007,
+        "xgb": 0.3296
+      }
+    },
+    {
+      "test_primary": 0.683598518371582,
+      "valid_primary": 0.6995948553085327,
+      "weights": {
+        "fm": 0.07200000000000001,
+        "i63": 0.1,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.3096
+      }
+    },
+    {
+      "test_primary": 0.6838403940200806,
+      "valid_primary": 0.6995714902877808,
+      "weights": {
+        "fm": 0.11200000000000002,
+        "i63": 0.1,
+        "lgb": 0.47840000000000005,
+        "xgb": 0.3096
+      }
+    },
+    {
+      "test_primary": 0.6831117868423462,
+      "valid_primary": 0.6995687484741211,
+      "weights": {
+        "fm": 0.07200000000000001,
+        "i63": 0.12,
+        "lgb": 0.47840000000000005,
+        "xgb": 0.3296
+      }
+    },
+    {
+      "test_primary": 0.6838252544403076,
+      "valid_primary": 0.6995683312416077,
+      "weights": {
+        "fm": 0.07200000000000001,
+        "i63": 0.04,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.3695999999999998
+      }
+    },
+    {
+      "test_primary": 0.683903157711029,
+      "valid_primary": 0.6995559930801392,
+      "weights": {
+        "fm": 0.11200000000000002,
+        "i63": 0.06,
+        "lgb": 0.49840000000000007,
+        "xgb": 0.3295999999999999
+      }
+    },
+    {
+      "test_primary": 0.6837857961654663,
+      "valid_primary": 0.6995519995689392,
+      "weights": {
+        "fm": 0.09200000000000001,
+        "i63": 0.08,
+        "lgb": 0.49840000000000007,
+        "xgb": 0.3296
+      }
+    },
+    {
+      "test_primary": 0.6833783984184265,
+      "valid_primary": 0.6995455622673035,
+      "weights": {
+        "fm": 0.07200000000000001,
+        "i63": 0.1,
+        "lgb": 0.47840000000000005,
+        "xgb": 0.3496
+      }
+    },
+    {
+      "test_primary": 0.6837255954742432,
+      "valid_primary": 0.6995200514793396,
+      "weights": {
+        "fm": 0.09200000000000001,
+        "i63": 0.08,
+        "lgb": 0.47840000000000005,
+        "xgb": 0.3496
+      }
+    },
+    {
+      "test_primary": 0.6840189695358276,
+      "valid_primary": 0.6995151042938232,
+      "weights": {
+        "fm": 0.11200000000000002,
+        "i63": 0.08,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.28959999999999997
+      }
+    },
+    {
+      "test_primary": 0.6832828521728516,
+      "valid_primary": 0.6995040774345398,
+      "weights": {
+        "fm": 0.05200000000000001,
+        "i63": 0.1,
+        "lgb": 0.49840000000000007,
+        "xgb": 0.3495999999999999
+      }
+    },
+    {
+      "test_primary": 0.683871865272522,
+      "valid_primary": 0.6994863152503967,
+      "weights": {
+        "fm": 0.11200000000000002,
+        "i63": 0.08,
+        "lgb": 0.49840000000000007,
+        "xgb": 0.3096
+      }
+    },
+    {
+      "test_primary": 0.6844834089279175,
+      "valid_primary": 0.6994770765304565,
+      "weights": {
+        "fm": 0.11200000000000002,
+        "i63": 0.04,
+        "lgb": 0.49840000000000007,
+        "xgb": 0.3495999999999999
+      }
+    },
+    {
+      "test_primary": 0.683232843875885,
+      "valid_primary": 0.6994770765304565,
+      "weights": {
+        "fm": 0.05200000000000001,
+        "i63": 0.1,
+        "lgb": 0.5184000000000001,
+        "xgb": 0.3295999999999999
+      }
+    },
+    {
+      "test_primary": 0.6839526891708374,
+      "valid_primary": 0.6994766592979431,
+      "weights": {
+        "fm": 0.09200000000000001,
+        "i63": 0.06,
+        "lgb": 0.49840000000000007,
+        "xgb": 0.3495999999999999
+      }
+    },
+    {
+      "test_primary": 0.6838698387145996,
+      "valid_primary": 0.699472188949585,
+      "weights": {
+        "fm": 0.11200000000000002,
+        "i63": 0.08,
+        "lgb": 0.47840000000000005,
+        "xgb": 0.3296
+      }
+    },
+    {
+      "test_primary": 0.6834601163864136,
+      "valid_primary": 0.6994516849517822,
+      "weights": {
+        "fm": 0.09200000000000001,
+        "i63": 0.12,
+        "lgb": 0.47840000000000005,
+        "xgb": 0.3096
+      }
+    },
+    {
+      "test_primary": 0.6836807727813721,
+      "valid_primary": 0.6994443535804749,
+      "weights": {
+        "fm": 0.07200000000000001,
+        "i63": 0.06,
+        "lgb": 0.49840000000000007,
+        "xgb": 0.3695999999999998
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "all_ok": true,
+  "best_blend": {
+    "delta": 0.0,
+    "ok": true,
+    "target": 0.6994344,
+    "valid": {
+      "GAUC": 0.7941505908966064,
+      "nDCG@5": 0.6047182679176331,
+      "primary": 0.6994343996047974,
+      "rows": 124909,
+      "users": 22377
+    },
+    "weights": {
+      "fm": 0.1,
+      "lgb": 0.52,
+      "xgb": 0.38
+    }
+  },
+  "elapsed_seconds": 353.3516209125519,
+  "environment": {
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "python": "3.14.6",
+    "xgboost": "3.4.1"
+  },
+  "lgb_reference": {
+    "delta": 0.0,
+    "ok": true,
+    "target": 0.6768913269042969,
+    "valid": {
+      "GAUC": 0.7646524310112,
+      "nDCG@5": 0.5891302824020386,
+      "primary": 0.6768913269042969,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "xgb_current_count": {
+    "delta": 0.0,
+    "ok": true,
+    "target": 0.6675541996955872,
+    "valid": {
+      "GAUC": 0.7519985437393188,
+      "nDCG@5": 0.5831098556518555,
+      "primary": 0.6675541996955872,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "xgb_reference_rate": {
+    "delta": 0.0,
+    "ok": true,
+    "target": 0.6697614192962646,
+    "valid": {
+      "GAUC": 0.7547547221183777,
+      "nDCG@5": 0.5847681760787964,
+      "primary": 0.6697614192962646,
+      "rows": 124909,
+      "users": 22377
+    }
+  }
+}

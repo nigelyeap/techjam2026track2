@@ -1,0 +1,58 @@
+=== [1/6] loading yixi's YIXI10 feature frames ===
+  rows train/valid/test = 1141112/124909/170588
+=== [2/6] harness-fidelity: LGB/XGB (seed 0) + FM (5-seed ensemble) ===
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  LGB candidate valid primary = 0.68834144  (ref 0.68834144)
+  XGB valid primary           = 0.66755420  (ref 0.66755420)
+  fitting FM seed=0
+  fitting FM seed=1
+  fitting FM seed=2
+  fitting FM seed=3
+  fitting FM seed=4
+  FM ensemble valid primary   = 0.63987792  (ref 0.63987792)
+  harness all_pass_1e-6 = True
+  deltas = {'lgb_candidate_valid': np.float32(0.0), 'xgb_valid': np.float32(0.0), 'fm_valid': np.float32(0.0), 'blend_valid': np.float32(0.0), 'blend_test': np.float32(0.0)}
+  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE4_multitask_aux_3model/results.json]
+=== [3/6] recovering aux engagement labels + verifying orig_idx alignment ===
+  alignment [train]: rows=1141112 mismatches=0
+  alignment [valid]: rows=124909 mismatches=0
+  alignment [test]: rows=170588 mismatches=0
+  PASS: orig_idx alignment exact on all splits (0 mismatches)
+  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE4_multitask_aux_3model/results.json]
+  train prevalence: {'is_like': 0.018676519044581074, 'is_follow': 0.001006912555472206, 'is_comment': 0.0025676708333625445, 'is_forward': 0.0009955201592832255}
+=== [4/6] training 4 aux LGBMClassifiers (mirrors iter67: n_estimators=100, num_leaves=31, lr=0.1, 5-fold OOF) on UNION_COLUMNS ===
+  is_like: OOF mean_pred=0.0178 actual_rate=0.0187
+  is_follow: OOF mean_pred=0.0021 actual_rate=0.0010
+  is_comment: OOF mean_pred=0.0020 actual_rate=0.0026
+  is_forward: OOF mean_pred=0.0022 actual_rate=0.0010
+  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE4_multitask_aux_3model/results.json]
+=== [5/6] retraining LGB+aux and XGB+aux (seed 0), individual + combined ablations ===
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  LGB: baseline=0.68834144 +aux=0.68834144 delta=+0.00000000
+  XGB: baseline=0.66755420 +aux=0.65837336 delta=-0.00918084
+  LGB aux importances: {'aux_is_like': 0, 'aux_is_follow': 0, 'aux_is_comment': 0, 'aux_is_forward': 0}
+  XGB aux importances: {'aux_is_like': 9.0, 'aux_is_follow': 2.0, 'aux_is_comment': 12.0, 'aux_is_forward': 8.0}
+  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE4_multitask_aux_3model/results.json]
+  blend[baseline_baseline]: valid=0.69943440 (delta=+0.00000000) test=0.68432260
+  blend[lgbaux_baseline]: valid=0.69943440 (delta=+0.00000000) test=0.68432260
+  blend[baseline_xgbaux]: valid=0.69567251 (delta=-0.00376189) test=0.68175703
+  blend[lgbaux_xgbaux]: valid=0.69567251 (delta=-0.00376189) test=0.68175703
+
+=== VERDICT: REJECT (best=baseline_baseline, delta=+0.00000000) ===
+  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE4_multitask_aux_3model/results.json]
+
+=== [6/6] done in 1013.5s ===

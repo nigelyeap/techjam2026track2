@@ -1,0 +1,118 @@
+{
+  "any_axis_shows_standalone_signal": false,
+  "elapsed_seconds": 478.67321610450745,
+  "environment": {
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "python": "3.14.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterMERGE8_decay_axis_on_i63",
+  "harness_3model": {
+    "blend_test": 0.6843225955963135,
+    "blend_valid": 0.6994343996047974,
+    "claimed_blend_test": 0.6843226,
+    "claimed_blend_valid": 0.6994344,
+    "delta_blend_test": 0.0,
+    "delta_blend_valid": 0.0,
+    "fm_valid": 0.6398779153823853,
+    "lgb_candidate_valid": 0.6883414387702942,
+    "pass": true,
+    "xgb_valid": 0.6675541996955872
+  },
+  "harness_4model_raw_blend": {
+    "claimed_test": 0.6836708784103394,
+    "claimed_valid": 0.6998183727264404,
+    "delta_test": 0.0,
+    "delta_valid": 0.0,
+    "pass": true,
+    "reproduced_test": 0.6836708784103394,
+    "reproduced_valid": 0.6998183727264404,
+    "weights": {
+      "fm": 0.072,
+      "i63": 0.08,
+      "lgb": 0.5184,
+      "xgb": 0.3296
+    }
+  },
+  "harness_fidelity_all_pass": true,
+  "harness_iter63_5seed_ensemble": {
+    "delta_test": 0.0,
+    "delta_valid": 0.0,
+    "ensemble_test_primary": 0.653362512588501,
+    "ensemble_valid_primary": 0.6714167594909668,
+    "pass": true,
+    "per_seed": {
+      "0": {
+        "test_primary": 0.6535274386405945,
+        "valid_primary": 0.6716787219047546
+      },
+      "1": {
+        "test_primary": 0.653233528137207,
+        "valid_primary": 0.6710515022277832
+      },
+      "2": {
+        "test_primary": 0.6532009840011597,
+        "valid_primary": 0.6710430383682251
+      },
+      "3": {
+        "test_primary": 0.6532009840011597,
+        "valid_primary": 0.6710430383682251
+      },
+      "4": {
+        "test_primary": 0.653233528137207,
+        "valid_primary": 0.6710515022277832
+      }
+    },
+    "reference_test": 0.653362512588501,
+    "reference_valid": 0.6714167594909668
+  },
+  "harness_iter63_seed0": {
+    "delta": 0.0,
+    "pass": true,
+    "reference": 0.6716787219047546,
+    "reproduced_test": 0.6535274386405945,
+    "reproduced_valid": 0.6716787219047546
+  },
+  "standalone_ablations": {
+    "author": {
+      "axis": "author",
+      "clears_standalone_signal_gate": false,
+      "column": "decay_author_rate_3",
+      "delta_valid_vs_i63_seed0": 0.0,
+      "new_column_gain": 0.0,
+      "new_column_gain_fraction": 0.0,
+      "new_column_split_count": 0,
+      "test_primary": 0.6535274386405945,
+      "total_gain": 59552.99642944336,
+      "valid_primary": 0.6716787219047546
+    },
+    "durbucket": {
+      "axis": "durbucket",
+      "clears_standalone_signal_gate": false,
+      "column": "decay_durbucket_rate_3",
+      "delta_valid_vs_i63_seed0": 0.0,
+      "new_column_gain": 0.0,
+      "new_column_gain_fraction": 0.0,
+      "new_column_split_count": 0,
+      "test_primary": 0.6535274386405945,
+      "total_gain": 59552.99642944336,
+      "valid_primary": 0.6716787219047546
+    },
+    "hour": {
+      "axis": "hour",
+      "clears_standalone_signal_gate": false,
+      "column": "decay_hour_rate_3",
+      "delta_valid_vs_i63_seed0": 0.0,
+      "new_column_gain": 0.0,
+      "new_column_gain_fraction": 0.0,
+      "new_column_split_count": 0,
+      "test_primary": 0.6535274386405945,
+      "total_gain": 59552.99642944336,
+      "valid_primary": 0.6716787219047546
+    }
+  },
+  "verdict": "REJECT",
+  "verdict_reason": "All 3 decay-rate axes (author, durbucket, hour) show zero LightGBM split usage and exact-zero (<1e-9) valid delta when added to iter63's own minimal 6-column rate_only feature set, extending iterMERGE2's finding (same 4/4-null signature) to a 3rd, much smaller-capacity harness. No blend-level retest performed, per protocol (gate requires standalone signal)."
+}

@@ -1,0 +1,135 @@
+=== [1/7] loading yixi's YIXI10 feature frames ===
+  rows train/valid/test = 1141112/124909/170588
+=== [2/7] harness-fidelity part A: LGB/XGB (seed 0) + FM (5-seed ensemble) ===
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  LGB candidate valid primary = 0.68834144  (ref 0.68834144)
+  XGB valid primary           = 0.66755420  (ref 0.66755420)
+  fitting FM seed=0
+  fitting FM seed=1
+  fitting FM seed=2
+  fitting FM seed=3
+  fitting FM seed=4
+  FM ensemble valid primary   = 0.63987792  (ref 0.63987792)
+  harness A all_pass_1e-6 = True  deltas={'lgb_candidate_valid': np.float32(0.0), 'xgb_valid': np.float32(0.0), 'fm_valid': np.float32(0.0), 'blend_valid': np.float32(0.0), 'blend_test': np.float32(0.0)}
+  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+
+=== [3/7] harness-fidelity part B: iter63's own rate_only GBM standalone ===
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+[rate_only] best_iteration=48  valid=0.67168  test=0.65353
+  iter63 rate_only seed0 valid = 0.6716787219  (code-verified ref 0.6716787219)  pass=True
+  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+
+=== [4/7] row-alignment check: yixi frames vs iter63 splits (valid/test) ===
+  [valid] rows=124909  user_id_mismatches(trusted)=0  video_id_mismatches=17 (of which 17 are known yixi NaN-video rows)  label_mismatches=0
+  [test] rows=170588  user_id_mismatches(trusted)=0  video_id_mismatches=14 (of which 14 are known yixi NaN-video rows)  label_mismatches=0
+  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+  row alignment OK (position-based combine is safe) = True
+
+=== [5/7] training iter63 rate_only GBM at 5 seeds, sigmoid-mean ensemble ===
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  fitting iter63 rate_only seed=1
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+    seed=1  valid=0.671052  test=0.653234
+  fitting iter63 rate_only seed=2
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+    seed=2  valid=0.671043  test=0.653201
+  fitting iter63 rate_only seed=3
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+    seed=3  valid=0.671043  test=0.653201
+  fitting iter63 rate_only seed=4
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+    seed=4  valid=0.671052  test=0.653234
+  iter63 5-seed sigmoid-mean ensemble: valid=0.67141676 test=0.65336251
+  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+
+=== [6/7] 4-way within-user-percentile blend weight search (VALID ONLY) ===
+  coarse w_i63=0.00  weights={'fm':0.100,'lgb':0.520,'xgb':0.380,'i63':0.000}  valid=0.69943440
+  coarse w_i63=0.02  weights={'fm':0.098,'lgb':0.510,'xgb':0.372,'i63':0.020}  valid=0.69946498
+  coarse w_i63=0.05  weights={'fm':0.095,'lgb':0.494,'xgb':0.361,'i63':0.050}  valid=0.69931996
+  coarse w_i63=0.08  weights={'fm':0.092,'lgb':0.478,'xgb':0.350,'i63':0.080}  valid=0.69952005
+  coarse w_i63=0.10  weights={'fm':0.090,'lgb':0.468,'xgb':0.342,'i63':0.100}  valid=0.69943666
+  coarse w_i63=0.12  weights={'fm':0.088,'lgb':0.458,'xgb':0.334,'i63':0.120}  valid=0.69939601
+  coarse w_i63=0.15  weights={'fm':0.085,'lgb':0.442,'xgb':0.323,'i63':0.150}  valid=0.69892651
+  coarse w_i63=0.20  weights={'fm':0.080,'lgb':0.416,'xgb':0.304,'i63':0.200}  valid=0.69837856
+  coarse w_i63=0.25  weights={'fm':0.075,'lgb':0.390,'xgb':0.285,'i63':0.250}  valid=0.69748712
+  coarse w_i63=0.30  weights={'fm':0.070,'lgb':0.364,'xgb':0.266,'i63':0.300}  valid=0.69555748
+  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+  best coarse point: {'fm': 0.09200000000000001, 'lgb': 0.47840000000000005, 'xgb': 0.3496, 'i63': 0.08}  valid=0.69952005
+  fine grid: 125 combos evaluated
+    valid=0.69981754  test=0.68366760  weights={'fm': 0.07200000000000001, 'lgb': 0.5184000000000001, 'xgb': 0.3296, 'i63': 0.08}
+    valid=0.69980049  test=0.68345177  weights={'fm': 0.05200000000000001, 'lgb': 0.5184000000000001, 'xgb': 0.3495999999999999, 'i63': 0.08}
+    valid=0.69979024  test=0.68392932  weights={'fm': 0.07200000000000001, 'lgb': 0.5184000000000001, 'xgb': 0.3495999999999998, 'i63': 0.06}
+    valid=0.69973350  test=0.68398631  weights={'fm': 0.09200000000000001, 'lgb': 0.5184000000000001, 'xgb': 0.3295999999999999, 'i63': 0.06}
+    valid=0.69970179  test=0.68367648  weights={'fm': 0.07200000000000001, 'lgb': 0.49840000000000007, 'xgb': 0.3496, 'i63': 0.08}
+  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+
+=== [7/7] verdict ===
+  3-model reference valid = 0.69943440
+  best 4-model valid      = 0.69981754  (delta=+0.00038314)
+  best 4-model test       = 0.68366760  (not used for selection)
+  best weights            = {'fm': 0.07200000000000001, 'lgb': 0.5184000000000001, 'xgb': 0.3296, 'i63': 0.08}
+  VERDICT: PRELIMINARY
+  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+
+=== done in 258.7s ===

@@ -1,0 +1,37 @@
+=== [1/4] rebuilding YIXI10 feature frames from raw CSVs ===
+  computing timestamp-causal watch-depth histories
+  rebuilding iter63 causal rows without writing shared caches
+  computing exact 5-day user pair with imported decay function
+  train/valid/test rows = 1141112/124909/170588
+=== [2/4] training LightGBM (reference + candidate) and XGBoost at seed 0 ===
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  candidate LGB valid primary = 0.68834144  (her claim: 0.68834144)
+  xgb valid primary           = 0.66755420  (her claim: 0.66755420)
+=== [3/4] training FM 5-seed ensemble via root make_submission.py (train_one_fm) ===
+  fitting FM seed=0
+  fitting FM seed=1
+  fitting FM seed=2
+  fitting FM seed=3
+  fitting FM seed=4
+  fm ensemble valid primary = 0.63987792  (her claim: 0.63987792)
+=== [4/4] within-user-percentile blend at 10% FM / 52% LGB / 38% XGB ===
+
+=== RESULT ===
+valid primary: ours=0.69943440  claimed=0.69943440  delta=+0.00000000
+test  primary: ours=0.68432260  claimed=0.68432260  delta=+0.00000000
+wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE1_verify_yixi10/verify_results.json

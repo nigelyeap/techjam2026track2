@@ -1,0 +1,253 @@
+=== [1/6] loading YIXI10 feature frames ===
+  train/valid/test rows = 1141112/124909/170588  (0s)
+=== [2/6] loading make_submission.py as module (reuse _fit_lgb/_fit_xgb/train_one_fm) ===
+=== [3/6] training LightGBM seeds 0-4 ===
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  LGB seed=0 valid=0.68834144  (3s)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  LGB seed=1 valid=0.68762863  (3s)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  LGB seed=2 valid=0.68746448  (3s)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  LGB seed=3 valid=0.68714005  (3s)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  LGB seed=4 valid=0.68850547  (3s)
+=== [4/6] training XGBoost seeds 0-4 ===
+  XGB seed=0 valid=0.66755420  (96s)
+  XGB seed=1 valid=0.66755420  (119s)
+  XGB seed=2 valid=0.66755420  (146s)
+  XGB seed=3 valid=0.66755420  (110s)
+  XGB seed=4 valid=0.66755420  (109s)
+=== [5/6] training FM 5-seed ensemble (unchanged production protocol) ===
+  FM seed=0 done  (241s)
+  FM seed=1 done  (51s)
+  FM seed=2 done  (51s)
+  FM seed=3 done  (50s)
+  FM seed=4 done  (66s)
+  FM ensemble valid primary = 0.63987792
+=== [6a/6] harness-fidelity check ===
+  [saved results.json stage: harness_fidelity]
+{
+  "lgb_valid": {
+    "ours": 0.6883414387702942,
+    "ref": 0.68834144,
+    "delta": 0.0
+  },
+  "xgb_valid": {
+    "ours": 0.6675541996955872,
+    "ref": 0.6675542,
+    "delta": 0.0
+  },
+  "fm_valid": {
+    "ours": 0.6398779153823853,
+    "ref": 0.63987792,
+    "delta": 0.0
+  },
+  "blend_valid": {
+    "ours": 0.6994343996047974,
+    "ref": 0.6994344,
+    "delta": 0.0
+  },
+  "blend_test": {
+    "ours": 0.6843225955963135,
+    "ref": 0.6843226,
+    "delta": 0.0
+  },
+  "tolerance": 1e-06,
+  "all_pass": true
+}
+=== [6b/6] per-model seed-ensemble comparison (plain mean vs sigmoid mean) ===
+  [saved results.json stage: seed_ensemble_comparison]
+{
+  "lgb": {
+    "per_seed_valid": {
+      "0": 0.6883414387702942,
+      "1": 0.6876286268234253,
+      "2": 0.6874644756317139,
+      "3": 0.6871400475502014,
+      "4": 0.6885054707527161
+    },
+    "plain_mean": {
+      "valid": 0.6878174543380737,
+      "test": 0.67249596118927
+    },
+    "sigmoid_mean": {
+      "valid": 0.6878221035003662,
+      "test": 0.6724954843521118
+    }
+  },
+  "xgb": {
+    "per_seed_valid": {
+      "0": 0.6675541996955872,
+      "1": 0.6675541996955872,
+      "2": 0.6675541996955872,
+      "3": 0.6675541996955872,
+      "4": 0.6675541996955872
+    },
+    "plain_mean": {
+      "valid": 0.6675541996955872,
+      "test": 0.6532329320907593
+    },
+    "sigmoid_mean": {
+      "valid": 0.6675541996955872,
+      "test": 0.6532329320907593
+    }
+  },
+  "fm_convention": "sigmoid_mean (unchanged production)"
+}
+=== [6c/6] re-blend at production 10/52/38 weights with seed-ensembled LGB/XGB ===
+  [saved results.json stage: production_weights_seed_ensembled]
+{
+  "lgb_convention_used": "sigmoid_mean",
+  "xgb_convention_used": "plain_mean",
+  "weights": {
+    "fm": 0.1,
+    "lgb": 0.52,
+    "xgb": 0.38
+  },
+  "blend_valid": 0.6986832022666931,
+  "blend_test": 0.6833600401878357,
+  "reference_blend_valid": 0.6994344,
+  "reference_blend_test": 0.6843226,
+  "delta_valid": -0.000751197338104248,
+  "delta_test": -0.0009625554084777832
+}
+=== [6d/6] local grid search around 10/52/38 on VALID ONLY ===
+  [saved results.json stage: grid_search]
+{
+  "n_combos": 49,
+  "top10": [
+    {
+      "fm": 0.1,
+      "lgb": 0.56,
+      "xgb": 0.34,
+      "valid_primary": 0.6987848281860352
+    },
+    {
+      "fm": 0.08,
+      "lgb": 0.56,
+      "xgb": 0.36,
+      "valid_primary": 0.6987401247024536
+    },
+    {
+      "fm": 0.1,
+      "lgb": 0.54,
+      "xgb": 0.36,
+      "valid_primary": 0.698735237121582
+    },
+    {
+      "fm": 0.12,
+      "lgb": 0.54,
+      "xgb": 0.34,
+      "valid_primary": 0.6987094879150391
+    },
+    {
+      "fm": 0.1,
+      "lgb": 0.52,
+      "xgb": 0.38,
+      "valid_primary": 0.6986832022666931
+    },
+    {
+      "fm": 0.14,
+      "lgb": 0.52,
+      "xgb": 0.34,
+      "valid_primary": 0.6986533403396606
+    },
+    {
+      "fm": 0.08,
+      "lgb": 0.58,
+      "xgb": 0.34,
+      "valid_primary": 0.6986236572265625
+    },
+    {
+      "fm": 0.12,
+      "lgb": 0.52,
+      "xgb": 0.36,
+      "valid_primary": 0.6986083388328552
+    },
+    {
+      "fm": 0.06,
+      "lgb": 0.58,
+      "xgb": 0.36,
+      "valid_primary": 0.6985893249511719
+    },
+    {
+      "fm": 0.12,
+      "lgb": 0.56,
+      "xgb": 0.32,
+      "valid_primary": 0.6985864639282227
+    }
+  ],
+  "best": {
+    "fm": 0.1,
+    "lgb": 0.56,
+    "xgb": 0.34,
+    "valid_primary": 0.6987848281860352
+  },
+  "best_test_primary": 0.6832387447357178,
+  "production_weights_valid": 0.6986832022666931,
+  "delta_best_vs_production_weights": 0.00010162591934204102
+}
+  [saved results.json stage: summary]
+
+=== FINAL SUMMARY ===
+{
+  "reference_blend_valid": 0.6994344,
+  "reference_blend_test": 0.6843226,
+  "seed_ensembled_production_weights_valid": 0.6986832022666931,
+  "seed_ensembled_production_weights_test": 0.6833600401878357,
+  "best_grid_valid": 0.6987848281860352,
+  "best_grid_weights": {
+    "fm": 0.1,
+    "lgb": 0.56,
+    "xgb": 0.34
+  },
+  "best_grid_test": 0.6832387447357178,
+  "final_delta_valid": -0.000649571418762207,
+  "preliminary_delta_threshold": 0.0003,
+  "promotion_delta_threshold": 0.001,
+  "verdict": "REJECT",
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1"
+  },
+  "total_runtime_sec": 1145.3643441200256
+}

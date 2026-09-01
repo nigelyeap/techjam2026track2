@@ -12,17 +12,26 @@ Within-user ranking on KuaiRand-Pure. Label: `long_view`. Metric: mean(GAUC, nDC
 | iter44 blend (test, prior final result) | — | — | 0.65197 |
 | iter51 blend (test, prior final result) | — | — | 0.65643 |
 | iter55 blend (test, prior final result) | — | — | 0.65832 |
-| **Final model — iter63 blend (valid)** | — | — | **0.67606** |
-| **Final model — iter63 blend (test)** | — | — | **0.65955** |
+| iter63 blend (valid, prior final result) | — | — | 0.67606 |
+| iter63 blend (test, prior final result) | — | — | 0.65955 |
+| **Final model — yixi10 3-model blend (valid)** | — | — | **0.69943** |
+| **Final model — yixi10 3-model blend (test)** | — | — | **0.68432** |
 
-- **Test primary: 0.65955** — a score-level blend (14% weight) of the FM ensemble above with
-  (86% weight) a single LightGBM ranker trained on a from-scratch, un-bucketed ("GBM-native")
-  encoding of the same causal features, with `linear_tree=True` (a linear model per leaf instead
-  of a flat constant), `learning_rate=0.10`, and one new feature: `decay_tab_rate_3`, a
-  Laplace-smoothed decayed per-tab positive **rate**, replacing the previous decayed per-tab
-  positive **count** (`decay_tab_3`)
-- **Valid primary: 0.67606** — model selection was valid-only throughout
-- **Improvement over baseline: +0.0650 absolute, +10.92% relative**
+- **Test primary: 0.68432** — a within-user-percentile-normalized blend of three components:
+  10% weight on the unchanged iter38 FM+BPR ensemble, 52% on a LightGBM ranker (`num_leaves=2`,
+  `linear_tree=True`, `learning_rate=0.10`, lambdarank with `truncation_level=50`/`sigmoid=2.0`)
+  trained on a chained causal feature set that adds a 5-day historical watch-depth decay feature
+  and a native `upload_type` categorical on top of iter63's features, and 38% on an `XGBRanker`
+  tuned independently by teammate yixi on the same native (un-bucketed) causal features. Found by
+  yixi (`experiments/iterYIXI1` through `iterYIXI10`) working from a separate branch of this
+  project's own research, merged in and independently re-verified from raw CSVs (all three
+  components retrained from scratch, no cached/frozen artifacts reused) in
+  [`experiments/iterMERGE1_verify_yixi10/RESULT.md`](experiments/iterMERGE1_verify_yixi10/RESULT.md):
+  exact match to her claim on every component and the final blend.
+- **Valid primary: 0.69943** — model selection was valid-only throughout
+- **Improvement over baseline: +0.1047 absolute, +17.61% relative** (+0.0234 valid / +0.0248 test
+  over the prior iter63 blend, from adding an XGBoost component and yixi's LightGBM feature/
+  objective refinements)
 - Reached across 12 iteration rounds / 37 iterations to convergence (3 consecutive
   non-improving rounds under a pre-declared ε=0.002, N=3 rule), then Round 13 (FM ensembling,
   +0.0020 valid / +0.0030 test), Round 14 (iter44's GBM-native representation + blend,
@@ -108,8 +117,9 @@ hyperparameters analogous to `learning_rate` (embedding dimension `k`, iter60; F
 [`experiments/iter55_learning_rate_sweep/RESULT.md`](experiments/iter55_learning_rate_sweep/RESULT.md)
 for the full standalone and blend results.
 
-**Round 19 (iter63) found a genuinely new feature and became the current final submitted model.**
-Every feature set since iter24 has carried `decay_tab_3`, a decayed per-tab positive **count** —
+**Round 19 (iter63) found a genuinely new feature and became the final submitted model through
+Round 19** (superseded by Round 20 below). Every feature set since iter24 has carried
+`decay_tab_3`, a decayed per-tab positive **count** —
 but never the matching decayed-total denominator needed to turn it into a Laplace-smoothed
 **rate**, the same count→rate upgrade that already won earlier in the project (the iter16-era
 `decay_rate` feature). Extending the pipeline to track that denominator and replacing the count
@@ -117,9 +127,60 @@ with the rate (`decay_tab_rate_3`) gave a real, causally-verified, 5-seed-confir
 gain (mean valid +0.00107, 5/5 seeds, test +0.00098 mean) that — unlike iter61's FM-side gain —
 propagated cleanly through to the blend level: re-blending with the unchanged iter38 FM ensemble
 at a re-swept optimum (14% weight on FM, 86% on the GBM) gave **valid 0.67606, test 0.65955**, the
-current final submitted model. See
+final submitted model through Round 19. See
 [`experiments/iter63_decay_tab_rate/RESULT.md`](experiments/iter63_decay_tab_rate/RESULT.md) for
 the full causality-verification, sweep, 5-seed-confirmation, and blend detail.
+
+**Round 20 (merge with teammate yixi's independent branch) found a larger, genuinely new gain
+and became the current final submitted model.** Yixi worked a separate research track on the
+same problem from `origin/main`, adding XGBoost as a third model family alongside this project's
+FM and LightGBM, plus several of her own feature/objective refinements (chained through
+`iterYIXI1`-`iterYIXI10`): the 5-day user-decay pair transferred to XGBoost, a lower learning
+rate for XGBoost, ranking-objective-aligned LightGBM retuning, a causal 5-day historical
+watch-depth decay feature, and a native `upload_type` categorical. Her final within-user-percentile
+blend (10% FM / 52% LightGBM / 38% XGBoost) reuses this project's own FM code unchanged
+(confirmed by reading her `blend.py`: it calls this file's `train_one_fm`) and already includes
+iter63's `decay_tab_rate_3` feature in her LightGBM columns — a genuine merge, not two disjoint
+models. Rather than trust her `RESULT.md` claim directly, it was independently re-verified from
+raw CSVs first — every component (LightGBM, XGBoost, FM) and the final blend matched her claimed
+numbers to 8 decimal places (see
+[`experiments/iterMERGE1_verify_yixi10/RESULT.md`](experiments/iterMERGE1_verify_yixi10/RESULT.md))
+before being promoted: **valid 0.69943, test 0.68432**, a +0.0234 valid / +0.0248 test gain over
+iter63. A follow-up merge-track experiment
+([`experiments/iterMERGE2_decay_axis_transfer/RESULT.md`](experiments/iterMERGE2_decay_axis_transfer/RESULT.md))
+tested transferring this project's own untried decay-rate feature axes (author-popularity,
+duration-bucket, hour-of-day) onto yixi's richer LightGBM/XGBoost representation — all three
+were clean nulls (exact-zero delta, no split ever used), extending an existing 2/2-null pattern
+(tag/`num_leaves=2` harness) to 4/4 nulls across two independent harnesses. The joint
+research-merge effort continues past this promotion in
+[`experiments/MERGE_LEDGER.md`](experiments/MERGE_LEDGER.md), tracked separately from this
+project's own [`experiments/LEDGER.md`](experiments/LEDGER.md) and yixi's stale
+[`YIXI_SUMMARY.md`](YIXI_SUMMARY.md) (which only covers her first four experiments,
+`iterYIXI1`-`iterYIXI4`) to avoid concurrent-write conflicts.
+
+**Round 21 (merge-track continuation, plus a third teammate's independent verification lane)
+did not change the submitted model, but closed the remaining search space and corroborated a
+key finding twice over.** Nine merge-track experiments in total
+([`experiments/MERGE_LEDGER.md`](experiments/MERGE_LEDGER.md)) tried linear reweighting of a
+4th blend component, per-component calibration, nonlinear meta-learner stacking, decay-feature
+transfer across the two research lines, and CV-regularized weight selection; all closed REJECT
+except one genuine finding, a valid/test crossover from adding this project's own GBM as a 4th
+blend component (+0.00038 valid, -0.0004 to -0.0009 test at every weight checked), confirmed by
+two independent methods (5-fold user-level CV re-selection, and a separately-implemented
+stacking meta-learner under honest out-of-fold evaluation) and left as a documented, not-promoted
+finding, detailed in the README's "Limitations" section. Separately, before a third teammate
+(Xuxia)'s own code arrived, her three hypotheses were independently reimplemented from her
+self-report alone as `iter65_segment_blend`, `iter66_calibrated_blend`, and
+`iter67_multitask_gbm` (`experiments/LEDGER.md` Round 21). Her isotonic-calibration-collapse
+result matched this independent reimplementation to the digit: GBM standalone valid
+0.67168 to 0.54189, exactly 37 calibrated levels, on two separately-written codebases. Her actual
+code then merged in as ground truth (`XUXIA_SUMMARY.md`, `experiments/iterXUXIA1`-`iterXUXIA3`):
+per-segment blend alpha, rank/calibrated fusion, and GBM-native multi-task stacking via OOF
+auxiliary features, all three REJECT, none touching the submitted model. Combined with the 80
+main-track and 11 Yixi-track iterations and the 9 merge-track experiments above, this brings the
+project to **103 logged iterations across four tracks**, all summarized in
+[`RUN_LOG_SUMMARY.md`](RUN_LOG_SUMMARY.md). The submitted model remains the Round 20 yixi10
+3-model blend: **valid 0.69943440, test 0.68432260**.
 
 Code: [`experiments/iter27_triple_fusion/data_ext.py`](experiments/iter27_triple_fusion/data_ext.py),
 [`experiments/iter27_triple_fusion/train.py`](experiments/iter27_triple_fusion/train.py) (FM base
@@ -131,22 +192,29 @@ config, per seed), [`experiments/iter38_seed_ensemble/driver.py`](experiments/it
 [`experiments/iter63_decay_tab_rate/data_ext.py`](experiments/iter63_decay_tab_rate/data_ext.py)
 (`decay_tab_rate_3` feature), [`experiments/iter63_decay_tab_rate/train.py`](experiments/iter63_decay_tab_rate/train.py)
 (GBM trained on the extended feature set), [`experiments/iter63_decay_tab_rate/blend.py`](experiments/iter63_decay_tab_rate/blend.py)
-(the FM+GBM blend), [`make_submission.py`](make_submission.py) (final end-to-end reproduction).
+(the FM+GBM blend, superseded as the final model by the Round 20 blend below,
+kept for provenance), [`experiments/iterYIXI10_video_metadata/features.py`](experiments/iterYIXI10_video_metadata/features.py)
+(yixi's chained causal feature frames — 5-day user-decay, causal watch-depth
+history, `upload_type`), [`experiments/iterYIXI5_xgboost_optimization/results.json`](experiments/iterYIXI5_xgboost_optimization/results.json)
+(tuned XGBoost config), [`experiments/iterMERGE1_verify_yixi10/verify.py`](experiments/iterMERGE1_verify_yixi10/verify.py)
+(independent from-scratch reproduction of the yixi10 blend), [`make_submission.py`](make_submission.py)
+(current final end-to-end reproduction: the yixi10 3-model blend).
 
 ## Reproducing the result
 
 ```bash
 # from the repo root, with KuaiRand-Pure/data/ already present (see README.md for download)
-pip install lightgbm pandas   # new dependencies for the GBM; the FM/BPR line stays numpy-only
+pip install lightgbm xgboost pandas   # new dependencies for the GBMs; the FM/BPR line stays numpy-only
 python3 make_submission.py submission.csv
 ```
 
-This trains iter63's GBM-native `linear_tree=True`, `learning_rate=0.10`,
-`decay_tab_rate_3`-augmented LightGBM ranker (a few seconds, CPU) and iter27's exact FM
-configuration at 5 seeds (~25s each on CPU, one core — ~2 minutes total, still well within the
-official baseline's resource profile), blends their test-split scores at the confirmed optimum
-(alpha=0.14), evaluates on valid/test, writes `submission.csv` in the format `submit.py`
-requires, then self-validates that file with `submit.py`'s own `read_submission` alignment check.
+This rebuilds yixi's causal feature frames (5-day user-decay, causal watch-depth history,
+`upload_type`), trains her tuned XGBoost ranker and refined LightGBM ranker (a few seconds each,
+CPU) and iter27's exact FM configuration at 5 seeds (~25s each on CPU, one core — ~2 minutes
+total, still well within the official baseline's resource profile), blends all three via
+within-user-percentile normalization at the confirmed weights (10% FM / 52% LightGBM / 38%
+XGBoost), evaluates on valid/test, writes `submission.csv` in the format `submit.py` requires,
+then self-validates that file with `submit.py`'s own `read_submission` alignment check.
 
 To reproduce the full 5-seed result reported above directly against the experiment harness:
 
@@ -289,7 +357,8 @@ Every iteration — hypothesis, method, harness-fidelity check, results, verdict
 
 See [`README.md`](README.md) for environment/data-download instructions. The FM/BPR line
 (iter1-iter39) is Python 3.9+ and numpy only, no other dependencies. **The final submitted model
-(iter63) additionally requires `pandas` and `lightgbm`** (both pip-installable) for its GBM
-component — see `pip install lightgbm pandas` in "Reproducing the result" above.
+(Round 20, the yixi10 3-model blend) additionally requires `pandas`, `lightgbm`, and `xgboost`**
+(all pip-installable) for its two GBM components — see `pip install lightgbm xgboost pandas` in
+"Reproducing the result" above.
 `make_submission.py` and everything under `experiments/` assume `KuaiRand-Pure/data/` is present
 at the repo root, per that README.

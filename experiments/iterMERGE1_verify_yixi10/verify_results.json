@@ -1,0 +1,100 @@
+{
+  "blend_test": {
+    "GAUC": 0.7615782618522644,
+    "nDCG@5": 0.6070669889450073,
+    "primary": 0.6843225955963135,
+    "rows": 170588,
+    "users": 23875
+  },
+  "blend_valid": {
+    "GAUC": 0.7941505908966064,
+    "nDCG@5": 0.6047182679176331,
+    "primary": 0.6994343996047974,
+    "rows": 124909,
+    "users": 22377
+  },
+  "claimed": {
+    "test_primary": 0.6843226,
+    "valid_primary": 0.6994344
+  },
+  "components_standalone": {
+    "fm_test": {
+      "GAUC": 0.7156077027320862,
+      "nDCG@5": 0.5681386590003967,
+      "primary": 0.6418731808662415,
+      "rows": 170588,
+      "users": 23875
+    },
+    "fm_valid": {
+      "GAUC": 0.7183587551116943,
+      "nDCG@5": 0.5613970756530762,
+      "primary": 0.6398779153823853,
+      "rows": 124909,
+      "users": 22377
+    },
+    "lgb_candidate_test": {
+      "GAUC": 0.7485741376876831,
+      "nDCG@5": 0.5982605814933777,
+      "primary": 0.673417329788208,
+      "rows": 170588,
+      "users": 23875
+    },
+    "lgb_candidate_valid": {
+      "GAUC": 0.7787111401557922,
+      "nDCG@5": 0.5979717373847961,
+      "primary": 0.6883414387702942,
+      "rows": 124909,
+      "users": 22377
+    },
+    "lgb_reference_test": {
+      "GAUC": 0.7414034008979797,
+      "nDCG@5": 0.5910542607307434,
+      "primary": 0.6662288308143616,
+      "rows": 170588,
+      "users": 23875
+    },
+    "lgb_reference_valid": {
+      "GAUC": 0.7675099968910217,
+      "nDCG@5": 0.5889347791671753,
+      "primary": 0.6782224178314209,
+      "rows": 124909,
+      "users": 22377
+    },
+    "xgb_test": {
+      "GAUC": 0.721746563911438,
+      "nDCG@5": 0.5847193002700806,
+      "primary": 0.6532329320907593,
+      "rows": 170588,
+      "users": 23875
+    },
+    "xgb_valid": {
+      "GAUC": 0.7519985437393188,
+      "nDCG@5": 0.5831098556518555,
+      "primary": 0.6675541996955872,
+      "rows": 124909,
+      "users": 22377
+    }
+  },
+  "delta": {
+    "test_primary": 0.0,
+    "valid_primary": 0.0
+  },
+  "environment": {
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "python": "3.14.6",
+    "xgboost": "3.4.1"
+  },
+  "experiment": "iterMERGE1_verify_yixi10",
+  "reproduced": {
+    "test": true,
+    "tolerance": 0.001,
+    "valid": true
+  },
+  "weights": {
+    "fm": 0.1,
+    "lgb": 0.52,
+    "xgb": 0.38
+  }
+}

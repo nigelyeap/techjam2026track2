@@ -1,0 +1,29 @@
+loading iterYIXI9 reference frames (source of LGB/XGB reference cols)
+  train=1141112 valid=124909 test=170588
+fitting reference LightGBM (seed=0)...
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  LGB primary=0.6768913269 target=0.6768913269 delta=+0.00e+00
+fitting reference XGBoost (rate col, seed=0)...
+  XGB(rate) primary=0.6697614193 target=0.6697614193 delta=+0.00e+00
+fitting current-production XGBoost (raw count col, seed=0)...
+  XGB(count) primary=0.6675541997 target=0.6675541997 delta=+0.00e+00
+fidelity: LGB ok=True XGB(rate) ok=True XGB(count) ok=True
+loading FM frozen predictions + iterYIXI10 best columns for blend fidelity
+fitting best-blend LightGBM (yixi10 columns incl. meta_upload_type, seed=0)...
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+/opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
+  _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
+  LGB(best) primary=0.6883414388
+fitting best-blend XGBoost (current-production cols, seed=0)...
+  XGB(best) primary=0.6675541997
+  BLEND primary=0.6994343996 target=0.6994344000 delta=+0.00e+00
+ALL FIDELITY CHECKS PASSED = True
+wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE2_decay_axis_transfer/harness_results.json
