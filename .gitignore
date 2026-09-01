@@ -13,3 +13,8 @@ __pycache__/
 # Stray dataset tarball / download scratch (data/ is downloaded fresh per README, not committed)
 KuaiRand-Pure.tar.gz
 curl_download.log
+
+# Scratch output from local reproduction runs, not part of the deliverable
+make_submission.log
+make_submission_new.log
+submission.csv.bak_iter63
