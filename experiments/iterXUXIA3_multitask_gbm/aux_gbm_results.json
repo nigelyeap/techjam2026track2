@@ -1,0 +1,30 @@
+{
+  "seed0": {
+    "baseline": {
+      "valid": 0.6716787219047546,
+      "test": 0.6535274386405945
+    },
+    "aux": {
+      "valid": 0.6719186305999756,
+      "test": 0.6539559364318848
+    },
+    "delta_valid": 0.00023990869522094727
+  },
+  "feature_importance": {
+    "user_id": 0,
+    "video_id": 8,
+    "author_id": 9,
+    "tab": 15,
+    "last1": 0,
+    "duration_ms": 1,
+    "decay_rate_2.5": 11,
+    "decay_act_2.5": 0,
+    "lastk_rate": 3,
+    "gap": 0,
+    "decay_tab_rate_3": 0,
+    "aux_is_like": 1,
+    "aux_is_follow": 0,
+    "aux_is_comment": 0,
+    "aux_is_forward": 0
+  }
+}
