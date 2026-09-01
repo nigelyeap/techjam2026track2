@@ -34,4 +34,4 @@
 === RESULT ===
 valid primary: ours=0.69943440  claimed=0.69943440  delta=+0.00000000
 test  primary: ours=0.68432260  claimed=0.68432260  delta=+0.00000000
-wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE1_verify_yixi10/verify_results.json
+wrote <repo>/experiments/iterMERGE1_verify_yixi10/verify_results.json

@@ -150,10 +150,10 @@ seed 4 ensemble (w=0.5): valid primary 0.6036 | test primary 0.5971
 valid primary: mean 0.60317 std 0.00043
 test  primary: mean 0.59753 std 0.00025
 Traceback (most recent call last):
-  File "/Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter10_ensemble/train.py", line 264, in <module>
+  File "<repo>/experiments/iter10_ensemble/train.py", line 264, in <module>
     main()
     ~~~~^^
-  File "/Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter10_ensemble/train.py", line 259, in main
+  File "<repo>/experiments/iter10_ensemble/train.py", line 259, in main
     json.dump(out, fh, indent=2)
     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
   File "/opt/miniconda3/lib/python3.14/json/__init__.py", line 181, in dump

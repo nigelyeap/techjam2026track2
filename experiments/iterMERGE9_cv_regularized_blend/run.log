@@ -18,7 +18,7 @@
   fitting FM seed=4
   FM ensemble valid primary   = 0.63987792  (ref 0.63987792)
   harness A all_pass_1e-6 = True  deltas={'lgb_candidate_valid': np.float32(0.0), 'xgb_valid': np.float32(0.0), 'fm_valid': np.float32(0.0), 'blend_valid': np.float32(0.0), 'blend_test': np.float32(0.0)}
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE9_cv_regularized_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE9_cv_regularized_blend/results.json]
 
 === [3/8] harness-fidelity: iter63 rate_only standalone + row alignment ===
 /opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
@@ -31,10 +31,10 @@
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
 [rate_only] best_iteration=48  valid=0.67168  test=0.65353
   iter63 rate_only seed0 valid = 0.6716787219  (ref 0.6716787219)  pass=True
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE9_cv_regularized_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE9_cv_regularized_blend/results.json]
   [valid] rows=124909  user_id_mismatches=0  video_id_mismatches(excl nan)=0  label_mismatches=0
   [test] rows=170588  user_id_mismatches=0  video_id_mismatches(excl nan)=0  label_mismatches=0
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE9_cv_regularized_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE9_cv_regularized_blend/results.json]
   row alignment OK = True
 
   training iter63 rate_only GBM at 5 seeds, sigmoid-mean ensemble
@@ -95,23 +95,23 @@
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
     seed=4  valid=0.671052  test=0.653234
   iter63 5-seed ensemble: valid=0.67141676 (ref 0.67141676) test=0.65336251 (ref 0.65336251)  pass=True
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE9_cv_regularized_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE9_cv_regularized_blend/results.json]
   MERGE5 raw-4model-blend sanity: valid=0.69981837 (claimed 0.69981837) test=0.68367088 (claimed 0.68367088) pass=True
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE9_cv_regularized_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE9_cv_regularized_blend/results.json]
 
 === HARNESS FIDELITY FULLY CONFIRMED (7 checks, all exact) -- proceeding to CV-regularized search ===
 
 === [4/8] building 5-fold user-level CV fold masks over valid ===
   fold row sizes = [25085, 25094, 24840, 24982, 24908]  (sum=124909, total rows=124909)
   fold user counts = [4476, 4476, 4475, 4475, 4475]  (sum=22377, total users=22377)
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE9_cv_regularized_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE9_cv_regularized_blend/results.json]
 
 === [5/8] CV mean valid AT iterMERGE5's original best point ===
   iterMERGE5 point weights = {'fm': 0.072, 'lgb': 0.5184, 'xgb': 0.3296, 'i63': 0.08}
   single-split valid = 0.69981837  (claimed 0.69981837)
   CV mean valid      = 0.69979823  (fold primaries: ['0.702313', '0.699951', '0.696766', '0.695340', '0.704623'])
   test (record only) = 0.68367088  (claimed 0.68367088)
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE9_cv_regularized_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE9_cv_regularized_blend/results.json]
 
 === [6/8] coarse sweep over i63 weight, scored by CV mean valid ===
   coarse w_i63=0.00  single_split_valid=0.69943440  cv_mean_valid=0.69941312
@@ -124,7 +124,7 @@
   coarse w_i63=0.20  single_split_valid=0.69837856  cv_mean_valid=0.69835395
   coarse w_i63=0.25  single_split_valid=0.69748712  cv_mean_valid=0.69746196
   coarse w_i63=0.30  single_split_valid=0.69555748  cv_mean_valid=0.69553113
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE9_cv_regularized_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE9_cv_regularized_blend/results.json]
   best coarse point (by CV mean): {'fm': 0.09200000000000001, 'lgb': 0.47840000000000005, 'xgb': 0.3496, 'i63': 0.08}  cv_mean_valid=0.69949651
 
 === [7/8] local fine grid refinement around best coarse point, scored by CV mean valid ===
@@ -134,7 +134,7 @@
     cv_mean_valid=0.69977015  single_split_valid=0.69979024  test=0.68392932  weights={'fm': 0.07200000000000001, 'lgb': 0.5184000000000001, 'xgb': 0.3495999999999998, 'i63': 0.06}
     cv_mean_valid=0.69971198  single_split_valid=0.69973350  test=0.68398631  weights={'fm': 0.09200000000000001, 'lgb': 0.5184000000000001, 'xgb': 0.3295999999999999, 'i63': 0.06}
     cv_mean_valid=0.69967890  single_split_valid=0.69970179  test=0.68367648  weights={'fm': 0.07200000000000001, 'lgb': 0.49840000000000007, 'xgb': 0.3496, 'i63': 0.08}
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE9_cv_regularized_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE9_cv_regularized_blend/results.json]
 
 === [8/8] verdict ===
   3-model reference valid          = 0.69943440
@@ -147,6 +147,6 @@
   same point as iterMERGE5 original? True
   crossover resolved (test >= 3model ref test)? False
   VERDICT: PRELIMINARY (crossover NOT resolved -- same pattern as iterMERGE5)
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE9_cv_regularized_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE9_cv_regularized_blend/results.json]
 
 === done in 506.2s ===

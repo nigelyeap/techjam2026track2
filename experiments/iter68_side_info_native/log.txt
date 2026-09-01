@@ -14,7 +14,7 @@
   PASS
 
 === variant: +user ===
-/Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter68_side_info_native/run.py:118: Pandas4Warning: Constructing a Categorical with a dtype and values containing non-null entries not in that dtype's categories is deprecated and will raise in a future version.
+<repo>/experiments/iter68_side_info_native/run.py:118: Pandas4Warning: Constructing a Categorical with a dtype and values containing non-null entries not in that dtype's categories is deprecated and will raise in a future version.
   dfs[name][c] = dfs[name][c].astype(cats[c])
 /opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
@@ -38,7 +38,7 @@
 [video_stat] seed=0 valid=0.64011 test=0.62538
 
 === variant: +video_basic ===
-/Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter68_side_info_native/run.py:118: Pandas4Warning: Constructing a Categorical with a dtype and values containing non-null entries not in that dtype's categories is deprecated and will raise in a future version.
+<repo>/experiments/iter68_side_info_native/run.py:118: Pandas4Warning: Constructing a Categorical with a dtype and values containing non-null entries not in that dtype's categories is deprecated and will raise in a future version.
   dfs[name][c] = dfs[name][c].astype(cats[c])
 /opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
@@ -51,7 +51,7 @@
 [video_basic] seed=0 valid=0.64268 test=0.63226
 
 === variant: +all ===
-/Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter68_side_info_native/run.py:118: Pandas4Warning: Constructing a Categorical with a dtype and values containing non-null entries not in that dtype's categories is deprecated and will raise in a future version.
+<repo>/experiments/iter68_side_info_native/run.py:118: Pandas4Warning: Constructing a Categorical with a dtype and values containing non-null entries not in that dtype's categories is deprecated and will raise in a future version.
   dfs[name][c] = dfs[name][c].astype(cats[c])
 /opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")

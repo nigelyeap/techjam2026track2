@@ -24,7 +24,7 @@
   fitting FM seed=4
   FM ensemble valid primary   = 0.63987792  (ref 0.63987792)
   harness A all_pass_1e-6 = True  deltas={'lgb_candidate_valid': np.float32(0.0), 'xgb_valid': np.float32(0.0), 'fm_valid': np.float32(0.0), 'blend_valid': np.float32(0.0), 'blend_test': np.float32(0.0)}
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE6_calibrated_4model/results.json]
+  [wrote <repo>/experiments/iterMERGE6_calibrated_4model/results.json]
 
 === [4/8] harness-fidelity part B: iter63's own rate_only GBM standalone ===
 /opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
@@ -37,13 +37,13 @@
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
 [rate_only] best_iteration=48  valid=0.67168  test=0.65353
   iter63 rate_only seed0 valid = 0.6716787219  (code-verified ref 0.6716787219)  pass=True
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE6_calibrated_4model/results.json]
+  [wrote <repo>/experiments/iterMERGE6_calibrated_4model/results.json]
 
 === [5/8] row-alignment check (reused method: trusted uncast arrays) ===
   [train] rows=1141112  user_id_mismatches=0  video_id_mismatches(excl nan)=0  label_mismatches=0
   [valid] rows=124909  user_id_mismatches=0  video_id_mismatches(excl nan)=0  label_mismatches=0
   [test] rows=170588  user_id_mismatches=0  video_id_mismatches(excl nan)=0  label_mismatches=0
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE6_calibrated_4model/results.json]
+  [wrote <repo>/experiments/iterMERGE6_calibrated_4model/results.json]
   row alignment OK on all 3 splits (position-based combine safe) = True
 
 === [6/8] training iter63 rate_only GBM at 5 seeds (sigmoid-mean ensemble, incl. TRAIN scores) ===
@@ -118,16 +118,16 @@
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
     seed=4  valid=0.671052  test=0.653234
   iter63 5-seed ensemble: valid=0.67141676 test=0.65336251
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE6_calibrated_4model/results.json]
+  [wrote <repo>/experiments/iterMERGE6_calibrated_4model/results.json]
   sanity: raw 4-model @ MERGE5 best weights -> valid=0.69981837 (ref 0.69981837)  test=0.68367088 (ref 0.68367088)
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE6_calibrated_4model/results.json]
+  [wrote <repo>/experiments/iterMERGE6_calibrated_4model/results.json]
 
 === [7/8] isotonic calibration per component (fit on TRAIN, apply to valid/test) ===
   [fm] unique raw(train/valid)=788541/117422  unique calibrated(valid/test)=576/631  standalone valid raw->cal: 0.63988 -> 0.63991 (+0.00003)
   [lgb] unique raw(train/valid)=1016423/120557  unique calibrated(valid/test)=35/42  standalone valid raw->cal: 0.68834 -> 0.53970 (-0.14865)
   [xgb] unique raw(train/valid)=71165/15776  unique calibrated(valid/test)=68/71  standalone valid raw->cal: 0.66755 -> 0.53774 (-0.12981)
   [i63] unique raw(train/valid)=955658/122612  unique calibrated(valid/test)=55/52  standalone valid raw->cal: 0.67142 -> 0.54159 (-0.12983)
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE6_calibrated_4model/results.json]
+  [wrote <repo>/experiments/iterMERGE6_calibrated_4model/results.json]
 
 === [8/8] weight search: calibrated 4-way blend (VALID ONLY) ===
     [variant-a-percentile] coarse w_i63=0.00  valid=0.60868239
@@ -154,12 +154,12 @@
     [variant-b-direct] coarse w_i63=0.30  valid=0.63841879
     [variant-b-direct] best coarse: {'fm': 0.0782608695652174, 'lgb': 0.5634782608695653, 'xgb': 0.35826086956521747, 'i63': 0.0}  valid=0.63862032
     [variant-b-direct] fine grid: 200 combos, best valid=0.63862032 test=0.63966358  weights={'fm': 0.0782608695652174, 'lgb': 0.5634782608695653, 'xgb': 0.3582608695652173, 'i63': 0.0}
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE6_calibrated_4model/results.json]
+  [wrote <repo>/experiments/iterMERGE6_calibrated_4model/results.json]
 
   3-model reference valid/test   = 0.69943440 / 0.68432260
   best calibrated 4-model        = 0.63862032 / 0.63966358  (variant=b_direct, weights={'fm': 0.0782608695652174, 'lgb': 0.5634782608695653, 'xgb': 0.3582608695652173, 'i63': 0.0})
   delta vs 3-model ref            = valid -0.06081408  test -0.04465902
   VERDICT: REJECT
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE6_calibrated_4model/results.json]
+  [wrote <repo>/experiments/iterMERGE6_calibrated_4model/results.json]
 
 === done in 772.6s ===

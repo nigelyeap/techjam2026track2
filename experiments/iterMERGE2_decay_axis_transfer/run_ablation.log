@@ -35,4 +35,4 @@ loading iterYIXI9 reference frames (shared base for all 6 ablations)
     LGB primary=0.67689133 delta=+0.000000
   fitting XGB reference+decay_hour_rate_3 (seed=0)...
     XGB primary=0.66976142 delta=+0.000000
-wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE2_decay_axis_transfer/ablation_results.json; any_promising=False
+wrote <repo>/experiments/iterMERGE2_decay_axis_transfer/ablation_results.json; any_promising=False

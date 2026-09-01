@@ -161,13 +161,13 @@
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
 [extra 3] {'num_leaves': 2, 'learning_rate': 0.05, 'n_estimators': 500, 'min_child_samples': 200, 'reg_lambda': 1.0} -> valid=0.66094 test=0.64744 best_iter=305
 Traceback (most recent call last):
-  File "/Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter46_extreme_capacity_depth/sweep.py", line 95, in <module>
+  File "<repo>/experiments/iter46_extreme_capacity_depth/sweep.py", line 95, in <module>
     main()
     ~~~~^^
-  File "/Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter46_extreme_capacity_depth/sweep.py", line 81, in main
+  File "<repo>/experiments/iter46_extreme_capacity_depth/sweep.py", line 81, in main
     model, va, te = run_with_extra(data, cfg)
                     ~~~~~~~~~~~~~~^^^^^^^^^^^
-  File "/Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter46_extreme_capacity_depth/sweep.py", line 60, in run_with_extra
+  File "<repo>/experiments/iter46_extreme_capacity_depth/sweep.py", line 60, in run_with_extra
     params = dict(objective='lambdarank', metric='ndcg', eval_at=[5],
                   random_state=0, verbosity=-1, n_jobs=-1, **cfg, **extra)
 TypeError: dict() got multiple values for keyword argument 'n_estimators'

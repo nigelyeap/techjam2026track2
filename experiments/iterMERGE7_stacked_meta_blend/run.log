@@ -18,7 +18,7 @@
   fitting FM seed=4
   FM ensemble valid primary   = 0.63987792  (ref 0.63987792)
   harness A all_pass_1e-6 = True  deltas={'lgb_candidate_valid': np.float32(0.0), 'xgb_valid': np.float32(0.0), 'fm_valid': np.float32(0.0), 'blend_valid': np.float32(0.0), 'blend_test': np.float32(0.0)}
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE7_stacked_meta_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE7_stacked_meta_blend/results.json]
 
 === [3/6] harness-fidelity: iter63 rate_only standalone + row alignment ===
 /opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
@@ -31,10 +31,10 @@
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
 [rate_only] best_iteration=48  valid=0.67168  test=0.65353
   iter63 rate_only seed0 valid = 0.6716787219  (ref 0.6716787219)  pass=True
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE7_stacked_meta_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE7_stacked_meta_blend/results.json]
   [valid] rows=124909  user_id_mismatches=0  video_id_mismatches(excl nan)=0  label_mismatches=0
   [test] rows=170588  user_id_mismatches=0  video_id_mismatches(excl nan)=0  label_mismatches=0
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE7_stacked_meta_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE7_stacked_meta_blend/results.json]
   row alignment OK = True
 
   training iter63 rate_only GBM at 5 seeds, sigmoid-mean ensemble
@@ -96,7 +96,7 @@
     seed=4  valid=0.671052  test=0.653234
   iter63 5-seed ensemble: valid=0.67141676 test=0.65336251
   MERGE5 raw-4model-blend sanity: valid=0.69981837 (claimed 0.69981837) pass=True
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE7_stacked_meta_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE7_stacked_meta_blend/results.json]
 
 === HARNESS FIDELITY FULLY CONFIRMED -- proceeding to meta-learner stacking ===
 
@@ -110,19 +110,19 @@
     C=0.3      oof_valid_primary=0.69856703
     C=1.0      oof_valid_primary=0.69851267
     C=3.0      oof_valid_primary=0.69848919
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE7_stacked_meta_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE7_stacked_meta_blend/results.json]
   best logreg: C=0.3  oof_valid=0.69856703
   (b) shallow GBM OOF sweep over num_leaves
     num_leaves=2  oof_valid_primary=0.69904566
     num_leaves=3  oof_valid_primary=0.69789273
     num_leaves=4  oof_valid_primary=0.69783026
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE7_stacked_meta_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE7_stacked_meta_blend/results.json]
   best gbm: num_leaves=2  oof_valid=0.69904566
 
   BEST OVERALL OOF: {'method': 'gbm', 'num_leaves': 2, 'oof_valid_primary': np.float32(0.69904566)}
   delta vs 3-model reference (0.69943440) = -0.00038874
   delta vs MERGE5 linear optimum (0.69981837) = -0.00077271
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE7_stacked_meta_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE7_stacked_meta_blend/results.json]
 
 === [5/6] refit winning meta-learner on ALL of valid, apply to test ===
   refit-on-all-valid in-sample primary (optimistic, NOT selection) = 0.69951206
@@ -130,7 +130,7 @@
   test primary (for the record only, never selection)             = 0.68481672
   delta test vs 3-model reference (0.68432260) = +0.00049412
   delta test vs MERGE5 linear optimum (0.68367088) = +0.00114584
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE7_stacked_meta_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE7_stacked_meta_blend/results.json]
 
 === [6/6] verdict ===
   3-model reference valid   = 0.69943440
@@ -138,6 +138,6 @@
   best meta-learner OOF     = 0.69904566  (delta vs 3model=-0.00038874, vs merge5=-0.00077271)
   test (record only)        = 0.68481672
   VERDICT: REJECT
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE7_stacked_meta_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE7_stacked_meta_blend/results.json]
 
 === done in 427.9s ===

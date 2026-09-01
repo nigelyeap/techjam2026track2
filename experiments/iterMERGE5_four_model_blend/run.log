@@ -18,7 +18,7 @@
   fitting FM seed=4
   FM ensemble valid primary   = 0.63987792  (ref 0.63987792)
   harness A all_pass_1e-6 = True  deltas={'lgb_candidate_valid': np.float32(0.0), 'xgb_valid': np.float32(0.0), 'fm_valid': np.float32(0.0), 'blend_valid': np.float32(0.0), 'blend_test': np.float32(0.0)}
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE5_four_model_blend/results.json]
 
 === [3/7] harness-fidelity part B: iter63's own rate_only GBM standalone ===
 /opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
@@ -31,12 +31,12 @@
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
 [rate_only] best_iteration=48  valid=0.67168  test=0.65353
   iter63 rate_only seed0 valid = 0.6716787219  (code-verified ref 0.6716787219)  pass=True
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE5_four_model_blend/results.json]
 
 === [4/7] row-alignment check: yixi frames vs iter63 splits (valid/test) ===
   [valid] rows=124909  user_id_mismatches(trusted)=0  video_id_mismatches=17 (of which 17 are known yixi NaN-video rows)  label_mismatches=0
   [test] rows=170588  user_id_mismatches(trusted)=0  video_id_mismatches=14 (of which 14 are known yixi NaN-video rows)  label_mismatches=0
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE5_four_model_blend/results.json]
   row alignment OK (position-based combine is safe) = True
 
 === [5/7] training iter63 rate_only GBM at 5 seeds, sigmoid-mean ensemble ===
@@ -101,7 +101,7 @@
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
     seed=4  valid=0.671052  test=0.653234
   iter63 5-seed sigmoid-mean ensemble: valid=0.67141676 test=0.65336251
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE5_four_model_blend/results.json]
 
 === [6/7] 4-way within-user-percentile blend weight search (VALID ONLY) ===
   coarse w_i63=0.00  weights={'fm':0.100,'lgb':0.520,'xgb':0.380,'i63':0.000}  valid=0.69943440
@@ -114,7 +114,7 @@
   coarse w_i63=0.20  weights={'fm':0.080,'lgb':0.416,'xgb':0.304,'i63':0.200}  valid=0.69837856
   coarse w_i63=0.25  weights={'fm':0.075,'lgb':0.390,'xgb':0.285,'i63':0.250}  valid=0.69748712
   coarse w_i63=0.30  weights={'fm':0.070,'lgb':0.364,'xgb':0.266,'i63':0.300}  valid=0.69555748
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE5_four_model_blend/results.json]
   best coarse point: {'fm': 0.09200000000000001, 'lgb': 0.47840000000000005, 'xgb': 0.3496, 'i63': 0.08}  valid=0.69952005
   fine grid: 125 combos evaluated
     valid=0.69981754  test=0.68366760  weights={'fm': 0.07200000000000001, 'lgb': 0.5184000000000001, 'xgb': 0.3296, 'i63': 0.08}
@@ -122,7 +122,7 @@
     valid=0.69979024  test=0.68392932  weights={'fm': 0.07200000000000001, 'lgb': 0.5184000000000001, 'xgb': 0.3495999999999998, 'i63': 0.06}
     valid=0.69973350  test=0.68398631  weights={'fm': 0.09200000000000001, 'lgb': 0.5184000000000001, 'xgb': 0.3295999999999999, 'i63': 0.06}
     valid=0.69970179  test=0.68367648  weights={'fm': 0.07200000000000001, 'lgb': 0.49840000000000007, 'xgb': 0.3496, 'i63': 0.08}
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE5_four_model_blend/results.json]
 
 === [7/7] verdict ===
   3-model reference valid = 0.69943440
@@ -130,6 +130,6 @@
   best 4-model test       = 0.68366760  (not used for selection)
   best weights            = {'fm': 0.07200000000000001, 'lgb': 0.5184000000000001, 'xgb': 0.3296, 'i63': 0.08}
   VERDICT: PRELIMINARY
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE5_four_model_blend/results.json]
+  [wrote <repo>/experiments/iterMERGE5_four_model_blend/results.json]
 
 === done in 258.7s ===

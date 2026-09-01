@@ -1,4 +1,4 @@
-loading /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter6_history_feature/../../KuaiRand-Pure/data ... fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'hist_affinity']
+loading <repo>/experiments/iter6_history_feature/../../KuaiRand-Pure/data ... fields=['user_id', 'video_id', 'author_id', 'tab', 'dur_bucket', 'hist_affinity']
 
 === iter6 fm+hist_affinity (seed=4) ===
   valid  GAUC 0.6665 | nDCG@5 0.5359 | primary 0.6012

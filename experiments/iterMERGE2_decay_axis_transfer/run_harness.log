@@ -26,4 +26,4 @@ fitting best-blend XGBoost (current-production cols, seed=0)...
   XGB(best) primary=0.6675541997
   BLEND primary=0.6994343996 target=0.6994344000 delta=+0.00e+00
 ALL FIDELITY CHECKS PASSED = True
-wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE2_decay_axis_transfer/harness_results.json
+wrote <repo>/experiments/iterMERGE2_decay_axis_transfer/harness_results.json

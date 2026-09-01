@@ -76,4 +76,4 @@
 
 === sanity: seed-0 blend should reproduce iter63 (valid=0.67606 test=0.65955) ===
   reproduced: valid=0.67606 test=0.65955
-SAVED /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter65_segment_blend/scores_5seed.npz
+SAVED <repo>/experiments/iter65_segment_blend/scores_5seed.npz

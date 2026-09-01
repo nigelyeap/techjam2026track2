@@ -9,3 +9,7 @@ experiments/**/*.pkl
 __pycache__/
 *.pyc
 .DS_Store
+
+# Stray dataset tarball / download scratch (data/ is downloaded fresh per README, not committed)
+KuaiRand-Pure.tar.gz
+curl_download.log

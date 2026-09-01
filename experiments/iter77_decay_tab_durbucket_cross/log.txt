@@ -1,5 +1,5 @@
 === preparing features ===
-/Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iter77_decay_tab_durbucket_cross/train.py:81: Pandas4Warning: Constructing a Categorical with a dtype and values containing non-null entries not in that dtype's categories is deprecated and will raise in a future version.
+<repo>/experiments/iter77_decay_tab_durbucket_cross/train.py:81: Pandas4Warning: Constructing a Categorical with a dtype and values containing non-null entries not in that dtype's categories is deprecated and will raise in a future version.
   dfs[name][c] = dfs[name][c].astype(cats[c])
 
 === harness-fidelity check ===

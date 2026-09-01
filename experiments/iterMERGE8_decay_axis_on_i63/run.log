@@ -11,7 +11,7 @@
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
 [rate_only] best_iteration=48  valid=0.67168  test=0.65353
   seed0 valid=0.6716787219 ref=0.6716787219 delta=0.00e+00 pass=True
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE8_decay_axis_on_i63/results.json]
+  [wrote <repo>/experiments/iterMERGE8_decay_axis_on_i63/results.json]
 
 === [1b/5] harness-fidelity: iter63 rate_only 5-seed ensemble ===
 /opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
@@ -71,7 +71,7 @@
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
     seed=4 valid=0.671052 test=0.653234
   5-seed ensemble valid=0.67141676 (ref 0.67141676) test=0.65336251 (ref 0.65336251) pass=True
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE8_decay_axis_on_i63/results.json]
+  [wrote <repo>/experiments/iterMERGE8_decay_axis_on_i63/results.json]
 
 === [2/5] harness-fidelity: 3-model reference (FM/LGB/XGB) ===
 /opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
@@ -88,16 +88,16 @@
   fitting FM seed=3
   fitting FM seed=4
   3-model blend valid=0.69943440 (ref 0.6994344) test=0.68432260 (ref 0.6843226) pass=True
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE8_decay_axis_on_i63/results.json]
+  [wrote <repo>/experiments/iterMERGE8_decay_axis_on_i63/results.json]
 
 === [3/5] harness-fidelity: raw 4-model blend at iterMERGE5 best weights ===
   [valid] uid_mismatch=0 vid_mismatch(excl known nan)=0 label_mismatch=0 ok=True
   [test] uid_mismatch=0 vid_mismatch(excl known nan)=0 label_mismatch=0 ok=True
   4-model blend valid=0.69981837 (ref 0.69981837) test=0.68367088 (ref 0.68367088) pass=True
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE8_decay_axis_on_i63/results.json]
+  [wrote <repo>/experiments/iterMERGE8_decay_axis_on_i63/results.json]
 
 *** ALL HARNESS-FIDELITY CHECKS PASSED ***
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE8_decay_axis_on_i63/results.json]
+  [wrote <repo>/experiments/iterMERGE8_decay_axis_on_i63/results.json]
 
 === [4/5] standalone ablations: attach each axis to i63's rate_only set (seed 0) ===
 
@@ -133,10 +133,10 @@
 /opt/miniconda3/lib/python3.14/site-packages/lightgbm/sklearn.py:969: UserWarning: Found 'eval_at' in params. Will use it instead of 'eval_at' argument
   _log_warning(f"Found '{alias}' in params. Will use it instead of 'eval_at' argument")
     valid=0.6716787219 delta=+0.0000000000 new_col_splits=0 new_col_gain_frac=0.000000 clears_gate=False
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE8_decay_axis_on_i63/results.json]
+  [wrote <repo>/experiments/iterMERGE8_decay_axis_on_i63/results.json]
 
 === [5/5] verdict: all 3 axes show zero split usage / exact-zero delta ===
   CLEAN REJECT -- skipping 5-seed retrain and blend-level testing per protocol
-  [wrote /Users/nigelyeap/Documents/tiktok-techjam/track2/kuairand-starter-kit/experiments/iterMERGE8_decay_axis_on_i63/results.json]
+  [wrote <repo>/experiments/iterMERGE8_decay_axis_on_i63/results.json]
 
 === done in 478.7s -- VERDICT: REJECT ===
